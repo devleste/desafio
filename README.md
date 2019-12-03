@@ -45,16 +45,29 @@ Persista as informações no próprio browser.
 
 #### 4. Remover Contatos
 
-Disponibilize para o usuário deletar um contato que ele adicionou, mas não os contatos padrões do retorno da API.
+Disponibilize para o usuário excluir um contato da lista.
 
-#### 5. Filtros
+#### 5. Editar Contatos
+
+Disponibilize para o usuário editar qualquer campo de um contato da lista.
+
+#### 6. Filtros
 
 Adicione filtros na listagem para as seguintes informações:
 
 - Gender
 - Language
 - Age
-- Birthday (next 30 days)
+- Birthday (todos de um determinado mês)
+
+#### 7. Resumo
+
+Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
+
+- Gender
+- Language
+
+
 
 ## 📅 Entrega
 
@@ -62,7 +75,8 @@ Para realizar a entrega do desafio basta seguir os passos:
 
 - Dê um **Fork** neste repositório para o Github
 - Realize o desafio e suba para a sua cópia do repositório
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome** e **Email**
+- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
+- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
 
 Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
 
