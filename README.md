@@ -29,7 +29,7 @@ Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
 
 #### 1. Chamada a API
 
-A aplicação deve fazer uma chamada para uma [API Externa]() que devolverá uma série de informações de contatos. 
+A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
 
 #### 2. Listagem de Contatos
 
