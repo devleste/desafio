@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Hudson Dias",
-  "engines" : {
+  "engines": {
     "node": "12.13.0"
   },
   "dependencies": {
@@ -15,7 +15,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "surge": "^0.21.3"
   },
   "scripts": {
     "start": "react-scripts start",
