@@ -6,27 +6,31 @@
 }
 
 .search-results ul {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
-.search-results li {
+.search-results a {
     display: grid;
-    grid-template-columns: 60px 1fr 70px 100px 50px 100px;
+    grid-template-columns: 60px 1fr 70px 120px 50px 100px;
     align-items: center;
     padding: 20px 0;
     text-align: center;
-}
-
-.search-results li img {
-    width: 40px;
-    height: 40px;
-    justify-content: cover;
-    border-radius: 50%;
-    border: 1px solid lightgray;
-}
-
-.search-results li a {
+    border-top: 1px solid lightgray;
     text-align: left;
     text-decoration: none;
     color: black;
 }
+
+.search-results li img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
+
+.search-results li a:hover {
+    background: rgba(46, 138, 86, 0.2);
+    font-weight: bold;
+}
+

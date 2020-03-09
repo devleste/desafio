@@ -15,6 +15,7 @@
 .contact-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 30px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 30px;
@@ -23,7 +24,7 @@
 .contact-header img {
     height: 75px;
     width: 75px;
-    justify-content: cover;
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 20px;
     margin-left: 20px;

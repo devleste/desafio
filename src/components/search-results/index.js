@@ -66,22 +66,26 @@ function SearchResults() {
             <h1>Contatos ({contacts.length})</h1>
                 <ul>
                     <li>
-                        <strong>Nome</strong>
-                        <strong></strong>
-                        <strong>Gênero</strong>
-                        <strong>Linguagem</strong>
-                        <strong>Idade</strong>
-                        <strong>Nascimento</strong>
+                        <a href="">
+                            <strong>Nome</strong>
+                            <strong></strong>
+                            <strong>Gênero</strong>
+                            <strong>Linguagem</strong>
+                            <strong>Idade</strong>
+                            <strong>Nascimento</strong>
+                        </a>
                     </li>
                 {contacts.map(contact => {
                     return (
                         <li key={contact.id}>
-                            <img src={contact.avatar} alt={`Foto de ${contact.name}`}/>
-                            <a href={`/contacts/${contact.id}`}>{contact.first_name} {contact.last_name}</a>
-                            <p>{contact.gender}</p>
-                            <p>{contact.language}</p>
-                            <p>{contact.age}</p>
-                            <p>{contact.formattedBirthday}</p>
+                            <a href={`/contacts/${contact.id}`}>
+                                <img src={contact.avatar} alt={`Foto de ${contact.name}`}/>
+                                <p>{contact.first_name} {contact.last_name}</p>
+                                <p>{contact.gender}</p>
+                                <p>{contact.language}</p>
+                                <p>{contact.age}</p>
+                                <p>{contact.formattedBirthday}</p>
+                            </a>
                         </li>
                     )
                 })}
