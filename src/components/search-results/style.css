@@ -1,0 +1,32 @@
+.search-results {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px dimgray;
+}
+
+.search-results ul {
+    margin-top: 20px;
+}
+
+.search-results li {
+    display: grid;
+    grid-template-columns: 60px 1fr 70px 100px 50px 100px;
+    align-items: center;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.search-results li img {
+    width: 40px;
+    height: 40px;
+    justify-content: cover;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
+
+.search-results li a {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}

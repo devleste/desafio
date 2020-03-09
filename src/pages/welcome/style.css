@@ -1,0 +1,10 @@
+.loading {
+    background: white;
+    padding: 30px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px dimgray;
+}
+
+.loading h1 {
+    text-align: center;
+}

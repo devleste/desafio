@@ -1,0 +1,82 @@
+.create-page {
+    width: 100%;
+    background: white;
+    padding: 30px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px dimgray;
+    color: #333333;
+}
+
+.create-page h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.create-page li {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    align-items: center;
+    padding: 10px;
+}
+
+.create-page label {
+    text-align: right;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.create-page input {
+    border: 2px solid seagreen;
+    border-radius: 20px;
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.create-page .radio-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    height: 39px;
+    width: 70%;
+}
+
+.create-page input[type=radio] {
+    width: initial;
+    margin: 0px 10px;
+}
+
+.create-page select {
+    border: 2px solid seagreen;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 20px
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.create-page .button {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 150px;
+    text-align: center;
+    color: white;
+    background: seagreen;
+    padding: 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.create-page .button:hover {
+    opacity: 0.9;
+}

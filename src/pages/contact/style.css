@@ -1,0 +1,100 @@
+.contact-page {
+    width: 100%;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px dimgray;
+}
+
+.contact-page a {
+    color: dimgray;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+}
+
+.contact-header img {
+    height: 75px;
+    width: 75px;
+    justify-content: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 2px solid seagreen;
+}
+
+.contact-details {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.contact-details h3 {
+    display: flex;
+    color: dimgray;
+    margin-bottom: 15px;
+}
+
+.contact-details li {
+    display: flex;
+    padding: 7px 0;
+    margin-left: 50px;
+}
+
+.contact-details p {
+    font-weight: bold;
+}
+
+.contact-details span {
+    margin-left: 7px;   
+}
+
+.actions {
+    display: flex;
+    border-top: 1px solid lightgray;
+    padding-top: 30px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+a.button {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 150px;
+    text-align: center;
+    color: white;
+    background: seagreen;
+    padding: 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+a.button:hover {
+    opacity: 0.9;
+}
+
+.button-delete {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 150px;
+    text-align: center;
+    color: white;
+    background: firebrick;
+    padding: 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-delete:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,53 @@
+.statistics-page {
+    width: 100%;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px dimgray;
+}
+
+.statistics-page a {
+    color: dimgray;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.statistics-page h1 {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.statistics-page h2 {
+    color: seagreen;
+    margin: 20px 0;
+    line-height: 50px;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+.statistics-page h3 {
+    margin: 20px 0;
+}
+
+.language {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+.language h2 {
+    margin: initial;
+    padding: initial;
+    text-align: left;
+    border: none;
+}
+
+.language p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
