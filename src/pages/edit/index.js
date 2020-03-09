@@ -55,6 +55,7 @@ function Edit() {
         let newContact = {id, first_name, last_name, email, gender, language, avatar, birthday}
         let myContactIndex = contactsArray.indexOf(contactsArray.find(contact => contact.id == id))
         contactsArray.splice(myContactIndex, 1, newContact)
+        setAvatar("")
         await localStorage.setItem("contacts", JSON.stringify(contactsArray))
     }
     function mGender(gender) {
