@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <title> Leste Contact </title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+
+
+<div class="logo" align="center">
+    <img class="imagem" src="img/logo.png">
+</div>
+
+
+<div class="cadastro" align="center">
+        <table>
+
+            <tr>
+                <td>
+
+                    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+
+                        <div>
+                            <label>Nome Completo*</label>
+                            <label class="avaliar-erro esconder" id="validarNomeCompleto">Este Campo é obrigatório!</label>
+                            <input type="text" name="Nome Completo" id="nomeCompleto" placeholder="Ex: José da silva">
+                        </div>
+
+                        <div>
+                            <label>Número</label>
+                            <input type="text" name="numero" id="numero" placeholder="(22)99213-4567">
+                        </div>
+
+                        <div>
+                            <label>Email</label>
+                            <input type="email" name="email" id="email" placeholder="exemplo@email.com">
+                        </div>
+
+                        <div>
+                            <label>Linguagem</label>
+                            <input type="text" name="linguagem" id="linguagem" placeholder="Inglês,Espanhol,Russo">
+                        </div>
+
+                        <div>
+                            <label>Data De Nascimento</label>
+                            <input type="date" name="dataNasc" id="dataNasc">
+                        </div>
+
+                        <div  class="botao-form">
+                            <input type="submit" value="Confirmar">
+                        </div>
+
+                    </form>
+
+                </td>
+                
+            </tr>
+
+        </table>
+</div>
+
+<br>
+
+<div class="cadastro2" align="center">
+        <table class="list" id="listaContatos">
+
+            <thead>
+
+                <tr class="espaco">
+                        <th>Nome Completo</th>
+                        <th>Número</th>
+                        <th>Email</th>
+                        <th>Linguagem</th>
+                        <th>Data De Nascimento</th>
+                </tr>
+
+            </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+            </table>
+
+</div>
+
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
