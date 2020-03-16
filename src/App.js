@@ -1,6 +1,6 @@
 import React from 'react';
-import PersonList from './Components/PersonList';
-import Nav from './Components/Nav';
+import PersonList from './Components/PersonList.js';
+import Nav from './Components/Nav.jsx';
 
 function App() {
   return (
