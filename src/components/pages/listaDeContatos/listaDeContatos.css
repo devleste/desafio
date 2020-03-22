@@ -1,0 +1,41 @@
+.shadow-custom{
+    box-shadow: 3px 3px 8px #00000038;
+}
+
+.contato-h1{
+    font-weight: 400;
+    letter-spacing: 10px;
+    font-size: 40px;
+    text-shadow: 1px 1px 6px #00000069;
+
+}
+
+@media (max-width: 575.98px) { 
+
+    .LesteTel_h1{
+        letter-spacing: 8px;
+        font-size: 50px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+    .LesteTel_h1{
+        letter-spacing: 10px;
+        font-size: 70px;
+    }
+
+ }
+
+
+@media (max-width: 990px){
+
+    .tabela-custom{
+        height: 500px !important;
+       
+    }
+
+   
+	
+}

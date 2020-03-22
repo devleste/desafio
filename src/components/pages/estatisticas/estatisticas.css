@@ -1,0 +1,16 @@
+.shadow-custom{
+    box-shadow: 3px 3px 8px #00000038;
+}
+
+.estatisticas-h1{
+    font-weight: 400;
+    letter-spacing: 10px;
+    font-size: 40px;
+    text-shadow: 1px 1px 6px #00000069;
+
+}
+
+.img-custom{
+    width: 50px !important;
+    height: 50px !important;
+}

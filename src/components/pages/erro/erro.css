@@ -1,0 +1,48 @@
+/* 0000002d */
+.btn-erro{
+
+    margin-top: 37px;
+    outline: 0;
+    height: 56px;
+    letter-spacing: .8px;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: 2px solid #3eb8ea;
+    background-color: transparent;
+    color: #3eb8ea;
+    box-sizing: border-box;
+    transition-property: color,background-color;
+    transition-duration: .2s;
+    padding: 0 20px;
+    font-weight: 800;
+}
+
+.btn-erro:hover{
+
+    background-color: #3eb8ea;
+    color: #fff;
+
+}
+
+.h1_erro{
+
+    margin-top: 62px;
+    color: #3eb8ea;
+    font-size: 66px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    line-height: 90px;
+}
+
+.p_erro{
+    margin-top: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    line-height: 39px;
+    color: #184a56;
+}

@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #0000002d;
+    /* background-color: rgba(0, 158, 63, 1) ; */
+}
+
+.LesteTel_h1{
+    letter-spacing: 13px;
+    font-size: 90px;
+    text-shadow: 3px 3px 4px #00000069;
+
+}
+
+.espacamento_pro_footer{
+    width: 90vw;
+    min-height: calc(77vh - 211px - 58px);
+}
+
+.shadow-custom{
+    box-shadow: 3px 3px 8px #00000038;
+}
+
+
+@media (max-width: 575.98px) { 
+
+    .LesteTel_h1{
+        letter-spacing: 8px;
+        font-size: 50px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+    .LesteTel_h1{
+        letter-spacing: 10px;
+        font-size: 70px;
+    }
+
+ }
