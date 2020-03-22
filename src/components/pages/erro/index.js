@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ErroImg from '../../../imagens/erro.png';
 import './erro.css';
 
 class Erro extends Component{
@@ -9,8 +8,6 @@ class Erro extends Component{
         return(
 
             <div class="container mt-4">
-
-                <img src={ErroImg} />
 
                 <h1 class="h1_erro" >PÁGINA NÃO ENCONTRADA</h1>
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import './estilo.css';
@@ -59,15 +59,15 @@ export default function Home(){
                                 <div className="row">
 
                                     <div className="col-sm-4 my-2">
-                                        <Link to="/ListaDeContatos"> <a class="btn btn-success btn-lg" href="#" role="button"> <i class="fas fa-list-alt"></i> Lista de contatos </a></Link>
+                                        <Link to="/ListaDeContatos"> <button class="btn btn-success btn-lg"  role="button"> <i class="fas fa-list-alt"></i> Lista de contatos </button></Link>
                                     </div>
 
                                     <div className="col-sm-4 my-2">
-                                        <Link to="/AddContatos"><a class="btn btn-success btn-lg" href="#"  role="button"> <i class="fas fa-user-plus"></i> Adicionar contatos </a></Link>
+                                        <Link to="/AddContatos"><button class="btn btn-success btn-lg"   role="button"> <i class="fas fa-user-plus"></i> Adicionar contatos </button></Link>
                                     </div>
                                      
                                     <div className="col-sm-4 my-2">
-                                        <Link to="/Estatisticas"><a class="btn btn-success btn-lg" href="#"  role="button"> <i class="fas fa-chart-pie"></i> Estatisticas </a></Link>
+                                        <Link to="/Estatisticas"><button class="btn btn-success btn-lg"   role="button"> <i class="fas fa-chart-pie"></i> Estatisticas </button></Link>
                                     </div>
 
                                 </div>
