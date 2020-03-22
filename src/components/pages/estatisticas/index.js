@@ -25,8 +25,6 @@ export default function Estatisticas(){
             setTotalFeminino(qtdFeminino)
             setTotalMasculino(qtdMasculino)
 
-            console.log(ListaDeContatos);
-
           }
     
           pegarContatos();

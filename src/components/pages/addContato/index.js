@@ -14,8 +14,6 @@ export default function AddContato() {
 
     function gerarId(){
 
-        console.log("birthday", birthday)
-
         let ultimoId = 0;
 
         const response = localStorage.getItem("contatosApi");

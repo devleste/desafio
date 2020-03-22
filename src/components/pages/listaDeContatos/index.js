@@ -7,7 +7,6 @@ export default function ListaDeContatos() {
   const [contatos, setContatos] = useState([])
   const [filtroLinguagem, setFiltroLinguagem] = useState([])
   const [filtroIdade, setFiltroIdade] = useState([])
-  const [alerta, setAlerta]  = useState([])
 
   useEffect(() => {
 
@@ -31,7 +30,6 @@ export default function ListaDeContatos() {
       let ListaDeContatos = JSON.parse(response);
 
       const newLista = ListaDeContatos.filter(person => person.gender == 'F');
-      console.log(newLista);
       setContatos(newLista);
 
     }
@@ -44,7 +42,6 @@ export default function ListaDeContatos() {
 
       const newLista = ListaDeContatos.filter(person => person.gender == 'M');
 
-      console.log(newLista);
       setContatos(newLista);
 
     }
@@ -81,10 +78,7 @@ function filtrarLinguagem(e){
   }else{
     x.style.display = "none";
   }
-
-
-  console.log(linguagemFiltrada)
-
+  
   setContatos(linguagemFiltrada);
 
 }
@@ -127,8 +121,6 @@ function formatData(data, obj, e, idadeOuMes){
 
 function FiltrarPorMesOuIdade(e, idadeOuMes){
 
-  console.log("e =>", e)
-  console.log("idadeMes: ", idadeOuMes)
 
   if(e != 0){
 
@@ -142,14 +134,14 @@ function FiltrarPorMesOuIdade(e, idadeOuMes){
 
     let mesFiltrado = ListaDeContatos.filter(n => n.birthday)
 
-    console.log("MesFiltrado", e)
+  
 
   
     ArrayM = mesFiltrado.map((info) => (
       formatData(info.birthday, info, e, idadeOuMes)
     ))
 
-console.log(ArrayM)
+
       for(let i = 0; i < ArrayM.length; i++){
 
         if(ArrayM[i] != ''){
@@ -166,8 +158,6 @@ console.log(ArrayM)
 
 async function deleteContact(id) {
 
-  console.log(id)
-
 
   const response = localStorage.getItem("contatosApi");
   let ListaDeContatos = JSON.parse(response);
@@ -175,7 +165,6 @@ async function deleteContact(id) {
 
   let contato = ListaDeContatos.indexOf(ListaDeContatos.find(n => n.id == id))
 
-  console.log(contato)
 
   ListaDeContatos.splice(contato, 1)
   localStorage.setItem("contatosApi", JSON.stringify(ListaDeContatos))
@@ -234,13 +223,10 @@ async function deleteContact(id) {
                         <div class="input-group mb-3">
                           <input type="text" class="form-control" readonly aria-label="Recipient's username" aria-describedby="button-addon2" value={filtroLinguagem} onChange={(e)=> setFiltroLinguagem(e.target.value)} placeholder="linguagem"/>
                             <div class="input-group-append">
-                              <button class="btn btn-outline-success" type="button" id="button-addon2" onClick={(e) =>  filtroLinguagem.length != 0 ? filtrarLinguagem(filtroLinguagem) :  setAlerta('')}><i class="fas fa-search"></i></button>
+                              <button class="btn btn-outline-success" type="button" id="button-addon2" onClick={(e) =>  filtrarLinguagem(filtroLinguagem)}><i class="fas fa-search"></i></button>
                             </div>
                           </div>
-
-                         
-                         
-                        
+                     
                       </div>
 
                       <div className="col-md-2">
