@@ -305,16 +305,16 @@ async function deleteContact(id) {
                       </tr>
                     </thead>
 
-                    <tbody id="filtro">
+                    <tbody id="filtro" >
                       {contatos.map((info) => (
                         
-                        <tr key={info.id} id={info.id}>
+                        <tr key={info.id} id={info.id} className="text-center">
                           <td><img class="img-thumbnail p-0 m-0" src={info.avatar} /></td>
-                          <td>{info.id} </td>
+                          <td >{info.id} </td>
                           <td>{info.first_name}</td>
                           <td>{info.last_name}</td>
                           <td>{info.email}</td>
-                          <td>{info.gender == 'M' ? info.gender = 'Masculino' :  info.gender = 'Feminino'}</td>
+                          <td>{info.gender}</td>
                           <td>{info.language}</td>
                           <td>{info.birthday}</td>
                           <td>
