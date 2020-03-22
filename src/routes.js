@@ -14,14 +14,13 @@ import Footer from './components/footer';
 
 const Routes = () =>{
     return (
-
-        <BrowserRouter>
+    <BrowserRouter>
         <Header/>
             <Switch>
 
-                <Route exact path='/' component={Home}/>
+                <Route path='/' component={Home}/>
                 <Route exact path='/ListaDeContatos' component={ListaDeContatos}/>
-                <Route path='/EditarContatos/:id' component={EditarContatos}/>
+                <Route exact path='/EditarContatos/:id' component={EditarContatos}/>
                 <Route exact path='/AddContatos' component={AddContato}/>
                 <Route exact path='/Estatisticas' component={Estatisticas}/>
                 <Route exact path='/teste' component={Testes}/>
@@ -29,8 +28,7 @@ const Routes = () =>{
 
             </Switch>
         <Footer/>
-
-        </BrowserRouter>
+    </BrowserRouter>
 
     );
 
