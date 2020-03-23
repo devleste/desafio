@@ -36,46 +36,34 @@ export default function Home(){
               
         }
         
-        
+    return(
 
-        return(
+        <div className="container">
 
-            
-            <div>
-                <div className="container">
-
-                    <div className="card  mt-4 shadow-custom">
-                        <div className="card-body">
-                            
-                    <div class="jumbotron shadow-custom">
-                        <h1 class="text-center text-success LesteTel_h1">Leste Contact</h1>
-
-                    </div>
-
+            <div className="card card-body mt-4">
                     
-                        <div className="card shadow-custom">
+                <div class="jumbotron">
+                    <h1 class="text-center text-success LesteTel_h1">Leste Contact</h1>
+                </div>
 
-                            <div className="card-body text-center">
-                                <div className="row">
+                <div className="card card-body text-center">
+                    <div className="row">
 
-                                    <div className="col-sm-4 my-2">
-                                        <Link to="/ListaDeContatos"> <button class="btn btn-success btn-lg"  role="button"> <i class="fas fa-list-alt"></i> Lista de contatos </button></Link>
-                                    </div>
-
-                                    <div className="col-sm-4 my-2">
-                                        <Link to="/AddContatos"><button class="btn btn-success btn-lg"   role="button"> <i class="fas fa-user-plus"></i> Adicionar contatos </button></Link>
-                                    </div>
-                                     
-                                    <div className="col-sm-4 my-2">
-                                        <Link to="/Estatisticas"><button class="btn btn-success btn-lg"   role="button"> <i class="fas fa-chart-pie"></i> Estatisticas </button></Link>
-                                    </div>
-
-                                </div>
-                            </div>
+                        <div className="col-sm-4 my-2">
+                            <Link to="/ListaDeContatos"> <button class="btn btn-success btn-lg"  role="button"> <i class="fas fa-list-alt"></i> Lista de contatos </button></Link>
                         </div>
+
+                        <div className="col-sm-4 my-2">
+                            <Link to="/AddContatos"><button class="btn btn-success btn-lg"   role="button"> <i class="fas fa-user-plus"></i> Adicionar contatos </button></Link>
+                        </div>
+                            
+                        <div className="col-sm-4 my-2">
+                            <Link to="/Estatisticas"><button class="btn btn-success btn-lg"   role="button"> <i class="fas fa-chart-pie"></i> Estatisticas </button></Link>
+                        </div>
+
                     </div>
-                 </div>
-            </div>  
+                </div>
+            </div> 
         </div>
 
     );

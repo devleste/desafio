@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 
 export default function Estatisticas(){
 
-    const [contatos, setContatos] = useState([])
     const [totalFeminino, setTotalFeminino] = useState([])
     const [totalMasculino, setTotalMasculino] = useState([])
     const [linguagens, setLinguagens] = useState([])
@@ -13,59 +12,86 @@ export default function Estatisticas(){
 
             let qtdFeminino = 0
             let qtdMasculino = 0
+
+            let arrayTemp = [];
     
             const response = localStorage.getItem("contatosApi");
             let ListaDeContatos = JSON.parse(response);
 
             ListaDeContatos.map(contatos => {
+
                 if (contatos.gender === "F") qtdFeminino += 1;
                 if (contatos.gender === "M") qtdMasculino += 1;
-            })
 
+                filtrarLinguagens(arrayTemp, contatos.language);
+     
+            })
+          
             setTotalFeminino(qtdFeminino)
             setTotalMasculino(qtdMasculino)
+            setLinguagens(arrayTemp);
 
           }
     
           pegarContatos();
       
     }, []);
-        
-        return(
 
-            <div>
-                <div className="container">
+    function filtrarLinguagens(lista, lingua){
 
-                    <div className="card  mt-4 shadow-custom">
-                        <div className="card-body">
+        let varItem = null;
+        let index = null;
 
-                    <div class="jumbotron py-4 shadow-custom">
-                        <h1 class="display-4 text-center contato-h1">Estatisticas</h1>
-                    </div>
+        lista.map((info, i) => { 
 
-                        <div className="card shadow-custom">
+            if(info.lingua == lingua){
 
-                            <div className="card-body">
-                                <div className="row">
+                index = i;
 
-                                    <div className="col-md-12">
+                varItem = info.lingua;
+                
+            }
             
-                                        <h6>Total de contatos do gênero Masculino: {totalMasculino}</h6>
-                                        <h6>Total de contatos do gênero Feminino: {totalFeminino}</h6>
-                                       
-                                    </div>
-                                    
-                                </div>
-                                    <hr/>
+        })
+        
+        if (varItem == null){
+            lista.push({lingua:lingua, quantidade: 1});
+        }else{
+           
+            lista[index].quantidade++;
+        }
 
-                            </div>
+    }
+        
+    return(
+
+        <div className="container">
+            <div className="card card-body mt-4">
+
+                <div class="jumbotron py-4">
+                    <h1 class="display-4 text-center contato-h1">Estatisticas</h1>
+                </div>
+
+                <div className="card card-body">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+
+                            <h6>Total de contatos do gênero Masculino: {totalMasculino}</h6>
+                            <h6>Total de contatos do gênero Feminino: {totalFeminino}</h6>
+                            <hr/>
+                            
+                            {linguagens.map((info) => (
+                            
+                                <p>{info.lingua} : {info.quantidade}</p>
+                            
+                            ))}
 
                         </div>
                     </div>
-                 </div>
-            </div>  
-        </div>
-
+                </div>
+            </div>
+        </div>  
+        
     );
     
 }
