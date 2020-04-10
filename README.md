@@ -1,7 +1,3 @@
-<h1 align="center">
-  <img alt="Leste Telecom" title="Leste Telecom" src="./logo.png" width="200px" />
-</h1>
-
 <h3 align="center">
   Desafio do Desenvolvimento
 </h3>
@@ -77,8 +73,6 @@ Para realizar a entrega do desafio basta seguir os passos:
 - Realize o desafio e suba para a sua cópia do repositório
 - Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
 - Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
-
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
 
 ---
 
