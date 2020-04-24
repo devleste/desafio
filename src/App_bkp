@@ -1,0 +1,250 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+import 'moment/locale/pt-br';
+
+//import ContatoList from './Components/ContatoList';
+import SideNav from './Components/SideNav';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      isEnable: true,
+      users: [],
+      contatos: [],
+      teste: []
+    };
+    moment.locale("pt-br");
+    //this.addNewContato = this.addNewContato.bind(this);
+    this.editContato = this.editContato.bind(this);
+    this.removeContato = this.removeContato.bind(this);
+  }
+
+  async componentDidMount() {
+    await axios.get('http://localhost:3000/usuarios/db.json')
+      .then(res => {
+        this.setState({
+          users: res.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      if (localStorage.getItem("myData") === null) {
+        localStorage.setItem('myData', JSON.stringify(this.state.users));
+      }
+
+      let contatos = JSON.parse(localStorage.getItem("myData"));
+      this.setState((prevState, props) => ({
+          contatos: contatos
+      }));
+      this.setState((prevState, props) => ({ teste: contatos }));
+      
+  }
+
+  onChangeGender = (e) => {
+    let contatosCopy = [];
+    
+    if (e.target.value !== "todos") {
+      this.setState((prevState, props) => ({ isEnable: false }));
+      contatosCopy = this.state.contatos.filter(d => d.gender === e.target.value);
+      this.setState((prevState, props) => ({
+        contatos: contatosCopy
+      }));
+  
+      //localStorage.setItem('myData',JSON.stringify(contatosCopy));
+    } else {
+      this.setState((prevState, props) => ({ isEnable: true }));
+      this.setState((prevState, props) => ({ contatos: this.state.teste }));
+      
+      //localStorage.setItem('myData',JSON.stringify(volta));
+    }
+  }
+
+  onChangeLanguage = (e) => {
+    let contatosCopy = [];
+    
+    if (e.target.value !== "todos") {
+      this.setState((prevState, props) => ({ isEnable: false }));
+      contatosCopy = this.state.contatos.filter(d => d.language === e.target.value);
+      this.setState((prevState, props) => ({
+        contatos: contatosCopy
+      }));
+  
+      //localStorage.setItem('myData',JSON.stringify(contatosCopy));
+    } else {
+      this.setState((prevState, props) => ({ isEnable: true }));
+      this.setState((prevState, props) => ({ contatos: this.state.teste }));
+    }
+  }
+
+  onChangeYears = (e) => {
+    let contatosCopy = [];
+    if (e.target.value !== "todos") {
+      this.setState((prevState, props) => ({ isEnable: false }));
+      contatosCopy = this.state.contatos.filter(d => d.birthday === e.target.value);
+      this.setState((prevState, props) => ({
+        contatos: contatosCopy
+      }));
+    } else {
+      this.setState((prevState, props) => ({ isEnable: true }));
+      this.setState((prevState, props) => ({ contatos: this.state.teste }));
+    }
+  }
+
+  onChangeNiver = (e) => {
+    let contatosCopy = [];
+    
+    if (e.target.value !== "todos") {
+      this.setState((prevState, props) => ({ isEnable: false }));
+      //let data = moment(e.target.value).format("MMMM");
+      let data = moment(e.target.value).format("MMMM");
+      //contatosCopy = this.state.contatos.filter(d => moment(d.birthday).format("MMMM") === data);
+      contatosCopy = this.state.contatos.filter(d => moment(d.birthday).format("MMMM") === data);
+      this.setState((prevState, props) => ({
+        contatos: contatosCopy
+      }));
+      console.log(data);
+    } else {
+      this.setState((prevState, props) => ({ isEnable: true }));
+      this.setState((prevState, props) => ({ contatos: this.state.teste }));
+      console.log(this.state.contatos);
+
+    }
+    
+  }
+
+  editContato(id, avatar, first_name, last_name, email, language, gender, birthday) {
+    let contatosCopy = this.state.contatos.map((contato) => {
+    
+      if (contato.id === id) {
+        contato.avatar = avatar;
+        contato.first_name = first_name;
+        contato.last_name = last_name;
+        contato.email = email;
+        contato.language = language;
+        contato.gender = gender;
+        contato.birthday = birthday;
+      }      
+      return contato;
+    });
+
+    this.setState((prevState, props) => ({
+      contatos: contatosCopy
+    }));
+
+    localStorage.setItem('myData',JSON.stringify(contatosCopy));
+  }
+
+  removeContato = (e, id) => {
+    let r = window.confirm("Tem certeza que deseja excluir esse item ?");
+    if (r === true) {
+      this.setState(prevState => ({
+        contatos: prevState.contatos.filter(d => d !== id)
+      }), () => {
+        const { contatos } = this.state;
+        
+        localStorage.setItem("myData", JSON.stringify(contatos))
+      });
+      
+    }
+  };
+  
+  render() {
+    return (
+      <div className="row">
+        <SideNav niver={this.onChangeNiver} years={this.onChangeYears} language={this.onChangeLanguage} gender={this.onChangeGender} />
+        <div className="col s2">
+          <ul>  
+              <li>Filtros :</li>
+                <div className="col s10">
+                    <label>Sexo: </label>
+                    <select onChange={e => this.onChangeGender(e)} className="browser-default">
+                    <option value="todos">Todos</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    </select>
+                </div>
+                <div className="col s10">
+                <label>Idioma</label>
+                  <select onChange={this.onChangeLanguage.bind(this)} className="browser-default">
+                    <option key="todos" value="todos">Todos</option>
+                    {this.state.contatos.map((p) => 
+                      <option key={p.id} value={p.language}>{p.language}</option>
+                    )}
+                  </select>
+                </div>
+                <div className="col s10">
+                <label>Idade</label>
+                  <select onChange={this.onChangeYears.bind(this)} className="browser-default">
+                    <option key="todos" value="todos">Todos</option>
+                    {this.state.contatos.map((p) => 
+                      <option key={p.id} value={p.birthday}>{moment(p.birthday, "YYYYMMDD").fromNow("yy")}</option>
+                    )}
+                  </select>
+                </div>
+                <div className="col s10">
+                <label>Aniversariantes</label>
+                  <select onChange={this.onChangeNiver.bind(this)} className="browser-default">
+                    <option key="todos" value="todos">Todos</option>
+                    <option key="janeiro" value="0001-01-01">Janeiro</option>
+                    <option key="fevereiro" value="0001-02-01">Fevereiro</option>
+                    <option key="marco" value="0001-03-01">Março</option>
+                    <option key="abril" value="0001-04-01">Abril</option>
+                    <option key="maio" value="0001-05-01">Maio</option>
+                    <option key="junho" value="0001-06-01">Junho</option>
+                    <option key="julho" value="0001-07-01">Julho</option>
+                    <option key="agosto" value="0001-08-01">Agosto</option>
+                    <option key="setembro" value="0001-09-01">Setembro</option>
+                    <option key="outubro" value="0001-10-01">Outubro</option>
+                    <option key="novembro" value="0001-11-01">Novembro</option>
+                    <option key="dezembro" value="0001-12-01">Dezembro</option>
+                  </select>
+                </div>
+              <li><Link to={"/relatorio"} ><button className="btn green darken-5">Relatorio de Contatos</button></Link></li>
+            </ul>
+        </div>
+        <div className="col s10">
+        <div className="container-fluid">
+        <table className="table table-stripped">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idioma</th>
+                <th>Sexo</th>
+                <th>Aniversario</th>
+                <th>Idade</th>
+                <th colSpan="2" className="center">Ação</th>
+              </tr>
+            </thead>
+          <tbody>
+            {this.state.contatos === null && <p>Carregando usuarios ....</p>}
+            {this.state.contatos && this.state.contatos.map((d, i) => 
+              <tr key={d.id}>
+                <td><img src={d.avatar} alt={d.id} width="50px" height="50px"/></td>
+                <td>{d.first_name} {d.last_name}</td>
+                <td>{d.email}</td>
+                <td>{d.language}</td>
+                <td>{d.gender === "M" ? "Masculino" : "Feminino"}</td>
+                <td>{moment(d.birthday).format("DD/MM/YYYY")}</td>
+                <td>{moment(d.birthday, "YYYYMMDD").fromNow("yy")}</td>
+                <td><Link to={`${d.id}/${i}`}><button className="btn green darken-5">Editar</button></Link></td>
+                {this.state.isEnable === true ? (<td><button className="btn red darken-5" onClick={e => this.removeContato(e, d)} >Apagar</button></td> ) 
+                : <td><button className="btn red darken-5" onClick={e => this.removeContato(e, d)} disabled>Apagar</button></td>}
+                
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+      </div>
+      </div>
+    );
+  }
+}
+
+export default App;
