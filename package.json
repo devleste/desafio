@@ -1,27 +1,25 @@
 {
-  "name": "desafio",
+  "name": "desafio3",
   "version": "0.1.0",
-  "engines": {
-    "node": "12.16.1"
-  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "ag-grid-community": "^23.0.2",
+    "ag-grid-react": "^23.0.3",
     "axios": "^0.19.2",
-    "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
     "moment": "^2.24.0",
-    "path": "^0.12.7",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-data-components": "^1.2.0",
+    "react-dom": "^16.13.1",
     "react-moment": "^0.9.7",
-    "react-scripts": "3.4.0",
-    "recharts": "^2.0.0-beta.2"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "surge": "^0.21.3"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
