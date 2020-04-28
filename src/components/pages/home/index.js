@@ -5,8 +5,8 @@ import './estilo.css';
 
 export default function Home(){
 
-        if (localStorage.length === 0){
-        
+        if (!localStorage.getItem("contatosApi")){
+            
             async function loadApi(){
 
                 const response = await api.get();
@@ -47,6 +47,12 @@ export default function Home(){
                 </div>
 
                 <div className="card card-body text-center">
+
+                    <div className="row text-center">
+                        <div class="col-md-12">
+                            <a class="btn btn-danger btn-lg" href="https://cadusureactjs.herokuapp.com/" target="_blank"> Versão atualizada </a>
+                        </div>
+                    </div>
                     <div className="row">
 
                         <div className="col-sm-4 my-2">
