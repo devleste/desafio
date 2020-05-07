@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function AddContact (props) {
 
@@ -10,6 +10,14 @@ export default function AddContact (props) {
     const [birthday, setBirth] = useState('')
     const [language, setLang] = useState('')
     const [id, setId] = useState()
+    
+    useEffect(() => {
+        function setFirstId(){
+            setId(Math.random())
+        }
+        
+        setFirstId()
+    }, [])
     
     const handleSubmit = (e) => {
         e.preventDefault()
