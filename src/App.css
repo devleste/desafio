@@ -1,0 +1,208 @@
+body {
+    background-color: #50d890;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    padding-left: 260px;
+    background-color: #fff;
+}
+.contentHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.card {
+    box-sizing: border-box;
+    background-color: #effffb;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 350px;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    padding-top: 0;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #B3644B;
+    box-shadow: 1px 1px 0.5em inset rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+}
+.cardInfo h4{
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.cardInfo p {
+    margin: 0;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+.icons {
+    display: flex;
+    width: 100%;
+    margin-top: -10px;
+    justify-content: space-between;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    width: 1200px;
+    margin-left: 250px;
+    margin-right: auto;
+}
+
+@media (min-width: 1450px) {
+    .list {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-left: 250px;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1100px) {
+    .list {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 800px;
+        margin-left: 250px;
+        margin-right: auto;
+    }
+    .contentHeader{
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+}
+
+@media (max-width: 800px) {
+    .list {
+        display: flex;
+        flex-direction: column;
+        margin-left: 250px;
+        margin-right: auto;
+    }
+    .contentHeader{
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+}
+
+
+.delBtn :hover {
+    cursor: pointer;
+    color: red;
+}
+
+.editBtn :hover {
+    cursor: pointer;
+    color: #50d890;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardModal {
+    background-color: #effffb;
+    border-radius: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modalBtn {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.btn {
+    font-size: 15px;
+    padding: 5px;
+    background: none;
+    border: 1px solid #50d890;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #50d890;
+    color: #fff;
+}
+
+.resume {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.resume img {
+    border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+    padding-bottom: 10px;
+}
+
+.resume h2 {
+    margin-bottom: 0;
+}
+.resume p {
+    margin: 10px;
+    margin-left: 15px ;
+}
+
+input {
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #50d890;
+}
+
+.select {
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #50d890;
+}
