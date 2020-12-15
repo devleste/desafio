@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Leste Contact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Projeto construído para o desafio de novos programadores da Leste Telecom.
 
-## Available Scripts
+#### [Sobre](#-objetivo) — [Funcionalidades](#-funcionalidades) — [Aplicação Online](#-aplicação-online) — [Layout](#-layout) — [Tecnologias](#-principais-tecnologias) — [Utilização](#-utilização) — [Licença](#-licença) — [Autor](#-autor)
 
-In the project directory, you can run:
+#### Status: Concluído ✅
 
-### `yarn start`
+## 💡 Objetivo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O objetivo do projeto é criar uma aplicação de listagem de contatos com todas as funcionalidades solicitadas que será utilizada para avaliação dos cadadidatos para a vaga de desenvolvimento da Leste Telecom.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠 Funcionalidades
 
-### `yarn test`
+Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] **Chamada a API**
+A aplicação deve fazer uma chamada para uma API Externa que devolverá uma série de informações de contatos.
 
-### `yarn build`
+- [x] **Listagem de Contatos**
+Liste todas as informações recebidas da API em formato de lista de contatos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] **Adicionar novo Contato**
+Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem. Persista as informações no próprio browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] **Remover Contatos**
+Disponibilize para o usuário excluir um contato da lista.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] **Editar Contatos**
+Disponibilize para o usuário editar qualquer campo de um contato da lista.
 
-### `yarn eject`
+- [x] **Filtros**
+Adicione filtros na listagem para as informações de gênero, linguagem, idade e nascimento (por mês).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] **Resumo**
+Adicione um resumo estatístico da sua lista, exibindo a contagem total dos contatos por gênero e linguagem.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🖥 Aplicação Online
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[A aplicação pdoe ser acessada aqui!]()
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🎨 Layout
 
-## Learn More
+Protótipo criado no Figma:
+https://www.figma.com/file/1WoLCp9uNnrszbbUoyPsCc/Leste-Contact?node-id=24%3A248
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Layout Responsivo.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💻 Tecnologias Utilizadas
+
+- [x] Typescript
+- [x] React
+- [x] React-Router-Dom
+- [x] Styled Components
+- [x] Yup
+- [x] Unform
+
+*Para visualizar todos as tecnologias e pacotes utilizados no projeto, acesse o arquivo package.json.*
+
+## 🚀 Utilização
+
+#### 💾 Arquivos
+
+```bash
+# Faça um clone do diretório ou download dos arquivos
+$ git clone https://github.com/hudvdias/lestecontact.git
+```
+
+```bash
+# Instale as dependências na pasta raiz do projeto
+$ yarn
+
+# Inicie a aplicação
+$ yarn start
+```
+
+## 📃 Licença
+
+Este repositório está sob licença MIT. Para mais informações, leia o arquivo [LICENSE](https://github.com/hudvdias/ecoleta/blob/master/LICENSE).
+
+## 🧑 Autor
+
+Feito por **Hudson Dias** . [Linkedin](https://www.linkedin.com/in/hudvdias/) - [Email](mailto:hudson.oliveira.dias@gmail.com)
