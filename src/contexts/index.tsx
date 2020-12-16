@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { ContactsProvider } from './ContactsContext';
+import { ToastProvider } from './ToastContext';
 
 const AppProvider: React.FC = ({ children }) => {
   return (
-    <ContactsProvider>
-      {children}
-    </ContactsProvider>
+    <ToastProvider>
+      <ContactsProvider>
+        {children}
+      </ContactsProvider>
+    </ToastProvider>
   );
 }
 

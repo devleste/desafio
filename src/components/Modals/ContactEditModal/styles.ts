@@ -1,4 +1,3 @@
-import { Cancel } from '@material-ui/icons';
 import styled, { keyframes } from 'styled-components';
 
 const appearFromBottom = keyframes`

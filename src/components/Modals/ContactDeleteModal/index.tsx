@@ -1,7 +1,9 @@
 import React, { Dispatch, SetStateAction, useCallback } from 'react';
 
-import { useContacts } from '../../../contexts/ContactsContext';
 import FormattedContact from '../../../types/FormattedContact';
+
+import { useContacts } from '../../../contexts/ContactsContext';
+import { useToast } from '../../../contexts/ToastContext';
 
 import { Container, Modal } from './styles';
 
@@ -13,12 +15,17 @@ interface DetailProps {
 
 const ContactDeleteModal: React.FC<DetailProps> = ({ contact, setContactDetail, setContactDelete }) => {
   const { deleteContact } = useContacts();
+  const { addToast } = useToast();
 
   const handleDelete = useCallback((contact) => {
     deleteContact(contact.id)
     setContactDelete(null);
     setContactDetail(null);
-  }, [setContactDetail, setContactDelete, deleteContact]);
+    addToast({
+      type: 'success',
+      description: 'Contato deletado com sucesso.'
+    });
+  }, [setContactDetail, setContactDelete, deleteContact, addToast]);
 
   return (
     <Container>

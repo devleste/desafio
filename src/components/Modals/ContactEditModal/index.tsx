@@ -10,6 +10,7 @@ import Input from '../../Form/Input';
 import RadioInput from '../../Form/RadioInput';
 
 import { useContacts } from '../../../contexts/ContactsContext';
+import { useToast } from '../../../contexts/ToastContext';
 
 import { Container, Modal, Divider, Buttons, CancelButton, SaveButton, DeleteButton } from './styles';
 
@@ -27,6 +28,7 @@ interface Errors {
 const ContactEditModal: React.FC<EditContactProps> = ({ contact, setContactEdit, setContactDetail, setContactDelete }) => {
   const formRef = useRef<FormHandles>(null);
   const { editContact } = useContacts();
+  const { addToast } = useToast();
 
   useEffect(() => {
     setContactDetail(null);
@@ -46,6 +48,10 @@ const ContactEditModal: React.FC<EditContactProps> = ({ contact, setContactEdit,
       await schema.validate(data, { abortEarly: false });
       editContact({ ...data, id: contact.id });
       setContactEdit(null);
+      addToast({
+        type: 'success',
+        description: 'Contato editado com sucesso.'
+      })
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         const validationErrors: Errors = {};
@@ -55,7 +61,7 @@ const ContactEditModal: React.FC<EditContactProps> = ({ contact, setContactEdit,
         formRef.current?.setErrors(validationErrors);
       }
     }
-  }, [setContactEdit, editContact, contact.id]);
+  }, [setContactEdit, editContact, contact.id, addToast]);
 
   return (
     <Container>

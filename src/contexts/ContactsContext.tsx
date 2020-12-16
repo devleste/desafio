@@ -1,7 +1,10 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 
 import Contact from '../types/Contact';
+
 import api from '../services/api';
+
+import { useToast } from '../contexts/ToastContext';
 
 interface ContactsContextData {
   contacts: Contact[],
@@ -24,6 +27,7 @@ const ContactsContext = createContext<ContactsContextData>({} as ContactsContext
 
 const ContactsProvider: React.FC = ({ children }) => {
   const [contacts, setContacts] = useState<Contact[]>([]);
+  const { addToast } = useToast();
 
   useEffect(() => {
     async function getContacts() {
@@ -32,13 +36,24 @@ const ContactsProvider: React.FC = ({ children }) => {
         const localContacts = JSON.parse(localContactsJSON);
         setContacts(localContacts);
       } else {
-        const response = await api.get("");
-        localStorage.setItem('@LesteContact:contacts', JSON.stringify(response.data));
-        setContacts(response.data);
+        try {
+          const response = await api.get("");
+          localStorage.setItem('@LesteContact:contacts', JSON.stringify(response.data));
+          setContacts(response.data);
+          addToast({
+            type: 'success',
+            description: 'Contatos da API carregados com sucesso.'
+          });
+        } catch (error) {
+          addToast({
+            type: 'error',
+            description: 'Não foi possível carregar os contatos da API. Limpe o localStorage e tente novamente mais tarde.'
+          });
+        }
       }
     }
     getContacts();
-  }, [])
+  }, [addToast]);
 
   const createContact = useCallback((data: CreateContactData) => {
     const id = contacts.length > 0 ? (contacts[contacts.length - 1].id + 1) : (1);
@@ -49,7 +64,6 @@ const ContactsProvider: React.FC = ({ children }) => {
   }, [contacts]);
 
   const editContact = useCallback((data: Contact) => {
-    console.log(data.id)
     let newContacts = contacts.filter(contact => contact.id !== data.id);
     newContacts.push(data);
     setContacts(newContacts);

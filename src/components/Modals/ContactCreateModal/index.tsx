@@ -3,10 +3,13 @@ import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { FormHandles } from '@unform/core';
 
-import { Container, Modal, Divider, Buttons, CancelButton, SaveButton } from './styles';
 import Input from '../../Form/Input';
 import RadioInput from '../../Form/RadioInput';
+
 import { useContacts } from '../../../contexts/ContactsContext';
+import { useToast } from '../../../contexts/ToastContext';
+
+import { Container, Modal, Divider, Buttons, CancelButton, SaveButton } from './styles';
 
 interface CreateContactProps {
   setShow: Dispatch<SetStateAction<boolean>>;
@@ -29,6 +32,8 @@ interface Errors {
 const ContactCreateModal: React.FC<CreateContactProps> = ({ setShow }) => {
   const formRef = useRef<FormHandles>(null);
   const { createContact } = useContacts();
+  const { addToast } = useToast();
+
 
   const handleSubmit = useCallback(async (data: CreateFormData) => {
     try {
@@ -44,6 +49,10 @@ const ContactCreateModal: React.FC<CreateContactProps> = ({ setShow }) => {
       await schema.validate(data, { abortEarly: false });
       createContact(data);
       setShow(false);
+      addToast({
+        type: 'success',
+        description: 'Contato criado com sucesso.'
+      });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         const validationErrors: Errors = {};
@@ -53,7 +62,7 @@ const ContactCreateModal: React.FC<CreateContactProps> = ({ setShow }) => {
         formRef.current?.setErrors(validationErrors);
       }
     }
-  }, [setShow, createContact]);
+  }, [setShow, createContact, addToast]);
 
   return (
     <Container>

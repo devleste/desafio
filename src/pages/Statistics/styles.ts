@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface GridBarProps {
   malesPercent: number;
@@ -61,6 +61,9 @@ const ProgressBar = styled.div<BarProps>`
     font-weight: 500;
     font-size: 20px;
     color: #ffffff;
+    ${props => props.percent < 4 && css`
+      visibility: hidden
+    `}
   }
 `;
 

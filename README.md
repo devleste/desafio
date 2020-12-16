@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Leste Contact
 
 #### Projeto construído para o desafio de novos programadores da Leste Telecom.

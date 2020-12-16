@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 
 import ContactsPage from '../pages/Contacts';
 import Statistics from '../pages/Statistics';
-import FormattedContact from '../types/FormattedContact';
 
 
 const Routes: React.FC = () => {
