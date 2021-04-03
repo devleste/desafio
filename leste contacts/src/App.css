@@ -1,0 +1,37 @@
+body {
+  background-color: #019874;
+  margin: 0px;
+}
+.action-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 12pt;
+  color: rgb(0, 0, 0);
+}
+.action-btn:hover {
+  cursor: pointer;
+}
+.btn-green {
+  color: lightgreen;
+}
+.btn-green:hover {
+  color: rgb(0, 255, 0);
+}
+.btn-red {
+  color: lightcoral;
+}
+.btn-blue {
+  color: rgb(115, 197, 230);
+}
+.btn-blue:hover {
+  color: rgb(0, 183, 255);
+}
+.btn-black {
+  color: #000;
+}
+.btn-black:hover {
+  color: rgb(95, 95, 95);
+}
+.btn-red:hover {
+  color: rgb(255, 0, 0);
+}
