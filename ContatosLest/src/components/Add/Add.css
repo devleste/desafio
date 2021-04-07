@@ -1,0 +1,45 @@
+.addDiv{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    max-width: 1000px;
+    margin: 1vh auto 0;
+}
+.add{
+    width: 80vw;
+    height: 5.5vh;
+    background: #00a0fd;
+    border: transparent;
+    border-radius: 20px;
+    color: white;
+    font-size: 2vh;
+    outline: none;
+    cursor: pointer;
+}
+
+.addForm{
+    max-width: 850px;
+    margin: 8px auto;
+    display:flex;
+    justify-content:center;
+}
+
+.addForm form{
+    border: solid rgb(0, 225, 255) 1px;
+    border-radius: 20px;
+}
+
+.addForm input, .addForm select{
+    display: block;
+    width: 80vw;
+    max-width: 1000px;
+    height: 5.5vh;
+    font-size: 2vh;
+    border-radius: 20px;
+    margin: 1vh;
+    outline: none;
+    border: transparent;
+    text-indent: 5px;
+    color: rgb(88, 87, 87);
+}

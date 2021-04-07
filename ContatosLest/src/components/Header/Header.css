@@ -1,0 +1,11 @@
+header{
+    background: linear-gradient(#1FADFF, #00ffff);
+    height: 20vh;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    line-height: 15vh;
+    font-size: 6vh;
+}

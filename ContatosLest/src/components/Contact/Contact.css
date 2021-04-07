@@ -1,0 +1,61 @@
+article{
+    width: 87vw;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    margin-top: 3vh;
+    text-align: center;
+    padding: 5px;
+}
+
+h4{
+    font-size: 2.5vh;
+}
+
+.imageEditRemove{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageEditRemove img{
+    width: 3vh;
+}
+
+.imageEditRemove button{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.line{
+    width: 50vw;
+    max-width: 350px;
+    height: 2px;
+    background: black;
+    margin: 0 auto;
+}
+
+.conteudos{
+    display: flex;
+    align-items: center;
+}
+
+.conteudos img{
+    width: 20vw;
+    max-width: 200px;
+}
+
+.conteudo1{
+    /* background: rgb(108, 171, 255); */
+    background: linear-gradient(#1FADFF, #00ffff);
+    border-radius: 20px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.conteudo2{
+    font-size: 2vh;
+    margin: 0 auto;
+}

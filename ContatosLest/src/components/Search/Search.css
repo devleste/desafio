@@ -1,0 +1,44 @@
+.searchDiv{
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    max-width: 1000px;
+    margin: -3vh auto 0;
+}
+.searchInput{
+    border-left: none;
+    border-right: none;
+    height: 5vh;
+    text-indent: 5px;
+    font-size: 2vh;
+    outline: none;
+    width: 70vw;
+    border: transparent;
+    text-align: center;
+}
+
+.search{
+    outline: none;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    border-color: transparent;
+    background: white;
+    cursor: pointer;
+    margin-right: -1.8px;
+}
+
+.filter{
+    outline: none;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    border-color: transparent;
+    background: white;
+    cursor: pointer;
+    margin-left: -1.8px;
+}
+
+.imgSearch, .imgFilter{
+    height: 4vh;
+}
