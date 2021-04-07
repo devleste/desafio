@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta chasert="UTF-8">
+    <link rel="stylesheet" href="ASSETS/CSS/leste.css">
+    <link rel="stylesheet" href="ASSETS/CSS/grid.css">
+    <link rel="stylesheet" href="ASSETS/CSS/normalize.css">
+    <link rel="stylesheet" href="ASSETS/CSS/responsivo.css">
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <link rel="stylesheet" href="ASSETS/ICON/css/font-awesome.min.css">
+    
+  </head> 
+  <body>
+    <div class=content>
+    <!--
+      <script type ="text/babel" src="ASSETS/JS/render.js"></script>
+    -->
+    <script type="text/babel">
+    class Contatos extends React.Component {
+      state = {
+          contatos: [
+            {"id":1,"first_name":"Fidole","last_name":"Stolberg","email":"fstolberg0@slideshare.net","gender":"M","language":"Czech","avatar":"https://robohash.org/accusantiumquiaharum.jpg?size=100x100\u0026set=set1","birthday":"1954-01-15"},
+            {"id":2,"first_name":"Staford","last_name":"Tring","email":"string1@shop-pro.jp","gender":"M","language":"Dzongkha","avatar":"https://robohash.org/utperspiciatissaepe.bmp?size=100x100\u0026set=set1","birthday":"1972-08-16"},
+            {"id":3,"first_name":"Kiley","last_name":"Swatten","email":"kswatten2@businessweek.com","gender":"M","language":"Luxembourgish","avatar":"https://robohash.org/hicsolutatotam.jpg?size=100x100\u0026set=set1","birthday":"1979-05-07"},
+            {"id":4,"first_name":"Hadleigh","last_name":"Yepiskopov","email":"hyepiskopov3@illinois.edu","gender":"M","language":"Persian","avatar":"https://robohash.org/vitaeaccusantiumquia.jpg?size=100x100\u0026set=set1","birthday":"1951-01-09"},
+            {"id":5,"first_name":"Beilul","last_name":"Maffiotti","email":"bmaffiotti4@huffingtonpost.com","gender":"F","language":"Greek","avatar":"https://robohash.org/officiisnesciuntqui.png?size=100x100\u0026set=set1","birthday":"2004-03-18"},
+            {"id":6,"first_name":"Ninnette","last_name":"Feaviour","email":"nfeaviour5@google.de","gender":"F","language":"Macedonian","avatar":"https://robohash.org/voluptateconsequatura.bmp?size=100x100\u0026set=set1","birthday":"1979-08-31"},
+            {"id":7,"first_name":"Thornie","last_name":"Blacksland","email":"tblacksland6@globo.com","gender":"M","language":"Catalan","avatar":"https://robohash.org/molestiasautet.bmp?size=100x100\u0026set=set1","birthday":"1970-10-08"},
+            {"id":8,"first_name":"Wiatt","last_name":"Lamberton","email":"wlamberton7@arizona.edu","gender":"M","language":"Quechua","avatar":"https://robohash.org/laboredoloremdolore.jpg?size=100x100\u0026set=set1","birthday":"1994-02-10"},
+            {"id":9,"first_name":"Minerva","last_name":"Colvine","email":"mcolvine8@umich.edu","gender":"F","language":"Zulu","avatar":"https://robohash.org/autquiaiure.png?size=100x100\u0026set=set1","birthday":"1964-04-05"},
+            {"id":10,"first_name":"Derrik","last_name":"Deverill","email":"ddeverill9@unicef.org","gender":"M","language":"Macedonian","avatar":"https://robohash.org/quasdoloremquepossimus.png?size=100x100\u0026set=set1","birthday":"1988-07-16"},
+            {"id":11,"first_name":"Iosep","last_name":"Doey","email":"idoeya@adobe.com","gender":"M","language":"Telugu","avatar":"https://robohash.org/asperioresperferendiscommodi.png?size=100x100\u0026set=set1","birthday":"1981-01-13"},
+            {"id":12,"first_name":"Trudi","last_name":"Gadie","email":"tgadieb@reuters.com","gender":"F","language":"Maltese","avatar":"https://robohash.org/aliquidrepudiandaelaudantium.jpg?size=100x100\u0026set=set1","birthday":"1996-12-23"},
+            {"id":13,"first_name":"Lizabeth","last_name":"Codrington","email":"lcodringtonc@cnbc.com","gender":"F","language":"Māori","avatar":"https://robohash.org/magnamconsequunturaut.png?size=100x100\u0026set=set1","birthday":"1975-12-17"},
+            {"id":14,"first_name":"Torie","last_name":"Corwood","email":"tcorwoodd@youku.com","gender":"F","language":"Yiddish","avatar":"https://robohash.org/vitaemaioresconsequatur.png?size=100x100\u0026set=set1","birthday":"1972-02-13"},
+            {"id":15,"first_name":"Remington","last_name":"Yonnie","email":"ryonniee@sohu.com","gender":"M","language":"Azeri","avatar":"https://robohash.org/velomnisvoluptas.png?size=100x100\u0026set=set1","birthday":"1963-08-10"},
+            {"id":16,"first_name":"Noe","last_name":"McCarver","email":"nmccarverf@wix.com","gender":"M","language":"Hungarian","avatar":"https://robohash.org/ipsamabconsectetur.png?size=100x100\u0026set=set1","birthday":"1970-11-01"},
+            {"id":17,"first_name":"Doralyn","last_name":"Drillingcourt","email":"ddrillingcourtg@cbc.ca","gender":"F","language":"Kurdish","avatar":"https://robohash.org/blanditiisvoluptatumest.png?size=100x100\u0026set=set1","birthday":"2001-07-05"},
+            {"id":18,"first_name":"Jandy","last_name":"Neville","email":"jnevilleh@cdc.gov","gender":"F","language":"Georgian","avatar":"https://robohash.org/autemveniamest.png?size=100x100\u0026set=set1","birthday":"1979-11-18"},
+            {"id":19,"first_name":"Isadora","last_name":"Lavrinov","email":"ilavrinovi@hp.com","gender":"F","language":"Malayalam","avatar":"https://robohash.org/inciduntdoloremtenetur.png?size=100x100\u0026set=set1","birthday":"1965-06-08"},
+            {"id":20,"first_name":"Leigh","last_name":"Gillani","email":"lgillanij@sphinn.com","gender":"M","language":"French","avatar":"https://robohash.org/estautexpedita.jpg?size=100x100\u0026set=set1","birthday":"1979-09-20"}
+          ]
+      };
+
+      /*componentDidMount() {
+        fetch('https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060')
+        .then((response) => response.json())
+        .then(json => {
+            this.setState({ contatos: json });
+        });
+      }*/
+
+      excluirContato = (id) => {
+        const contatos = this.state.contatos;
+        contatos.forEach((contato, index) => {
+          if (contato.id == id) {
+            contatos.splice(index, 1)
+            this.setState({ contatos: contatos });
+          }
+        });
+        alert("Contato excluído com sucesso!");
+      }
+
+      alterarContato(id, first_name, last_name, email, gender, language, avatar, birthday){
+        const contatos = this.state.contatos;
+        contatos.forEach((contato, index) => {
+          if (contato.id == id) {
+            contatos[index] = {
+              "id":id,"first_name":first_name,"last_name":last_name,"email":email,"gender":gender,"language":language,"avatar":avatar,"birthday":birthday
+            };
+            this.setState({ contatos: contatos });
+          }
+        });
+        alert("Contato excluído com sucesso!");
+      }
+
+      adicionarContato( first_name, last_name, email, gender, language, avatar, birthday){
+        const contatos = this.state.contatos;
+        var max_id = 0;
+        
+        
+        contatos.forEach((contato, index) => {
+          max_id = Math.max(max_id, contato.id);
+          if (contato.id >= id) {
+            contatos[index] = {
+              "id":id,"first_name":first_name,"last_name":last_name,"email":email,"gender":gender,"language":language,"avatar":avatar,"birthday":birthday
+            };
+            this.setState({ contatos: contatos });
+          }
+        });
+
+        contatos[index] = {
+          "id":id,"first_name":first_name,"last_name":last_name,"email":email,"gender":gender,"language":language,"avatar":avatar,"birthday":birthday
+        };
+
+        this.setState({ contatos: contatos });
+        alert("Contato excluído com sucesso!");
+      }
+
+      handleClick(letter) {
+        this.setState({ contatos: [] });
+      }
+      
+      render() {
+        function handleClick(id){
+          alert("Funcionou! ID é "+id);
+        }
+
+        function handleClick(id){
+          this.setState({ contatos: [] })
+        }
+
+        function excluirContato(id){
+          this.excluirContato(id)
+        }
+
+        function alterarContato(id){
+          this.alterarContato(id)
+        }
+
+        function adicionarContato(id){
+          this.adicionarContato(id)
+        }
+        return (
+          <div>
+            {this.state.contatos.map((contato, i) => {
+            if(typeof contato === 'object'){
+              return (
+                  <div className="cardbox">
+                    <div className="cardimage">
+                      <img src={contato.avatar} alt={"Avatar de "+contato.first_name} />
+                    </div>
+                    <div className="cardcontainer">
+                      <h3>{contato.first_name+" "+contato.last_name}</h3>
+                      <p><i class="fa fa-envelope" aria-hidden="true"></i>: {contato.email}</p>  
+                      <p><i class="fa fa-female" aria-hidden="true"></i>: {contato.gender}</p>  
+                      <p><i class="fa fa-globe" aria-hidden="true"></i>: {contato.language}</p>  
+                      <p><i class="fa fa-birthday-cake" aria-hidden="true"></i>: {contato.birthday}</p>  
+                    </div>
+                    <div className="cardbutton">
+                      <div className="icon">
+                        <button onClick={() => this.setState({ contatos: [] })}><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button onClick={() => this.excluirContato(contato.id)}><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button onClick={() => handleClick(contato.id)}>Teste</button>
+                      </div>
+                    </div>
+                  </div>
+              );
+            }
+          })}
+          </div>
+        ) 
+      }
+    }
+    const html = (
+  <div>
+     <header className="header">
+      <div className="container">
+        <nav className="headerTitulo">
+          <img src="ASSETS/IMG/leste.png" alt="logoleste" />
+        </nav>
+      </div>
+    </header>
+
+    <section className="introducao">
+      <div className="conatainer">
+        <h1>Leste Contact</h1>
+      </div>
+    </section>
+
+    <section className="pesquisa">
+      <div className="container">
+        <input placeholder="Buscar contato"></input>
+        <button>Filtrar</button>
+        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+      </div>
+    </section>
+
+    <section className="lista">
+      <div className="borda container">
+        <ul>
+          <li><button><i class="fa fa-user-plus" aria-hidden="true"></i></button></li>
+          <li><button><i class="fa fa-trash" aria-hidden="true"> </i></button></li>
+          {/*<li><button>Expandir</button></li>*/}
+          <li><button>Resumo</button></li>
+        </ul>
+        <hr/>
+        <Contatos />
+      </div>
+    </section>
+
+    <footer>
+      <div className="copy">
+        <div className="container">
+          <p className="grid-16">Leste Telecon 2021 - todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+);
+
+const wrapper = document.querySelector("#wrapper");
+
+ReactDOM.render(
+  html,wrapper
+)
+
+
+    </script>
+    <div id="wrapper">
+
+    </div>
+    
+    </div>
+  </body>
+
+</html>
