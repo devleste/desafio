@@ -74,3 +74,4 @@ Este repositório está sob licença MIT. Para mais informações, leia o arquiv
 ## 🧑 Autor
 
 Feito por **Hudson Dias**. [Linkedin](https://www.linkedin.com/in/hudvdias/) — [Email](mailto:hudson.oliveira.dias@gmail.com)
+Atualizado em 07/04/2021.
