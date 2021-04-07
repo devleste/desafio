@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
     <link rel="stylesheet" href="ASSETS/ICON/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     
   </head> 
   <body>
@@ -20,136 +21,310 @@
     <script type="text/babel">
     class Contatos extends React.Component {
       state = {
-          contatos: [
-            {"id":1,"first_name":"Fidole","last_name":"Stolberg","email":"fstolberg0@slideshare.net","gender":"M","language":"Czech","avatar":"https://robohash.org/accusantiumquiaharum.jpg?size=100x100\u0026set=set1","birthday":"1954-01-15"},
-            {"id":2,"first_name":"Staford","last_name":"Tring","email":"string1@shop-pro.jp","gender":"M","language":"Dzongkha","avatar":"https://robohash.org/utperspiciatissaepe.bmp?size=100x100\u0026set=set1","birthday":"1972-08-16"},
-            {"id":3,"first_name":"Kiley","last_name":"Swatten","email":"kswatten2@businessweek.com","gender":"M","language":"Luxembourgish","avatar":"https://robohash.org/hicsolutatotam.jpg?size=100x100\u0026set=set1","birthday":"1979-05-07"},
-            {"id":4,"first_name":"Hadleigh","last_name":"Yepiskopov","email":"hyepiskopov3@illinois.edu","gender":"M","language":"Persian","avatar":"https://robohash.org/vitaeaccusantiumquia.jpg?size=100x100\u0026set=set1","birthday":"1951-01-09"},
-            {"id":5,"first_name":"Beilul","last_name":"Maffiotti","email":"bmaffiotti4@huffingtonpost.com","gender":"F","language":"Greek","avatar":"https://robohash.org/officiisnesciuntqui.png?size=100x100\u0026set=set1","birthday":"2004-03-18"},
-            {"id":6,"first_name":"Ninnette","last_name":"Feaviour","email":"nfeaviour5@google.de","gender":"F","language":"Macedonian","avatar":"https://robohash.org/voluptateconsequatura.bmp?size=100x100\u0026set=set1","birthday":"1979-08-31"},
-            {"id":7,"first_name":"Thornie","last_name":"Blacksland","email":"tblacksland6@globo.com","gender":"M","language":"Catalan","avatar":"https://robohash.org/molestiasautet.bmp?size=100x100\u0026set=set1","birthday":"1970-10-08"},
-            {"id":8,"first_name":"Wiatt","last_name":"Lamberton","email":"wlamberton7@arizona.edu","gender":"M","language":"Quechua","avatar":"https://robohash.org/laboredoloremdolore.jpg?size=100x100\u0026set=set1","birthday":"1994-02-10"},
-            {"id":9,"first_name":"Minerva","last_name":"Colvine","email":"mcolvine8@umich.edu","gender":"F","language":"Zulu","avatar":"https://robohash.org/autquiaiure.png?size=100x100\u0026set=set1","birthday":"1964-04-05"},
-            {"id":10,"first_name":"Derrik","last_name":"Deverill","email":"ddeverill9@unicef.org","gender":"M","language":"Macedonian","avatar":"https://robohash.org/quasdoloremquepossimus.png?size=100x100\u0026set=set1","birthday":"1988-07-16"},
-            {"id":11,"first_name":"Iosep","last_name":"Doey","email":"idoeya@adobe.com","gender":"M","language":"Telugu","avatar":"https://robohash.org/asperioresperferendiscommodi.png?size=100x100\u0026set=set1","birthday":"1981-01-13"},
-            {"id":12,"first_name":"Trudi","last_name":"Gadie","email":"tgadieb@reuters.com","gender":"F","language":"Maltese","avatar":"https://robohash.org/aliquidrepudiandaelaudantium.jpg?size=100x100\u0026set=set1","birthday":"1996-12-23"},
-            {"id":13,"first_name":"Lizabeth","last_name":"Codrington","email":"lcodringtonc@cnbc.com","gender":"F","language":"Māori","avatar":"https://robohash.org/magnamconsequunturaut.png?size=100x100\u0026set=set1","birthday":"1975-12-17"},
-            {"id":14,"first_name":"Torie","last_name":"Corwood","email":"tcorwoodd@youku.com","gender":"F","language":"Yiddish","avatar":"https://robohash.org/vitaemaioresconsequatur.png?size=100x100\u0026set=set1","birthday":"1972-02-13"},
-            {"id":15,"first_name":"Remington","last_name":"Yonnie","email":"ryonniee@sohu.com","gender":"M","language":"Azeri","avatar":"https://robohash.org/velomnisvoluptas.png?size=100x100\u0026set=set1","birthday":"1963-08-10"},
-            {"id":16,"first_name":"Noe","last_name":"McCarver","email":"nmccarverf@wix.com","gender":"M","language":"Hungarian","avatar":"https://robohash.org/ipsamabconsectetur.png?size=100x100\u0026set=set1","birthday":"1970-11-01"},
-            {"id":17,"first_name":"Doralyn","last_name":"Drillingcourt","email":"ddrillingcourtg@cbc.ca","gender":"F","language":"Kurdish","avatar":"https://robohash.org/blanditiisvoluptatumest.png?size=100x100\u0026set=set1","birthday":"2001-07-05"},
-            {"id":18,"first_name":"Jandy","last_name":"Neville","email":"jnevilleh@cdc.gov","gender":"F","language":"Georgian","avatar":"https://robohash.org/autemveniamest.png?size=100x100\u0026set=set1","birthday":"1979-11-18"},
-            {"id":19,"first_name":"Isadora","last_name":"Lavrinov","email":"ilavrinovi@hp.com","gender":"F","language":"Malayalam","avatar":"https://robohash.org/inciduntdoloremtenetur.png?size=100x100\u0026set=set1","birthday":"1965-06-08"},
-            {"id":20,"first_name":"Leigh","last_name":"Gillani","email":"lgillanij@sphinn.com","gender":"M","language":"French","avatar":"https://robohash.org/estautexpedita.jpg?size=100x100\u0026set=set1","birthday":"1979-09-20"}
-          ]
+          contatos: [],
+          contatosfiltrados: []
       };
 
-      /*componentDidMount() {
+      componentDidMount() {
         fetch('https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060')
         .then((response) => response.json())
         .then(json => {
             this.setState({ contatos: json });
+            this.setState({ contatosfiltrados: json });
         });
-      }*/
+      }
 
       excluirContato = (id) => {
         const contatos = this.state.contatos;
+        const contatosfiltrados = this.state.contatosfiltrados;
         contatos.forEach((contato, index) => {
           if (contato.id == id) {
             contatos.splice(index, 1)
             this.setState({ contatos: contatos });
           }
         });
-        alert("Contato excluído com sucesso!");
-      }
-
-      alterarContato(id, first_name, last_name, email, gender, language, avatar, birthday){
-        const contatos = this.state.contatos;
-        contatos.forEach((contato, index) => {
+        contatosfiltrados.forEach((contato, index) => {
           if (contato.id == id) {
-            contatos[index] = {
-              "id":id,"first_name":first_name,"last_name":last_name,"email":email,"gender":gender,"language":language,"avatar":avatar,"birthday":birthday
-            };
-            this.setState({ contatos: contatos });
+            contatosfiltrados.splice(index, 1)
+            this.setState({ contatosfiltrados: contatosfiltrados });
           }
         });
-        alert("Contato excluído com sucesso!");
+        Swal.fire("Contato excluído com sucesso!")
       }
 
-      adicionarContato( first_name, last_name, email, gender, language, avatar, birthday){
+      async alterarContato(id){
         const contatos = this.state.contatos;
+        const contatosfiltrados = this.state.contatosfiltrados;
+        var i, ifiltrado, first_name, last_name, email, gender, language, avatar, birthday;
+        contatos.forEach((contato, index) => {
+          if (contato.id == id) {
+            i = index, first_name = contato.first_name, last_name = contato.last_name, email = contato.email, gender = contato.gender, language = contato.language, avatar = contato.avatar, birthday = contato.birthday;
+          }
+        });
+        contatosfiltrados.forEach((contato, index) => {
+          if (contato.id == id) {
+            ifiltrado = index, first_name = contato.first_name, last_name = contato.last_name, email = contato.email, gender = contato.gender, language = contato.language, avatar = contato.avatar, birthday = contato.birthday;
+          }
+        });
+
+        const { value: formValues } = await Swal.fire({
+          title: 'Alterar contato',
+          html:
+            '<label for="first_name">First Name' +
+            '<input id="first_name" class="swal2-input" value="'+first_name+'">'+
+            '</label>'+
+            '<label for="last_name">Last Name' +
+            '<input id="last_name" class="swal2-input" value="'+last_name+'">'+
+            '</label>'+
+            '<label for="email">E-mail' +
+            '<input id="email" class="swal2-input" value="'+email+'">'+
+            '</label>'+
+            '<label for="gender">Gender' +
+            '<input id="gender" class="swal2-input" value="'+gender+'">'+
+            '</label>'+
+            '<label for="language">Language' +
+            '<input id="language" class="swal2-input" value="'+language+'">'+
+            '</label>'+
+            '<label for="avatar">Avatar\'s URL' +
+            '<input id="avatar" class="swal2-input" value="'+avatar+'">'+
+            '</label>'+
+            '<label for="birthday">Birthday' +
+            '<input id="birthday" class="swal2-input" value="'+birthday+'">'+
+            '</label>',
+          focusConfirm: false,
+          preConfirm: () => {
+            return [
+              document.getElementById('first_name').value,
+              document.getElementById('last_name').value,
+              document.getElementById('email').value,
+              document.getElementById('gender').value,
+              document.getElementById('language').value,
+              document.getElementById('avatar').value,
+              document.getElementById('birthday').value
+            ]
+          }
+        })
+
+        if (formValues) {
+          contatos[i] = {
+            "id":id,"first_name":formValues[0],"last_name":formValues[1],"email":formValues[2],"gender":formValues[3],"language":formValues[4],"avatar":formValues[5],"birthday":formValues[6]
+          };
+          contatosfiltrados[ifiltrado] = {
+            "id":id,"first_name":formValues[0],"last_name":formValues[1],"email":formValues[2],"gender":formValues[3],"language":formValues[4],"avatar":formValues[5],"birthday":formValues[6]
+          };
+          this.setState({ contatos: contatos });
+          this.setState({ contatosfiltrados: contatosfiltrados });
+          Swal.fire("Contato alterado com sucesso!")
+        }
+      }
+
+      async adicionarContato(){
+        const contatos = this.state.contatos;
+        const contatosfiltrados = this.state.contatosfiltrados;
         var max_id = 0;
-        
         
         contatos.forEach((contato, index) => {
           max_id = Math.max(max_id, contato.id);
-          if (contato.id >= id) {
-            contatos[index] = {
-              "id":id,"first_name":first_name,"last_name":last_name,"email":email,"gender":gender,"language":language,"avatar":avatar,"birthday":birthday
-            };
-            this.setState({ contatos: contatos });
-          }
         });
 
-        contatos[index] = {
-          "id":id,"first_name":first_name,"last_name":last_name,"email":email,"gender":gender,"language":language,"avatar":avatar,"birthday":birthday
-        };
+        const { value: formValues } = await Swal.fire({
+          title: 'Adicionar contato',
+          html:
+            '<label for="first_name">First Name' +
+            '<input id="first_name" class="swal2-input">'+
+            '</label>'+
+            '<label for="last_name">Last Name' +
+            '<input id="last_name" class="swal2-input">'+
+            '</label>'+
+            '<label for="email">E-mail' +
+            '<input id="email" class="swal2-input">'+
+            '</label>'+
+            '<label for="gender">Gender' +
+            '<input id="gender" class="swal2-input">'+
+            '</label>'+
+            '<label for="language">Language' +
+            '<input id="language" class="swal2-input">'+
+            '</label>'+
+            '<label for="avatar">Avatar\'s URL' +
+            '<input id="avatar" class="swal2-input">'+
+            '</label>'+
+            '<label for="birthday">Birthday' +
+            '<input id="birthday" class="swal2-input">'+
+            '</label>',
+          focusConfirm: false,
+          preConfirm: () => {
+            return [
+              document.getElementById('first_name').value,
+              document.getElementById('last_name').value,
+              document.getElementById('email').value,
+              document.getElementById('gender').value,
+              document.getElementById('language').value,
+              document.getElementById('avatar').value,
+              document.getElementById('birthday').value
+            ]
+          }
+        })
 
-        this.setState({ contatos: contatos });
-        alert("Contato excluído com sucesso!");
-      }
-
-      handleClick(letter) {
-        this.setState({ contatos: [] });
+        if (formValues) {
+          const novocontato = {
+            "id":max_id+1,"first_name":formValues[0],"last_name":formValues[1],"email":formValues[2],"gender":formValues[3],"language":formValues[4],"avatar":formValues[5],"birthday":formValues[6]
+          };
+          contatos.unshift(novocontato); 
+          this.setState({ contatos: contatos });
+          this.setState({ contatosfiltrados: contatosfiltrados });
+          Swal.fire("Contato adicionado com sucesso!")
+        }
       }
       
+      buscarContato(){
+        const busca = document.querySelector("#busca").value;
+        const contatos = this.state.contatos;
+        var contatosfiltrados = [];
+        if (busca!="") {
+          contatos.forEach((contato, index) => {
+            if ((contato.first_name+" "+contato.last_name).includes(busca)) {
+              console.log((contato.first_name+" "+contato.last_name).includes(busca));
+              contatosfiltrados.push(contato);
+            }
+          }); 
+        } else {
+          contatosfiltrados = contatosfiltrados.concat(contatos);
+        }
+        this.setState({ contatosfiltrados: contatosfiltrados });
+      }
+
+      async filtrarContato(){
+        const contatos = this.state.contatos;
+        const contatosposfiltro = [];
+
+        const { value: formValues } = await Swal.fire({
+          title: 'Filtrar contatos',
+          html:
+            '<h3>Gender<h3>'+
+            '<input type="radio" id="male" name="gender" value="M">'+
+            '<label for="male">Male</label></br></br>'+
+            '<input type="radio" id="female" name="gender" value="F">'+
+            '<label for="female">Female</label></br></br>'+
+            '<input type="radio" id="any" name="gender" value="" checked>'+
+            '<label for="any">Any</label></br></br>'+
+            '<label for="language">Language' +
+            '<input name="language" class="swal2-input">'+
+            '</label>'+
+            '<label for="age">Age' +
+            '<input name="age" class="swal2-input">'+
+            '</label>'+
+            '<label for="month">Month' +
+            '<select name="month" class="swal2-input">'+
+            '<option value="">Month</option>'+
+            '<option value="01">Jan</option>'+
+            '<option value="02">Feb</option>'+
+            '<option value="03">Mar</option>'+
+            '<option value="04">Apr</option>'+
+            '<option value="05">May</option>'+
+            '<option value="06">Jun</option>'+
+            '<option value="07">Jul</option>'+
+            '<option value="08">Aug</option>'+
+            '<option value="09">Sep</option>'+
+            '<option value="10">Oct</option>'+
+            '<option value="11">Nov</option>'+
+            '<option value="12">Dec</option>'+
+            '</select>'+
+            '</label>',
+            showDenyButton: true,
+            confirmButtonText: "Filtrar",
+            denyButtonText: "Remover Filtros",
+            focusConfirm: false,
+            preConfirm: () => {
+              return [
+                document.querySelector('[name="gender"]:checked').value,
+                document.querySelector('[name="language"]').value,
+                document.querySelector('[name="age"]').value,
+                document.querySelector('[name="month"]').value,
+              ]
+            }
+          })
+
+          if (formValues) {
+            console.log(formValues);
+              const busca = document.querySelector("#busca").value;
+              contatos.forEach((contato, index) => {
+                var hoje = new Date(), nascimento = new Date(contato.birthday)
+                var age = hoje.getFullYear() - nascimento.getFullYear();
+                if (new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate()) < new Date(hoje.getFullYear(), nascimento.getMonth(), nascimento.getDate())){
+                  age--;
+                }
+                var birthmonth = contato.birthday.split("-")[1];
+
+                console.log(age, birthmonth);
+                if (contato.gender == formValues[0] || formValues[0] == "") {
+                  console.log("teste1");
+                  if (contato.language == formValues[1] || formValues[1] == "") {
+                    console.log("teste2");
+                    if (age == formValues[2] || formValues[2] == "") {
+                      console.log("teste3");
+                      if (birthmonth == formValues[3] || formValues[3] == "") {
+                        console.log("teste4");
+                        if ((contato.first_name+" "+contato.last_name).includes(busca) || busca == "") {
+                          console.log("teste5");
+                          contatosposfiltro.push(contato);
+                        }
+                      }
+                    }
+                  }
+                }
+              });
+
+              this.setState({ contatosfiltrados: contatosposfiltro });
+              Swal.fire("Filtro realizado com sucesso!", "", "success")
+            }
+      }
+
       render() {
-        function handleClick(id){
-          alert("Funcionou! ID é "+id);
-        }
-
-        function handleClick(id){
-          this.setState({ contatos: [] })
-        }
-
-        function excluirContato(id){
-          this.excluirContato(id)
-        }
-
-        function alterarContato(id){
-          this.alterarContato(id)
-        }
-
-        function adicionarContato(id){
-          this.adicionarContato(id)
-        }
         return (
           <div>
-            {this.state.contatos.map((contato, i) => {
-            if(typeof contato === 'object'){
-              return (
-                  <div className="cardbox">
-                    <div className="cardimage">
-                      <img src={contato.avatar} alt={"Avatar de "+contato.first_name} />
-                    </div>
-                    <div className="cardcontainer">
-                      <h3>{contato.first_name+" "+contato.last_name}</h3>
-                      <p><i class="fa fa-envelope" aria-hidden="true"></i>: {contato.email}</p>  
-                      <p><i class="fa fa-female" aria-hidden="true"></i>: {contato.gender}</p>  
-                      <p><i class="fa fa-globe" aria-hidden="true"></i>: {contato.language}</p>  
-                      <p><i class="fa fa-birthday-cake" aria-hidden="true"></i>: {contato.birthday}</p>  
-                    </div>
-                    <div className="cardbutton">
-                      <div className="icon">
-                        <button onClick={() => this.setState({ contatos: [] })}><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button onClick={() => this.excluirContato(contato.id)}><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        <button onClick={() => handleClick(contato.id)}>Teste</button>
-                      </div>
-                    </div>
-                  </div>
-              );
-            }
-          })}
+            <section className="pesquisa">
+              <div className="container">
+                <input onKeyUp={() => this.buscarContato()} id="busca" placeholder="Buscar contato"></input>
+              </div>
+            </section>
+
+            <section className="lista">
+              <div className="borda container">
+                <ul>
+                  <li><button onClick={() => this.adicionarContato()}><i class="fa fa-user-plus" aria-hidden="true"></i></button></li>
+                  <li><button onClick={() => this.filtrarContato()}>Filtrar</button></li>
+                  
+                  {/*<li><button><i class="fa fa-trash" aria-hidden="true"> </i></button></li>*/}
+                  {/*<li><button>Expandir</button></li>*/}
+                  {/*<li><button>Resumo</button></li>*/}
+                </ul>
+                <hr/>
+                {this.state.contatosfiltrados.map((contato, i) => {
+                  if(typeof contato === 'object'){
+                    return (
+                        <div className="cardbox">
+                          <div className="cardimage">
+                            <img src={contato.avatar} alt={"Avatar de "+contato.first_name} />
+                          </div>
+                          <div className="cardcontainer">
+                            <h3>{contato.first_name+" "+contato.last_name}</h3>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i>: {contato.email}</p>  
+                            <p><i class={contato.gender == "F"?"fa fa-female":"fa fa-male"} aria-hidden="true"></i>: {contato.gender}</p>  
+                            <p><i class="fa fa-globe" aria-hidden="true"></i>: {contato.language}</p>  
+                            <p><i class="fa fa-birthday-cake" aria-hidden="true"></i>: {contato.birthday}</p>  
+                          </div>
+                          <div className="cardbutton">
+                            <div className="icon">
+                              <button onClick={() => this.alterarContato(contato.id)}><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                              <button onClick={() => this.excluirContato(contato.id)}><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                    );
+                  }
+                })}
+              </div>
+            </section>
           </div>
         ) 
       }
@@ -169,28 +344,7 @@
         <h1>Leste Contact</h1>
       </div>
     </section>
-
-    <section className="pesquisa">
-      <div className="container">
-        <input placeholder="Buscar contato"></input>
-        <button>Filtrar</button>
-        <button><i class="fa fa-search" aria-hidden="true"></i></button>
-      </div>
-    </section>
-
-    <section className="lista">
-      <div className="borda container">
-        <ul>
-          <li><button><i class="fa fa-user-plus" aria-hidden="true"></i></button></li>
-          <li><button><i class="fa fa-trash" aria-hidden="true"> </i></button></li>
-          {/*<li><button>Expandir</button></li>*/}
-          <li><button>Resumo</button></li>
-        </ul>
-        <hr/>
-        <Contatos />
-      </div>
-    </section>
-
+      <Contatos />
     <footer>
       <div className="copy">
         <div className="container">
