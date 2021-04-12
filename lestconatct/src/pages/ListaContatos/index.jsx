@@ -2,14 +2,17 @@ import React, { useContext } from "react";
 import { ContatosContext } from "../../providers/contatos";
 
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 function ListaContatos() {
 	const { contatos } = useContext(ContatosContext);
+
 	return (
 		<Container>
 			<h1>Lista de Pacientes</h1>
+
 			<Contatos>
 				{contatos.map((contato) => (
-					<a href={`/contato/${contato.id}/show`}>
+					<Link key={contato.id} to={`/contato/${contato.id}/show`}>
 						<Contato key={contato.id}>
 							<Avatar>
 								<img src={contato.avatar} alt="avatar" />
@@ -21,7 +24,7 @@ function ListaContatos() {
 								<small>{contato.email}</small>
 							</Info>
 						</Contato>
-					</a>
+					</Link>
 				))}
 			</Contatos>
 		</Container>
@@ -51,16 +54,19 @@ const Contato = styled.div`
 `;
 const Avatar = styled.div`
 	display: flex;
-	height: 50px;
-	width: 50px;
+	height: 55px;
+	width: 55px;
 	background-color: #fff;
 	border-radius: 50px;
 	justify-content: center;
 	align-items: center;
 	margin-right: 10px;
-	border img {
-		width: 40px;
-		height: 40px;
+	img {
+		justify-content: center;
+		align-items: center;
+		width: 55px;
+		height: 55px;
+		border-radius: 25px;
 	}
 `;
 const Info = styled.div`

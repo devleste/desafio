@@ -3,17 +3,16 @@ import Routes from "./routes";
 import GlobalStyled, { Container, Header, Content } from "./styles/global";
 import logo from "./assets/logo.png";
 import { ContatosProvider } from "./providers/contatos";
-import { DBConfig } from "./DBconfig";
-import { initDB } from "react-indexed-db";
 
-initDB(DBConfig);
 export default function App() {
 	return (
 		<Fragment>
 			<Container>
-				<Header>
-					<img src={logo} alt="logo" />
-				</Header>
+				<a href="/">
+					<Header>
+						<img src={logo} alt="logo" />
+					</Header>
+				</a>
 				<ContatosProvider>
 					<Content>
 						<Routes />
