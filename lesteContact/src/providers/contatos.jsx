@@ -8,8 +8,15 @@ export const ContatosProvider = (props) => {
 
 	const carregaContatosDaApi = async () => {
 		if (!localStorage.getItem("@lesteContatos")) {
-			const response = await api.get();
-			setContatos(response.data);
+			await api
+				.get()
+				.then((response) => {
+					console.log(response.data);
+					setContatos(response.data);
+				})
+				.catch((err) => {
+					console.error(err);
+				});
 			localStorage.setItem("@lesteContatos", JSON.stringify(contatos));
 		}
 	};

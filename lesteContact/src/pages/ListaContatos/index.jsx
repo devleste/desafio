@@ -17,19 +17,19 @@ function ListaContatos() {
 			<Contatos>
 				{contatos &&
 					contatos.map((contato) => (
-						<Link key={contato.id} to={`/contato/${contato.id}/show`}>
-							<Contato key={contato.id}>
-								<Avatar>
-									<img src={contato.avatar} alt="avatar" />
-								</Avatar>
+						<Contato key={contato.id}>
+							<Avatar>
+								<img src={contato.avatar} alt="avatar" />
+							</Avatar>
+							<Link key={contato.id} to={`/contato/${contato.id}/show`}>
 								<Info>
 									<p>
 										{contato.first_name} {contato.last_name}
 									</p>
 									<small>{contato.email}</small>
 								</Info>
-							</Contato>
-						</Link>
+							</Link>
+						</Contato>
 					))}
 			</Contatos>
 		</Container>
@@ -59,19 +59,22 @@ const Contato = styled.div`
 `;
 const Avatar = styled.div`
 	display: flex;
-	height: 55px;
-	width: 55px;
+	height: 75px;
+	width: 75px;
 	background-color: #fff;
 	border-radius: 50px;
 	justify-content: center;
 	align-items: center;
-	margin-right: 10px;
+	margin: 15px;
 	img {
 		justify-content: center;
 		align-items: center;
-		width: 55px;
-		height: 55px;
-		border-radius: 25px;
+		width: 75px;
+		height: 75px;
+		border-radius: 50px;
+		box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.37);
+		-webkit-box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.37);
+		-moz-box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.37);
 	}
 `;
 const Info = styled.div`
