@@ -9,7 +9,6 @@ export default function AdicionarContato() {
 	const [gender, setGender] = useState("O");
 	const [languages, setLanguages] = useState("");
 	const [birthday, setBirthday] = useState("");
-	const [avatar, setAvatar] = useState("anon");
 	let history = useHistory();
 	const adiciona = () => {
 		const exist = JSON.parse(localStorage.getItem("@lesteContatos"));
