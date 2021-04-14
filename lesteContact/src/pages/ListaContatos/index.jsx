@@ -1,31 +1,36 @@
-import React, { useContext } from "react";
-import { ContatosContext } from "../../providers/contatos";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-function ListaContatos() {
-	const { contatos } = useContext(ContatosContext);
 
+function ListaContatos() {
+	const [contatos, setContatos] = useState([]);
+
+	useEffect(() => {
+		const response = localStorage.getItem("@lesteContatos");
+		setContatos(JSON.parse(response));
+	}, []);
 	return (
 		<Container>
 			<h1>Lista de Pacientes</h1>
 
 			<Contatos>
-				{contatos.map((contato) => (
-					<Link key={contato.id} to={`/contato/${contato.id}/show`}>
-						<Contato key={contato.id}>
-							<Avatar>
-								<img src={contato.avatar} alt="avatar" />
-							</Avatar>
-							<Info>
-								<p>
-									{contato.first_name} {contato.last_name}
-								</p>
-								<small>{contato.email}</small>
-							</Info>
-						</Contato>
-					</Link>
-				))}
+				{contatos &&
+					contatos.map((contato) => (
+						<Link key={contato.id} to={`/contato/${contato.id}/show`}>
+							<Contato key={contato.id}>
+								<Avatar>
+									<img src={contato.avatar} alt="avatar" />
+								</Avatar>
+								<Info>
+									<p>
+										{contato.first_name} {contato.last_name}
+									</p>
+									<small>{contato.email}</small>
+								</Info>
+							</Contato>
+						</Link>
+					))}
 			</Contatos>
 		</Container>
 	);
