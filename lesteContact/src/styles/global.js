@@ -13,7 +13,7 @@ body, html {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   height: 100vh;
-  width: 100vw;
+	width: 100vw;
   font-family: 'Montserrat', sans-serif;
   a{
     color:#111;
@@ -24,10 +24,11 @@ body, html {
 export const Container = styled.div`
 	display: flex;
 	height: 100vh;
+	width: 100vw;
 `;
 export const Content = styled.div`
 	width: 100vw;
-	height: 85h;
+	height: 85vh;
 	margin-top: 15vh;
 	padding: 20px 0 20px 20px;
 `;

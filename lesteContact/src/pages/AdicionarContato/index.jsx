@@ -65,9 +65,10 @@ export default function AdicionarContato() {
 					<label htmlFor="email">E-mail</label>
 					<input
 						placeholder="Primeiro nome"
-						type="text"
+						type="e-mail"
 						name="email"
 						id="email"
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 				</Input>

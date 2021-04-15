@@ -11,7 +11,7 @@ function HomePage() {
 				<li>
 					<Link to="/contatos">
 						<div>
-							<i class="far fa-address-book"></i>{" "}
+							<i className="far fa-address-book"></i>{" "}
 						</div>
 						<strong>Lista de contatos</strong>
 					</Link>
@@ -19,7 +19,7 @@ function HomePage() {
 				<li>
 					<Link to="/contatos/adicionar">
 						<div>
-							<i class="fas fa-user-plus"></i>
+							<i className="fas fa-user-plus"></i>
 						</div>
 						<strong>Adicionar contatos</strong>
 					</Link>
