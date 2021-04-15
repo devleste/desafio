@@ -27,7 +27,8 @@ function ListaContatos() {
 		setSearchName("");
 		setSearchLanguages(contatoSearch);
 		const lista = contatos.filter((item) => {
-			return item.languages.toLowerCase().includes(contatoSearch.toLowerCase());
+			const lingua = item.language.toLowerCase();
+			return lingua.includes(contatoSearch.toLowerCase());
 		});
 		setSearch(lista);
 	};
