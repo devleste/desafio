@@ -5,18 +5,34 @@ import { Link } from "react-router-dom";
 
 function ListaContatos() {
 	const [contatos, setContatos] = useState([]);
-
+	const [search, setSearch] = useState("");
 	useEffect(() => {
 		const response = localStorage.getItem("@lesteContatos");
 		setContatos(JSON.parse(response));
+		setSearch(JSON.parse(response));
 	}, []);
+
+	const handleSearch = (contatoSearch) => {
+		const lista = contatos.filter((item) => {
+			const nome = item.first_name + item.last_name;
+			return nome.toLowerCase().includes(contatoSearch.toLowerCase());
+		});
+		setSearch(lista);
+	};
 	return (
 		<Container>
 			<h1>Lista de Pacientes</h1>
-
+			<Search>
+				<input
+					type="text"
+					placeholder="Busque pelo nome"
+					onChange={(e) => handleSearch(e.target.value)}
+				/>
+				<i class="fas fa-search"></i>
+			</Search>
 			<Contatos>
-				{contatos &&
-					contatos.map((contato) => (
+				{search &&
+					search.map((contato) => (
 						<Contato key={contato.id}>
 							<Avatar>
 								<img src={contato.avatar} alt="avatar" />
@@ -35,6 +51,19 @@ function ListaContatos() {
 		</Container>
 	);
 }
+const Search = styled.div`
+	display: flex;
+
+	align-items: center;
+	background-color: #ffffff;
+	border-radius: 8px;
+	padding: 10px;
+	margin: 10px;
+	input {
+		padding: 5px;
+		border: 0;
+	}
+`;
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -49,7 +78,7 @@ const Contato = styled.div`
 	display: flex;
 
 	align-items: center;
-	background-color: #eee;
+	background-color: #ffffff;
 	border-radius: 8px;
 	padding: 10px;
 	margin: 10px;
@@ -61,7 +90,7 @@ const Avatar = styled.div`
 	display: flex;
 	height: 75px;
 	width: 75px;
-	background-color: #fff;
+	background-color: #92d478;
 	border-radius: 50px;
 	justify-content: center;
 	align-items: center;
