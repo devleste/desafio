@@ -35,9 +35,7 @@ function ListaContatos() {
 		const lista = contatos.filter((item) => gender.includes(item.gender));
 		setSearch(lista);
 	};
-	const handleDelete = (contato) => {
-		window.confirm(`Deseja excluir o contato de ${contato.first_name}?`);
-	};
+
 	return (
 		<Container>
 			<h1>Lista de Pacientes</h1>
