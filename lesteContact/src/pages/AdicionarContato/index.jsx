@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { Header, Form, PerfilImage, Alerta, Input } from "./style";
 import { useHistory } from "react-router-dom";
 
 export default function AdicionarContato() {
@@ -9,8 +9,11 @@ export default function AdicionarContato() {
 	const [gender, setGender] = useState("O");
 	const [languages, setLanguages] = useState("");
 	const [birthday, setBirthday] = useState("");
+	const [erro, setErro] = useState(false);
+	const [erroEmail, setErroEmail] = useState(false);
 	let history = useHistory();
-	const adiciona = () => {
+
+	const adiciona = (e) => {
 		if (
 			first_name === "" ||
 			last_name === "" ||
@@ -19,7 +22,11 @@ export default function AdicionarContato() {
 			languages === "" ||
 			birthday === ""
 		) {
-			alert("Todos os campos devem ser preenchidos");
+			setErro(true);
+			return;
+		}
+		if (!email.includes(["@", "."])) {
+			setErroEmail(true);
 			return;
 		}
 		const exist = JSON.parse(localStorage.getItem("@lesteContatos"));
@@ -39,7 +46,12 @@ export default function AdicionarContato() {
 
 	return (
 		<div>
-			<h1>Adicionar Contato</h1>
+			<Header>
+				<span onClick={() => history.push("/contatos")}>
+					<i class="fas fa-chevron-left"></i> Voltar
+				</span>
+				<h1> Adicionar Contato</h1>
+			</Header>
 			<Form>
 				<PerfilImage>
 					<img
@@ -47,8 +59,8 @@ export default function AdicionarContato() {
 						alt="Avatar"
 					/>
 				</PerfilImage>
+				{erro && <Alerta>Todos os campos devem ser preenchidos</Alerta>}
 				<Input>
-					{first_name}
 					<label htmlFor="first_name">Primeiro nome</label>
 					<input
 						placeholder="Primeiro nome"
@@ -59,7 +71,6 @@ export default function AdicionarContato() {
 					/>
 				</Input>
 				<Input>
-					{last_name}
 					<label htmlFor="last_name">Ultimo nome</label>
 					<input
 						placeholder="Primeiro nome"
@@ -70,7 +81,6 @@ export default function AdicionarContato() {
 					/>
 				</Input>
 				<Input>
-					{email}
 					<label htmlFor="email">E-mail</label>
 					<input
 						placeholder="Primeiro nome"
@@ -80,9 +90,9 @@ export default function AdicionarContato() {
 						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						onChange={(e) => setEmail(e.target.value)}
 					/>
+					{erroEmail && <Alerta>verifique o e-mail</Alerta>}
 				</Input>
 				<Input>
-					{gender}
 					<label htmlFor="gender">Gênero</label>
 					<select
 						value={gender}
@@ -96,7 +106,6 @@ export default function AdicionarContato() {
 					</select>
 				</Input>
 				<Input>
-					{languages}
 					<label htmlFor="languages">Idioma</label>
 					<input
 						placeholder="Primeiro nome"
@@ -107,7 +116,6 @@ export default function AdicionarContato() {
 					/>
 				</Input>
 				<Input>
-					{birthday}
 					<label htmlFor="birthday">Aniversario</label>
 					<input
 						placeholder="Primeiro nome"
@@ -117,80 +125,15 @@ export default function AdicionarContato() {
 						onChange={(e) => setBirthday(e.target.value)}
 					/>
 				</Input>
-				<button onClick={() => adiciona()}>Cadastrar</button>
+				<button
+					onClick={(e) => {
+						e.preventDefault();
+						adiciona();
+					}}
+				>
+					Cadastrar
+				</button>
 			</Form>
 		</div>
 	);
 }
-const PerfilImage = styled.div`
-	display: flex;
-	width: 150px;
-	height: 150px;
-	padding: 10px;
-	justify-content: center;
-	margin: 5px;
-	background-color: #fff;
-	border-radius: 75px;
-	box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-	-webkit-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-	-moz-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-	img {
-		border-radius: 75px;
-		background-color: #eee;
-	}
-`;
-const Form = styled.form`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-bottom: 10px;
-	button {
-		border-radius: 8px;
-		display: flex;
-		border: 0;
-		width: 300px;
-		height: 50px;
-		justify-content: center;
-		align-items: center;
-		font-size: 1.5em;
-		font-weight: bold;
-		color: #fff;
-		background-color: green;
-		box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-		-webkit-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-		-moz-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-		&:hover {
-			transition: 0.5s;
-			background: #16b416;
-		}
-	}
-`;
-const Input = styled.div`
-	display: flex;
-	background-color: #fff;
-	margin: 5px;
-
-	justify-content: center;
-	width: 300px;
-	padding: 10px;
-	border-radius: 10px;
-	justify-content: center;
-	background-color: #eee;
-	flex-direction: column;
-	box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-	-webkit-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-	-moz-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
-	label {
-		font-weight: bold;
-		margin-bottom: 5px;
-	}
-	input,
-	select,
-	option {
-		height: 40px;
-		padding: 5px;
-		border-radius: 5px;
-		border: 0;
-		font-size: 0.8rem;
-	}
-`;
