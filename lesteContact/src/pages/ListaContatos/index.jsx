@@ -40,9 +40,24 @@ function ListaContatos() {
 		setSearch(lista);
 	};
 	const handleDelete = (contato) => {
-		console.log("====================================");
-		console.log("delete " + contato.first_name);
-		console.log("====================================");
+		if (
+			window.confirm(
+				`Você deseja excluir o contato de ${contato.first_name} ${contato.last_name}`
+			)
+		) {
+			const response = localStorage.getItem("@lesteContatos");
+			let listaContatos = JSON.parse(response);
+
+			let contatoLista = listaContatos.indexOf(
+				listaContatos.find((n) => n.id === Number(contato.id))
+			);
+
+			listaContatos.splice(contatoLista, 1);
+			localStorage.setItem("@lesteContatos", JSON.stringify(listaContatos));
+
+			setContatos(listaContatos);
+			document.location.reload();
+		}
 	};
 	return (
 		<Container>
@@ -243,7 +258,7 @@ const Info = styled.div`
 		color: #999;
 	}
 `;
-const ButtonList = styled.button`
+const ButtonList = styled.div`
 	display: flex;
 	border: 0;
 	margin: 5px;
