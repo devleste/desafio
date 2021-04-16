@@ -34,7 +34,7 @@ const Container = styled.div`
 	ul {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		width: 90%;
 		padding: 10px;
 		list-style: none;
@@ -43,7 +43,6 @@ const Container = styled.div`
 			margin: 10px;
 			padding: 10px;
 			width: 90%;
-			justify-content: flex-start;
 			a {
 				display: flex;
 				width: 15em;

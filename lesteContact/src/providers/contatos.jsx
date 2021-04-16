@@ -22,9 +22,5 @@ export const ContatosProvider = (props) => {
 	};
 	carregaContatosDaApi();
 
-	return (
-		<ContatosContext.Provider value={{ contatos }}>
-			{props.children}
-		</ContatosContext.Provider>
-	);
+	return <ContatosContext.Provider>{props.children}</ContatosContext.Provider>;
 };

@@ -11,6 +11,7 @@ function ListaContatos() {
 	const [search, setSearch] = useState("");
 	const [searchName, setSearchName] = useState("");
 	const [searchLanguages, setSearchLanguages] = useState("");
+
 	useEffect(() => {
 		const response = localStorage.getItem("@lesteContatos");
 		setContatos(JSON.parse(response));
@@ -59,9 +60,15 @@ function ListaContatos() {
 			document.location.reload();
 		}
 	};
+
 	return (
 		<Container>
-			<h1>Lista de Pacientes</h1>
+			<div>
+				<div>
+					<h1>Lista de Pacientes</h1>
+					<span>Total de contatos homens: {contatos.length}</span>
+				</div>
+			</div>
 			<Search>
 				<div>
 					<input
@@ -93,9 +100,9 @@ function ListaContatos() {
 			<Contatos>
 				{search &&
 					search.map((contato) => {
-						var hoje = new Date();
-						var nascimento = new Date(contato.birthday);
-						var idade = hoje.getFullYear() - nascimento.getFullYear();
+						let hoje = new Date();
+						let nascimento = new Date(contato.birthday);
+						let idade = hoje.getFullYear() - nascimento.getFullYear();
 
 						return (
 							<Contato key={contato.id}>
