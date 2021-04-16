@@ -11,6 +11,17 @@ export default function AdicionarContato() {
 	const [birthday, setBirthday] = useState("");
 	let history = useHistory();
 	const adiciona = () => {
+		if (
+			first_name === "" ||
+			last_name === "" ||
+			email === "" ||
+			gender === "" ||
+			languages === "" ||
+			birthday === ""
+		) {
+			alert("Todos os campos devem ser preenchidos");
+			return;
+		}
 		const exist = JSON.parse(localStorage.getItem("@lesteContatos"));
 		exist.push({
 			id: Number(exist.length) + 1,
@@ -23,11 +34,9 @@ export default function AdicionarContato() {
 			avatar: `https://robohash.org/${first_name ? first_name : "avatar"}`,
 		});
 		localStorage.setItem("@lesteContatos", JSON.stringify(exist));
-	};
-	const submit = () => {
-		adiciona();
 		history.push("/contatos");
 	};
+
 	return (
 		<div>
 			<h1>Adicionar Contato</h1>
@@ -108,7 +117,7 @@ export default function AdicionarContato() {
 						onChange={(e) => setBirthday(e.target.value)}
 					/>
 				</Input>
-				<button onClick={submit}>Cadastrar</button>
+				<button onClick={() => adiciona()}>Cadastrar</button>
 			</Form>
 		</div>
 	);
