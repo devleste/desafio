@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Header, Form, PerfilImage, Alerta, Input } from "./style";
+import {
+	Header,
+	Form,
+	PerfilImage,
+	Alerta,
+	Input,
+} from "../../styles/formStyle";
 import { useHistory } from "react-router-dom";
 
 export default function AdicionarContato() {
@@ -7,7 +13,7 @@ export default function AdicionarContato() {
 	const [last_name, setLast_name] = useState("");
 	const [email, setEmail] = useState("");
 	const [gender, setGender] = useState("O");
-	const [languages, setLanguages] = useState("");
+	const [language, setLanguage] = useState("");
 	const [birthday, setBirthday] = useState("");
 	const [erro, setErro] = useState(false);
 	const [erroEmail, setErroEmail] = useState(false);
@@ -19,7 +25,7 @@ export default function AdicionarContato() {
 			last_name === "" ||
 			email === "" ||
 			gender === "" ||
-			languages === "" ||
+			language === "" ||
 			birthday === ""
 		) {
 			setErro(true);
@@ -36,7 +42,7 @@ export default function AdicionarContato() {
 			last_name: last_name,
 			email: email,
 			gender: gender,
-			languages: languages,
+			language: language,
 			birthday: birthday,
 			avatar: `https://robohash.org/${first_name ? first_name : "avatar"}`,
 		});
@@ -48,7 +54,7 @@ export default function AdicionarContato() {
 		<div>
 			<Header>
 				<span onClick={() => history.push("/contatos")}>
-					<i class="fas fa-chevron-left"></i> Voltar
+					<i className="fas fa-chevron-left"></i> Voltar
 				</span>
 				<h1> Adicionar Contato</h1>
 			</Header>
@@ -87,7 +93,6 @@ export default function AdicionarContato() {
 						type="e-mail"
 						name="email"
 						id="email"
-						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 					{erroEmail && <Alerta>verifique o e-mail</Alerta>}
@@ -106,13 +111,13 @@ export default function AdicionarContato() {
 					</select>
 				</Input>
 				<Input>
-					<label htmlFor="languages">Idioma</label>
+					<label htmlFor="language">Idioma</label>
 					<input
 						placeholder="Primeiro nome"
 						type="text"
-						name="languages"
-						id="languages"
-						onChange={(e) => setLanguages(e.target.value)}
+						name="language"
+						id="language"
+						onChange={(e) => setLanguage(e.target.value)}
 					/>
 				</Input>
 				<Input>

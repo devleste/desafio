@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function ListaContatos() {
+	let history = useHistory();
+
 	const [contatos, setContatos] = useState([]);
 	const [search, setSearch] = useState("");
 	const [searchName, setSearchName] = useState("");
@@ -36,7 +39,11 @@ function ListaContatos() {
 		const lista = contatos.filter((item) => gender.includes(item.gender));
 		setSearch(lista);
 	};
-
+	const handleDelete = (contato) => {
+		console.log("====================================");
+		console.log("delete " + contato.first_name);
+		console.log("====================================");
+	};
 	return (
 		<Container>
 			<h1>Lista de Pacientes</h1>
@@ -120,14 +127,15 @@ function ListaContatos() {
 									</Info>
 								</div>
 								<ButtonList>
-									<button>
+									<button
+										onClick={() => history.push(`/contato/${contato.id}/edit`)}
+									>
 										<i className="fas fa-user-edit"></i> <span>Editar</span>
 									</button>
-									<a href={"!#"}>
-										<button>
-											<i className="fas fa-user-minus"></i> <span>Excluir</span>
-										</button>
-									</a>
+
+									<button onClick={() => handleDelete(contato)}>
+										<i className="fas fa-user-minus"></i> <span>Excluir</span>
+									</button>
 								</ButtonList>
 							</Contato>
 						);
@@ -189,6 +197,12 @@ const Contato = styled.div`
 	box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
 	-webkit-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
 	-moz-box-shadow: 4px 5px 17px 1px rgba(0, 0, 0, 0.37);
+
+	&:hover {
+		border-width: 1px;
+		border-color: #2da150;
+		border-style: solid;
+	}
 `;
 const Avatar = styled.div`
 	display: flex;
