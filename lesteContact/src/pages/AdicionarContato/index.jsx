@@ -31,13 +31,16 @@ export default function AdicionarContato() {
 			setErro(true);
 			return;
 		}
-		if (!email.includes(["@", "."])) {
+		if (!email.includes("@")) {
 			setErroEmail(true);
 			return;
 		}
+
 		const exist = JSON.parse(localStorage.getItem("@lesteContatos"));
+		let lastContact = exist[exist.length - 1];
+		let lastId = lastContact.id + 1;
 		exist.push({
-			id: Number(exist.length) + 1,
+			id: lastId,
 			first_name: first_name,
 			last_name: last_name,
 			email: email,
