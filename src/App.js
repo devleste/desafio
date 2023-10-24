@@ -12,11 +12,9 @@ function App() {
 
 export default App;
 
-const Screen = styled.div`
+const Screen = styled.body`
   font-family: "Roboto", "sans-serif";
   background-color: #069676;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 `;
