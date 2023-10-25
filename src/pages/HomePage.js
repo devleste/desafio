@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
+// import AddContact from "../components/AddContact";
 import ContactList from "../components/ContactList";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
                 <Header />
             </NavBar>
             
+            {/* <AddContact /> */}
             <ContactList />
         </>
     )
