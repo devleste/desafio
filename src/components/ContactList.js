@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { 
+    IoEllipsisVertical, 
+    IoCaretUpCircleOutline, 
+    IoCaretDownCircleOutline 
+} from "react-icons/io5";
 
 const tempArray = [
     {
@@ -60,15 +65,56 @@ const tempArray = [
 ]
 
 export default function ContactList() {
+    const [gender, setGender] = useState(false)
+    const [age, setAge] = useState(false)
+    const [language, setLanguage] = useState(false)
+    const [birthday, setBirthday] = useState(false)
+
+    function handleGender(){
+        setGender(!gender)
+    }
+
+    function handleAge(){
+        setAge(!age)
+    }
+
+    function handleLanguage(){
+        setLanguage(!language)
+    }
+
+    function handleBirthday(){
+        setBirthday(!birthday)
+    }
+
     return (
     <>
         <Container>
             <List>
                 <Rows>
-                    <Gender>Gender</Gender>
-                    <Age>Age</Age>
-                    <Language>Language</Language>
-                    <Birthday>Birthday</Birthday>
+                    <p>Gender</p>
+                    <div 
+                        onClick={() => handleGender()}
+                    >
+                        {gender ? <DownArrow/> : <UpArrow/>}
+                    </div>
+                    <p>Age</p>
+                    <div 
+                        onClick={() => handleAge()}
+                    >
+                        {age ? <DownArrow/> : <UpArrow/>}
+                    </div>
+                    <p>Language</p> 
+                    <div 
+                        onClick={() => handleLanguage()}
+                    >
+                        {language ? <DownArrow/> : <UpArrow/>}
+                    </div>
+                    <p>Birthday</p> 
+                    <div 
+                        onClick={() => handleBirthday()}
+                    >
+                        {birthday ? <DownArrow/> : <UpArrow/>}
+                    </div>
                 </Rows>
                 {tempArray.map(contact => (
                     <Contact>
@@ -82,7 +128,7 @@ export default function ContactList() {
                             <h3>{contact.age}</h3>
                             <h4>{contact.language}</h4>
                             <h5>{contact.birthday.slice(5, 10)}</h5>
-                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            <Ellipsis/>
                         </span>
                     </Contact>
                 ))}
@@ -103,41 +149,61 @@ const Container = styled.div`
     border-radius: 5%;
 `
 
-const List = styled.div`
+const List = styled.table`
     display: flex;
     flex-direction: column;
     height: 68vh;
     padding: 30px 0 0 10px;
 `
 
-const Rows = styled.div`
+const Rows = styled.tr`
     display: flex;
     margin-top: -8px;
-    font-size: 14px;
+    font-size: 12px;
     color: #5A5A5A;
     font-style: italic;
     position: absolute;
     left: 16.2pc;
+
+    ion-icon {
+        cursor: pointer;
+        margin-left: 2px;
+    }
+
+    p {
+        margin-right: 4px;
+    }
+
+    div {
+        margin-right: 22px;
+    }
 `
 
-const Gender = styled.div`
-    margin-right: 32px;
+const Ellipsis = styled(IoEllipsisVertical)`
+    cursor: pointer;
+    position: absolute;
+    left: 24.5pc;
+    opacity: 50%;
+    width: 14px;
+    height: 14px;
+    margin: 0 4px 0 4px;
 `
 
-const Age = styled.div`
-    margin-right: 32px;
+const UpArrow = styled(IoCaretUpCircleOutline)`
+    cursor: pointer;
+    font-size: 12px;
 `
 
-const Language = styled.div`
-    margin-right: 32px;
+const DownArrow = styled(IoCaretDownCircleOutline)`
+    cursor: pointer;
+    font-size: 12px;
 `
-const Birthday = styled.div``
 
 const Contact = styled.div`
     display: flex;
     margin-top: 10px;
     font-family: "Roboto";
-    font-size: 14px;
+    font-size: 12px;
 
     img {
         border-radius: 100%;
@@ -188,15 +254,5 @@ const Contact = styled.div`
         position: absolute;
         left: 15pc;
         width: 50px;
-    }
-
-    ion-icon {
-        cursor: pointer;
-        position: absolute;
-        left: 24.5pc;
-        opacity: 50%;
-        width: 14px;
-        height: 14px;
-        margin: 0 4px 0 4px;
     }
 `
