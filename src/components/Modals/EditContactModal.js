@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function ContactModal({ ContactShown, onClose, contactData, setContactModal }) {
+export default function EditContactModal({ EditContactShown, onClose, contactData, setEditContactModal, contactId }) {
+
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -11,12 +12,31 @@ export default function ContactModal({ ContactShown, onClose, contactData, setCo
     const [language, setLanguage] = useState("");
     const [birthday, setBirthday] = useState("");
 
-    if (!ContactShown) return null;
 
-    function submitContact (e) {
+    useEffect(() => { 
+        if (contactData && contactId) {
+
+            console.log("test")
+            const contact = contactData.find((contact) => contact.id === contactId)
+            console.log(contact)
+    
+            setFirstName(contact.first_name)
+            setLastName(contact.last_name)
+            setEmail(contact.email)
+            setAvatar(contact.avatar)
+            setGender(contact.gender)
+            setAge(contact.age)
+            setLanguage(contact.language)
+            setBirthday(contact.birthday)
+        }
+
+    }, [contactId])
+
+    if (!EditContactShown) return null;
+
+    function updateContact (e) {
         e.preventDefault();
-        const newContact = {
-            "id": (contactData.length + 1),
+        const updateContact = {
             "first_name": firstName,  
             "last_name": lastName,
             "email": email,
@@ -26,7 +46,8 @@ export default function ContactModal({ ContactShown, onClose, contactData, setCo
             "birthday": birthday
         }
 
-        contactData.push(newContact)
+        const index = contactData.findIndex((contact) => contact.id === contactId)
+        contactData[index] = updateContact
 
         onClose();
     }
@@ -35,8 +56,8 @@ export default function ContactModal({ ContactShown, onClose, contactData, setCo
         <>
         <Background>
             <Container>
-                <p onClick={() => setContactModal(false)}>x</p>
-                <form onSubmit={submitContact}>
+                <p onClick={() => setEditContactModal(false)}>x</p>
+                <form onSubmit={updateContact}>
                     <label htmlFor="name">First Name</label>
                     <input
                         type="text"
@@ -99,7 +120,7 @@ export default function ContactModal({ ContactShown, onClose, contactData, setCo
                         onChange={e => setBirthday(e.target.value)}
                         required
                     />
-                    <button type="submit">Submit</button>
+                    <button type="submit">Update</button>
                 </form>
             </Container>
         </Background>

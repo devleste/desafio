@@ -9,78 +9,86 @@ import {
     IoTrash
 } from "react-icons/io5";
 
-// const tempArray = [
-//     {
-//         "id": 21,
-//         "first_name": "Bob", 
-//         "last_name": "France",
-//         "email": "bob.france@gmail.com",
-//         "avatar": "https://i.pravatar.cc/150?img=13",
-//         "gender": "M",
-//         "age": "29",
-//         "language": "French",
-//         "birthday": "1993-12-05",
-//     },
-//     {
-//         "id": 22,
-//         "first_name": "Jonas", 
-//         "last_name": "Doeson",
-//         "email": "jonas.doeson@gmail.com",
-//         "avatar": "https://i.pravatar.cc/150?img=8",
-//         "gender": "M",
-//         "age": "34",
-//         "language": "English",
-//         "birthday": "1989-05-30",
-//     },
-//     {
-//         "id": 23,
-//         "first_name": "Susan", 
-//         "last_name": "Friend",
-//         "email": "susan.friend@gmail.com",
-//         "avatar": "https://i.pravatar.cc/150?img=28",
-//         "gender": "F",
-//         "age": "33",
-//         "language": "English",
-//         "birthday": "1990-03-08",
-//     },
-//     {
-//         "id": 24,
-//         "first_name": "Jessica", 
-//         "last_name": "Low",
-//         "email": "jessica.low@gmail.com",
-//         "avatar": "https://i.pravatar.cc/150?img=30",
-//         "gender": "F",
-//         "age": "39",
-//         "language": "Spanish",
-//         "birthday": "1984-09-17",
-//     },
-//     {
-//         "id": 25,
-//         "first_name": "Linda",
-//         "last_name": "Boner",
-//         "email": "linda.boner@gmail.com",
-//         "avatar": "https://i.pravatar.cc/150?img=45",
-//         "gender": "F",
-//         "age": "29",
-//         "language": "French",
-//         "birthday": "1994-08-20",
-//     },
-// ]
-
-export default function ContactList({ EnableContactModal, contactData, setContactData }) {
+export default function ContactList(
+    { 
+        EnableContactModal, 
+        EnableEditContactModal, 
+        contactData, 
+        setContactData,
+        setContactId
+    }
+    ) {
     const [gender, setGender] = useState(false)
     const [age, setAge] = useState(false)
     const [language, setLanguage] = useState(false)
     const [birthday, setBirthday] = useState(false)
+    
+
+    // const tempArray = [
+    // {
+    //     "id": 21,
+    //     "first_name": "Bob", 
+    //     "last_name": "France",
+    //     "email": "bob.france@gmail.com",
+    //     "avatar": "https://i.pravatar.cc/150?img=13",
+    //     "gender": "M",
+    //     "age": "29",
+    //     "language": "French",
+    //     "birthday": "1993-12-05",
+    // },
+    // {
+    //     "id": 22,
+    //     "first_name": "Jonas", 
+    //     "last_name": "Doeson",
+    //     "email": "jonas.doeson@gmail.com",
+    //     "avatar": "https://i.pravatar.cc/150?img=8",
+    //     "gender": "M",
+    //     "age": "34",
+    //     "language": "English",
+    //     "birthday": "1989-05-30",
+    // },
+    // {
+    //     "id": 23,
+    //     "first_name": "Susan", 
+    //     "last_name": "Friend",
+    //     "email": "susan.friend@gmail.com",
+    //     "avatar": "https://i.pravatar.cc/150?img=28",
+    //     "gender": "F",
+    //     "age": "33",
+    //     "language": "English",
+    //     "birthday": "1990-03-08",
+    // },
+    // {
+    //     "id": 24,
+    //     "first_name": "Jessica", 
+    //     "last_name": "Low",
+    //     "email": "jessica.low@gmail.com",
+    //     "avatar": "https://i.pravatar.cc/150?img=30",
+    //     "gender": "F",
+    //     "age": "39",
+    //     "language": "Spanish",
+    //     "birthday": "1984-09-17",
+    // },
+    // {
+    //     "id": 25,
+    //     "first_name": "Linda",
+    //     "last_name": "Boner",
+    //     "email": "linda.boner@gmail.com",
+    //     "avatar": "https://i.pravatar.cc/150?img=45",
+    //     "gender": "F",
+    //     "age": "29",
+    //     "language": "French",
+    //     "birthday": "1994-08-20",
+    // },
+    // ]
 
     useEffect(() => {
         const request = axios.get("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060");
         request.then(res => {
-            setContactData(res.data);
+            setContactData(res.data)
         });
+        // setContactData(tempArray);
     }, [setContactData]);
-
-    console.log(contactData)
 
     function handleGender(){
         setGender(!gender)
@@ -159,7 +167,10 @@ export default function ContactList({ EnableContactModal, contactData, setContac
                             <h3>{contact.age}</h3>
                             <h4>{contact.language}</h4>
                             <h5>{contact.birthday}</h5>
-                            <Pencil/>
+                            <Pencil onClick={() => {
+                                setContactId(contact.id)
+                                EnableEditContactModal(true)
+                            }}/>
                             <Trash />
                         </span>
                     </Contact>
