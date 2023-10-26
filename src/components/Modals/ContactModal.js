@@ -16,16 +16,16 @@ export default function ContactModal({ ContactShown, onClose, contactData, setCo
     function submitContact (e) {
         e.preventDefault();
         const newContact = {
-            "first_name": {firstName},  
-            "last_name": {lastName},
-            "email": {email},
-            "gender": {gender},
-            "language": {language},
-            "avatar": {avatar},
-            "birthday": {birthday}
+            "first_name": firstName,  
+            "last_name": lastName,
+            "email": email,
+            "gender": gender,
+            "language": language,
+            "avatar": avatar,
+            "birthday": birthday
         }
 
-        setContactData([...contactData, newContact])
+        contactData.push(newContact)
 
         onClose();
     }

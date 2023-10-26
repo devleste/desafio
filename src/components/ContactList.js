@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { 
-    IoEllipsisVertical, 
+    IoPencil, 
     IoArrowUp, 
     IoArrowDown,
-    IoAdd
+    IoAdd,
+    IoTrash
 } from "react-icons/io5";
 
 // const tempArray = [
@@ -158,7 +159,8 @@ export default function ContactList({ EnableContactModal, contactData, setContac
                             <h3>{contact.age}</h3>
                             <h4>{contact.language}</h4>
                             <h5>{contact.birthday}</h5>
-                            <Ellipsis/>
+                            <Pencil/>
+                            <Trash />
                         </span>
                     </Contact>
                 ))}
@@ -225,10 +227,20 @@ const Add = styled.div`
     }
 `
 
-const Ellipsis = styled(IoEllipsisVertical)`
+const Pencil = styled(IoPencil)`
     cursor: pointer;
     position: absolute;
-    left: 24.5pc;
+    left: 23.5pc;
+    opacity: 50%;
+    width: 14px;
+    height: 14px;
+    margin: 0 4px 0 4px;
+`
+
+const Trash = styled(IoTrash)`
+    cursor: pointer;
+    position: absolute;
+    left: 25pc;
     opacity: 50%;
     width: 14px;
     height: 14px;
