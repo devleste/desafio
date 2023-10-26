@@ -12,7 +12,7 @@ function App() {
 
 export default App;
 
-const Screen = styled.body`
+const Screen = styled.div`
   font-family: "Roboto", "sans-serif";
   background-color: #069676;
   width: 100vw;

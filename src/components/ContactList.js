@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import { 
     IoEllipsisVertical, 
-    IoCaretUpCircleOutline, 
-    IoCaretDownCircleOutline 
+    IoArrowUp, 
+    IoArrowDown,
+    IoAdd
 } from "react-icons/io5";
 
 const tempArray = [
     {
-        "id": 1,
+        "id": 21,
         "first_name": "Bob", 
         "last_name": "France",
         "email": "bob.france@gmail.com",
@@ -19,7 +21,7 @@ const tempArray = [
         "birthday": "1993-12-05",
     },
     {
-        "id": 2,
+        "id": 22,
         "first_name": "Jonas", 
         "last_name": "Doeson",
         "email": "jonas.doeson@gmail.com",
@@ -30,7 +32,7 @@ const tempArray = [
         "birthday": "1989-05-30",
     },
     {
-        "id": 3,
+        "id": 23,
         "first_name": "Susan", 
         "last_name": "Friend",
         "email": "susan.friend@gmail.com",
@@ -41,7 +43,7 @@ const tempArray = [
         "birthday": "1990-03-08",
     },
     {
-        "id": 4,
+        "id": 24,
         "first_name": "Jessica", 
         "last_name": "Low",
         "email": "jessica.low@gmail.com",
@@ -52,7 +54,7 @@ const tempArray = [
         "birthday": "1984-09-17",
     },
     {
-        "id": 5,
+        "id": 25,
         "first_name": "Linda",
         "last_name": "Boner",
         "email": "linda.boner@gmail.com",
@@ -64,11 +66,20 @@ const tempArray = [
     },
 ]
 
-export default function ContactList() {
+export default function ContactList({ EnableContactModal, contactData, setContactData }) {
     const [gender, setGender] = useState(false)
     const [age, setAge] = useState(false)
     const [language, setLanguage] = useState(false)
     const [birthday, setBirthday] = useState(false)
+
+    useEffect(() => {
+        const request = axios.get("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060");
+        request.then(res => {
+            setContactData(res.data);
+        });
+    }, [setContactData]);
+
+    console.log(contactData)
 
     function handleGender(){
         setGender(!gender)
@@ -91,6 +102,7 @@ export default function ContactList() {
         <Container>
             <List>
                 <Rows>
+                    <Title>Contact List</Title>
                     <p>Gender</p>
                     <div 
                         onClick={() => handleGender()}
@@ -115,6 +127,11 @@ export default function ContactList() {
                     >
                         {birthday ? <DownArrow/> : <UpArrow/>}
                     </div>
+
+                    <Add onClick={() => EnableContactModal(true)}>
+                        <p><AddSign/> New</p>
+                    </Add>
+                    
                 </Rows>
                 {tempArray.map(contact => (
                     <Contact>
@@ -149,14 +166,14 @@ const Container = styled.div`
     border-radius: 5%;
 `
 
-const List = styled.table`
+const List = styled.div`
     display: flex;
     flex-direction: column;
     height: 68vh;
     padding: 30px 0 0 10px;
 `
 
-const Rows = styled.tr`
+const Rows = styled.div`
     display: flex;
     margin-top: -8px;
     font-size: 12px;
@@ -165,17 +182,32 @@ const Rows = styled.tr`
     position: absolute;
     left: 16.2pc;
 
-    ion-icon {
-        cursor: pointer;
-        margin-left: 2px;
-    }
-
     p {
         margin-right: 4px;
     }
 
     div {
         margin-right: 22px;
+    }
+`
+
+const Title = styled.div`
+    position: absolute;
+    width: 90px;
+    font-size: 16px;
+    top: -0.15pc;
+    right: 26pc;
+`
+
+const Add = styled.div`
+    position: absolute;
+    top: -0.25pc;
+    left: 22.5pc;
+    width: 100px;
+    font-size: 18px;
+
+    p {
+        cursor: pointer;
     }
 `
 
@@ -189,12 +221,17 @@ const Ellipsis = styled(IoEllipsisVertical)`
     margin: 0 4px 0 4px;
 `
 
-const UpArrow = styled(IoCaretUpCircleOutline)`
+const UpArrow = styled(IoArrowUp)`
     cursor: pointer;
     font-size: 12px;
 `
 
-const DownArrow = styled(IoCaretDownCircleOutline)`
+const DownArrow = styled(IoArrowDown)`
+    cursor: pointer;
+    font-size: 12px;
+`
+
+const AddSign = styled(IoAdd)`
     cursor: pointer;
     font-size: 12px;
 `
