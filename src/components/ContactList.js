@@ -8,63 +8,63 @@ import {
     IoAdd
 } from "react-icons/io5";
 
-const tempArray = [
-    {
-        "id": 21,
-        "first_name": "Bob", 
-        "last_name": "France",
-        "email": "bob.france@gmail.com",
-        "avatar": "https://i.pravatar.cc/150?img=13",
-        "gender": "M",
-        "age": "29",
-        "language": "French",
-        "birthday": "1993-12-05",
-    },
-    {
-        "id": 22,
-        "first_name": "Jonas", 
-        "last_name": "Doeson",
-        "email": "jonas.doeson@gmail.com",
-        "avatar": "https://i.pravatar.cc/150?img=8",
-        "gender": "M",
-        "age": "34",
-        "language": "English",
-        "birthday": "1989-05-30",
-    },
-    {
-        "id": 23,
-        "first_name": "Susan", 
-        "last_name": "Friend",
-        "email": "susan.friend@gmail.com",
-        "avatar": "https://i.pravatar.cc/150?img=28",
-        "gender": "F",
-        "age": "33",
-        "language": "English",
-        "birthday": "1990-03-08",
-    },
-    {
-        "id": 24,
-        "first_name": "Jessica", 
-        "last_name": "Low",
-        "email": "jessica.low@gmail.com",
-        "avatar": "https://i.pravatar.cc/150?img=30",
-        "gender": "F",
-        "age": "39",
-        "language": "Spanish",
-        "birthday": "1984-09-17",
-    },
-    {
-        "id": 25,
-        "first_name": "Linda",
-        "last_name": "Boner",
-        "email": "linda.boner@gmail.com",
-        "avatar": "https://i.pravatar.cc/150?img=45",
-        "gender": "F",
-        "age": "29",
-        "language": "French",
-        "birthday": "1994-08-20",
-    },
-]
+// const tempArray = [
+//     {
+//         "id": 21,
+//         "first_name": "Bob", 
+//         "last_name": "France",
+//         "email": "bob.france@gmail.com",
+//         "avatar": "https://i.pravatar.cc/150?img=13",
+//         "gender": "M",
+//         "age": "29",
+//         "language": "French",
+//         "birthday": "1993-12-05",
+//     },
+//     {
+//         "id": 22,
+//         "first_name": "Jonas", 
+//         "last_name": "Doeson",
+//         "email": "jonas.doeson@gmail.com",
+//         "avatar": "https://i.pravatar.cc/150?img=8",
+//         "gender": "M",
+//         "age": "34",
+//         "language": "English",
+//         "birthday": "1989-05-30",
+//     },
+//     {
+//         "id": 23,
+//         "first_name": "Susan", 
+//         "last_name": "Friend",
+//         "email": "susan.friend@gmail.com",
+//         "avatar": "https://i.pravatar.cc/150?img=28",
+//         "gender": "F",
+//         "age": "33",
+//         "language": "English",
+//         "birthday": "1990-03-08",
+//     },
+//     {
+//         "id": 24,
+//         "first_name": "Jessica", 
+//         "last_name": "Low",
+//         "email": "jessica.low@gmail.com",
+//         "avatar": "https://i.pravatar.cc/150?img=30",
+//         "gender": "F",
+//         "age": "39",
+//         "language": "Spanish",
+//         "birthday": "1984-09-17",
+//     },
+//     {
+//         "id": 25,
+//         "first_name": "Linda",
+//         "last_name": "Boner",
+//         "email": "linda.boner@gmail.com",
+//         "avatar": "https://i.pravatar.cc/150?img=45",
+//         "gender": "F",
+//         "age": "29",
+//         "language": "French",
+//         "birthday": "1994-08-20",
+//     },
+// ]
 
 export default function ContactList({ EnableContactModal, contactData, setContactData }) {
     const [gender, setGender] = useState(false)
@@ -83,18 +83,30 @@ export default function ContactList({ EnableContactModal, contactData, setContac
 
     function handleGender(){
         setGender(!gender)
+        setAge(false)
+        setLanguage(false)
+        setBirthday(false)
     }
 
     function handleAge(){
         setAge(!age)
+        setGender(false)
+        setLanguage(false)
+        setBirthday(false)
     }
 
     function handleLanguage(){
         setLanguage(!language)
+        setGender(false)
+        setAge(false)
+        setBirthday(false)
     }
 
     function handleBirthday(){
         setBirthday(!birthday)
+        setGender(false)
+        setAge(false)
+        setLanguage(false)
     }
 
     return (
@@ -133,7 +145,8 @@ export default function ContactList({ EnableContactModal, contactData, setContac
                     </Add>
                     
                 </Rows>
-                {tempArray.map(contact => (
+                <Contacts>
+                {contactData.map(contact => (
                     <Contact>
                         <img src={contact.avatar} alt="avatar" />
                         <div>
@@ -144,12 +157,12 @@ export default function ContactList({ EnableContactModal, contactData, setContac
                             <h2>{contact.gender}</h2>
                             <h3>{contact.age}</h3>
                             <h4>{contact.language}</h4>
-                            <h5>{contact.birthday.slice(5, 10)}</h5>
+                            <h5>{contact.birthday}</h5>
                             <Ellipsis/>
                         </span>
                     </Contact>
                 ))}
-                
+                </Contacts>
             </List>
         </Container>
     </>
@@ -164,6 +177,7 @@ const Container = styled.div`
     background-color: #CEEAE5;
     border: 3px solid #cdcdcd;
     border-radius: 5%;
+    overflow: hidden;
 `
 
 const List = styled.div`
@@ -193,10 +207,10 @@ const Rows = styled.div`
 
 const Title = styled.div`
     position: absolute;
-    width: 90px;
-    font-size: 16px;
+    width: 140px;
+    font-size: 24px;
     top: -0.15pc;
-    right: 26pc;
+    right: 23pc;
 `
 
 const Add = styled.div`
@@ -236,6 +250,14 @@ const AddSign = styled(IoAdd)`
     font-size: 12px;
 `
 
+const Contacts = styled.div`
+    position: relative;
+    margin: 24px 0 0 -5px;
+    height: 64vh;
+    overflow-y: scroll;
+    right: -14px;
+`
+
 const Contact = styled.div`
     display: flex;
     margin-top: 10px;
@@ -244,7 +266,7 @@ const Contact = styled.div`
 
     img {
         border-radius: 100%;
-        margin: 12px 5px 5px 10px;
+        margin: 12px 5px 5px 5px;
         width: 50px;
         height: 50px;
     }
@@ -253,7 +275,7 @@ const Contact = styled.div`
         position: absolute;
         font-size: 12px;
         left: 4.5pc;
-        margin: 20px 0 8px 10px;
+        margin: 20px 0 8px -2px;
     }
 
 
@@ -266,7 +288,7 @@ const Contact = styled.div`
         display: flex;
         flex-direction: row;
         position: absolute;
-        margin: 0 18px 0 12px;
+        margin: 0 18px 0 -6px;
         font-size: 12px;
         padding: 24px;
         left: 15pc;
@@ -284,7 +306,7 @@ const Contact = styled.div`
 
     h4 {
         position: absolute;
-        left: 9.4pc;
+        left: 8.8pc;
     }
 
     h5 {
