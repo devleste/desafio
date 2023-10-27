@@ -6,7 +6,7 @@ export default function ContactModal(
         ContactShown, 
         onClose, 
         contactData,
-        setContactData, 
+        userContacts,
         setContactModal 
     }) {
     const [firstName, setFirstName] = useState("");
@@ -14,26 +14,60 @@ export default function ContactModal(
     const [email, setEmail] = useState("");
     const [avatar, setAvatar] = useState("");
     const [gender, setGender] = useState("");
-    const [age, setAge] = useState("");
     const [language, setLanguage] = useState("");
     const [birthday, setBirthday] = useState("");
 
     if (!ContactShown) return null;
 
+    const currentDate = new Date();
+
+    const months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ]
+
+    let userGender
+
     function submitContact (e) {
         e.preventDefault();
+
+        if (gender === "M") {
+            userGender = "1"
+        } else {
+            userGender = "2"
+        }
+
+        const [year, month, day] = birthday.split("-");
+        let shortenedbday = parseInt(month)
+
+        const date = new Date(year, month - 1, day);
+        const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
+
+        let count = currentDate.getFullYear() - date.getFullYear();
+        if (currentDate.getMonth() < date.getMonth() || 
+        (currentDate.getMonth() === date.getMonth() && 
+        currentDate.getDate() < date.getDate())) {
+            count--;
+        }
+        let age = count
+
         const newContact = {
             "id": (contactData.length + 1),
             "first_name": firstName,  
             "last_name": lastName,
             "email": email,
             "gender": gender,
+            "age": age,
             "language": language,
             "avatar": avatar,
-            "birthday": birthday
+            "birthday": formattedDate,
+            "shortenedbday": shortenedbday,
+            "num": userGender,
         }
 
-        setContactData(...contactData, newContact)
+        userContacts.push(newContact)
+        console.log(userContacts)
+        contactData.push(newContact)
 
         onClose();
     }
@@ -46,7 +80,7 @@ export default function ContactModal(
                 <form onSubmit={submitContact}>
                     <label htmlFor="name">First Name</label>
                     <input
-                        type="text"
+                        type="fname"
                         placeholder="type first name here..."
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
@@ -54,14 +88,14 @@ export default function ContactModal(
                     />
                     <label htmlFor="name">Last Name</label>
                     <input
-                        type="text"
+                        type="lname"
                         placeholder="type last name here..."
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}
                     />
                     <label htmlFor="email">Email</label>
                     <input
-                        type="text"
+                        type="email"
                         placeholder="type email here..."
                         value={email}
                         onChange={e => setEmail(e.target.value)}
@@ -69,7 +103,7 @@ export default function ContactModal(
                     />
                     <label htmlFor="avatar">Avatar</label>
                     <input
-                        type="text"
+                        type="url"
                         placeholder="avatar pic url here..."
                         value={avatar}
                         onChange={e => setAvatar(e.target.value)}
@@ -82,17 +116,9 @@ export default function ContactModal(
                         onChange={e => setGender(e.target.value)}
                         required
                     />
-                    <label htmlFor="age">Age</label>
-                    <input
-                        type="text"
-                        placeholder="type age here..."
-                        value={age}
-                        onChange={e => setAge(e.target.value)}
-                        required
-                    />
                     <label htmlFor="name">Language</label>
                     <input
-                        type="text"
+                        type="language"
                         placeholder="type language here..."
                         value={language}
                         onChange={e => setLanguage(e.target.value)}
@@ -100,8 +126,7 @@ export default function ContactModal(
                     />
                     <label htmlFor="birthday">Birthday</label>
                     <input
-                        type="text"
-                        placeholder="YYYY-MM-DD"
+                        type="date"
                         value={birthday}
                         onChange={e => setBirthday(e.target.value)}
                         required

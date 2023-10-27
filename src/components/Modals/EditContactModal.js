@@ -14,7 +14,6 @@ export default function EditContactModal(
     const [email, setEmail] = useState("");
     const [avatar, setAvatar] = useState("");
     const [gender, setGender] = useState("");
-    const [age, setAge] = useState("");
     const [language, setLanguage] = useState("");
     const [birthday, setBirthday] = useState("");
 
@@ -27,24 +26,55 @@ export default function EditContactModal(
             setEmail(contact.email)
             setAvatar(contact.avatar)
             setGender(contact.gender)
-            setAge(contact.age)
             setLanguage(contact.language)
-            setBirthday(contact.birthday)
         }
     }, [contactId])
 
     if (!EditContactShown) return null;
 
+    const currentDate = new Date();
+
+    const months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ]
+
+    let userGender
+
     function updateContact (e) {
         e.preventDefault();
+
+        if (gender === "M") {
+            userGender = "1"
+        } else {
+            userGender = "2"
+        }
+
+        const [year, month, day] = birthday.split("-");
+        let shortenedbday = parseInt(month)
+
+        const date = new Date(year, month - 1, day);
+        const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
+
+        let count = currentDate.getFullYear() - date.getFullYear();
+        if (currentDate.getMonth() < date.getMonth() || 
+        (currentDate.getMonth() === date.getMonth() && 
+        currentDate.getDate() < date.getDate())) {
+            count--;
+        }
+        let age = count
+
         const updateContact = {
             "first_name": firstName,  
             "last_name": lastName,
             "email": email,
             "gender": gender,
+            "age": age,
             "language": language,
             "avatar": avatar,
-            "birthday": birthday
+            "birthday": formattedDate,
+            "shortenedbday": shortenedbday,
+            "num": userGender,
         }
 
         const index = contactData.findIndex((contact) => contact.id === contactId)
@@ -60,7 +90,7 @@ export default function EditContactModal(
                 <form onSubmit={updateContact}>
                     <label htmlFor="name">First Name</label>
                     <input
-                        type="text"
+                        type="fname"
                         placeholder="type first name here..."
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
@@ -68,14 +98,14 @@ export default function EditContactModal(
                     />
                     <label htmlFor="name">Last Name</label>
                     <input
-                        type="text"
+                        type="lname"
                         placeholder="type last name here..."
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}
                     />
                     <label htmlFor="email">Email</label>
                     <input
-                        type="text"
+                        type="email"
                         placeholder="type email here..."
                         value={email}
                         onChange={e => setEmail(e.target.value)}
@@ -83,7 +113,7 @@ export default function EditContactModal(
                     />
                     <label htmlFor="avatar">Avatar</label>
                     <input
-                        type="text"
+                        type="url"
                         placeholder="avatar pic url here..."
                         value={avatar}
                         onChange={e => setAvatar(e.target.value)}
@@ -96,14 +126,6 @@ export default function EditContactModal(
                         onChange={e => setGender(e.target.value)}
                         required
                     />
-                    <label htmlFor="age">Age</label>
-                    <input
-                        type="text"
-                        placeholder="type age here..."
-                        value={age}
-                        onChange={e => setAge(e.target.value)}
-                        required
-                    />
                     <label htmlFor="name">Language</label>
                     <input
                         type="text"
@@ -114,8 +136,7 @@ export default function EditContactModal(
                     />
                     <label htmlFor="birthday">Birthday</label>
                     <input
-                        type="text"
-                        placeholder="YYYY-MM-DD"
+                        type="date"
                         value={birthday}
                         onChange={e => setBirthday(e.target.value)}
                         required

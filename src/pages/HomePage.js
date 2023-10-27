@@ -12,6 +12,7 @@ export default function HomePage() {
     const [contactModal, setContactModal] = useState(false)
     const [editContactModal, setEditContactModal] = useState(false)
     const [deleteContactModal, setDeleteContactModal] = useState(false)
+    const [userContacts, setUserContacts] = useState([])
 
     return (    
         <>
@@ -21,6 +22,7 @@ export default function HomePage() {
 
             <ContactList 
                 contactData={contactData}
+                userContacts={userContacts}
                 setContactData={setContactData}
                 setContactId={setContactId}
                 EnableContactModal={setContactModal}
@@ -33,6 +35,8 @@ export default function HomePage() {
                 contactData={contactData}
                 setContactData={setContactData}
                 setContactModal={setContactModal}
+                userContacts={userContacts}
+                setUserContacts={setUserContacts}
                 onClose={() => setContactModal(false)}
             />
 
