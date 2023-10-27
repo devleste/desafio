@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Leste Contact" title="Leste Contact" src="./assets/lestecontact.png" width="200px" />
+  <img alt="Leste Contact" title="Leste Contact" src="./logo.png" width="200px" />
 </h1>
 
 <h3 align="center">
