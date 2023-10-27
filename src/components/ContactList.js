@@ -121,6 +121,7 @@ export default function ContactList(
             res.data[i].age = age
             }
 
+
             setContactData(res.data)
         });
 
@@ -140,6 +141,12 @@ export default function ContactList(
         setGender(false)
         setLanguage(false)
         setBirthday(false)
+
+        if (!age) {
+            contactData.sort((a, b) => b.age - a.age)
+        } else if (age) {
+            contactData.sort((a, b) => a.age - b.age)
+        }
     }
 
     function handleLanguage(){
@@ -147,6 +154,24 @@ export default function ContactList(
         setGender(false)
         setAge(false)
         setBirthday(false)
+
+        if (!language) {
+            contactData.sort((a, b) => {
+                const languageA = a.language.toUpperCase()
+                const languageB = b.language.toUpperCase()
+                if (languageA < languageB) return -1
+                if (languageA > languageB) return 1
+                return 0
+            })
+        } else if (language) {
+            contactData.sort((a, b) => {
+                const languageA = a.language.toUpperCase()
+                const languageB = b.language.toUpperCase()
+                if (languageB < languageA) return -1
+                if (languageB > languageA) return 1
+                return 0
+            })
+        }
     }
 
     function handleBirthday(){
@@ -255,7 +280,7 @@ const Rows = styled.div`
     }
 
     div {
-        margin-right: 22px;
+        margin-right: 23px;
     }
 `
 
@@ -319,7 +344,7 @@ const Contacts = styled.div`
     margin: 24px 0 0 -5px;
     height: 64vh;
     overflow-y: scroll;
-    right: -14px;
+    right: -19px;
 `
 
 const Contact = styled.div`
@@ -327,6 +352,8 @@ const Contact = styled.div`
     margin-top: 10px;
     font-family: "Roboto";
     font-size: 12px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #CDCDCD;
 
     img {
         border-radius: 100%;
@@ -344,6 +371,7 @@ const Contact = styled.div`
 
 
     p {
+        font-size: 11px;
         margin-top: 8px;
         color: #5A5A5A;
     }
