@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function EditContactModal({ EditContactShown, onClose, contactData, setEditContactModal, contactId }) {
-
+export default function EditContactModal(
+    { 
+        EditContactShown, 
+        onClose, 
+        contactData, 
+        setEditContactModal, 
+        contactId 
+    }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -12,13 +18,9 @@ export default function EditContactModal({ EditContactShown, onClose, contactDat
     const [language, setLanguage] = useState("");
     const [birthday, setBirthday] = useState("");
 
-
     useEffect(() => { 
         if (contactData && contactId) {
-
-            console.log("test")
             const contact = contactData.find((contact) => contact.id === contactId)
-            console.log(contact)
     
             setFirstName(contact.first_name)
             setLastName(contact.last_name)
@@ -29,7 +31,6 @@ export default function EditContactModal({ EditContactShown, onClose, contactDat
             setLanguage(contact.language)
             setBirthday(contact.birthday)
         }
-
     }, [contactId])
 
     if (!EditContactShown) return null;
@@ -48,7 +49,6 @@ export default function EditContactModal({ EditContactShown, onClose, contactDat
 
         const index = contactData.findIndex((contact) => contact.id === contactId)
         contactData[index] = updateContact
-
         onClose();
     }
 

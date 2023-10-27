@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export default function ContactModal({ ContactShown, onClose, contactData, setContactModal }) {
+export default function ContactModal(
+    { 
+        ContactShown, 
+        onClose, 
+        contactData, 
+        setContactModal 
+    }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");

@@ -13,11 +13,11 @@ export default function ContactList(
     { 
         EnableContactModal, 
         EnableEditContactModal, 
+        EnableDeleteContactModal,
         contactData, 
         setContactData,
         setContactId
-    }
-    ) {
+    }) {
     const [gender, setGender] = useState(false)
     const [age, setAge] = useState(false)
     const [language, setLanguage] = useState(false)
@@ -171,7 +171,10 @@ export default function ContactList(
                                 setContactId(contact.id)
                                 EnableEditContactModal(true)
                             }}/>
-                            <Trash />
+                            <Trash onClick={() => {
+                                setContactId(contact.id)
+                                EnableDeleteContactModal(true)
+                            }}/>
                         </span>
                     </Contact>
                 ))}

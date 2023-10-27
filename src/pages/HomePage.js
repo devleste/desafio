@@ -4,12 +4,14 @@ import Header from "../components/Header";
 import ContactModal from "../components/Modals/ContactModal";
 import ContactList from "../components/ContactList";
 import EditContactModal from "../components/Modals/EditContactModal";
+import DeleteContactModal from "../components/Modals/DeleteContactModal";
 
 export default function HomePage() {
     const [contactData, setContactData] = useState([])
     const [contactId, setContactId] = useState("")
     const [contactModal, setContactModal] = useState(false)
     const [editContactModal, setEditContactModal] = useState(false)
+    const [deleteContactModal, setDeleteContactModal] = useState(false)
 
     return (    
         <>
@@ -23,6 +25,7 @@ export default function HomePage() {
                 setContactId={setContactId}
                 EnableContactModal={setContactModal}
                 EnableEditContactModal={setEditContactModal}
+                EnableDeleteContactModal={setDeleteContactModal}
             />
 
             <ContactModal
@@ -38,6 +41,14 @@ export default function HomePage() {
                 EditContactShown={editContactModal}
                 setEditContactModal={setEditContactModal}
                 onClose={() => setEditContactModal(false)}
+            />
+
+            <DeleteContactModal
+                contactId={contactId}
+                contactData={contactData}
+                DeleteContactShown={deleteContactModal}
+                setDeleteContactModal={setDeleteContactModal}
+                onClose={() => setDeleteContactModal(false)}
             />
         </>
     )
