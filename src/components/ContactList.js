@@ -18,11 +18,18 @@ export default function ContactList(
         setContactData,
         setContactId
     }) {
+
     const [gender, setGender] = useState(false)
     const [age, setAge] = useState(false)
     const [language, setLanguage] = useState(false)
     const [birthday, setBirthday] = useState(false)
-    
+
+    const months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ]
+
+    const currentDate = new Date();
 
     // const tempArray = [
     // {
@@ -32,7 +39,6 @@ export default function ContactList(
     //     "email": "bob.france@gmail.com",
     //     "avatar": "https://i.pravatar.cc/150?img=13",
     //     "gender": "M",
-    //     "age": "29",
     //     "language": "French",
     //     "birthday": "1993-12-05",
     // },
@@ -43,7 +49,6 @@ export default function ContactList(
     //     "email": "jonas.doeson@gmail.com",
     //     "avatar": "https://i.pravatar.cc/150?img=8",
     //     "gender": "M",
-    //     "age": "34",
     //     "language": "English",
     //     "birthday": "1989-05-30",
     // },
@@ -54,7 +59,6 @@ export default function ContactList(
     //     "email": "susan.friend@gmail.com",
     //     "avatar": "https://i.pravatar.cc/150?img=28",
     //     "gender": "F",
-    //     "age": "33",
     //     "language": "English",
     //     "birthday": "1990-03-08",
     // },
@@ -65,7 +69,6 @@ export default function ContactList(
     //     "email": "jessica.low@gmail.com",
     //     "avatar": "https://i.pravatar.cc/150?img=30",
     //     "gender": "F",
-    //     "age": "39",
     //     "language": "Spanish",
     //     "birthday": "1984-09-17",
     // },
@@ -76,18 +79,53 @@ export default function ContactList(
     //     "email": "linda.boner@gmail.com",
     //     "avatar": "https://i.pravatar.cc/150?img=45",
     //     "gender": "F",
-    //     "age": "29",
     //     "language": "French",
-    //     "birthday": "1994-08-20",
+    //     "birthday": "1990-08-20",
     // },
     // ]
 
+    // for (let i = 0; i < tempArray.length; i++) {
+    //     const [year, month, day] = tempArray[i].birthday.split("-");
+    //     const date = new Date(year, month - 1, day);
+
+    //     const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
+    //     tempArray[i].birthday = formattedDate
+
+    //     let age = currentDate.getFullYear() - date.getFullYear();
+    //     if (currentDate.getMonth() < date.getMonth() || 
+    //     (currentDate.getMonth() === date.getMonth() && 
+    //     currentDate.getDate() < date.getDate())) {
+    //         age--;
+    //     }
+    //     tempArray[i].age = age
+    // }
+
     useEffect(() => {
+
         const request = axios.get("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060");
         request.then(res => {
+
+            for (let i = 0; i < res.data.length; i++) {
+                const [year, month, day] = res.data[i].birthday.split("-");
+                const date = new Date(year, month - 1, day);
+
+                const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
+                res.data[i].birthday = formattedDate
+
+                let age = currentDate.getFullYear() - date.getFullYear();
+                if (currentDate.getMonth() < date.getMonth() || 
+                (currentDate.getMonth() === date.getMonth() && 
+                currentDate.getDate() < date.getDate())) {
+                    age--;
+            }
+            res.data[i].age = age
+            }
+
             setContactData(res.data)
         });
-        // setContactData(tempArray);
+
+        // setContactData(tempArray)
+
     }, [setContactData]);
 
     function handleGender(){

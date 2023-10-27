@@ -31,6 +31,7 @@ export default function HomePage() {
             <ContactModal
                 ContactShown={contactModal}
                 contactData={contactData}
+                setContactData={setContactData}
                 setContactModal={setContactModal}
                 onClose={() => setContactModal(false)}
             />

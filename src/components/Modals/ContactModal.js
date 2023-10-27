@@ -5,7 +5,8 @@ export default function ContactModal(
     { 
         ContactShown, 
         onClose, 
-        contactData, 
+        contactData,
+        setContactData, 
         setContactModal 
     }) {
     const [firstName, setFirstName] = useState("");
@@ -32,7 +33,7 @@ export default function ContactModal(
             "birthday": birthday
         }
 
-        contactData.push(newContact)
+        setContactData(...contactData, newContact)
 
         onClose();
     }
