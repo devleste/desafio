@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img alt="Leste Telecom" title="Leste Telecom" src="./logo.png" width="200px" />
+  <img alt="Leste Contact" title="Leste Contact" src="./assets/lestecontact.png" width="200px" />
 </h1>
 
 <h3 align="center">
-  Desafio do Desenvolvimento
+  Leste Contact
 </h3>
 
 <p align="center">
