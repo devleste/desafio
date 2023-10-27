@@ -6,68 +6,27 @@
   Leste Contact
 </h3>
 
-<p align="center">
-  <a href="#computer-o-desafio">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>
-</p>
+## :open_book: Lista de contatos
 
-## :computer: O desafio
+O **Leste Contact** é uma aplicação desenvolvida como parte de um desafio da <a href="https://www.lestetelecom.com.br/">Leste Telecom</a>. Nela, pode-se visualizar uma tela contendo múltiplos contatos, sendo possível a edição e deleção de contatos existentes, ou adição de novos. A tecnologia utilizada foi ReactJS, utilizando Styled Components.
 
-A aplicação que deverá ser desenvolvida é uma listagem de contatos, o **Leste Contact**.
+### Deployment
 
-Neste desafio deverá ser criado uma aplicação com todas as funcionalidades solicitadas e será utilizada para **avaliação dos cadadidatos** para a vaga de desenvolvimento da Leste Telecom.
+<a href="desafio-leste.vercel.app">desafio-leste.vercel.app/</a>
+</br>
 
-### Um pouco sobre as ferramentas
-
-Você deverá criar a aplicação do zero utilizando o [ReactJS](https://expressjs.com/).
-
-Poderá ser utilizado qualquer outra biblioteca complementar ao React para o desenvolvimento desta aplicação.
-
-### Funcionalidades
-
-Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
-
-#### 1. Chamada a API
-
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
-
-#### 2. Listagem de Contatos
-
-Liste todas as informações recebidas da API em formato de lista de contatos. 
-
-O design da aplicação fica a seu critério
-
-#### 3. Adicionar novo Contato
-
-Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem.
-
-Persista as informações no próprio browser.
-
-#### 4. Remover Contatos
-
-Disponibilize para o usuário excluir um contato da lista.
-
-#### 5. Editar Contatos
-
-Disponibilize para o usuário editar qualquer campo de um contato da lista.
-
-#### 6. Filtros
-
-Adicione filtros na listagem para as seguintes informações:
-
-- Gender
-- Language
-- Age
-- Birthday (todos de um determinado mês)
-
-#### 7. Resumo
-
-Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
-
-- Gender
-- Language
-
-
+### How to run ▶️
+```bash
+# Clone this repository
+$ git clone <https://github.com/stonasss/desafio-leste.git>
+# Access the project folder cmd/terminal
+$ cd linkr
+# Install the dependencies
+$ npm install
+# Run the application 
+$ npm start
+# The server will automatically start at localhost:3000/ on your favorite browser 
+```
 
 ## 📅 Entrega
 
