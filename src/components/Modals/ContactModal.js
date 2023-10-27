@@ -66,7 +66,6 @@ export default function ContactModal(
         }
 
         userContacts.push(newContact)
-        console.log(userContacts)
         contactData.push(newContact)
 
         onClose();
@@ -78,17 +77,17 @@ export default function ContactModal(
             <Container>
                 <p onClick={() => setContactModal(false)}>x</p>
                 <form onSubmit={submitContact}>
-                    <label htmlFor="name">First Name</label>
+                    <label htmlFor="fname">First Name</label>
                     <input
-                        type="fname"
+                        type="text"
                         placeholder="type first name here..."
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
                         required
                     />
-                    <label htmlFor="name">Last Name</label>
+                    <label htmlFor="lname">Last Name</label>
                     <input
-                        type="lname"
+                        type="text"
                         placeholder="type last name here..."
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}

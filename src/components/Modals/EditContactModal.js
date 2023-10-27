@@ -88,17 +88,17 @@ export default function EditContactModal(
             <Container>
                 <p onClick={() => setEditContactModal(false)}>x</p>
                 <form onSubmit={updateContact}>
-                    <label htmlFor="name">First Name</label>
+                    <label htmlFor="fname">First Name</label>
                     <input
-                        type="fname"
+                        type="text"
                         placeholder="type first name here..."
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
                         required
                     />
-                    <label htmlFor="name">Last Name</label>
+                    <label htmlFor="lname">Last Name</label>
                     <input
-                        type="lname"
+                        type="text"
                         placeholder="type last name here..."
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}

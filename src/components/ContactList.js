@@ -20,218 +20,14 @@ export default function ContactList(
         setContactId
     }) {
 
-
-    const tempArray = [
-        {
-            "id": 1,
-            "first_name": "Bob", 
-            "last_name": "France",
-            "email": "bob.france@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=13",
-            "gender": "M",
-            "language": "French",
-            "birthday": "1993-12-05",
-        },
-        {
-            "id": 2,
-            "first_name": "Jonas", 
-            "last_name": "Doeson",
-            "email": "jonas.doeson@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=8",
-            "gender": "M",
-            "language": "English",
-            "birthday": "1989-05-30",
-        },
-        {
-            "id": 3,
-            "first_name": "Susan", 
-            "last_name": "Friend",
-            "email": "susan.friend@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=28",
-            "gender": "F",
-            "language": "English",
-            "birthday": "1990-03-08",
-        },
-        {
-            "id": 4,
-            "first_name": "Jessica", 
-            "last_name": "Low",
-            "email": "jessica.low@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=30",
-            "gender": "F",
-            "language": "Spanish",
-            "birthday": "1984-09-17",
-        },
-        {
-            "id": 5,
-            "first_name": "Ned",
-            "last_name": "Short",
-            "email": "linda.boner@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=57",
-            "gender": "M",
-            "language": "Japanese",
-            "birthday": "1980-03-20",
-        },
-        {
-            "id": 6,
-            "first_name": "John",
-            "last_name": "Garcia",
-            "email": "john.garcia@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=55",
-            "gender": "M",
-            "language": "French",
-            "birthday": "1989-10-10",
-        },
-        {
-            "id": 7,
-            "first_name": "Donna",
-            "last_name": "Genes",
-            "email": "donna.genes@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=44",
-            "gender": "F",
-            "language": "English",
-            "birthday": "1990-08-20",
-        },
-        {
-            "id": 8,
-            "first_name": "Ana",
-            "last_name": "Gomes",
-            "email": "ana.gomes@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=36",
-            "gender": "F",
-            "language": "Portuguese",
-            "birthday": "1998-01-15",
-        },
-        {
-            "id": 9,
-            "first_name": "Tony",
-            "last_name": "Soprano",
-            "email": "gaba.gool@gmail.com",
-            "avatar": "https://pbs.twimg.com/media/E7YE8arWEAEKkzO?format=jpg&name=4096x4096",
-            "gender": "M",
-            "language": "Italian",
-            "birthday": "1959-08-22",
-        },
-        {
-            "id": 10,
-            "first_name": "Jesse",
-            "last_name": "White",
-            "email": "jesse.white@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=33",
-            "gender": "F",
-            "language": "Russian",
-            "birthday": "1973-07-30",
-        },
-        {
-            "id": 11,
-            "first_name": "Joanna",
-            "last_name": "Girl",
-            "email": "joanna.girl@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=21",
-            "gender": "F",
-            "language": "German",
-            "birthday": "1979-06-01",
-        },
-        {
-            "id": 12,
-            "first_name": "Audrey",
-            "last_name": "Ladyson",
-            "email": "audrey.ladyson@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=32",
-            "gender": "F",
-            "language": "English",
-            "birthday": "2000-02-27",
-        },
-        {
-            "id": 13,
-            "first_name": "Dan",
-            "last_name": "Chevsky",
-            "email": "dan.chevsky@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=56",
-            "gender": "M",
-            "language": "German",
-            "birthday": "1996-11-28",
-        },
-        {
-            "id": 14,
-            "first_name": "Carol",
-            "last_name": "Santos",
-            "email": "carol.santos@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=48",
-            "gender": "F",
-            "language": "Portuguese",
-            "birthday": "1988-01-02",
-        },
-        {
-            "id": 15,
-            "first_name": "Chris",
-            "last_name": "Kidson",
-            "email": "chris.kidson@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=69",
-            "gender": "M",
-            "language": "Russian",
-            "birthday": "1965-11-01",
-        },
-        {
-            "id": 16,
-            "first_name": "Leo",
-            "last_name": "Lion",
-            "email": "leo.lion@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=59",
-            "gender": "M",
-            "language": "French",
-            "birthday": "1979-04-13",
-        },
-        {
-            "id": 17,
-            "first_name": "Soon",
-            "last_name": "Sandon",
-            "email": "soon.sandon@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=31",
-            "gender": "F",
-            "language": "Korean",
-            "birthday": "2001-03-19",
-        },
-        {
-            "id": 18,
-            "first_name": "Mei",
-            "last_name": "Wang",
-            "email": "mei.wang@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=35",
-            "gender": "F",
-            "language": "Chinese",
-            "birthday": "1990-08-08",
-        },
-        {
-            "id": 19,
-            "first_name": "Catherine",
-            "last_name": "Soul",
-            "email": "catherine.soul@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=29",
-            "gender": "F",
-            "language": "French",
-            "birthday": "1994-09-27",
-        },
-        {
-            "id": 20,
-            "first_name": "Rupert",
-            "last_name": "Jackson",
-            "email": "rupert.jackson@gmail.com",
-            "avatar": "https://i.pravatar.cc/150?img=17",
-            "gender": "M",
-            "language": "Italian",
-            "birthday": "1955-10-22",
-        },
-    ]
-
-
     const [age, setAge] = useState(false)
     const [language, setLanguage] = useState(false)
     const [selectedMonth, setSelectedMonth] = useState("")
     const [selectedGender, setSelectedGender] = useState("")
+    const [apiData, setApiData] = useState([]);
+
 
     let filteredApi = []
-    let filteredUsers = []
 
     const genders = [
         "M", "F"
@@ -244,85 +40,71 @@ export default function ContactList(
 
     const currentDate = new Date();
 
-    for (let i = 0; i < tempArray.length; i++) {
-        if (tempArray[i].gender === "M") {
-            tempArray[i].num = "1"
-        } else {
-            tempArray[i].num = "2"
-        }
-
-        const [year, month, day] = tempArray[i].birthday.split("-");
-        tempArray[i].shortenedbday = parseInt(month)
-
-        const date = new Date(year, month - 1, day);
-        const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
-        tempArray[i].birthday = formattedDate
-
-
-        let age = currentDate.getFullYear() - date.getFullYear();
-        if (currentDate.getMonth() < date.getMonth() || 
-        (currentDate.getMonth() === date.getMonth() && 
-        currentDate.getDate() < date.getDate())) {
-            age--;
-        }
-        tempArray[i].age = age
-    }
-
     const fetchData = () => {
-        // const request = axios.get("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060");
-        // request.then(res => {
+        const request = axios.get("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060");
+        request.then(res => {
 
-        //     for (let i = 0; i < res.data.length; i++) {
-        //         if (res.data[i].gender === "M") {
-        //             res.data[i].num = "1"
-        //         } else {
-        //             res.data[i].num = "2"
-        //         }
+            for (let i = 0; i < res.data.length; i++) {
+                if (res.data[i].gender === "M") {
+                    res.data[i].num = "1"
+                } else {
+                    res.data[i].num = "2"
+                }
 
-        //         const [year, month, day] = res.data[i].birthday.split("-");
-        //         res.data[i].shortenedbday = parseInt(month)
+                const [year, month, day] = res.data[i].birthday.split("-");
+                res.data[i].shortenedbday = parseInt(month)
 
-        //         const date = new Date(year, month - 1, day);
-        //         const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
-        //         res.data[i].birthday = formattedDate
+                const date = new Date(year, month - 1, day);
+                const formattedDate = `${months[date.getMonth()]} ${date.getDate()}`
+                res.data[i].birthday = formattedDate
 
-        //         let age = currentDate.getFullYear() - date.getFullYear();
-        //         if (currentDate.getMonth() < date.getMonth() || 
-        //         (currentDate.getMonth() === date.getMonth() && 
-        //         currentDate.getDate() < date.getDate())) {
-        //             age--;
-        //     }
-        //     res.data[i].age = age
-        //     }
+                let age = currentDate.getFullYear() - date.getFullYear();
+                if (currentDate.getMonth() < date.getMonth() || 
+                (currentDate.getMonth() === date.getMonth() && 
+                currentDate.getDate() < date.getDate())) {
+                    age--;
+            }
+            res.data[i].age = age
+            }
 
-
-        //     setContactData(res.data, userContacts)
-        // });
-
-        setContactData(tempArray, userContacts)
+            setApiData(res.data);
+            console.log(apiData)
+            setContactData(res.data, userContacts)
+            const langCount = langCount()
+        });
     }
 
 
     useEffect(() => {
 
+
         if(selectedMonth) {
+            setContactData(apiData)
             setSelectedGender("")
             handleBirthday(selectedMonth)
             setContactData(filteredApi)
-            console.log(contactData, "bday")
-            console.log(filteredApi, "filteredApi")
+            langCount()
         } else if (selectedGender) {
             setSelectedMonth("")    
             handleGender(selectedGender)
             setContactData(filteredApi)
-            console.log(contactData, "gender")
         } else {
             fetchData();
         }
 
     }, [selectedMonth, selectedGender]);
 
-
+    function langCount(){
+        const languages = []
+        contactData.forEach(person =>{
+            const language = person.language
+            if (!languages.includes(language)) {
+                languages.push(language);
+            }
+        })
+        return languages.length
+        console.log(languages)
+    }
 
     function handleAge(){
         setAge(!age)
@@ -360,21 +142,20 @@ export default function ContactList(
 
 
     const handleGender = (selectedGender) => {
-        setContactData(tempArray, userContacts)
+
         setSelectedMonth("")
+        setContactData(apiData)
         filteredApi = contactData.filter((contact) => parseInt(contact.num) === parseInt(selectedGender))
-        // filteredUsers = userContacts.filter((contact) => parseInt(contact.num) === parseInt(selectedGender))
 
         return filteredApi
     }
 
 
     const handleBirthday = (selectedMonth) => {
-        setContactData(tempArray, userContacts)
+
         setSelectedGender("")
-
+        setContactData(apiData)
         filteredApi = contactData.filter((contact) => parseInt(contact.shortenedbday) === parseInt(selectedMonth))
-
         return filteredApi
     }
 
@@ -463,9 +244,14 @@ export default function ContactList(
                         </span>
                     </Contact>
                 ))} 
+
+                
                 </Contacts>
+
             </List>
         </Container>
+
+
     </>
     )
 }
