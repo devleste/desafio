@@ -17,7 +17,13 @@ export default function ContactList(
         contactData,
         userContacts,
         setContactData,
-        setContactId
+        setContactId,
+        // totalLang,
+        // setTotalLang,
+        // totalMale,
+        // setTotalMale,
+        // totalFemale,
+        // setTotalFemale
     }) {
 
     const [age, setAge] = useState(false)
@@ -25,7 +31,6 @@ export default function ContactList(
     const [selectedMonth, setSelectedMonth] = useState("")
     const [selectedGender, setSelectedGender] = useState("")
     const [apiData, setApiData] = useState([]);
-
 
     let filteredApi = []
 
@@ -70,7 +75,9 @@ export default function ContactList(
             setApiData(res.data);
             console.log(apiData)
             setContactData(res.data, userContacts)
-            const langCount = langCount()
+            // langCount()
+            // maleCount()
+            // femaleCount()
         });
     }
 
@@ -83,7 +90,7 @@ export default function ContactList(
             setSelectedGender("")
             handleBirthday(selectedMonth)
             setContactData(filteredApi)
-            langCount()
+            // langCount()
         } else if (selectedGender) {
             setSelectedMonth("")    
             handleGender(selectedGender)
@@ -94,17 +101,39 @@ export default function ContactList(
 
     }, [selectedMonth, selectedGender]);
 
-    function langCount(){
-        const languages = []
-        contactData.forEach(person =>{
-            const language = person.language
-            if (!languages.includes(language)) {
-                languages.push(language);
-            }
-        })
-        return languages.length
-        console.log(languages)
-    }
+
+// funções abaixo para calcular quantidade de línguas/pessoas de cada sexo
+    // function langCount(){
+    //     const languages = []
+    //     contactData.forEach(person =>{
+    //         const language = person.language
+    //         if (!languages.includes(language)) {
+    //             languages.push(language);
+    //         }
+    //     })
+    //     console.log(languages.length)
+    //     setTotalLang(languages.length)
+    // }
+
+    // function maleCount() {
+    //     const males = []
+    //     contactData.forEach(person => {
+    //         if (person.gender === "M") males.push("M")
+    //     })
+    //     console.log(males.length)
+    //     setTotalMale(males.length)
+    // }
+
+    // function femaleCount() {
+    //     const females = []
+    //     contactData.forEach(person => {
+    //         if (person.gender === "F") females.push("M")
+    //     })
+    //     console.log(females.length)
+    //     setTotalFemale(females.length)
+    // }
+
+
 
     function handleAge(){
         setAge(!age)
@@ -248,7 +277,14 @@ export default function ContactList(
                 
                 </Contacts>
 
+                {/* <Count>
+                    <h1>Total: {totalLang}</h1>
+                    <h2>M: {totalMale}</h2>
+                    <h3>F: {totalFemale}</h3>
+                </Count> */}
             </List>
+
+
         </Container>
 
 
@@ -267,6 +303,29 @@ const Container = styled.div`
     overflow: hidden;
 `
 
+// const Count = styled.div`
+//     color: #5A5A5A;
+//     font-size: 9px;
+
+//     h1 {
+//         position: absolute;
+//         top: 2.2pc;
+//         right: 16.8pc;
+//     }
+
+//     h2 {
+//         position: absolute;
+//         top: 2.2pc;
+//         right: 26.2pc;
+//     }
+
+//     h3 {
+//         position: absolute;
+//         top: 2.2pc;
+//         right: 24.7pc;
+//     }
+// `
+
 const List = styled.div`
     display: flex;
     flex-direction: column;
@@ -276,7 +335,7 @@ const List = styled.div`
 
 const Rows = styled.div`
     display: flex;
-    margin-top: -8px;
+    margin-top: -12px;
     font-size: 12px;
     color: #5A5A5A;
     font-style: italic;

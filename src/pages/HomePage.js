@@ -13,6 +13,9 @@ export default function HomePage() {
     const [editContactModal, setEditContactModal] = useState(false)
     const [deleteContactModal, setDeleteContactModal] = useState(false)
     const [userContacts, setUserContacts] = useState([])
+    const [totalLang, setTotalLang] = useState("0")
+    const [totalMale, setTotalMale] = useState("0")
+    const [totalFemale, setTotalFemale] = useState("0")
 
     return (    
         <>
@@ -28,6 +31,12 @@ export default function HomePage() {
                 EnableContactModal={setContactModal}
                 EnableEditContactModal={setEditContactModal}
                 EnableDeleteContactModal={setDeleteContactModal}
+                totalLang={totalLang}
+                setTotalLang={setTotalLang}
+                totalMale={totalMale}
+                setTotalMale={setTotalMale}
+                totalFemale={totalFemale}
+                setTotalFemale={setTotalFemale}
             />
 
             <ContactModal

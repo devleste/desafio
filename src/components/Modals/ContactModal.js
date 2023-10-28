@@ -7,7 +7,7 @@ export default function ContactModal(
         onClose, 
         contactData,
         userContacts,
-        setContactModal 
+        setContactModal,
     }) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
