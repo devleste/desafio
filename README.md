@@ -27,18 +27,3 @@ $ npm install
 $ npm start
 # The server will automatically start at localhost:3000/ on your favorite browser 
 ```
-
-## 📅 Entrega
-
-Para realizar a entrega do desafio basta seguir os passos:
-
-- Dê um **Fork** neste repositório para o Github
-- Realize o desafio e suba para a sua cópia do repositório
-- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
-
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
-
----
-
-Feito com ♥ by Leste Telecom :wave: 
