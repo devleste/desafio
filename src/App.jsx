@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import logo from './assets/logo.png';
 import './App.css';
+import Statistc from './componentes/Statistc';
 
 
 export default function App() {
@@ -95,24 +96,6 @@ export default function App() {
     setData(newData);
     setForm(initialForm);
     setLocalStorage(form);
-  }
-
-  function countGenders() {
-    const genderCounts = data.reduce((counts, contact) => {
-      counts[contact.gender] = (counts[contact.gender] || 0) + 1;
-      return counts;
-    }, {});
-
-    return genderCounts;
-  }
-
-  function countLanguage() {
-    const languageCounts = data.reduce((counts, contact) => {
-      counts[contact.language] = (counts[contact.language] || 0) + 1;
-      return counts;
-    }, {});
-
-    return languageCounts;
   }
 
   function searchContact() {
@@ -366,26 +349,10 @@ export default function App() {
       </div>
       <h3 className='statistc'>Estatisticas</h3>
       <div>
-        <h3 className='title-gender'>Contagem de Gênero</h3>
-        <ul className='card'>
-          {Object.entries(countGenders()).map(([gender, count]) => (
-            <li className='card-info' key={gender}>
-              <span className='gender-list'>{`${gender}`}</span>
-              <span className='count'>{`${count}`}</span>
-            </li>
-          ))}
-        </ul>
+        <Statistc data={data} title="Contagem de Gênero" field="gender" />
       </div>
       <div>
-        <h3 className='title-language'>Contagem de Idiomas</h3>
-        <ul className='card'>
-          {Object.entries(countLanguage()).map(([language, count]) => (
-            <li className='card-info' key={language}>
-              <span className='language-list'>{`${language}`}</span>
-              <span className='count'>{`${count}`}</span>
-            </li>
-          ))}
-        </ul>
+        <Statistc data={data} title="Contagem de Idiomas" field="language" />
       </div>
       <h3 className='title-table'>Lista da Leste Contact</h3>
       <div className='resposive-table'>
