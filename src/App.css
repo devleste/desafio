@@ -1,0 +1,504 @@
+body{
+  overflow-x: hidden;
+}
+
+/* Fomulário adicionar */
+
+.logo-img {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 150px;
+  display: block;
+  padding-bottom: 20px;
+}
+
+h3.add{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-form{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e2e2e2;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 750px;
+  min-width: 100px;
+  margin: 0 auto;
+}
+
+.first-name {
+  margin-bottom: 12px;
+  padding: 0;
+  width: 100%;
+}
+
+.first-name{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#first_name{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 35%;
+}
+
+.last-name{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+#last_name{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40%;
+}
+
+.email{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#email{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 91.5%;
+  margin-top: 20px;
+}
+
+#gender{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.gender-male{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-right: 5px;
+}
+
+.gender-female{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-right: 5px;
+}
+
+.gender{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+}
+
+.language{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#language{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40%;
+}
+
+.avatar{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+#avatar{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 39.2%;
+}
+
+.birthday{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#birthday{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  margin-top: 20px;
+  color: #7c7b7c;
+}
+
+.btn-add{
+  background-color: #3ea98e;
+  border-radius: 3px;
+  border: 1px solid #009373;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: 58px;
+  width: 100%;
+  justify-content: center;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  margin-top: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* Filtro */
+
+h3.filter{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.filter-form{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e2e2e2;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 750px;
+  min-width: 100px;
+  margin: 0 auto;
+}
+
+.gender-filter{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#gender-filter{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40%;
+}
+
+.filter-gender{
+  margin-bottom: 20px;
+}
+
+.language-filter{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+#language-filter{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 41.5%;
+}
+
+.filter-age-birthday{
+  margin-bottom: 20px;
+}
+
+.age-filter{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#age-filter{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 40%;
+}
+
+.birthday-filter{
+  color: #7c7b7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: nome;
+  margin-bottom: 2px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+#birthday-filter{
+  color: #555;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c8c8c8;
+  height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 30.2%;
+}
+
+.btn-filter{
+  background-color: #3ea98e;
+  border-radius: 3px;
+  border: 1px solid #009373;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: 58px;
+  width: 48%;
+  justify-content: center;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  margin-top: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.btn-clear{
+  background-color: #3e7ba9;
+  border-radius: 3px;
+  border: 1px solid #006793;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: 58px;
+  width: 48%;
+  justify-content: center;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  margin-top: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 30px;
+}
+
+/* Estatistica */
+
+h3.statistc{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-gender{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.title-language{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.card{
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  max-width: 750px;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-info{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background-color: #00997b;
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Todos os contatos */
+.title-table{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resposive-table{
+  overflow-y: hidden;
+  overflow-x: auto;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+table{
+  width: 100%;
+}
+
+.image-avatar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th{
+  background-color: #3ea98e;
+  color: #fff;
+
+}
+
+tr:nth-child(even) {
+  background-color: #3ea98e;
+  color: #fff;
+}
+
+.btn-edit{
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.btn-delete{
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
