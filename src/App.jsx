@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import logo from './assets/logo.png';
 import './App.css';
-import Statistc from './componentes/Statistc';
+// import Statistc from './componentes/Statistc';
 
 
 export default function App() {
@@ -39,7 +39,10 @@ export default function App() {
         const local = localStorage.getItem('data');
         if (local) return;
         localStorage.setItem('data', JSON.stringify(data));
+      }).catch((error) => {
+        console.error(error);
       });
+    // setData(data);
   }, []);
 
   function filterData(array, object) {
@@ -144,6 +147,21 @@ export default function App() {
     // searchContact();
   }
 
+  function calculateCounts(columnName) {
+    const counts = {};
+    data.forEach((row) => {
+      const value = row[columnName];
+      if (counts[value]) {
+        counts[value] += 1;
+      } else {
+        counts[value] = 1;
+      }
+    });
+    return counts;
+  }
+
+  const genderCounts = calculateCounts('gender');
+  const languageCounts = calculateCounts('language');
   function handleOnChange(e) {
     const temporaryForm = {
       ...form,
@@ -348,11 +366,21 @@ export default function App() {
         </form>
       </div>
       <h3 className='statistc'>Estatisticas</h3>
+      <h3 className='title-gender'>Contagem de Gênero</h3>
       <div>
-        <Statistc data={data} title="Contagem de Gênero" field="gender" />
+        <ul className='card'>
+          {Object.entries(genderCounts).map(([gender, count]) => (
+            <li className='card-info' key={gender}>{gender}{count}</li>
+          ))}
+        </ul>
       </div>
+      <h3 className='title-language'>Contagem de Idiomas</h3>
       <div>
-        <Statistc data={data} title="Contagem de Idiomas" field="language" />
+        <ul className='card'>
+          {Object.entries(languageCounts).map(([language, count]) => (
+            <li className='card-info' key={language}>{language}{count}</li>
+          ))}
+        </ul>
       </div>
       <h3 className='title-table'>Lista da Leste Contact</h3>
       <div className='resposive-table'>
