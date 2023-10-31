@@ -15,7 +15,12 @@ export default function App() {
     birthday: '',
   };
 
-  const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState(() => {
+    const local = localStorage.getItem('data');
+    if (local) {
+      return JSON.parse(local);
+    }
+  });
   const [form, setForm] = React.useState(JSON.parse(localStorage.getItem('form')) || initialForm);
 
   const [search, setSearch] = React.useState({
@@ -26,28 +31,22 @@ export default function App() {
     birthdayMonth: '',
   });
 
+
+  React.useEffect(() => {
+    axios.get('https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060')
+      .then(({ data }) => {
+        const local = localStorage.getItem('data');
+        if (local) return;
+        localStorage.setItem('data', JSON.stringify(data));
+      });
+  }, []);
+
   function filterData(array, object) {
     let newData = array;
     newData = newData.filter(({ id }) => id !== object.id);
     newData.push(object);
     return newData;
   }
-
-  React.useEffect(() => {
-    const getData = async () => {
-      const result = await axios.get('https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060');
-      const ls = JSON.parse(localStorage.getItem('data') || '[]');
-      if (!ls || ls.length === 0) return setData(result.data);
-      let newData = result.data;
-      for (const contact of ls) {
-        newData = filterData(newData, contact);
-      }
-
-      setData(newData);
-
-    };
-    getData();
-  }, []);
 
   function setLocalStorage(contact) {
     let ls = JSON.parse(localStorage.getItem('data') || '[]');
@@ -62,7 +61,6 @@ export default function App() {
     const contact = { id: data.length + 1, ...form };
     const newData = [...data, contact];
     setData(newData);
-    setForm(initialForm);
     setLocalStorage(contact);
   }
 
@@ -160,7 +158,7 @@ export default function App() {
       age: '',
       birthdayMonth: '',
     });
-    searchContact();
+    // searchContact();
   }
 
   function handleOnChange(e) {
@@ -226,23 +224,23 @@ export default function App() {
           </div>
           <div id='gender'>
             <label className='gender'>Genero* </label>
-            <label className='gender-male'>Male</label>
+            <label className='gender-male'>M</label>
             <input
               type="radio"
               name="gender"
               id="gender"
               value='Male'
-              checked={form.gender === 'Male'}
+              checked={form.gender === 'M'}
               onChange={handleOnChange}
               required
             />
-            <label className='gender-female'>Female</label>
+            <label className='gender-female'>F</label>
             <input
               type="radio"
               name="gender"
               id="gender"
-              value='Female'
-              checked={form.gender === 'Female'}
+              value='F'
+              checked={form.gender === 'F'}
               onChange={handleOnChange}
               required
             />
@@ -306,8 +304,8 @@ export default function App() {
               value={search.gender}
               onChange={handleFilterContact}>
               <option value="">Todos</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
+              <option value="M">M</option>
+              <option value="F">F</option>
             </select>
 
             <label className='language-filter'>Idioma:</label>
