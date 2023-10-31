@@ -35,7 +35,7 @@ export default function App() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const result = await axios.get('./apiData.json');
+      const result = await axios.get('https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060');
       const ls = JSON.parse(localStorage.getItem('data') || '[]');
       if (!ls || ls.length === 0) return setData(result.data);
       let newData = result.data;
@@ -410,7 +410,10 @@ export default function App() {
                 <tr key={id}>
                   <td>
                     <div className='image-avatar'>
-                      <img src={avatar} alt={first_name} />
+                      <img
+                        className='avatar-img'
+                        src={avatar}
+                        alt={first_name} />
                     </div>
                   </td>
                   <td>{first_name}</td>

@@ -474,6 +474,12 @@ table{
   justify-content: center;
 }
 
+.avatar-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 th{
   background-color: #3ea98e;
   color: #fff;
