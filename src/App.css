@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   overflow-x: hidden;
 }
@@ -24,7 +30,7 @@ h3.add{
   justify-content: center;
   border-radius: 10px;
   padding: 20px;
-  width: 100%;
+  width: 90%;
   max-width: 750px;
   min-width: 100px;
   margin: 0 auto;
@@ -241,6 +247,7 @@ h3.filter{
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
 }
 
 .filter-form{
@@ -249,7 +256,7 @@ h3.filter{
   justify-content: center;
   border-radius: 10px;
   padding: 20px;
-  width: 100%;
+  width: 90%;
   max-width: 750px;
   min-width: 100px;
   margin: 0 auto;
@@ -279,7 +286,7 @@ h3.filter{
 }
 
 .filter-gender{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .language-filter{
@@ -307,7 +314,7 @@ h3.filter{
 }
 
 .filter-age-birthday{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .age-filter{
@@ -330,7 +337,7 @@ h3.filter{
   border: 1px solid #c8c8c8;
   height: 32px;
   font-family: Arial, Helvetica, sans-serif;
-  width: 40%;
+  width: 39%;
 }
 
 .birthday-filter{
@@ -341,6 +348,7 @@ h3.filter{
   font-weight: 400;
   text-align: left;
   text-decoration: nome;
+  margin-top: 5px;
   margin-bottom: 2px;
   margin-left: 20px;
   margin-right: 5px;
@@ -388,7 +396,7 @@ h3.filter{
   font-style: normal;
   font-weight: 700;
   height: 58px;
-  width: 48%;
+  width: 47%;
   justify-content: center;
   line-height: 1.42857;
   margin-bottom: 0;
@@ -406,6 +414,7 @@ h3.statistc{
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
 }
 
 .title-gender{
@@ -413,6 +422,8 @@ h3.statistc{
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .title-language{
@@ -420,6 +431,8 @@ h3.statistc{
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card{
@@ -454,6 +467,7 @@ h3.statistc{
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
 }
 
 .resposive-table{
@@ -507,4 +521,145 @@ tr:nth-child(even) {
   cursor: pointer;
   width: 25px;
   height: 25px;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px){
+  #first_name{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .last-name{
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 0;
+  }
+
+  #last_name{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #email {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #language{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .avatar{
+    margin-left: 0;
+  }
+
+  #avatar{
+    width: 100%;
+  }
+
+  #gender-filter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #language-filter{
+    width: 100%;
+  }
+
+  .language-filter{
+    margin-left: 0;
+  }
+
+  #age-filter{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #birthday-filter{
+    width: 100%;
+  }
+
+  .birthday-filter{
+    margin-left: 0;
+  }
+
+  .btn-filter{
+    width: 49%;
+  }
+
+  .btn-clear{
+    margin-left: 9px;
+    width: 49%;
+  }
+}
+
+@media (max-width: 768px){
+  #first_name{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .last-name{
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 0;
+  }
+
+  #last_name{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #email {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #language{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .avatar{
+    margin-left: 0;
+  }
+
+  #avatar{
+    width: 100%;
+  }
+
+  #gender-filter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #language-filter{
+    width: 100%;
+  }
+
+  .language-filter{
+    margin-left: 0;
+  }
+
+  #age-filter{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #birthday-filter{
+    width: 100%;
+  }
+
+  .birthday-filter{
+    margin-left: 0;
+  }
+
+  .btn-clear{
+    margin-left: 5px;
+  }
+
+
 }

@@ -39,10 +39,10 @@ export default function App() {
         const local = localStorage.getItem('data');
         if (local) return;
         localStorage.setItem('data', JSON.stringify(data));
+        setData(data);
       }).catch((error) => {
         console.error(error);
       });
-    // setData(data);
   }, []);
 
   function filterData(array, object) {
@@ -102,7 +102,8 @@ export default function App() {
   }
 
   function searchContact() {
-    let filterData = data.filter((contact) => {
+    const newData = data;
+    let filterData = newData.filter((contact) => {
       if (search.gender && contact.gender !== search.gender) {
         return false;
       }
@@ -117,7 +118,6 @@ export default function App() {
         const today = new Date();
         const birthDate = new Date(contact.birthday);
         const age = today.getFullYear() - birthDate.getFullYear();
-
         if (age < parseInt(search.age, 10)) {
           return false;
         }
@@ -137,27 +137,34 @@ export default function App() {
     setData(filterData);
   }
 
-  function clearFilter() {
+  function clearFilter(e) {
+    e.preventDefault();
     setSearch({
       gender: '',
       language: '',
       age: '',
       birthdayMonth: '',
     });
-    // searchContact();
+    setData(JSON.parse(localStorage.getItem('data')));
   }
 
   function calculateCounts(columnName) {
     const counts = {};
-    data.forEach((row) => {
-      const value = row[columnName];
-      if (counts[value]) {
-        counts[value] += 1;
-      } else {
-        counts[value] = 1;
-      }
-    });
+    if (data && data.length) {
+      data.forEach((row) => {
+        const value = row[columnName];
+        if (counts[value]) {
+          counts[value] += 1;
+        } else {
+          counts[value] = 1;
+        }
+      });
+    }
     return counts;
+  }
+
+  function formatterDate(date) {
+    return new Date(date).toLocaleDateString('pt-BR');
   }
 
   const genderCounts = calculateCounts('gender');
@@ -182,7 +189,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <div className='logo'>
         <img className='logo-img' src={logo} alt="logo" />
       </div>
@@ -358,6 +365,7 @@ export default function App() {
             Filtrar
           </button>
           <button
+            type='button'
             className='btn-clear'
             onClick={clearFilter}
           >
@@ -384,22 +392,22 @@ export default function App() {
       </div>
       <h3 className='title-table'>Lista da Leste Contact</h3>
       <div className='resposive-table'>
-        <table>
-          <thead>
-            <tr>
-              <th>Avatar</th>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Email</th>
-              <th>Gênero</th>
-              <th>Idioma</th>
-              <th>Aniversário</th>
-              <th>Ação</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data && data.length !== 0 ? (
-              data.map(({ id, first_name, last_name, email, gender, language, avatar, birthday }) => (
+        {data && data.length !== 0 ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Avatar</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Gênero</th>
+                <th>Idioma</th>
+                <th>Aniversário</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data?.map(({ id, first_name, last_name, email, gender, language, avatar, birthday }) => (
                 <tr key={id}>
                   <td>
                     <div className='image-avatar'>
@@ -414,7 +422,7 @@ export default function App() {
                   <td>{email}</td>
                   <td>{gender}</td>
                   <td>{language}</td>
-                  <td>{birthday}</td>
+                  <td>{formatterDate(birthday)}</td>
                   <td>
                     <span className='btn-edit' onClick={() => populateForm(id)}>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
@@ -431,12 +439,13 @@ export default function App() {
                   </td>
                 </tr>
               ))
-            ) : (
-              <p>Nenhum contato encontrado.</p>
-            )}
-          </tbody>
-        </table>
+              }
+            </tbody>
+          </table>
+        ) : (
+          <p>Nenhum contato encontrado.</p>
+        )}
       </div>
-    </div>
+    </>
   );
 }
