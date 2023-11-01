@@ -295,6 +295,7 @@ export default function App() {
 
         </form>
         <button
+          className='btn-add-edit'
           type="button"
           onClick={() => updateContact(form)}
         >

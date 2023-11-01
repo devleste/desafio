@@ -241,6 +241,27 @@ h3.add{
   padding-left: 10px;
 }
 
+.btn-add-edit{
+  background-color: #97a93e;
+  border-radius: 3px;
+  border: 1px solid #879300;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: 58px;
+  width: 100%;
+  justify-content: center;
+  line-height: 1.42857;
+  margin-bottom: 0;
+  margin-top: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 /* Filtro */
 
 h3.filter{
