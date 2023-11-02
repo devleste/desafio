@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaEdit, FaRegTrashAlt, FaUserPlus } from "react-icons/fa";
+import logo from './img/logo.png'
 import './contatos.css';
 import Api from './services/api';
 
@@ -65,7 +66,7 @@ function Contato() {
 
   return (
     <div className="contatos-container">
-
+      <img src={logo} className='logo' />
       <h1>Lista de Contatos</h1>
 
       <ul className="contato-list">
