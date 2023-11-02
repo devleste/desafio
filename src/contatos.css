@@ -1,0 +1,75 @@
+.contatos-container {
+  height: 200vh;
+  background-image: linear-gradient(30deg, #4b6226 0, #3f5f23 16.67%, #315c21 33.33%, #1f591f 50%, #00551e 66.67%, #00521f 83.33%, #004f21 100%);
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.contato-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contato-item {
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.contato-nome {
+  margin: 2px;
+  padding: 2px;
+  display: flex;
+
+}
+
+.contato-nome div {
+  padding-left: 15px;
+}
+
+.contato-button {
+  margin: 2px;
+  display: flex;
+}
+
+.adicionar-contato {
+  margin-top: 20px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.adicionar-contato input {
+  margin-right: 10px;
+}
+
+.editar {
+  margin: 2px;
+}
+
+.excluir {
+  margin: 2px;
+}
+
+.resumo {
+  margin: 10px 0;
+  padding: 10px 2;
+  flex-direction: column;
+  display: flex;
+  align-items: start;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+.resumo div{
+  margin: 10px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
