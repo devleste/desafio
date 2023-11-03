@@ -1,0 +1,26 @@
+h1 {
+  background-color: DarkBlue;
+  color: white;
+  margin: 0;
+  padding: 10px;
+}
+
+.table {
+  width: 100%;
+  border: 3px solid #aabfbf;
+  height: auto;
+}
+
+.td {
+  border: 1px solid #aabfbf;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+.th {
+  border: #aabfbf 1px solid;
+  height: 30px;
+  background-color: CornflowerBlue;
+  color: white;
+}

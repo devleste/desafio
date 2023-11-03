@@ -1,14 +1,12 @@
 import React from 'react';
-import useFetch from '../src/hooks/useFetch';
 import './App.css';
+import Lista from './components/Lista';
 
 function App() {
-  const { lista } = useFetch();
-  console.log(lista)
   
   return (
     <div className="App">
-      <p>Lista de contatos</p>
+      <Lista />
     </div>
   );
 }
