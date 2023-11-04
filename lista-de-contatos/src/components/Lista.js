@@ -1,16 +1,20 @@
-import React from 'react';
-import styles from './Lista.module.css';
-import useFetch from '../../src/hooks/useFetch';
+import React, { useContext, useEffect } from 'react';
 import { contatosData } from '../mocks/contatosData';
+import ContatosContext from '../context/ContatosContext';
+import styles from './Lista.module.css';
+import { v4 as uuidv4 } from 'uuid';
 
 function Lista() {
-  const useRealData = process.env.REACT_APP_USE_REAL_DATA === 'true';
-  const { lista } = useRealData ? useFetch : { lista: contatosData };
-  console.log(lista)
+  const { listaContatos, setListaContatos } = useContext(ContatosContext);
+
+  useEffect(() => {
+    setListaContatos(contatosData);
+  }, []); 
 
   return (
     <div>
-    {Array.isArray(lista) &&
+      
+    {Array.isArray(listaContatos) &&
       <table className={styles.table}>
         <thead>
           <tr>
@@ -24,8 +28,8 @@ function Lista() {
           </tr>
         </thead>
         <tbody>
-          {lista.map((item) => (
-          <tr key={item.id}>
+          {listaContatos.map((item) => (
+          <tr key={uuidv4()}>
             <td className={styles.td}>{ item.first_name }</td>
             <td className={styles.td}>{ item.last_name }</td>
             <td className={styles.td}>{ item.email }</td>
