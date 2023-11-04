@@ -28,7 +28,6 @@ function Edit() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newContact = { id: uuidv4(), ...formData };
-    console.log(newContact)
     setListaContatos([...listaContatos, newContact]);
     const updatedLocalStorageData = JSON.stringify([...listaContatos, formData]);
     localStorage.setItem('contatos', updatedLocalStorageData);
