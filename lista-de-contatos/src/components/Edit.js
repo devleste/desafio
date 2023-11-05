@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import ContatosContext from '../context/ContatosContext';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,43 +8,54 @@ import {styleBox, styleh1} from './EditStyles';
 
 function Edit() {
   const { 
-    editContato,
-    setEditContato,
-    formData,
-    setFormData,
+    openEditContato,
+    setOpenEditContato,
     idContatoEdit, 
-    contatoEdit,
-    setContatoEdit,
     listaContatos,
     setListaContatos,
   } = useContext(ContatosContext);
-
+  const [editedContact, setEditedContact] = useState({});
+    
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setContatoEdit({
-      ...contatoEdit,
+    setEditedContact((prevEditedContact) => ({
+      ...prevEditedContact,
       [name]: value,
-    });
+    }));
   };
   
   const saveEdits = (e) => {
     e.preventDefault();
-    const removeContato = listaContatos.filter((item) => item.id !== idContatoEdit[0].id);
-    const newContact = { id: idContatoEdit[0].id, ...formData };
-    setListaContatos([...removeContato, newContact]);
-    const updatedLocalStorageData = JSON.stringify([listaContatos]);
-    localStorage.setItem('contatos', updatedLocalStorageData);
-    setEditContato(false);
+    if (idContatoEdit[0]) {
+      const index = listaContatos.findIndex((contact) => contact.id === idContatoEdit[0].id);
+
+      if (index !== -1) {
+        const updatedContacts = [...listaContatos];
+        updatedContacts[index] = {
+          ...updatedContacts[index],
+          ...editedContact,
+        };
+      setListaContatos(updatedContacts);
+
+      const updatedLocalStorageData = JSON.stringify(updatedContacts);
+      localStorage.setItem('contatos', updatedLocalStorageData);
+
+      setOpenEditContato(false);
+      }
+    }
   };
   
   const closeModal = () => {
-    setEditContato(false);
+    setOpenEditContato(false);
   };
+
+  const idContato = idContatoEdit[0];
 
   return (
   <div>
+    {idContatoEdit[0] &&
     <Modal
-      open={editContato}
+      open={openEditContato}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       >
@@ -58,7 +69,7 @@ function Edit() {
                 type="text"
                 id="first_name"
                 name="first_name"
-                value={idContatoEdit[0]?.first_name}
+                value={editedContact.first_name || idContato.first_name}
                 onChange={handleInputChange}
                 required
               />
@@ -69,7 +80,7 @@ function Edit() {
                 type="text"
                 id="last_name"
                 name="last_name"
-                value={idContatoEdit[0]?.last_name}
+                value={editedContact.last_name || idContato.last_name}
                 onChange={handleInputChange}
                 required
               />
@@ -80,7 +91,7 @@ function Edit() {
                 type="email"
                 id="email"
                 name="email"
-                value={idContatoEdit[0]?.email}
+                value={editedContact.email || idContato.email}
                 onChange={handleInputChange}
                 required
               />
@@ -90,7 +101,7 @@ function Edit() {
               <select
                 id="gender"
                 name="gender"
-                value={idContatoEdit[0]?.gender}
+                value={editedContact.gender || idContato.gender}
                 onChange={handleInputChange}
                 required
               >
@@ -103,7 +114,7 @@ function Edit() {
               <select
                 id="language"
                 name="language"
-                value={idContatoEdit[0]?.language}
+                value={editedContact.language || idContato.language}
                 onChange={handleInputChange}
                 required
               >
@@ -146,7 +157,7 @@ function Edit() {
                 type='date'
                 id="birthday"
                 name="birthday"
-                value={idContatoEdit[0]?.birthday}
+                value={editedContact.birthday || idContato.birthday}
                 onChange={handleInputChange}
                 required
               />
@@ -155,6 +166,7 @@ function Edit() {
           </form>
         </Box>
     </Modal>
+    }
   </div>
   );
 }

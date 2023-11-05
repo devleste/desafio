@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {styleBox, styleh1} from './NewStyles';
-import { v4 as uuidv4 } from 'uuid';
 
 function New() {
   const { 
@@ -20,18 +19,28 @@ function New() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
-      ...formData,
-      [name]: value,
+        ...formData,
+        [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newContact = { id: uuidv4(), ...formData };
-    setListaContatos([...listaContatos, newContact]);
-    const updatedLocalStorageData = JSON.stringify([...listaContatos, formData]);
+    const newId = listaContatos ? listaContatos.length + 1 : 1; // Gere um novo ID
+    const novoContato = { ...formData, id: newId }; // Crie o novo contato com o novo ID
+    const novaListaContatos = listaContatos ? [...listaContatos, novoContato] : [novoContato]; // Adicione o novo contato à lista
+  
+    setListaContatos(novaListaContatos);
+  
+    const updatedLocalStorageData = JSON.stringify(novaListaContatos);
     localStorage.setItem('contatos', updatedLocalStorageData);
+  
     setNewContato(false);
+
+    // setListaContatos([...listaContatos, formData]);
+    // const updatedLocalStorageData = JSON.stringify([...listaContatos, formData]);
+    // localStorage.setItem('contatos', updatedLocalStorageData);
+    // setNewContato(false);
   };
   
   const closeModal = () => {

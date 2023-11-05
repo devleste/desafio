@@ -3,11 +3,10 @@ import { node } from 'prop-types';
 import ContatosContext from './ContatosContext';
 
 function ContatosProvider({ children }) {
-  const [newContato, setNewContato] = useState(false);
-  const [editContato, setEditContato] = useState(false);
-  const [idContatoEdit, setIdContatoEdit] = useState(0);
-  const [contatoEdit, setContatoEdit] = useState();
-  const [listaContatos, setListaContatos] = useState('');
+  const [listaContatos, setListaContatos] = useState([]); // carrega as informações da mock
+
+  // New
+  const [newContato, setNewContato] = useState(false); //abre modal new
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -16,27 +15,42 @@ function ContatosProvider({ children }) {
     language: 'Bengali',
     avatar: '',
     birthday: '',
-  });
+  }); // salva as alterações do form new
+
+  // Edit
+  const [openEditContato, setOpenEditContato] = useState(false); // abre modal edit
+  const [idContatoEdit, setIdContatoEdit] = useState(0); // seleciona contato para editar
+  const [contatoEdited, setContatoEdited] = useState(); // salva as alterações do form de edição
+  
+  // Search
+  const [searchTerm, setSearchTerm] = useState(''); // pesquisa digitada
+  const [filtroContatos, setFiltroContatos] = useState(''); // listaContatos === searchTerm
 
   const values = useMemo(() => ({
     newContato,
     setNewContato,
-    editContato,
-    setEditContato,
+    openEditContato,
+    setOpenEditContato,
     idContatoEdit,
     setIdContatoEdit,
-    contatoEdit,
-    setContatoEdit,
+    contatoEdited,
+    setContatoEdited,
     listaContatos,
     setListaContatos,
+    searchTerm,
+    setSearchTerm,
+    filtroContatos,
+    setFiltroContatos,
     formData,
     setFormData,
   }), [
     newContato,
-    editContato,
+    openEditContato,
     idContatoEdit,
-    contatoEdit,
+    contatoEdited,
+    searchTerm,
     formData,
+    filtroContatos,
     listaContatos,
   ]);
 

@@ -1,17 +1,22 @@
 import React, { useContext } from 'react';
 import ContatosContext from '../context/ContatosContext';
 import styles from './Lista.module.css';
-import { v4 as uuidv4 } from 'uuid';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 function Lista() {
-  const { listaContatos, setListaContatos, setEditContato, setIdContatoEdit } = useContext(ContatosContext);
-
+  const { listaContatos, setListaContatos, setOpenEditContato, setIdContatoEdit, 
+    // searchTerm
+   } = useContext(ContatosContext);
+  //  console.log(listaContatos)
+  // const filtroContatos = listaContatos?.filter((item) =>
+  // item.first_name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+  
   const editContato = (contato) => {
-    const contatoSelecionado = listaContatos.filter((contacto) => contacto.id === contato.id);
-    setIdContatoEdit(contatoSelecionado)
-    setEditContato(true);
+    const contatoSelecionado = listaContatos.filter((item) => item.id === contato.id);
+    setIdContatoEdit(contatoSelecionado) 
+    setOpenEditContato(true); 
   }
 
   const deleteContato = (contato) => {
@@ -39,22 +44,25 @@ function Lista() {
         </thead>
         <tbody>
           {listaContatos.map((item) => (
-          <tr key={uuidv4()}>
-            <td className={styles.td}>{ item.first_name }</td>
-            <td className={styles.td}>{ item.last_name }</td>
-            <td className={styles.td}>{ item.email }</td>
-            <td className={styles.td}>{ item.gender }</td>
-            <td className={styles.td}>{ item.language }</td>
-            <td className={styles.td}>
+          // {filtroContatos.map((item) => (
+          <tr key={item.id}>
+            {/* {console.log(filtroContatos)} */}
+            {/* {console.log(item.id)} */}
+            <td key={`first_name_${item.id}`} className={styles.td}>{ item.first_name }</td>
+            <td key={`last_name_${item.id}`} className={styles.td}>{ item.last_name }</td>
+            <td key={`email_${item.id}`} className={styles.td}>{ item.email }</td>
+            <td key={`gender_${item.id}`} className={styles.td}>{ item.gender }</td>
+            <td key={`language_${item.id}`} className={styles.td}>{ item.language }</td>
+            <td key={`avatar_${item.id}`} className={styles.td}>
               <img src={item.avatar} alt="Avatar" />
             </td>
-            <td className={styles.td}>{ item.birthday }</td>
-            <td className={styles.td}>
+            <td key={`birthday_${item.id}`} className={styles.td}>{ item.birthday }</td>
+            <td key="edit" className={styles.td}>
               <button onClick={() => editContato(item)}>
                 <EditIcon />
               </button>
             </td>
-            <td className={styles.td}>
+            <td key={`delete_${item.id}`} className={styles.td}>
               <button onClick={() => deleteContato(item)}>
                 <DeleteIcon />
               </button>
