@@ -2,20 +2,19 @@ import React, { useContext } from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 // import styles from './Header.module.css';
 import ContatosContext from '../context/ContatosContext';
+import Button from '@mui/material/Button';
 
 function Header() {
-  const { setOpenModal } = useContext(ContatosContext);
+  const { setNewContato } = useContext(ContatosContext);
 
   const openModal = () => {
-    setOpenModal(true);
+    setNewContato(true);
   };
 
   return (
     <div>
       <h1>Lista de contatos</h1>
-      <button onClick={openModal}>
-        <AddCircleIcon />
-      </button>
+      <Button onClick={openModal}><AddCircleIcon /></Button>
     </div>
   )
 }

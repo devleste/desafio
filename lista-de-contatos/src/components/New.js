@@ -4,61 +4,58 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import {styleBox, styleh1} from './EditStyles';
+import {styleBox, styleh1} from './NewStyles';
+import { v4 as uuidv4 } from 'uuid';
 
-function Edit() {
+function New() {
   const { 
-    editContato,
-    setEditContato,
+    newContato,
+    setNewContato,
     formData,
     setFormData,
-    idContatoEdit, 
-    contatoEdit,
-    setContatoEdit,
     listaContatos,
     setListaContatos,
   } = useContext(ContatosContext);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setContatoEdit({
-      ...contatoEdit,
+    setFormData({
+      ...formData,
       [name]: value,
     });
   };
-  
-  const saveEdits = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const removeContato = listaContatos.filter((item) => item.id !== idContatoEdit[0].id);
-    const newContact = { id: idContatoEdit[0].id, ...formData };
-    setListaContatos([...removeContato, newContact]);
-    const updatedLocalStorageData = JSON.stringify([listaContatos]);
+    const newContact = { id: uuidv4(), ...formData };
+    setListaContatos([...listaContatos, newContact]);
+    const updatedLocalStorageData = JSON.stringify([...listaContatos, formData]);
     localStorage.setItem('contatos', updatedLocalStorageData);
-    setEditContato(false);
+    setNewContato(false);
   };
   
   const closeModal = () => {
-    setEditContato(false);
+    setNewContato(false);
   };
 
   return (
   <div>
     <Modal
-      open={editContato}
+      open={newContato}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       >
         <Box sx={styleBox}>
-          <Typography sx={styleh1} component="h1">{`Editar contato`}</Typography>
+          <Typography sx={styleh1} component="h1">{`Novo Contato`}</Typography>
           <Button onClick={closeModal}>Fechar</Button>
-          <form onSubmit={saveEdits}>
+          <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="first_name">First name:</label>
               <input
                 type="text"
                 id="first_name"
                 name="first_name"
-                value={idContatoEdit[0]?.first_name}
+                value={formData.first_name}
                 onChange={handleInputChange}
                 required
               />
@@ -69,7 +66,7 @@ function Edit() {
                 type="text"
                 id="last_name"
                 name="last_name"
-                value={idContatoEdit[0]?.last_name}
+                value={formData.last_name}
                 onChange={handleInputChange}
                 required
               />
@@ -80,7 +77,7 @@ function Edit() {
                 type="email"
                 id="email"
                 name="email"
-                value={idContatoEdit[0]?.email}
+                value={formData.email}
                 onChange={handleInputChange}
                 required
               />
@@ -90,7 +87,7 @@ function Edit() {
               <select
                 id="gender"
                 name="gender"
-                value={idContatoEdit[0]?.gender}
+                value={formData.gender}
                 onChange={handleInputChange}
                 required
               >
@@ -103,7 +100,7 @@ function Edit() {
               <select
                 id="language"
                 name="language"
-                value={idContatoEdit[0]?.language}
+                value={formData.language}
                 onChange={handleInputChange}
                 required
               >
@@ -146,12 +143,12 @@ function Edit() {
                 type='date'
                 id="birthday"
                 name="birthday"
-                value={idContatoEdit[0]?.birthday}
+                value={formData.birthday}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            <Button type="submit">Salvar edição</Button>
+            <Button type="submit">Salvar novo contato</Button>
           </form>
         </Box>
     </Modal>
@@ -159,4 +156,4 @@ function Edit() {
   );
 }
     
-export default Edit;
+export default New;

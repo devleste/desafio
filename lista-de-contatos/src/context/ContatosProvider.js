@@ -3,7 +3,10 @@ import { node } from 'prop-types';
 import ContatosContext from './ContatosContext';
 
 function ContatosProvider({ children }) {
-  const [OpenModal, setOpenModal] = useState(false);
+  const [newContato, setNewContato] = useState(false);
+  const [editContato, setEditContato] = useState(false);
+  const [idContatoEdit, setIdContatoEdit] = useState(0);
+  const [contatoEdit, setContatoEdit] = useState();
   const [listaContatos, setListaContatos] = useState('');
   const [formData, setFormData] = useState({
     first_name: '',
@@ -16,14 +19,23 @@ function ContatosProvider({ children }) {
   });
 
   const values = useMemo(() => ({
-    OpenModal,
-    setOpenModal,
+    newContato,
+    setNewContato,
+    editContato,
+    setEditContato,
+    idContatoEdit,
+    setIdContatoEdit,
+    contatoEdit,
+    setContatoEdit,
     listaContatos,
     setListaContatos,
     formData,
     setFormData,
   }), [
-    OpenModal,
+    newContato,
+    editContato,
+    idContatoEdit,
+    contatoEdit,
     formData,
     listaContatos,
   ]);

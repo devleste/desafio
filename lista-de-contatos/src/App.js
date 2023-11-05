@@ -5,6 +5,7 @@ import Edit from './components/Edit';
 import Lista from './components/Lista';
 import ContatosContext from '../src/context/ContatosContext';
 import { contatosData } from '../src/mocks/contatosData';
+import New from './components/New';
 
 function App() {
   const { listaContatos, setListaContatos } = useContext(ContatosContext);
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <New />
       <Edit />
       <Lista />
     </div>
