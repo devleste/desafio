@@ -1,85 +1,85 @@
-<h1 align="center">
-  <img alt="Leste Telecom" title="Leste Telecom" src="./logo.png" width="200px" />
-</h1>
+# Visão Geral
+Este projeto é uma aplicação React que exibe uma lista de contatos. Os usuários podem filtrar e buscar por contatos, editar suas informações e realizar análises estatísticas dos dados. O projeto também inclui a capacidade de excluir contatos, mas está protegido por um diálogo de confirmação para evitar exclusões acidentais.
+## O projeto pode ser testando online através do link:
+[Desafio Leste](https://leste-desafio-tecnico.vercel.app/)
 
-<h3 align="center">
-  Desafio do Desenvolvimento
-</h3>
+## Pré-requisitos
+Antes de executar o projeto, certifique-se de ter o seguinte:
 
-<p align="center">
-  <a href="#computer-o-desafio">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>
-</p>
+- Node.js e npm instalados em sua máquina.
 
-## :computer: O desafio
+## Configuração
 
-A aplicação que deverá ser desenvolvida é uma listagem de contatos, o **Leste Contact**.
+1. Clone o repositório em sua máquina local.
 
-Neste desafio deverá ser criado uma aplicação com todas as funcionalidades solicitadas e será utilizada para **avaliação dos cadadidatos** para a vaga de desenvolvimento da Leste Telecom.
+2. Abra um terminal e navegue até o diretório do projeto.
 
-### Um pouco sobre as ferramentas
+3. Instale as dependências necessárias executando:
 
-Você deverá criar a aplicação do zero utilizando o [ReactJS](https://expressjs.com/).
+   ```bash
+   npm install
+   ```
 
-Poderá ser utilizado qualquer outra biblioteca complementar ao React para o desenvolvimento desta aplicação.
+   **Observação:** Mockaroo oferece um número limitado de solicitações gratuitas por dia, então você pode querer usar um arquivo JSON (`api.json`) para testar se exceder o limite de solicitações da API.
 
-### Funcionalidades
+4. Inicie o servidor de desenvolvimento executando:
 
-Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
+   ```bash
+   npm run dev
+   ```
 
-#### 1. Chamada a API
+5. Abra seu navegador da web e acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
 
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
+## Uso
 
-#### 2. Listagem de Contatos
+- **Lista de Contatos:** A página principal exibe uma lista de contatos. Você pode filtrar os contatos com base em vários critérios, como nome, gênero, idioma, idade e ano de nascimento.
 
-Liste todas as informações recebidas da API em formato de lista de contatos. 
+- **Editar Contato:** Para editar as informações de um contato, clique no botão de edição (ícone de lápis) no cartão do contato. Você pode modificar os detalhes do contato e salvar as alterações.
 
-O design da aplicação fica a seu critério
+- **Criar Contato:** Para criar um novo contato, clique no botão "Criar". Preencha os detalhes e clique em "Criar".
 
-#### 3. Adicionar novo Contato
+- **Excluir Contato:** Para excluir um contato, clique no botão de exclusão (ícone de lixeira) no cartão do contato. Um diálogo de confirmação aparecerá. Escolha "Sim" para excluir ou "Não" para cancelar.
 
-Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem.
+- **Estatísticas:** Clique no botão "Estatísticas" para ver estatísticas gerais sobre a lista de contatos, como o número total de usuários, idiomas únicos, gêneros únicos e o número de homens e mulheres.
 
-Persista as informações no próprio browser.
+## Componentes
 
-#### 4. Remover Contatos
+- `ListComponent`: O principal componente que exibe a lista de contatos, lida com a filtragem de dados e fornece opções para editar, criar e excluir contatos. Ele busca dados de uma API e usa estado e propriedades para gerenciar o comportamento da aplicação.
 
-Disponibilize para o usuário excluir um contato da lista.
+- `EditComponent`: Um componente modal para editar ou criar um contato. Permite que os usuários insiram ou modifiquem informações de contato.
 
-#### 5. Editar Contatos
+- `DialogComponent`: Um componente de diálogo para confirmar a exclusão de contatos. Ele evita exclusões acidentais, solicitando confirmação antes de excluir um contato.
 
-Disponibilize para o usuário editar qualquer campo de um contato da lista.
+- `StatisticsComponent`: Um componente modal para exibir informações estatísticas sobre a lista de contatos.
 
-#### 6. Filtros
+- `FilterSelect`: Um componente reutilizável para criar menus suspensos de filtro e filtrar contatos com base em vários critérios.
 
-Adicione filtros na listagem para as seguintes informações:
+## Autor
 
-- Gender
-- Language
-- Age
-- Birthday (todos de um determinado mês)
+Este projeto foi criado por Lucas Oliveira Jnoub.
 
-#### 7. Resumo
+**Observação sobre o Limite de Requisições da API**
 
-Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
+A API fornecida pelo Mockaroo tem um limite de 200 solicitações por dia. Caso você atinja esse limite durante a avaliação, você pode contornar essa limitação da seguinte forma:
 
-- Gender
-- Language
+1. Comente o bloco `try...catch` na função `getData` do `ListComponent`:
 
+   ```javascript
+   // try {
+   //   const response = await fetch(apiEndPoint);
+   //   if (response.ok) {
+   //     const jsonResponse = await response.json();
+   //     setData(jsonResponse);
+   //   }
+   // } catch (error) {
+   //   console.error('Erro ao buscar dados: ' + error);
+   // }
+   ```
 
+2. Descomente o método `setData(jsonData)` que recebe dados de um arquivo JSON que simula o recebimento de dados de uma API REST:
 
-## 📅 Entrega
+   ```javascript
+   setData(jsonData);
+   ```
 
-Para realizar a entrega do desafio basta seguir os passos:
-
-- Dê um **Fork** neste repositório para o Github
-- Realize o desafio e suba para a sua cópia do repositório
-- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
-
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
-
----
-
-Feito com ♥ by Leste Telecom :wave: 
+Isso permitirá que você continue a avaliação usando os dados do arquivo JSON em vez de fazer solicitações à API Mockaroo.
