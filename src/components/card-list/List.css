@@ -85,11 +85,18 @@ option{
 input,input::placeholder{
   border: none;
   appearance: none;
-  color: #CFCFCF;
   background-color:#fff ;
   border-radius: 5px;
   outline: none;
   text-align: center;
+}
+
+input::placeholder{
+  color: #CFCFCF;
+}
+
+input{
+  color:#00997B;
 }
 
 .contact-card{
