@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {styleBox, styleh1} from './NewStyles';
+import { genderData, languageData } from '../mocks/optionsData';
 
 function New() {
   const { 
@@ -36,11 +37,6 @@ function New() {
     localStorage.setItem('contatos', updatedLocalStorageData);
   
     setNewContato(false);
-
-    // setListaContatos([...listaContatos, formData]);
-    // const updatedLocalStorageData = JSON.stringify([...listaContatos, formData]);
-    // localStorage.setItem('contatos', updatedLocalStorageData);
-    // setNewContato(false);
   };
   
   const closeModal = () => {
@@ -100,8 +96,11 @@ function New() {
                 onChange={handleInputChange}
                 required
               >
-                <option value='F'>Feminino</option>
-                <option value='M'>Masculino</option>
+                {genderData.map((gender, index) => (
+                  <option key={index} value={gender.value}>
+                    {gender.name}
+                  </option>
+                ))}
               </select>
             </div>
             <div>
@@ -113,26 +112,11 @@ function New() {
                 onChange={handleInputChange}
                 required
               >
-                <option value='Bengali'>Bengali</option>
-                <option value='Dari'>Dari</option>
-                <option value='Dutch'>Dutch</option>
-                <option value='Estonian'>Estonian</option>
-                <option value='Hungarian'>Hungarian</option>
-                <option value='Indonesian'>Indonesian</option>
-                <option value='Filipino'>Filipino</option>
-                <option value='Finnish'>Finnish</option>
-                <option value='Kannada'>Kannada</option>
-                <option value='Kazakh'>Kazakh</option>
-                <option value='Kurdish'>Kurdish</option>
-                <option value='Latvian'>Latvian</option>
-                <option value='Māori'>Māori</option>
-                <option value='Moldovan'>Moldovan</option>
-                <option value='Oriya'>Oriya</option>
-                <option value='Polish'>Polish</option>
-                <option value='Somali'>Somali</option>
-                <option value='Spanish'>Spanish</option>
-                <option value='Swati'>Swati</option>
-                <option value='Tok Pisin'>Tok Pisin</option>
+                {languageData.map((language, index) => (
+                  <option key={index} value={language}>
+                    {language}
+                  </option>
+                ))}
               </select>
             </div>
             <div>

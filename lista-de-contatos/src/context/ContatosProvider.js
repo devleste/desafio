@@ -23,8 +23,15 @@ function ContatosProvider({ children }) {
   const [contatoEdited, setContatoEdited] = useState(); // salva as alterações do form de edição
   
   // Search
-  const [searchTerm, setSearchTerm] = useState(''); // pesquisa digitada
+  const [searchTerm, setSearchTerm] = useState({
+    gender: '',
+    language: '',
+    age: '',
+    birthday: '',
+  }); // pesquisa digitada
   const [filtroContatos, setFiltroContatos] = useState(''); // listaContatos === searchTerm
+  const [birthday, setBirthday] = useState('') // carregas as datas de aniversario
+  const [language, setLanguage] = useState(''); // carrega as languages
 
   const values = useMemo(() => ({
     newContato,
@@ -43,6 +50,10 @@ function ContatosProvider({ children }) {
     setFiltroContatos,
     formData,
     setFormData,
+    birthday,
+    setBirthday,
+    language,
+    setLanguage,
   }), [
     newContato,
     openEditContato,
@@ -52,6 +63,8 @@ function ContatosProvider({ children }) {
     formData,
     filtroContatos,
     listaContatos,
+    birthday,
+    language,
   ]);
 
   return (

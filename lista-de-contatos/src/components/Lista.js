@@ -5,13 +5,43 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 function Lista() {
-  const { listaContatos, setListaContatos, setOpenEditContato, setIdContatoEdit, 
-    // searchTerm
-   } = useContext(ContatosContext);
-  //  console.log(listaContatos)
-  // const filtroContatos = listaContatos?.filter((item) =>
-  // item.first_name.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
+  const { listaContatos, setListaContatos, setOpenEditContato, setIdContatoEdit, searchTerm } = useContext(ContatosContext);
+  
+   const filtroContatos = listaContatos?.filter((item) => {
+    const { gender, language, birthday, age } = searchTerm;
+  
+    // Filtre com base no gênero
+    if (gender && !item.gender.toLowerCase().includes(gender.toLowerCase())) {
+      return false;
+    }
+  
+    // Filtre com base no idioma
+    if (language && !item.language.toLowerCase().includes(language.toLowerCase())) {
+      return false;
+    }
+  
+    // Filtre com base na idade
+    if (age) {
+      const ageInMilliseconds = Date.now() - new Date(item.birthday);
+      const ageInSeconds = ageInMilliseconds / 1000;
+      const ageInYears = ageInSeconds / (365 * 24 * 60 * 60);
+      const ageValue = Math.floor(ageInYears).toString();
+      if (ageValue !== age) {
+        return false;
+      }
+    }
+  
+    // Filtre com base no mês de aniversário
+    if (birthday) {
+      const selectedMonth = parseInt(birthday, 10);
+      const itemMonth = new Date(item.birthday).getMonth() + 1;
+      if (itemMonth !== selectedMonth) {
+        return false;
+      }
+    }
+  
+    return true; // O contato atende a todos os critérios de filtro
+  });  
   
   const editContato = (contato) => {
     const contatoSelecionado = listaContatos.filter((item) => item.id === contato.id);
@@ -43,11 +73,8 @@ function Lista() {
           </tr>
         </thead>
         <tbody>
-          {listaContatos.map((item) => (
-          // {filtroContatos.map((item) => (
+          {filtroContatos.map((item) => (
           <tr key={item.id}>
-            {/* {console.log(filtroContatos)} */}
-            {/* {console.log(item.id)} */}
             <td key={`first_name_${item.id}`} className={styles.td}>{ item.first_name }</td>
             <td key={`last_name_${item.id}`} className={styles.td}>{ item.last_name }</td>
             <td key={`email_${item.id}`} className={styles.td}>{ item.email }</td>
