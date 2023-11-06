@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import ContatosContext from '../context/ContatosContext';
-import { genderData } from '../mocks/optionsData';
 
 function Search() {
   const { searchTerm, setSearchTerm, birthday, language } = useContext(ContatosContext);

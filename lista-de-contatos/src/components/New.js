@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {styleBox, styleh1} from './NewStyles';
-import { genderData, languageData } from '../mocks/optionsData';
 
 function New() {
   const { 
@@ -96,28 +95,20 @@ function New() {
                 onChange={handleInputChange}
                 required
               >
-                {genderData.map((gender, index) => (
-                  <option key={index} value={gender.value}>
-                    {gender.name}
-                  </option>
-                ))}
+                <option value={'F'}>Feminino</option>
+                <option value={'M'}>Masculino</option>
               </select>
             </div>
             <div>
               <label htmlFor="language">Language:</label>
-              <select
+              <input
+                type="text"
                 id="language"
                 name="language"
                 value={formData.language}
                 onChange={handleInputChange}
                 required
-              >
-                {languageData.map((language, index) => (
-                  <option key={index} value={language}>
-                    {language}
-                  </option>
-                ))}
-              </select>
+              />
             </div>
             <div>
               <label htmlFor="avatar">Avatar:</label>

@@ -12,7 +12,7 @@ function ContatosProvider({ children }) {
     last_name: '',
     email: '',
     gender: 'F',
-    language: 'Bengali',
+    language: '',
     avatar: '',
     birthday: '',
   }); // salva as alterações do form new
