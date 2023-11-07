@@ -31,11 +31,11 @@ function App() {
   }  
 
   useEffect(() => {
-    /* fetch("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060") 
+    fetch("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060") 
       .then((response) => response.json())
       .then((data) => setContacts(data))
       .catch((error) => console.error("Erro ao buscar dados da API:", error));  
-       */
+       
     // Carregar dados do Local Storage quando a aplicação é montada
     const storedContacts = JSON.parse(localStorage.getItem("conacts") || "[]");
     setContacts(storedContacts);
