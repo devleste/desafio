@@ -212,7 +212,8 @@ h1 {
     .contact-card{
       margin: 0 auto;
       margin-top: 20px;
-      width: 65%;
+      width: 70%;
+      max-width: 70%;
     }
 
     
