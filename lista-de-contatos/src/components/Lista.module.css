@@ -25,3 +25,8 @@ h1 {
   background-color: CornflowerBlue;
   color: white;
 }
+
+.tableContainer {
+  max-height: 250px;
+  overflow: auto;
+}

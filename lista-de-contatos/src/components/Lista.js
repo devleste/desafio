@@ -56,7 +56,7 @@ function Lista() {
   }
 
   return (
-    <div>
+    <div className={styles.tableContainer}>
     {Array.isArray(listaContatos) &&
       <table className={styles.table}>
         <thead>

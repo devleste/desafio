@@ -33,6 +33,9 @@ function ContatosProvider({ children }) {
   const [birthday, setBirthday] = useState('') // carregas as datas de aniversario
   const [language, setLanguage] = useState(''); // carrega as languages
 
+  //Gráficos
+  const [languageTotals, setLanguageTotals] = useState({});
+
   const values = useMemo(() => ({
     newContato,
     setNewContato,
@@ -54,6 +57,8 @@ function ContatosProvider({ children }) {
     setBirthday,
     language,
     setLanguage,
+    languageTotals, 
+    setLanguageTotals,
   }), [
     newContato,
     openEditContato,
@@ -65,6 +70,7 @@ function ContatosProvider({ children }) {
     listaContatos,
     birthday,
     language,
+    languageTotals, 
   ]);
 
   return (

@@ -1,0 +1,15 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    border: 1px solid #ddd;
+    box-shadow: 2px 5px 5px 2px #ddd;
+    margin: 5px 5px 8px 5px;
+    height: 80px;
+}
+
+.term {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import ContatosContext from '../context/ContatosContext';
+import styles from './Search.module.css';
 
 function Search() {
   const { searchTerm, setSearchTerm, birthday, language } = useContext(ContatosContext);
@@ -32,8 +33,9 @@ function Search() {
   const monthsAsIntegers = [...new Set(months)].sort((a, b) => a - b);
 
   return (
-    <div>
-      <div>
+    <fieldset className={styles.search}> 
+    <legend>Filtro:</legend>
+      <div className={styles.term}>
         <label htmlFor="gender">Gender:</label>
         <select
           id="gender"
@@ -47,7 +49,7 @@ function Search() {
           <option value={'M'}>Masculino</option>
         </select>
       </div>
-      <div>
+      <div className={styles.term}>
         <label htmlFor="language">Language:</label>
         <select
           id="language"
@@ -64,7 +66,7 @@ function Search() {
           ))}
         </select>
       </div>
-      <div>
+      <div className={styles.term}>
         <label htmlFor="age">Age:</label>
         <select
           id="age"
@@ -81,7 +83,7 @@ function Search() {
           ))}
         </select>
       </div>
-      <div>
+      <div className={styles.term}>
         <label htmlFor="birthday">birthday month:</label>
         <select
           id="birthday"
@@ -98,7 +100,7 @@ function Search() {
           ))}
         </select>
       </div>
-    </div>
+    </fieldset>
   )
 }
 
