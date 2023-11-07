@@ -70,7 +70,12 @@ const ListComponent = () => {
   };
 
   const getData = async () => {
-    //PREAZADO AVALIADOR, A API FORNECIDA TEM LIMITE DE 200 REQUESTS POR DIA, ENTÃO DEIXEI PREPARADO UMA LINHA DE CÓDIGO A SER DESCOMENTADA EM CASO DE A API TER ATINGIDO O LIMITE DE REQUESTS DURANTE A AVALIAÇÃO, NESSE CASO COMENTE O BLOCO TRY CATCH E DESCOMENTE O METODO setData(jsonData) QUE RECEBE DADOS DE UM JSON QUE SIMULA O RECEBIMENTO DE DADOS DE UMA API REST;
+    /*PREAZADO AVALIADOR, A API FORNECIDA TEM LIMITE DE 200 REQUESTS POR DIA, 
+    ENTÃO DEIXEI PREPARADO UMA LINHA DE CÓDIGO A SER DESCOMENTADA EM CASO DE A
+    API TER ATINGIDO O LIMITE DE REQUESTS DURANTE A AVALIAÇÃO, NESSE CASO COMENTE
+    O BLOCO TRY CATCH E DESCOMENTE O METODO setData(jsonData) QUE RECEBE DADOS DE 
+    UM JSON QUE SIMULA O RECEBIMENTO DE DADOS DE UMA API REST;
+    */
     try {
       const response = await fetch(apiEndPoint);
       if (response.ok) {
@@ -119,7 +124,7 @@ const ListComponent = () => {
           <button
             className="button-svg add-user"
             style={{ color: '#0B8B6A' }}
-            onClick={() => handleEdit(null)} // Pass null to indicate creating a new user
+            onClick={() => handleEdit(null)} 
           >
             <div>Create</div>
             <AddComponent />
