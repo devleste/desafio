@@ -4,7 +4,7 @@
 }
 
 label {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 select {
@@ -15,7 +15,10 @@ select {
   border-radius: 5px;
   outline: none;
   text-align: center;
-  max-width: 130px;
+}
+
+.select-language{
+  max-width:130px;
 }
 
 @media (max-width: 826px) {
