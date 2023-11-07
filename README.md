@@ -1,7 +1,7 @@
 # Project developed in react
 
 ## Autor: Jânderson Machado, Rio de Janeiro - RJ
-## phone number and whatsapp : (21) 99470-7188
+## Phone number and whatsapp : (21) 99470-7188
 ## E-mail: jandersonmachado090@gmail.com
 
 Available Scripts
