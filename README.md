@@ -1,4 +1,4 @@
-# Project developed in react
+# Project developed in ReactJS
 
 ## Autor: Jânderson Machado, Rio de Janeiro - RJ
 ## Phone number and whatsapp : (21) 99470-7188
