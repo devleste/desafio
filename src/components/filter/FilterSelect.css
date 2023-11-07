@@ -15,7 +15,7 @@ select {
   border-radius: 5px;
   outline: none;
   text-align: center;
-  max-width: 70%;
+  max-width: 130px;
 }
 
 @media (max-width: 826px) {
