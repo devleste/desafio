@@ -99,7 +99,14 @@ input{
   color:#00997B;
 }
 
-.contact-card{
+.contact-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -119,16 +126,6 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-}
-
-.contact-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 .card-avatar{
@@ -212,9 +209,9 @@ h1 {
     }
 
     .contact-card{
-      width: 70%;
-      margin:0 auto;
+      margin: 0 auto;
       margin-top: 20px;
+      width: 65%;
     }
 
     
