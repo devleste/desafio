@@ -71,26 +71,28 @@ li h4 {
     border: none;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .lista-completa {
-        padding-bottom: 80px;
-        width: 70%;
-        margin: 0 auto;
-    }    
-}
-
-@media screen and (max-width: 767px) {
-    .lista-completa {
-        padding-bottom: 80px;
-        width: 100%;
-    }    
-}
-
+/* Estilo padrão (para dispositivos móveis) */
 .lista-completa {
     padding-bottom: 80px;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
+
+  /* Estilo para tablets (largura de tela entre 768px e 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .lista-completa {
+    width: 70%;
+    }
+}
+
+/* Estilo para computadores (largura de tela maior que 1024px) */
+@media (min-width: 1025px) {
+    .lista-completa {
+    width: 50%;
+    }
+}
+
+
 
 .new {
     height: 50px;

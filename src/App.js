@@ -26,6 +26,9 @@ function App() {
     localStorage.setItem("contacts", JSON.stringify([...contacts, novo]));
     console.log(" textoo ", novo);
   }
+
+
+  
   
 
   //função para gerar novos IDs para novos contatos
