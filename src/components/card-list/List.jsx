@@ -151,6 +151,7 @@ const ListComponent = () => {
           filterHandler={(e) => setFilterLanguage(e.target.value)}
           filterPlaceholder="All Languages"
           filterName="Language"
+          componentClass="select-language"
         />
 
         <FilterSelect
