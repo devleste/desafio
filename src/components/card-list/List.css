@@ -206,6 +206,7 @@ h1 {
 
     .contact-list{
       grid-template-columns: 1fr 1fr;
+      justify-content: center;
     }
 
     .contact-card{
