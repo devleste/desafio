@@ -175,9 +175,15 @@ h1 {
   color: #fff;
 }
 
+.user-details{
+  max-width: 100%;
+}
+
 .user-email {
   margin: 0;
   color: #ccc;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .user-info p {
