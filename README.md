@@ -1,7 +1,9 @@
 # Visão Geral
 Este projeto é uma aplicação React que exibe uma lista de contatos. Os usuários podem filtrar e buscar por contatos, editar suas informações e realizar análises estatísticas dos dados. O projeto também inclui a capacidade de excluir contatos, mas está protegido por um diálogo de confirmação para evitar exclusões acidentais.
 
+
 ![ezgif com-video-to-gif](https://github.com/LucasJnoub/desafio/assets/122225478/7d284a6b-b4d2-4674-b2fb-7d6b23184baa)
+
 
 ## O projeto pode ser testando online através do link:
 [Desafio Leste](https://leste-desafio-tecnico.vercel.app/)
