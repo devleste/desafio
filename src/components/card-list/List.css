@@ -230,11 +230,6 @@ h1 {
       width: 40%;
     }
 
-    .user-email {
-      overflow-wrap: normal;
-    }
-
-
     @media (max-width:630px) {
       
       .contact-list{
