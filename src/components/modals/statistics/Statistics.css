@@ -12,6 +12,7 @@
   z-index: 5;
   border-radius: 5px;
   width: 350px;
+  text-wrap: nowrap;
 }
 
 .modal-style h1{
