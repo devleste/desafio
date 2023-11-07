@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Abel', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: none;
+    color:  antiquewhite;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #070707;
+    z-index: -1;
+}
+
+header {
+    height: 80px;
+    width: 92%;
+    margin: 14px auto;
+    position: sticky;
+    top: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #211f1f;
+    border-radius: 30px;
+}
+
+header h1 {
+    color: antiquewhite;
+    font-weight: lighter;
+    font-size: 14px;
+    color: #00997b;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {/* 
+    border-bottom: 1px solid rgb(7, 7, 7); */
+    padding: 0px 0 0px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+li h4 {
+    letter-spacing: 3px;
+    font-weight: lighter;
+}
+
+.user {
+    height: 40px;
+    width: 40px;
+}
+
+.add li {
+    border: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .lista-completa {
+        padding-bottom: 80px;
+        width: 70%;
+        margin: 0 auto;
+    }    
+}
+
+@media screen and (max-width: 767px) {
+    .lista-completa {
+        padding-bottom: 80px;
+        width: 100%;
+    }    
+}
+
+.lista-completa {
+    padding-bottom: 80px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.new {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0%;
+    background-color: rgb(33, 33, 33);
+    border-radius: 70% 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.new svg {
+    color: antiquewhite;
+    padding: 10px 4px 4px 10px;
+    width: 100%;
+    height: 28px;
+}
+
+.container-editar {
+    background-color: rgb(7, 7, 7);
+    color: antiquewhite;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow: auto;
+} 
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.container-editar input {
+    background-color: transparent;
+    color: #00997b;
+    border: none;
+    border-bottom: 2px solid #00997b;
+    outline: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    width: 80%;
+    height: 24px;
+}
+.container-editar label {
+    width: 80%;
+    font-size: 13px;
+}
+
+.container-editar button {
+    background-color: #00997b;
+    border: none;
+    width: 80%;
+    height: 34px;
+    color: antiquewhite;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.x {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 2%;
+    right: 4%;
+}
+
+.lixeira {
+    top: 0;/* 
+    background-color: rgb(7, 7, 7); */
+    color: antiquewhite;
+    padding: 0 4px;
+    width: 20px;
+    min-height: 80px;
+    height: 100%;
+}
+
+h4 {
+    width: 100%;
+    height: 60px;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.nomeContato {
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.filter {
+    color: antiquewhite;
+    width: 24px;
+    height: 24px;
+}
+
+.user {
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.userEdit {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid #00997b;
+}
+
+/*  filtro  */
+
+.filtros-contact {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: antiquewhite;
+    color: #070707;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    z-index: 1;
+    overflow: auto;
+}
+
+.filtros-contact .sub-header {    
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filtros-contact h3 {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.filtros-contact label {
+    text-align: start;
+    font-weight: bold;
+    width: 80%;
+}
+
+.filtros-contact select {
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: none;
+    color: #070707;
+}
+
