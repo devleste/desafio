@@ -183,6 +183,7 @@ form {
     width: 20px;
     min-height: 80px;
     height: 100%;
+    cursor: pointer;
 }
 
 h4 {
