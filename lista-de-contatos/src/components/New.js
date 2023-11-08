@@ -129,22 +129,21 @@ function New() {
                   value={formData.birthday}
                   onChange={handleInputChange}
                   required
-                  className={styles.birthday}
                 />
               </div>
             </div>
             <div className={styles.newInput}>
               <div>
-                  <label htmlFor="avatar">Avatar:</label>
-                  <input
-                    type="file"
-                    id="avatar"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
+                <label htmlFor="avatar">Avatar:</label>
+                <input
+                  type="file"
+                  id="avatar"
+                  name="avatar"
+                  accept="image/*"
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
             </div>
             <Button className={styles.buttonSubmit} type="submit">Salvar novo contato</Button>
           </form>
