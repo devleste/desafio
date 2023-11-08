@@ -35,6 +35,7 @@ function Search() {
   return (
     <fieldset className={styles.search}> 
     <legend>Filtro:</legend>
+    <div>
       <div className={styles.term}>
         <label htmlFor="gender">Gender:</label>
         <select
@@ -66,6 +67,8 @@ function Search() {
           ))}
         </select>
       </div>
+    </div>
+    <div>
       <div className={styles.term}>
         <label htmlFor="age">Age:</label>
         <select
@@ -100,6 +103,7 @@ function Search() {
           ))}
         </select>
       </div>
+    </div>
     </fieldset>
   )
 }

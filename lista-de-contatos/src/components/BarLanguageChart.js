@@ -21,13 +21,22 @@ const BarLanguageChart = () => {
   const languageLabels = Object.keys(languageTotals);
   const languageCounts = Object.values(languageTotals);
  
+  const getRandomColor = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgba(${r}, ${g}, ${b}, 0.6)`;
+  }
+
+  const backgroundColors = languageLabels.map(() => getRandomColor());
+
   const chartData = {
     labels: languageLabels,
     datasets: [
       {
         label: "Language",
         data: languageCounts,
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        backgroundColor: backgroundColors,
       },
     ],
   };
@@ -49,12 +58,16 @@ const BarLanguageChart = () => {
     }
   }
 
+  
+
   return (
-    <div>
-      <h2>Language</h2>
-      <Bar className={styles.bar} data={chartData} options={chartOptions} />
+    <div className={styles.barContainer}>
+      <fieldset className={styles.statistical}>
+        <legend>Language</legend>
+        <Bar className={styles.bar} data={chartData} options={chartOptions} />
+      </fieldset>
     </div>
   );
-};
+}
 
 export default BarLanguageChart;

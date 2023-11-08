@@ -20,15 +20,18 @@ function Header() {
   }, [listaContatos, setBirthday, setLanguage]);
 
   return (
-    <div>
+    <div className={styles.headerContainer}>
       <h1>Lista de contatos</h1>
       <div className={styles.sidenav}>
         <div className={styles.secao}>
           <Button className={styles.button} onClick={openModal}><AddCircleIcon />Adicionar contato</Button>
           <Search />
         </div>
-        <PieChartGender />
-        <BarLanguageChart />
+        <fieldset className={styles.statistical}> 
+          <legend>Resumo Estatístico:</legend>
+          <PieChartGender />
+          <BarLanguageChart />
+        </fieldset>
       </div>
     </div>
   )

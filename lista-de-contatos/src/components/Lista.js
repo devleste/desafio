@@ -86,12 +86,12 @@ function Lista() {
             <td key={`birthday_${item.id}`} className={styles.td}>{ item.birthday }</td>
             <td key="edit" className={styles.td}>
               <button onClick={() => editContato(item)}>
-                <EditIcon />
+                <EditIcon className={styles.icon} />
               </button>
             </td>
             <td key={`delete_${item.id}`} className={styles.td}>
               <button onClick={() => deleteContato(item)}>
-                <DeleteIcon />
+                <DeleteIcon className={styles.icon} />
               </button>
             </td>
           </tr>

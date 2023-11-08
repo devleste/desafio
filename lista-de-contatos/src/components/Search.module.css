@@ -3,13 +3,14 @@
     flex-direction: row;
     text-align: start;
     border: 1px solid #ddd;
-    box-shadow: 2px 5px 5px 2px #ddd;
+    box-shadow: 2px 5px 5px 2px #4682B4;
     margin: 5px 5px 8px 5px;
-    height: 80px;
+    background-color: #fff;
+    height: 210px;
 }
 
 .term {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 30px;
 }

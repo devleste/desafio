@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import ContatosContext from '../context/ContatosContext';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import styles from './Header.module.css';
+import styles from './PieChartGender.module.css';
 
 const PieChartGender = () => {
   ChartJS.register(ArcElement, Tooltip, Legend);
@@ -58,9 +58,11 @@ const PieChartGender = () => {
   };
 
   return (
-    <div>
-      <h2>Gender</h2>
-      <Pie data={data} options={options} className={styles.pie}/>
+    <div className={styles.chartPie}>
+      <fieldset className={styles.statistical}>
+        <legend>Gender</legend>
+        <Pie data={data} options={options} className={styles.pie}/>
+      </fieldset>
     </div>
   );
 };

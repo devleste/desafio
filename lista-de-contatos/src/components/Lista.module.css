@@ -30,3 +30,13 @@ h1 {
   max-height: 250px;
   overflow: auto;
 }
+
+.icon {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: black;
+  border: none;
+}
