@@ -27,8 +27,6 @@ function App() {
     console.log(" textoo ", novo);
   }
 
-
-  
   
 
   //função para gerar novos IDs para novos contatos

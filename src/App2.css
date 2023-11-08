@@ -21,6 +21,11 @@
     padding-right: 10px;
 }
 
+#resultFilter img {
+    width: 100%;
+    max-width: 150px;
+}
+
 /* filter style lista */
 
 
@@ -149,6 +154,7 @@
 .logo {
     width: 90px;
 }
+
 
 
 
