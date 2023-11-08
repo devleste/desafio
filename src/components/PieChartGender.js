@@ -8,25 +8,26 @@ const PieChartGender = () => {
   ChartJS.register(ArcElement, Tooltip, Legend);
   const { listaContatos } = useContext(ContatosContext);
   
-  let feminino = 0;
-  let masculino = 0;
-  listaContatos.forEach((contato) => {
-    if (contato.gender === 'M') {
-      masculino += 1;
-    } else {
-      feminino += 1;
-    }
-  });
+  let female = 0;
+  let male = 0;
+  
+  if (Array.isArray(listaContatos)) {
+    listaContatos.forEach((contato) => {
+      if (contato.gender === 'M') {
+        male += 1;
+      } else {
+        female += 1;
+      }
+    });
+  }
 
-  const total = masculino + feminino;
-  // const percentMasculino = ((masculino / total) * 100).toFixed(2);
-  // const percentFeminino = ((feminino / total) * 100).toFixed(2);
-
+  const total = male + female;
+  
   const data = {
-    labels: ['Masculino', 'Feminino'],
+    labels: ['Male', 'Female'],
     datasets: [
       {
-        data: [masculino, feminino],
+        data: [male, female],
         backgroundColor: [
           '#6495ED',
           '#FF69B4',

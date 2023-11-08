@@ -9,14 +9,14 @@ const BarLanguageChart = () => {
   const { listaContatos, languageTotals, setLanguageTotals } = useContext(ContatosContext);
   
   useEffect(() => {
+    if (Array.isArray(listaContatos)) {
     const totals = listaContatos?.reduce((acc, person) => {
       const language = person.language;
       acc[language] = (acc[language] || 0) + 1;
       return acc;
     }, {});
-
     setLanguageTotals(totals);
-  }, [listaContatos]);
+  }}, [listaContatos, setLanguageTotals]);
 
   const languageLabels = Object.keys(languageTotals);
   const languageCounts = Object.values(languageTotals);
