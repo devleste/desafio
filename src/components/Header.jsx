@@ -25,8 +25,10 @@ function Header() {
       <h1>Contact List</h1>
       <div className={styles.sidenav}>
         <div className={styles.secao}>
-          <Button className={styles.button} onClick={openModal}><AddCircleIcon />Add Contact</Button>
-          <Search />
+          <div className={styles.buttonContainer}>
+            <Button className={styles.button} onClick={openModal}><AddCircleIcon />Add Contact</Button>
+          </div>
+          <Search className={styles.search}/>
         </div>
         <fieldset className={styles.statistical}> 
           <legend>Statistical Summary:</legend>
