@@ -19,6 +19,7 @@
     width: 24px;
     height: 24px;
     padding-right: 10px;
+    cursor: pointer;
 }
 
 #resultFilter img {
@@ -59,6 +60,7 @@
     right: 4%;
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 .iconAddUser {
@@ -92,6 +94,7 @@
     background-color: #00997b;
     color: antiquewhite;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .form-add-new-contact select {

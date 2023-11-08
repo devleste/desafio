@@ -60,6 +60,7 @@ li {/*
 li h4 {
     letter-spacing: 3px;
     font-weight: lighter;
+    cursor: pointer;
 }
 
 .user {
@@ -111,6 +112,7 @@ li h4 {
     padding: 10px 4px 4px 10px;
     width: 100%;
     height: 28px;
+    cursor: pointer;
 }
 
 .container-editar {
@@ -161,6 +163,7 @@ form {
     color: antiquewhite;
     font-weight: bold;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .x {
@@ -169,6 +172,7 @@ form {
     height: 28px;
     top: 2%;
     right: 4%;
+    cursor: pointer;
 }
 
 .lixeira {
