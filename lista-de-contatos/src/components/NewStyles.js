@@ -4,9 +4,9 @@ export const styleBox = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 1000,
-  height: 500,
-  backgroundColor: 'black',
-  color: 'white',
+  height: 490,
+  backgroundColor: '#aabfbf',
+  color: 'black',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -14,8 +14,10 @@ export const styleBox = {
   
 export const styleh1 = {
   color: 'white',
-  width: '100%',
+  width: '98%',
   textAlign: 'start',
   fontSize: "30px",
-  paddingLeft: '10px',
+  backgroundColor: '#1c1f2b',
+  display: 'flex',
+  justifyContent: 'space-between',
 };

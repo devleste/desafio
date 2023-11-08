@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {styleBox, styleh1} from './NewStyles';
+import styles from './New.module.css';
+import CloseIcon from '@mui/icons-material/Close';
 
 function New() {
   const { 
@@ -48,91 +50,103 @@ function New() {
       open={newContato}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
+      className={styles.newContainer}
       >
         <Box sx={styleBox}>
-          <Typography sx={styleh1} component="h1">{`Novo Contato`}</Typography>
-          <Button onClick={closeModal}>Fechar</Button>
+          <Typography sx={styleh1} component="h1">{`Novo Contato`}
+            <Button onClick={closeModal}><CloseIcon style={{ color: 'white' }} /></Button>
+          </Typography>
+          
           <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="first_name">First name:</label>
-              <input
-                type="text"
-                id="first_name"
-                name="first_name"
-                value={formData.first_name}
-                onChange={handleInputChange}
-                required
-              />
+            <div className={styles.newInput}>
+              <div>
+                <label htmlFor="first_name">First name:</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  value={formData.first_name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="last_name">Last name:</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  value={formData.last_name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
             </div>
-            <div>
-              <label htmlFor="last_name">Last name:</label>
-              <input
-                type="text"
-                id="last_name"
-                name="last_name"
-                value={formData.last_name}
-                onChange={handleInputChange}
-                required
-              />
+            <div className={styles.newInput}>
+              <div>
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="language">Language:</label>
+                <input
+                  type="text"
+                  id="language"
+                  name="language"
+                  value={formData.language}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
             </div>
-            <div>
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
+            <div className={styles.newInput}>
+              <div>
+                <label htmlFor="gender">Gender:</label>
+                <select
+                  id="gender"
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value={'F'}>Feminino</option>
+                  <option value={'M'}>Masculino</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="birthday">Birthday:</label>
+                <input
+                  type='date'
+                  id="birthday"
+                  name="birthday"
+                  value={formData.birthday}
+                  onChange={handleInputChange}
+                  required
+                  className={styles.birthday}
+                />
+              </div>
             </div>
-            <div>
-              <label htmlFor="gender">Gender:</label>
-              <select
-                id="gender"
-                name="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-                required
-              >
-                <option value={'F'}>Feminino</option>
-                <option value={'M'}>Masculino</option>
-              </select>
+            <div className={styles.newInput}>
+              <div>
+                  <label htmlFor="avatar">Avatar:</label>
+                  <input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    accept="image/*"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
             </div>
-            <div>
-              <label htmlFor="language">Language:</label>
-              <input
-                type="text"
-                id="language"
-                name="language"
-                value={formData.language}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="avatar">Avatar:</label>
-              <input
-                type="file"
-                id="avatar"
-                name="avatar"
-                accept="image/*"
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="birthday">Birthday:</label>
-              <input
-                type='date'
-                id="birthday"
-                name="birthday"
-                value={formData.birthday}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <Button type="submit">Salvar novo contato</Button>
+            <Button className={styles.buttonSubmit} type="submit">Salvar novo contato</Button>
           </form>
         </Box>
     </Modal>
