@@ -205,6 +205,7 @@ h4 {
     color: antiquewhite;
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 .user {
