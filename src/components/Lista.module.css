@@ -1,3 +1,10 @@
+.tableContainer {
+  position: absolute;
+  top: 385px;
+  width: 100%;
+  overflow: auto;
+}
+
 h1 {
   background-color: DarkBlue;
   color: white;
@@ -8,7 +15,8 @@ h1 {
 .table {
   width: 100%;
   border: 3px solid #aabfbf;
-  height: auto;
+  max-width: 100%;
+  flex: 1;
 }
 
 .td {
@@ -26,11 +34,6 @@ h1 {
   color: white;
 }
 
-.tableContainer {
-  max-height: 250px;
-  overflow: auto;
-}
-
 .icon {
   background-color: black;
   color: white;
@@ -39,4 +42,10 @@ h1 {
 button {
   background-color: black;
   border: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .tableContainer {
+    top: 250px;
+  }
 }
