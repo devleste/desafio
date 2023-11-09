@@ -23,9 +23,9 @@
 .statistical {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items:start;
     justify-content: space-between;
-    text-align: flex-start;
+    text-align: start;
     border: 1px solid #ddd;
     box-shadow: 2px 5px 5px 2px #4682B4;
     margin: 5px 5px 8px 5px;

@@ -45,13 +45,13 @@ label {
   left: 25%;
   margin: 15px;
   padding: 10px;
-  background-color: #007bff !important;
-  color: #fff !important;
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .buttonSubmit:hover {
-  background-color: #0056b3 !important;
+  background-color: #0056b3;
 }

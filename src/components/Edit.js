@@ -165,22 +165,13 @@ function Edit() {
               <div>
                 <label htmlFor="avatar">Avatar:</label>
                 <input
-                  type="text"
-                  id="avatar"
-                  name="avatar"
-                  placeholder='Digite aqui a url da imagem.'
-                  value={editedContact.avatar || idContato.avatar}
-                  onChange={handleInputChange}
-                  required
-                />
-                {/* <input
                   type="file"
                   id="avatar"
                   name="avatar"
                   accept="image/*"
                   onChange={handleInputChange}
                   required
-                /> */}
+                />
               </div>
             </div>            
             <Button className={styles.buttonSubmit} type="submit">Salvar edição</Button>

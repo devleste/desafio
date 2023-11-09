@@ -4,7 +4,7 @@ export const styleBox = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 1000,
-  height: 450,
+  height: 490,
   backgroundColor: '#aabfbf',
   color: 'black',
   border: '2px solid #000',

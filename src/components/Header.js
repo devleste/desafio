@@ -15,21 +15,20 @@ function Header() {
   };
 
   useEffect(() => {
-    if (Array.isArray(listaContatos)) {
-      setBirthday(listaContatos.map((contact) => contact.birthday));
-      setLanguage(listaContatos.map((contact) => contact.language));
-    }}, [listaContatos, setBirthday, setLanguage]);
+    setBirthday(listaContatos.map((contato) => contato.birthday));
+    setLanguage(listaContatos.map((contato) => contato.language));
+  }, [listaContatos, setBirthday, setLanguage]);
 
   return (
     <div className={styles.headerContainer}>
-      <h1>Contact List</h1>
+      <h1>Lista de contatos</h1>
       <div className={styles.sidenav}>
         <div className={styles.secao}>
-          <Button className={styles.button} onClick={openModal}><AddCircleIcon />Add Contact</Button>
+          <Button className={styles.button} onClick={openModal}><AddCircleIcon />Adicionar contato</Button>
           <Search />
         </div>
         <fieldset className={styles.statistical}> 
-          <legend>Statistical Summary:</legend>
+          <legend>Resumo Estatístico:</legend>
           <PieChartGender />
           <BarLanguageChart />
         </fieldset>

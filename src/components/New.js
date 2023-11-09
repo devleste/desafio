@@ -28,9 +28,9 @@ function New() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newId = listaContatos ? listaContatos.length + 1 : 1; 
-    const novoContato = { ...formData, id: newId }; 
-    const novaListaContatos = listaContatos ? [...listaContatos, novoContato] : [novoContato]; 
+    const newId = listaContatos ? listaContatos.length + 1 : 1; // Gere um novo ID
+    const novoContato = { ...formData, id: newId }; // Crie o novo contato com o novo ID
+    const novaListaContatos = listaContatos ? [...listaContatos, novoContato] : [novoContato]; // Adicione o novo contato à lista
   
     setListaContatos(novaListaContatos);
   
@@ -38,28 +38,10 @@ function New() {
     localStorage.setItem('contatos', updatedLocalStorageData);
   
     setNewContato(false);
-    setFormData({
-      first_name: '',
-      last_name: '',
-      email: '',
-      gender: 'F',
-      language: '',
-      avatar: '',
-      birthday: '',
-    })
   };
   
   const closeModal = () => {
     setNewContato(false);
-    setFormData({
-      first_name: '',
-      last_name: '',
-      email: '',
-      gender: 'F',
-      language: '',
-      avatar: '',
-      birthday: '',
-    })
   };
 
   return (
@@ -134,8 +116,8 @@ function New() {
                   onChange={handleInputChange}
                   required
                 >
-                  <option value={'F'}>Female</option>
-                  <option value={'M'}>Male</option>
+                  <option value={'F'}>Feminino</option>
+                  <option value={'M'}>Masculino</option>
                 </select>
               </div>
               <div>
@@ -154,22 +136,13 @@ function New() {
               <div>
                 <label htmlFor="avatar">Avatar:</label>
                 <input
-                  type="text"
-                  id="avatar"
-                  name="avatar"
-                  placeholder='Digite aqui a url da imagem.'
-                  value={formData.avatar}
-                  onChange={handleInputChange}
-                  required
-                />
-                {/* <input
                   type="file"
                   id="avatar"
                   name="avatar"
                   accept="image/*"
                   onChange={handleInputChange}
                   required
-                /> */}
+                />
               </div>
             </div>
             <Button className={styles.buttonSubmit} type="submit">Salvar novo contato</Button>
