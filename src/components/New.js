@@ -71,7 +71,7 @@ function New() {
       className={styles.newContainer}
       >
         <Box sx={styleBox}>
-          <Typography sx={styleh1} component="h1">{`Novo Contato`}
+          <Typography sx={styleh1} component="h1">{`New contact`}
             <Button onClick={closeModal}><CloseIcon style={{ color: 'white' }} /></Button>
           </Typography>
           
@@ -172,7 +172,7 @@ function New() {
                 /> */}
               </div>
             </div>
-            <Button className={styles.buttonSubmit} type="submit">Salvar novo contato</Button>
+            <Button className={styles.buttonSubmit} type="submit">Save new contact</Button>
           </form>
         </Box>
     </Modal>

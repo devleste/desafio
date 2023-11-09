@@ -63,7 +63,7 @@ function Edit() {
       aria-describedby="modal-modal-description"
       >
         <Box sx={styleBox}>
-          <Typography sx={styleh1} component="h1">{`Editar Contato`}
+          <Typography sx={styleh1} component="h1">{`Edit contact`}
             <Button onClick={closeModal}><CloseIcon style={{ color: 'white' }} /></Button>
           </Typography>
 
@@ -169,7 +169,7 @@ function Edit() {
                 /> */}
               </div>
             </div>            
-            <Button className={styles.buttonSubmit} type="submit">Salvar edição</Button>
+            <Button className={styles.buttonSubmit} type="submit">Save edit</Button>
           </form>
         </Box>
     </Modal>
