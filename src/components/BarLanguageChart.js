@@ -16,7 +16,7 @@ const BarLanguageChart = () => {
     }, {});
 
     setLanguageTotals(totals);
-  }, [listaContatos]);
+  }, [listaContatos, setLanguageTotals]);
 
   const languageLabels = Object.keys(languageTotals);
   const languageCounts = Object.values(languageTotals);

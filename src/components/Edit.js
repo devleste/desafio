@@ -15,6 +15,7 @@ function Edit() {
     idContatoEdit, 
     listaContatos,
     setListaContatos,
+    language,
   } = useContext(ContatosContext);
   const [editedContact, setEditedContact] = useState({});
     
@@ -112,26 +113,11 @@ function Edit() {
                   onChange={handleInputChange}
                   required
                 >
-                  <option value='Bengali'>Bengali</option>
-                  <option value='Dari'>Dari</option>
-                  <option value='Dutch'>Dutch</option>
-                  <option value='Estonian'>Estonian</option>
-                  <option value='Hungarian'>Hungarian</option>
-                  <option value='Indonesian'>Indonesian</option>
-                  <option value='Filipino'>Filipino</option>
-                  <option value='Finnish'>Finnish</option>
-                  <option value='Kannada'>Kannada</option>
-                  <option value='Kazakh'>Kazakh</option>
-                  <option value='Kurdish'>Kurdish</option>
-                  <option value='Latvian'>Latvian</option>
-                  <option value='Māori'>Māori</option>
-                  <option value='Moldovan'>Moldovan</option>
-                  <option value='Oriya'>Oriya</option>
-                  <option value='Polish'>Polish</option>
-                  <option value='Somali'>Somali</option>
-                  <option value='Spanish'>Spanish</option>
-                  <option value='Swati'>Swati</option>
-                  <option value='Tok Pisin'>Tok Pisin</option>
+                  {language?.map((language, index) => (
+                    <option key={index} value={language}>
+                      {language}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
