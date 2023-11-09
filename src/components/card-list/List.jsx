@@ -76,17 +76,17 @@ const ListComponent = () => {
     O BLOCO TRY CATCH E DESCOMENTE O METODO setData(jsonData) QUE RECEBE DADOS DE 
     UM JSON QUE SIMULA O RECEBIMENTO DE DADOS DE UMA API REST;
     */
-    try {
-      const response = await fetch(apiEndPoint);
-      if (response.ok) {
-        const jsonResponse = await response.json();
-        setData(jsonResponse);
-      }
-    } catch (error) {
-      console.error('Error fetching data: ' + error);
-    }
+    // try {
+    //   const response = await fetch(apiEndPoint);
+    //   if (response.ok) {
+    //     const jsonResponse = await response.json();
+    //     setData(jsonResponse);
+    //   }
+    // } catch (error) {
+    //   console.error('Error fetching data: ' + error);
+    // }
 
-    //setData(jsonData);
+    setData(jsonData);
   };
 
   useEffect(() => {
