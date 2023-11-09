@@ -5,13 +5,6 @@
   overflow: auto;
 }
 
-h1 {
-  background-color: DarkBlue;
-  color: white;
-  margin: 0;
-  padding: 10px;
-}
-
 .table {
   width: 100%;
   border: 3px solid #aabfbf;
@@ -30,7 +23,7 @@ h1 {
 .th {
   border: #aabfbf 1px solid;
   height: 30px;
-  background-color: CornflowerBlue;
+  background-color: rgb(0, 153, 123);
   color: white;
 }
 
@@ -46,6 +39,6 @@ button {
 
 @media screen and (max-width: 1200px) {
   .tableContainer {
-    top: 250px;
+    top: 300px;
   }
 }

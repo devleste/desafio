@@ -2,8 +2,7 @@ form {
   width: 95.8%;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  height: 350px;
   background-color: #f9f9f9;
 }
 
@@ -45,7 +44,7 @@ label {
   left: 25%;
   margin: 15px;
   padding: 10px;
-  background-color: #007bff !important;
+  background-color: rgb(0, 153, 123) !important;
   color: #fff !important;
   border: none;
   border-radius: 5px;
@@ -53,5 +52,5 @@ label {
 }
 
 .buttonSubmit:hover {
-  background-color: #0056b3 !important;
+  background-color: rgb(0, 153, 123) !important;
 }

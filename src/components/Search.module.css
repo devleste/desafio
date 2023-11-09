@@ -3,7 +3,7 @@
     flex-direction: row;
     text-align: start;
     border: 1px solid #ddd;
-    box-shadow: 2px 5px 5px 2px #4682B4;
+    box-shadow: 2px 5px 5px 2px rgb(0, 153, 123);
     margin: 5px 5px 8px 5px;
     background-color: #fff;
     height: 210px;

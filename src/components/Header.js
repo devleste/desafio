@@ -22,7 +22,10 @@ function Header() {
 
   return (
     <div className={styles.headerContainer}>
-      <h1>Contact List</h1>
+      <div className={styles.headerTitle}>
+        <img  className={styles.headerTitleImg} src='https://central.lestetelecom.com.br/sites/default/files//leste_2.jpg' alt="Logo" width="150" height="60"></img>
+        <h1>Leste Contact</h1>
+      </div>
       <div className={styles.sidenav}>
         <div className={styles.secao}>
           <div className={styles.buttonContainer}>
