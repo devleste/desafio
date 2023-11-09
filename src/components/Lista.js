@@ -80,8 +80,8 @@ function Lista() {
             <td key={`avatar_${item.id}`} className={styles.td}>
               <img src={item.avatar} width='100' height='100' alt="Avatar" />
             </td>
-            <td key={`birthday_${item.id}`} className={styles.td} >{ item.birthday }</td>
-            <td key={`edit_delete_${item.id}`}  className={styles.td} >
+            <td key={`birthday_${item.id}`} className={styles.td}>{ item.birthday }</td>
+            <td key={`edit_delete_${item.id}`}  className={styles.td}>
               <button onClick={() => editContato(item)}>
                 <EditIcon className={styles.icon} />
               </button>
