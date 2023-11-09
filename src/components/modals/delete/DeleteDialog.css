@@ -1,0 +1,69 @@
+.dialog-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: fadeIn 1.5s ease forwards;
+  width: 350px;
+
+}
+
+.dialog-backdrop {
+  backdrop-filter: blur(5px);
+}
+
+.dialog-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 5px;
+  color: black;
+  border: 1px solid #31AD94;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-message {
+  color: #31AD94;
+}
+
+.dialog-button {
+  padding: 10px;
+  width: 80px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog-button-yes {
+  background-color: #E74C3C;
+}
+
+.dialog-button-no {
+  background-color: #31AD94;
+}
+
+.dialog-button-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media(max-width:826px){
+  .dialog-container{
+    width: 300px;
+  }
+} 

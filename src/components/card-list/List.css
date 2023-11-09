@@ -1,0 +1,242 @@
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 5s ease forwards;
+  opacity: 0;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 17px;
+}
+.add-user{
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: bold;
+}
+.add-user button {
+  background: #00997B;
+  color: #fff;
+  border: none;
+  height: 45px;
+  padding: 5px 15px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.add-user button:hover {
+  background-color: #007A60;
+}
+
+.add-user button:focus,
+.add-user button:active {
+  outline: none;
+}
+
+.statistics-button{
+  background-color: #e0e0e0;
+  color: #0B8B6A;
+  border: none;
+  height: 45px;
+  padding: 5px 15px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  font-size: 14px;
+   background-color: #e0e0e0;
+}
+
+
+
+.statistics-button:focus,
+.statistics-button:active {
+  outline: none;
+}
+
+
+.add-user{
+  margin-bottom: 20px;
+}
+.filter-container{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+option{
+  padding: 20px;
+}
+
+input,input::placeholder{
+  border: none;
+  appearance: none;
+  background-color:#fff ;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+}
+
+input::placeholder{
+  color: #CFCFCF;
+  background-color: #fff !important;
+}
+
+input{
+  color:#00997B;
+}
+
+.contact-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.contact-card:hover{
+  transform: scale(1.1);
+}
+
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card-avatar{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.icons{
+  margin-top: 15px;
+}
+
+.svg-icon{
+  margin-right: 15px;
+}
+.user-details {
+  margin-top: 10px;
+}
+
+.button-svg {
+  background:#f5f5f5;;
+  color: #fff;
+  border: none;
+  height: 45px;
+  padding: 5px; 
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.button-svg:focus,
+.button-svg:active {
+  outline: none;
+  background-color: #e0e0e0;
+}
+
+
+
+.user-name {
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.user-details{
+  max-width: 100%;
+}
+
+.user-email {
+  margin: 0;
+  color: #ccc;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.user-info p {
+  margin: 5px 0;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@media (max-width:826px){
+    .filter-container{
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .contact-list{
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+    }
+
+    .contact-card{
+      margin: 0 auto;
+      margin-top: 20px;
+      width: 70%;
+      max-width: 70%;
+    }
+
+    
+.contact-card:hover{
+  transform: none;
+}
+  
+    svg{
+      width: 20px;
+    }
+
+    select{
+      width: 40%;
+    }
+
+    @media (max-width:630px) {
+      
+      .contact-list{
+        grid-template-columns: 1fr;
+      }
+    }
+}
+
+
