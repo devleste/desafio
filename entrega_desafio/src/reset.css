@@ -1,0 +1,118 @@
+/* reset.css */
+
+/* Aplica um box-sizing padrão a todos os elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove margens padrão */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Define fontes padrão */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Remove estilo de lista */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove decoração de link */
+a {
+  text-decoration: none;
+}
+
+/* Define cores padrão para texto e fundo */
+body {
+  color: #000;
+  background-color: #fff;
+}
+
+/* Define a largura da imagem como 100% do contêiner pai */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove elementos de formulário e botões padrão */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  background: none;
+}
+
+/* Corrige a exibição de botões em determinados navegadores */
+button,
+input {
+  overflow: visible;
+}
+
+/* Corrige a renderização estranha em alguns navegadores */
+textarea {
+  overflow: auto;
+}
+
+/* Corrige o espaçamento e a cor do botão em determinados navegadores */
+button,
+select {
+  text-transform: none;
+}
+
+/* Evita o "arrastar e soltar" incorreto em alguns elementos */
+[draggable] {
+  user-select: none;
+}
+
+/* Remove estilos padrão do elemento "quote" */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* Define aspas em elementos "quote" */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+/* Evitar a mudança de fundo para cinza durante o preenchimento automático */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
+}
+

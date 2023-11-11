@@ -1,0 +1,94 @@
+.contatocard{
+    width: 90%;
+    height: 400px;
+    background: var(--white);
+    box-shadow: 2px 2px 10px var(--black);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin-left: 4.2%;
+}
+.contatocard img{
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    max-height: 120px;
+    max-width: 120px;
+}
+.contatocard .name{
+    display: flex;
+    gap: 7px;
+    color: var(--sec-cl);
+    font-size: 24px;
+}
+.contatocard .email{
+    font-size: 14px;
+}
+.contatocard .genero{
+    font-weight: bold;
+}
+.contatocard .idioma{
+    font-weight: bold;
+}
+.contatocard .aniversario{
+    font-weight: bold;
+}
+.contatocard .delete-btn{
+    cursor: pointer;
+}
+.contatocard .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.buttons .delete-btn{
+    padding: 10px;
+    background: #7e1d16;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.delete-btn svg{
+    margin-left: 5px;
+}
+
+.buttons .edit-btn{
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--sec-cl);
+    color: var(--white);
+    cursor: pointer;
+}
+.edit-btn svg{
+    margin-left: 5px;
+}
+
+@media(max-width:424px){
+    .contatocard .name{
+        display: flex;
+        gap: 7px;
+        color: var(--sec-cl);
+        font-size: 19px;
+    }
+}
+
+@media(min-width:425px) and (max-width:767px){
+    .contatocard .name{
+        display: flex;
+        gap: 7px;
+        color: var(--sec-cl);
+        font-size: 19px;
+    }
+}
+
+/* Tablets pequenos */
+@media(min-width:768px) and (max-width:991px){
+}
+
+/* Tablets grandes e Notebook */
+@media(min-width:992px) and (max-width:1400px){
+
+}

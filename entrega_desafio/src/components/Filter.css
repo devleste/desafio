@@ -1,0 +1,91 @@
+.filter{
+    width: 70%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin-block: 20px;
+}
+.filters-data{
+    display: flex;
+    padding: 20px;
+}
+.filter h2{
+  font-size: 30px;
+  font-weight: bold;
+}
+.btn-green{
+    padding: 10px;
+    background: var(--maincl);
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 1px 1px 10px var(--black);
+    color: var(--white);
+  }
+  .btn-green:hover{
+    background: var(--sec-cl);
+  }
+
+  @media(max-width:424px){
+    .filter{
+      width: 95%;
+    }
+    .filters-data{
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    .filters{
+      display: flex;
+      flex-direction: column;
+      margin-block: 5px;
+      text-align: center;
+    }
+    .mobile-label{
+      font-size: 17px;
+    }
+  }
+
+  @media(min-width:425px) and (max-width:767px){
+    .filter{
+      width: 95%;
+    }
+    .filters-data{
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    .filters{
+      display: flex;
+      flex-direction: column;
+      margin-block: 5px;
+      text-align: center;
+    }
+    .mobile-label{
+      font-size: 17px;
+    }
+  }
+
+  /* Tablets pequenos */
+@media(min-width:768px) and (max-width:991px){
+  .filter{
+    width: 80%;
+  }
+  .filters-data{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* Tablets grandes e Notebook */
+@media(min-width:992px) and (max-width:1400px){
+  .filter{
+    width: 90%;
+  }
+}
