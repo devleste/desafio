@@ -1,0 +1,78 @@
+.resumo{
+        width: 70%;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 20px;
+        margin-block: 20px;
+}
+.resumos {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 20px;
+}
+.resumo h2{
+    font-size: 30px;
+  font-weight: bold;
+}
+.resumo-item{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:424px){
+
+    .resumo{
+        width: 95%;
+    }
+    .resumos{
+        flex-direction: column;
+    }
+    .resumo-item{
+        flex-direction: column;
+        text-align: center;
+        margin-block: 5px;
+    }
+}
+
+@media(min-width:425px) and (max-width:767px){
+    .resumo{
+        width: 95%;
+    }
+    .resumos{
+        flex-direction: column;
+    }
+    .resumo-item{
+        flex-direction: column;
+        text-align: center;
+        margin-block: 5px;
+    }
+}
+
+/* Tablets pequenos */
+@media(min-width:768px) and (max-width:991px){
+    .resumo{
+        width: 90%;
+    }
+    .resumos{
+        flex-direction: column;
+    }
+    .resumo-item{
+        flex-direction: column;
+        text-align: center;
+        margin-block: 5px;
+    }
+}
+
+/* Tablets grandes e Notebook */
+@media(min-width:992px) and (max-width:1400px){
+    .resumo{
+        width: 90%;
+    }
+}
