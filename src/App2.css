@@ -1,0 +1,207 @@
+
+/* botão do formulario filter */
+.button-filter {
+    width: 80%;
+    height: 40px;
+    color: antiquewhite;
+    background-color: #00997b;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.filtros-contact option {
+    font-weight: bold;
+}
+
+.fechar-filtro {
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#resultFilter img {
+    width: 100%;
+    max-width: 150px;
+}
+
+/* filter style lista */
+
+
+#resultFilter {
+    width: 80%;
+    margin: 20px auto;
+    height: 100px;
+    outline: none;
+}
+
+/* add new contact */
+
+.newContact {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    min-height: 400px;
+    width: 100%;
+    background-color: antiquewhite;
+    color: #070707;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fechar-adicionar-contato {
+    color: #070707;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.iconAddUser {
+    width: 48px;
+    height: 48px;
+    color: #00997b;
+}
+
+.form-add-new-contact {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-add-new-contact input,
+.form-add-new-contact select,
+.form-add-new-contact button {
+    width: 100%;
+    border: none;
+    height: 30px;
+}
+
+.form-add-new-contact input {
+    background-color: transparent;
+    border-bottom: 2px solid #070707;
+    outline: none;
+    color: #070707;
+}
+
+.form-add-new-contact button {
+    margin: 16px 0;
+    background-color: #00997b;
+    color: antiquewhite;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.form-add-new-contact select {
+    background-color: transparent;
+    color: #070707;
+    border-bottom: 2px solid #070707;
+}
+
+.form-add-new-contact label {
+    color: #070707;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.statistical {
+    width: 24px;
+    height: 24px;
+}
+
+.statistics-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;     
+    overflow: auto;
+    background-color:antiquewhite;
+    z-index: 10;
+}
+
+.statistics-container h2 {
+    padding: 10px;
+    color: #070707;
+}
+
+.statistics-container p {
+    padding: 2px 0 6px 10px;
+    background-color: #070707;
+}
+
+.statistics-container li {
+    height: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    padding-left: 18px;
+    color: #070707;
+}
+
+.fechar-statistic {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    color: #070707;
+}
+
+/* logo leste */
+
+.logo {
+    width: 90px;
+}
+
+
+
+
+
+
+
+
+/* scroll */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #5C5656 #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+*::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #5C5656;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #6F6F6F;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #DBDBDB;
+}
+
+
+/* scroll */
