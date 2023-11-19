@@ -84,6 +84,10 @@ li h4 {
     .lista-completa {
     width: 70%;
     }
+        
+    #formAdd {
+        width: 70%;
+    }
 }
 
 /* Estilo para computadores (largura de tela maior que 1024px) */
@@ -91,6 +95,13 @@ li h4 {
     .lista-completa {
     width: 50%;
     }
+    
+}
+
+@media screen and (max-width: 767px) {
+    #formAdd {
+        width: 80%;
+    }    
 }
 
 
@@ -131,12 +142,21 @@ li h4 {
 } 
 
 form {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px auto;
+}
+
+#formAdd {
+    width: 50%;
+}
+
+#formAdd button {
+    height: 40px;
+    font-weight: bold;
 }
 
 .container-editar input {

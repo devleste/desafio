@@ -51,65 +51,65 @@ return (
             onClick={() => setNewContact(false)}
             />
             <AiOutlineUserAdd className="iconAddUser" />
-            <form className="form-add-new-contact">
+            <form id="formAdd" className="form-add-new-contact">
 
-            <label htmlFor="avatar">Profile picture:</label>
-            <input
-                type="file"
-                accept="image/*"
-                name="avatar"
-                onChange={(e) => handleAvatarChange(e)}
-            />
+                <label htmlFor="avatar">Profile picture:</label>
+                <input
+                    type="file"
+                    accept="image/*"
+                    name="avatar"
+                    onChange={(e) => handleAvatarChange(e)}
+                />
 
-            <label htmlFor="first_name">First name:</label>
-            <input
-                type="text"
-                name="first_name"
-                value={formData.first_name}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="last_name">Last name:</label>
-            <input
-                type="text"
-                name="last_name"
-                value={formData.last_name}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="email">E-mail:</label>
-            <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="gender">Gênero</label>
-            <select
-                name="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-            >
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
-                <option value="Outro">Outro</option>
-            </select>
-            <label htmlFor="language">Language:</label>
-            <input
-                type="text"
-                name="language"
-                value={formData.language}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="birthday">Date of birth:</label>
-            <input
-                type="text"
-                placeholder="00-00-0000"
-                name="birthday"
-                value={formData.birthday}
-                onChange={handleInputChange}
-            />
-            <button type="button" onClick={saveContact}>
-                Save
-            </button>
+                <label htmlFor="first_name">First name:</label>
+                <input
+                    type="text"
+                    name="first_name"
+                    value={formData.first_name}
+                    onChange={handleInputChange}
+                />
+                <label htmlFor="last_name">Last name:</label>
+                <input
+                    type="text"
+                    name="last_name"
+                    value={formData.last_name}
+                    onChange={handleInputChange}
+                />
+                <label htmlFor="email">E-mail:</label>
+                <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                />
+                <label htmlFor="gender">Gênero</label>
+                <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleInputChange}
+                >
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <label htmlFor="language">Language:</label>
+                <input
+                    type="text"
+                    name="language"
+                    value={formData.language}
+                    onChange={handleInputChange}
+                />
+                <label htmlFor="birthday">Date of birth:</label>
+                <input
+                    type="text"
+                    placeholder="00-00-0000"
+                    name="birthday"
+                    value={formData.birthday}
+                    onChange={handleInputChange}
+                />
+                <button type="button" onClick={saveContact}>
+                    Save
+                </button>
             </form>
         </div>
         )}

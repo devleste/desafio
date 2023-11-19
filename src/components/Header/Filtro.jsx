@@ -70,7 +70,7 @@ return(
     <>
     <header>
         < BsGraphUpArrow className="statistical" onClick={() => setStatistical(true)} />
-        <img src={LogoLeste} className="logo" alt="logo-leste" />
+        <h1 style={{textAlign: 'center'}}>JM Contact</h1>
         <BsFilterCircle className="filter" onClick={() => setFiltrarContact(true)} />  
     </header>
 
