@@ -1,3 +1,7 @@
+.container {
+  background-color: #009373;
+}
+
 .headerContainer {
   display: flex;
   align-items: center;
@@ -8,8 +12,11 @@
   max-width: 1350px;
   
   margin: auto;
+}
 
-  border: 1px solid red;
+.buttonContainer{
+  display: flex;
+  gap: 15px;
 }
 
 .headerButton{
@@ -23,3 +30,8 @@
   transform: scale(1.1, 1.2);
   font-weight: bold;
 }
+
+.logo{
+  height: 100%;
+}
+

@@ -1,0 +1,30 @@
+
+.container{
+  background-color: #002019;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  max-width: 1350px;
+  margin: auto;
+  color: white;
+}
+
+section.socialMidia{
+  display: flex;
+  gap: 10px;
+}
+
+section.clientContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+div.phoneNumberContainer{
+  display: flex;
+  gap: 10px;
+}

@@ -1,17 +1,22 @@
-import logo from "../../assets/leste-logo.webp";
+import logo from "../../assets/leste-logo-white.png";
 import style from "./index.module.css";
-import { MdQueryStats } from "react-icons/md";
+import { MdQueryStats, MdFormatListBulletedAdd } from "react-icons/md";
 
 
 export default function Header(){
   
   return (
-    <section>
+    <section className={style.container}>
       <header className={style.headerContainer}>
-        <img src={logo} alt="logo" />
-        <button className={style.headerButton}>
-          <MdQueryStats size={34} color="#009373" />
-        </button>
+        <img className={style.logo} src={logo} alt="logo" />
+        <div className={style.buttonContainer}>
+          <button title="Statistics" className={style.headerButton}>
+            <MdQueryStats size={34} color="#ffffff" />
+          </button>
+          <button className={style.headerButton}>
+            <MdFormatListBulletedAdd size={34} color="#ffffff" />
+          </button>
+        </div>
       </header>
     </section>
   )
