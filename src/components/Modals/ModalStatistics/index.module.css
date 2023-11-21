@@ -1,0 +1,10 @@
+
+.title{
+  text-align: center;
+  color: #019272;
+  font-size: 2.4rem;
+}
+
+.chartContainer{
+  display: flex;
+}

@@ -36,6 +36,18 @@ th{
   letter-spacing: 3px;
 }
 
+.buttonDetail{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.buttonDetail:hover{
+  transform: scale(1.2, 1.2);
+}
+
 .title{
   color: #019272;
   text-align: center;
@@ -58,7 +70,7 @@ section.cardsContainer{
   justify-content: space-around;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1040px) {
 
   table{
     border: 0;

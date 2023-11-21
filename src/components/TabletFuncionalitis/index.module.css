@@ -1,0 +1,27 @@
+
+.funcionalitisContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1350px;
+  margin: 15px auto;
+}
+
+.funcionalitisContainer button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.funcionalitisContainer button:hover{
+  transform: scale(1.2, 1.2);
+}
+
+.buttonGroup{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

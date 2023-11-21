@@ -7,6 +7,22 @@ import Form from "./components/Form"
 import Header from './components/Header'
 import Map from "./components/Map"
 import SearchInput from "./components/SearchInput"
+import TableFuncionalitis from "./components/TabletFuncionalitis"
+
+// Modals
+import ModalStatistics from "./components/Modals/ModalStatistics"
+import ModalTableDelete from "./components/Modals/ModalaTableDelete"
+import ModalTableUpdate from "./components/Modals/ModalTableUpdate"
+import ModalAddUser from "./components/Modals/ModalAddUser"
+import ModalDetail from "./components/Modals/ModalDetail"
+import ModalFilter from "./components/Modals/ModalFilter"
+import ModalUpdateUser from "./components/Modals/ModalUpdadeUser"
+
+// Icons
+import { BiSolidUserDetail } from "react-icons/bi";
+
+// Zustand
+import { useDetail } from "./store/useDetail"
 
 const data = [
   {
@@ -40,6 +56,15 @@ const data = [
 ]
 
 function App() {
+  const [setDetail, setUser] = useDetail((state) => [state.toggleDetail, state.setUser]);
+
+  function handleClick(id: number){
+    setDetail();
+
+    const user = data.filter(item => item.id === id);
+
+    setUser(user[0]);
+  }
 
   return (
     <div className="container">
@@ -47,6 +72,7 @@ function App() {
       <main>
         <h1 className="title">Leste Contact</h1>
         <SearchInput />
+        <TableFuncionalitis />
         <section>
           <table>
             <thead>
@@ -58,6 +84,7 @@ function App() {
                 <th scope="col">Language</th>
                 <th scope="col">Avatar</th>
                 <th scope="col">Birthday</th>
+                <th scope="col">Detail</th>
               </tr>
             </thead>
             <tbody id="tbody">
@@ -73,6 +100,9 @@ function App() {
                       <img className="avatar" src={item.avatar} alt="avatar" />
                     </td>
                     <td data-label="Birthday">{item.birthday}</td>
+                    <td data-label="Detail">
+                      <button onClick={() => handleClick(item.id)} className="buttonDetail"><BiSolidUserDetail size={30} color="#019272" /></button>
+                    </td>
                   </tr>
                 ))
               }
@@ -81,6 +111,15 @@ function App() {
         </section>
         <Form/>
         <Map/>
+
+        <ModalStatistics/>
+        <ModalTableDelete/>
+        <ModalTableUpdate />
+        <ModalUpdateUser />
+        <ModalAddUser />
+        <ModalDetail/>
+        <ModalFilter />
+        <ModalDetail />
       </main>
       <Footer/>
     </div>

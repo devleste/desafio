@@ -37,7 +37,7 @@ export default function Map(){
               }}
               />
             </GoogleMap>
-          ) : <p>Não foi possivel carregar</p>
+          ) : <p className={style.unloadMessage}>Não foi possivel carregar o mapa, recarregue a pagina!</p>
       }
     </section>
   )
