@@ -1,7 +1,7 @@
 import style from "./index.module.css"
 import { BiSearchAlt } from "react-icons/bi";
 
-export function SearchInput(){
+export default function SearchInput(){
 
 
   return (
