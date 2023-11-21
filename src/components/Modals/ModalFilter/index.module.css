@@ -1,0 +1,23 @@
+
+.title{
+  text-align: center;
+  font-size: 2.4rem;
+  color: #019272;
+}
+
+.listContainer{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.listContent{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listContent ul{
+  list-style: none;
+}
