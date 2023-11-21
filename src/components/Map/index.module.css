@@ -1,0 +1,13 @@
+
+.mapContainer {
+  width: 100%;
+  height: 350px;
+  max-width: 1350px;
+  margin: 20px auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.mapLabel{
+  margin-top: -30;
+}

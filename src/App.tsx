@@ -5,6 +5,7 @@ import "./App.css"
 import Footer from './components/Footer'
 import Form from "./components/Form"
 import Header from './components/Header'
+import Map from "./components/Map"
 import SearchInput from "./components/SearchInput"
 
 const data = [
@@ -46,38 +47,40 @@ function App() {
       <main>
         <h1 className="title">Leste Contact</h1>
         <SearchInput />
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Lastname</th>
-              <th scope="col">Email</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Language</th>
-              <th scope="col">Avatar</th>
-              <th scope="col">Birthday</th>
-            </tr>
-          </thead>
-          <tbody id="tbody">
-            {
-              data.map((item) => (
-                <tr key={item.id} className="tr">
-                  <td data-label="Name">{item.first_name}</td>
-                  <td data-label="Lastname">{item.last_name}</td>
-                  <td data-label="Email">{item.email}</td>
-                  <td data-label="Gender">{item.gender}</td>
-                  <td data-label="Language">{item.language}</td>
-                  <td data-label="Avatar">
-                    <img className="avatar" src={item.avatar} alt="avatar" />
-                  </td>
-                  <td data-label="Birthday">{item.birthday}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Language</th>
+                <th scope="col">Avatar</th>
+                <th scope="col">Birthday</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              {
+                data.map((item) => (
+                  <tr key={item.id} className="tr">
+                    <td data-label="Name">{item.first_name}</td>
+                    <td data-label="Lastname">{item.last_name}</td>
+                    <td data-label="Email">{item.email}</td>
+                    <td data-label="Gender">{item.gender}</td>
+                    <td data-label="Language">{item.language}</td>
+                    <td data-label="Avatar">
+                      <img className="avatar" src={item.avatar} alt="avatar" />
+                    </td>
+                    <td data-label="Birthday">{item.birthday}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </section>
         <Form/>
-        <section className="cardsContainer"></section>
+        <Map/>
       </main>
       <Footer/>
     </div>
