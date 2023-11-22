@@ -7,47 +7,6 @@ body{
   min-height: 100vh;
 }
 
-table {
-  border-collapse: collapse;
-  border: 5px solid #019272;
-  border-radius: 5px;
-  margin: 10px auto;
-  max-width: 1350px;
-  width: 100%;
-  /* table-layout: fixed; */
-}
-
-thead{
-  background-color: #019272;
-  color: #ffffff;
-  height: 70px;
-}
-
-td{
-  border: 3px solid #019272;
-  padding: 0 15px;
-  text-align: start;
-  width: 150px;
-}
-th{
-  width: 150px;
-  padding: 0 15px;
-  text-align: start;
-  letter-spacing: 3px;
-}
-
-.buttonDetail{
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  transition: all 0.2s;
-}
-
-.buttonDetail:hover{
-  transform: scale(1.2, 1.2);
-}
-
 .title{
   color: #019272;
   text-align: center;
@@ -68,61 +27,4 @@ section.cardsContainer{
   margin: 20px  auto;
   display: flex;
   justify-content: space-around;
-}
-
-@media screen and (max-width: 1040px) {
-
-  table{
-    border: 0;
-  }
-
-  table th, table td {
-    padding: 14px;
-    text-align: center;
-    width: 100%;
-  }
-
-  table thead{
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    margin: -1px;
-    width: 1px;
-  }
-
-  .tr {
-    border: 4px solid #019272;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  table td {
-    border-bottom: 2px solid #019272;
-    display: block;
-    font-size: 14px;
-    text-align: right;
-  }
-
-  table td:last-child {
-    border-bottom: 0;
-  }
-
-  td:first-child, th:first-child{
-    border-radius: 0;
-  }
-  
-  td:last-child, th:last-child{
-    border-radius: 0;
-  }
-
-  table td::before{
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    color: black;
-  }
-
 }

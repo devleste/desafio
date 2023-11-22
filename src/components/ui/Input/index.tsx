@@ -7,12 +7,12 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  function Input({htmlForName, ...props}){
+  function Input({htmlForName, ...props}, ref){
 
     return(
       <div className={style.inputContainer}>
-        <label htmlFor="">{htmlForName}</label>
-        <input {...props} />
+        <label htmlFor={htmlForName}>{htmlForName}</label>
+        <input {...props} ref={ref} id={htmlForName} />
       </div>
     )
   }

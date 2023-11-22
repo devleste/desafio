@@ -14,42 +14,28 @@ import { useDelete } from "../../../store/useDelete";
 // Icons
 import { MdDelete } from "react-icons/md";
 
-const data = [
-  {
-    id:	1,
-    first_name:	"Ragnar",
-    last_name:	"Bendtsen",
-    email:	"rbendtsen0@about.me",
-    gender:	"M",
-    language:	"Kannada",
-    avatar:	"https://robohash.org/quooccaecatiqui.png?size=100x100&set=set1",
-    birthday:	"1994-12-08",
-  },{
-    id:	2,
-    first_name:	"Chrissy",
-    last_name:	"Heinke",
-    email:	"cheinke1@businessweek.com",
-    gender:	"F",
-    language:	"Kurdish",
-    avatar:	"https://robohash.org/molestiaseaeius.bmp?size=100x100&set=set1",
-    birthday:	"1997-12-17",
-  },{
-    id:	3,
-    first_name:	"Lincoln",
-    last_name:	"Antrobus",
-    email:	"lantrobus2@dagondesign.com",
-    gender:	"M",
-    language:	"Oriya",
-    avatar:	"https://robohash.org/repellatnonrerum.png?size=100x100&set=set1",
-    birthday:	"1957-03-23",
-  }
-]
+// Type
+import storageType from "../../../type/storageType";
+import { HandleSave } from "../../../services/storage";
 
-export default function ModalTableDelete(){
+type IProps = {
+  data: storageType[],
+  updateTable: (data:storageType[]) => void
+}
+
+export default function ModalTableDelete({data, updateTable}:IProps){
   const [show, setShow] = useDelete((state) => [state.delete, state.toggleDelete]);
 
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
   const [dataValues, setDataValues] = useState(data);
+
+  function handleClick(id: number){
+    const dataValues = data;
+
+    const newDataValues = dataValues.filter((item) => item.id !== id)
+    HandleSave(newDataValues);
+    updateTable(newDataValues);
+  }
 
   useEffect(() => {
 
@@ -64,7 +50,7 @@ export default function ModalTableDelete(){
 
     filterTable();
 
-  }, [seachInpuValue])
+  }, [seachInpuValue, data])
 
   return (
     <Modal isOpen={show} toogleModal={setShow} >
@@ -80,7 +66,7 @@ export default function ModalTableDelete(){
                     <img src={item.avatar} alt="Avatar" />
                     <h4>{item.first_name} {item.first_name}</h4>
                   </div>
-                  <button>
+                  <button onClick={() => handleClick(item.id)}>
                     Delete <MdDelete size={16} color="#ffffff" />
                   </button>
                 </li>

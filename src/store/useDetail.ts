@@ -1,21 +1,11 @@
 import { create } from "zustand";
-
-type IUser = {
-    id:	number,
-    first_name:	string,
-    last_name:	string,
-    email:	string,
-    gender:	string,
-    language:	string,
-    avatar:	string,
-    birthday:	string,
-}
+import storageType from "../type/storageType";
 
 type props = {
   detail: boolean,
   toggleDetail: () => void,
-  userData?: IUser,
-  setUser: (user: IUser) => void
+  userData?: storageType,
+  setUser: (user: storageType) => void
 }
 
 export const useDetail = create<props>((set) => ({

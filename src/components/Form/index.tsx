@@ -30,7 +30,7 @@ export default function Form(){
 
   return (
     <section className={style.formSection}>
-      <h2>Contact us</h2>
+      <h2>Contact the developer</h2>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
         <Input htmlForName="Name" {...register("name")} placeholder="Type your name" />
         {

@@ -1,0 +1,24 @@
+.selectContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 20px;
+}
+
+.selectContainer label{
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.selectContainer select{
+  margin-left: 20px;
+  border: none;
+  background-color: #019272;
+  color: #ffffff;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
