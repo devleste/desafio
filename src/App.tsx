@@ -23,6 +23,7 @@ import { BiSolidUserDetail } from "react-icons/bi";
 
 // Zustand
 import { useDetail } from "./store/useDetail"
+import { useEffect, useState } from "react"
 
 const data = [
   {
@@ -58,6 +59,9 @@ const data = [
 function App() {
   const [setDetail, setUser] = useDetail((state) => [state.toggleDetail, state.setUser]);
 
+  const [seachInpuValue, setSeachInpuValue] = useState<string>("");
+  const [dataValues, setDataValues] = useState(data);
+
   function handleClick(id: number){
     setDetail();
 
@@ -66,12 +70,27 @@ function App() {
     setUser(user[0]);
   }
 
+  useEffect(() => {
+
+    function filterTable(){
+      setDataValues(data.filter(item => (item.first_name).includes(seachInpuValue)))
+
+      if(seachInpuValue === ""){
+        setDataValues(data);
+      }
+
+    }
+
+    filterTable();
+
+  }, [seachInpuValue])
+
   return (
     <div className="container">
       <Header />
       <main>
         <h1 className="title">Leste Contact</h1>
-        <SearchInput />
+        <SearchInput value={seachInpuValue} setValue={setSeachInpuValue} />
         <TableFuncionalitis />
         <section>
           <table>
@@ -89,22 +108,28 @@ function App() {
             </thead>
             <tbody id="tbody">
               {
-                data.map((item) => (
-                  <tr key={item.id} className="tr">
-                    <td data-label="Name">{item.first_name}</td>
-                    <td data-label="Lastname">{item.last_name}</td>
-                    <td data-label="Email">{item.email}</td>
-                    <td data-label="Gender">{item.gender}</td>
-                    <td data-label="Language">{item.language}</td>
-                    <td data-label="Avatar">
-                      <img className="avatar" src={item.avatar} alt="avatar" />
-                    </td>
-                    <td data-label="Birthday">{item.birthday}</td>
-                    <td data-label="Detail">
-                      <button onClick={() => handleClick(item.id)} className="buttonDetail"><BiSolidUserDetail size={30} color="#019272" /></button>
-                    </td>
-                  </tr>
-                ))
+                dataValues ?
+                  dataValues.map((item) => (
+                    <tr key={item.id} className="tr">
+                      <td data-label="Name">{item.first_name}</td>
+                      <td data-label="Lastname">{item.last_name}</td>
+                      <td data-label="Email">{item.email}</td>
+                      <td data-label="Gender">{item.gender}</td>
+                      <td data-label="Language">{item.language}</td>
+                      <td data-label="Avatar">
+                        <img className="avatar" src={item.avatar} alt="avatar" />
+                      </td>
+                      <td data-label="Birthday">{item.birthday}</td>
+                      <td data-label="Detail">
+                        <button onClick={() => handleClick(item.id)} className="buttonDetail">
+                          <BiSolidUserDetail size={30} color="#019272" />
+                        </button>
+                      </td>
+                    </tr>
+                  )) :
+                  <p>
+                    Não contem item
+                  </p>
               }
             </tbody>
           </table>

@@ -1,3 +1,7 @@
+// React
+import { useEffect, useState } from "react";
+
+// Style
 import style from "./index.module.css"
 
 // Components
@@ -46,29 +50,49 @@ export default function ModalTableUpdate(){
   const [show, setShow] = useUpdate((state) => [state.update, state.toggleUpdate])
   const setUpdateUser = useUpdateUser((state) => state.toggleUpdateUser);
 
+  const [seachInpuValue, setSeachInpuValue] = useState<string>("");
+  const [dataValues, setDataValues] = useState(data);
   function handleClick(){
     setShow();
     setUpdateUser();
   }
 
+
+  useEffect(() => {
+
+    function filterTable(){
+      setDataValues(data.filter(item => (item.first_name).includes(seachInpuValue)))
+
+      if(seachInpuValue === ""){
+        setDataValues(data);
+      }
+
+    }
+
+    filterTable();
+
+  }, [seachInpuValue])
+
   return (
     <Modal isOpen={show} toogleModal={setShow} >
       <h1 className={style.title}>Upgrade</h1>
-      <SearchInput />
+      <SearchInput value={seachInpuValue} setValue={setSeachInpuValue} />
       <section className={style.listContainer}>
         <ul>
-          {
-            data.map((item) => (
-              <li key={item.id}>
-                <div className={style.informations}>
-                  <img src={item.avatar} alt="Avatar" />
-                  <h4>{item.first_name} {item.first_name}</h4>
-                </div>
-                <button onClick={handleClick}>
-                  Update <MdUpgrade size={16} color="#ffffff" />
-                </button>
-              </li>
-            ))
+          { 
+            dataValues ?
+              dataValues.map((item) => (
+                <li key={item.id}>
+                  <div className={style.informations}>
+                    <img src={item.avatar} alt="Avatar" />
+                    <h4>{item.first_name} {item.last_name}</h4>
+                  </div>
+                  <button onClick={handleClick}>
+                    Update <MdUpgrade size={16} color="#ffffff" />
+                  </button>
+                </li>
+              )):
+            <p>Error</p>
           }
         </ul>
       </section>
