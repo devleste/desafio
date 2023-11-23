@@ -11,5 +11,5 @@ export const useUpdateUser = create<props>((set) => ({
   updateUser: false,
   toggleUpdateUser: () => set((state) => ({ updateUser: !state.updateUser })),
   id: null,
-  setId: (idvalue) => set((state) => ({id: idvalue})) 
+  setId: (idvalue) => set(() => ({id: idvalue})) 
 }))

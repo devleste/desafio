@@ -44,7 +44,7 @@ function App() {
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
 
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [postsPerPage, setPostsPerPage] = useState<number>(5);
+  const [postsPerPage] = useState<number>(5);
 
   const [
     currentLanguage, 

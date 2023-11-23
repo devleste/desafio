@@ -15,9 +15,9 @@ export const useFilter = create<props>((set) => ({
   filter: false,
   toggleFilter: () => set((state) => ({ filter: !state.filter })),
   languageFilter: "",
-  setLanguageFilter: (language) => set((state) => ({ languageFilter: language})),
+  setLanguageFilter: (language) => set(() => ({ languageFilter: language})),
   genderFilter: "",
-  setGenderFilter: (gender) => set((state) => ({ genderFilter: gender})),
+  setGenderFilter: (gender) => set(() => ({ genderFilter: gender})),
   dateFilter: "",
-  setDateFilter: (date) => set((state) => ({ dateFilter: date}))
+  setDateFilter: (date) => set(() => ({ dateFilter: date}))
 }))
