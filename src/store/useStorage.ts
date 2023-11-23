@@ -7,6 +7,6 @@ type props = {
 }
 
 export const useStorage = create<props>((set) => ({
-  setStorageData: (data) => set((state) => ({ storageData: data })),
+  setStorageData: (data) => set(() => ({ storageData: data })),
   storageData: []
 }))
