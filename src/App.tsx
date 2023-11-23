@@ -131,7 +131,7 @@ function App() {
         <Form/>
         <Map/>
 
-        <ModalStatistics />
+        <ModalStatistics data={data} />
         <ModalTableDelete data={data} updateTable={setData}/>
         <ModalTableUpdate data={data} />
         <ModalUpdateUser updateTable={setData} />

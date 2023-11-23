@@ -12,6 +12,9 @@ import { useFilter } from "../../../store/useFilter";
 // Type
 import storageType from "../../../type/storageType";
 
+// Helpers
+import { getOptionsValue } from '../../../helpers/getValueForOptions';
+
 export default function ModalFilter({data}:{data: storageType[]}){
   const [
     show, 
@@ -40,16 +43,6 @@ export default function ModalFilter({data}:{data: storageType[]}){
     "Age >= 45"
   ]
 
-  function filterRepeatedOptions(data: (string|number)[]){
-    const uniqueOptions = new Set(data);
-    return [...uniqueOptions];
-  }
-
-  function getOptionsValue(key: keyof storageType):(string|number)[]{
-    const optionsValue = data.map((item) => item[key])
-    return filterRepeatedOptions(optionsValue);
-  }
-
   function handleClick(){
 
     setCurrentFilterDate("");
@@ -64,14 +57,14 @@ export default function ModalFilter({data}:{data: storageType[]}){
         <SelectOptions 
           htmlForName="language" 
           label="Language" 
-          options={getOptionsValue("language")} 
+          options={getOptionsValue("language", data)} 
           show={currentLanguage}
           setShow={setCurrentLanguage}
         />
         <SelectOptions 
           htmlForName="gender" 
           label="Gender" 
-          options={getOptionsValue("gender")}
+          options={getOptionsValue("gender", data)}
           show={currentGender}
           setShow={setCurrentGender}
         />
