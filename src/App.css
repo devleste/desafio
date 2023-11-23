@@ -1,0 +1,36 @@
+body{
+  background-color: #ededed;
+}
+
+.container{
+  height: 100%;
+  min-height: 100vh;
+}
+
+.title{
+  color: #019272;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 3.4rem;
+  font-weight: bold;
+}
+
+.avatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+}
+
+section.cardsContainer{
+  width: 100%;
+  max-width: 1350px;
+  margin: 20px  auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 550px) {
+  .title{
+    font-size: 3rem;
+  }
+}

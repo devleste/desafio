@@ -1,0 +1,25 @@
+
+.title{
+  text-align: center;
+  color: #019272;
+  font-size: 2.4rem;
+}
+
+.chartContainer{
+  display: flex;
+  height: 400px;
+  width: auto;
+}
+
+@media (max-width: 850px) {
+  .chartContainer{
+    overflow-y: scroll;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 660px) {
+  .chartContainer{
+    width: 100%;
+  }
+}
