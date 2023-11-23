@@ -11,7 +11,6 @@ import "./App.css";
 import Footer from './components/Footer';
 import Form from "./components/Form";
 import Header from './components/Header';
-import Map from "./components/Map";
 import SearchInput from "./components/SearchInput";
 import TableFuncionalitis from "./components/TabletFuncionalitis";
 
@@ -25,7 +24,7 @@ import ModalFilter from "./components/Modals/ModalFilter";
 import ModalUpdateUser from "./components/Modals/ModalUpdadeUser";
 
 // Storage
-import { HandleFetch, HandleSave } from "./services/storage";
+import { HandleSave } from "./services/storage";
 
 // Type
 import storageType from './type/storageType';
@@ -38,41 +37,10 @@ import { useFilter } from "./store/useFilter";
 // Helpers
 import filtering from "./helpers/filtering";
 
-// const data = [
-//   {
-//     id:	1,
-//     first_name:	"Ragnar",
-//     last_name:	"Bendtsen",
-//     email:	"rbendtsen0@about.me",
-//     gender:	"M",
-//     language:	"Kannada",
-//     avatar:	"https://robohash.org/quooccaecatiqui.png?size=100x100&set=set1",
-//     birthday:	"1994-12-08",
-//   },{
-//     id:	2,
-//     first_name:	"Chrissy",
-//     last_name:	"Heinke",
-//     email:	"cheinke1@businessweek.com",
-//     gender:	"F",
-//     language:	"Kurdish",
-//     avatar:	"https://robohash.org/molestiaseaeius.bmp?size=100x100&set=set1",
-//     birthday:	"1997-12-17",
-//   },{
-//     id:	3,
-//     first_name:	"Lincoln",
-//     last_name:	"Antrobus",
-//     email:	"lantrobus2@dagondesign.com",
-//     gender:	"M",
-//     language:	"Oriya",
-//     avatar:	"https://robohash.org/repellatnonrerum.png?size=100x100&set=set1",
-//     birthday:	"1957-03-23",
-//   }
-// ]
-
 function App() {
-  const [data, setData] = useState<storageType[]>(HandleFetch());
-  const [dataValues, setDataValues] = useState<storageType[]>(data);
-
+  const [data, setData] = useState<storageType[]>([]);
+  const [dataValues, setDataValues] = useState<storageType[]>([]);
+  
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
 
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -98,22 +66,20 @@ function App() {
 
   useEffect(() => {
     async function getData(){
-      if(data){
+      if(data.length !== 0){
+        console.log("oi");
         return;
       }
 
-      const response = axios.get("https://jsonplaceholder.typicode.com/todos/1");
+      const response = axios.get("https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060");
       setData((await response).data);
-
-      console.log("!!!!!!!!!!!!!!EEEEEEEEEERRRRROOOOO!!!!!!!!!!!!!!!!!");
-
-      HandleSave(data)
+      HandleSave((await response).data);
     }
     getData();
-    
+
     setDataValues(filtering(data, currentFilterDate, currentGender, currentLanguage, seachInpuValue));
 
-  }, [seachInpuValue, data, currentLanguage, currentGender, currentFilterDate])
+  }, [seachInpuValue, data, currentLanguage, currentGender, currentFilterDate]);
 
   return (
     <div className="container">
@@ -129,7 +95,6 @@ function App() {
           setCurrentPage={setCurrentPage}
           currentPage={currentPage} />
         <Form/>
-        <Map/>
 
         <ModalStatistics data={data} />
         <ModalTableDelete data={data} updateTable={setData}/>
@@ -147,8 +112,4 @@ function App() {
 
 export default App
 
-// @TODO - Substituir o mapa da pagina por outra coisa;
-// @TODO - Implementar o envio de formulario para o meu email (contate o desenvolvedor);
-// @TODO - Colocar os types na pasta type;
-// @TODO - Colocar as estatisticas certas;
 // @TODO - Começar a fazer os testes;

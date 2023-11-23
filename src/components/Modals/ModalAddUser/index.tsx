@@ -23,7 +23,7 @@ import storageType from "../../../type/storageType";
 export default function ModalAddUser({updateTable}:{updateTable: (data:storageType[]) => void}){
   const [show, setShow] = useAddUser((state) => [state.addUser, state.toggleAddUser]);
 
-  const {handleSubmit, register, formState:{errors}} = useForm<schemaProps>({
+  const {handleSubmit, register, formState:{errors, isSubmitSuccessful}} = useForm<schemaProps>({
     mode: "onChange",
     criteriaMode: "all",
     resolver: zodResolver(schema),
@@ -37,16 +37,18 @@ export default function ModalAddUser({updateTable}:{updateTable: (data:storageTy
     }
   })
 
+  
   function getRandomId() {
     return Math.floor(Math.random() * 1000000);
   }
-
+  
   function onSubmit(data: schemaProps){
     const dataValues = {id: getRandomId(), ...data};
-
+    
     const localData = HandleFetch();
     HandleSave([...localData, dataValues]);
     updateTable([...localData, dataValues])
+    console.log(isSubmitSuccessful)
   }
 
   return (

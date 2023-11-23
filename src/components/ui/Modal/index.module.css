@@ -12,6 +12,7 @@
 .modal{
   min-width: 400px;
   min-height: 400px;
+  max-height: 700px;
 
   position: absolute;
   top: 50%;

@@ -16,8 +16,8 @@
   flex-direction: column;
   gap: 10px;
   list-style: none;
+  height: 400px;
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .listContainer ul li{

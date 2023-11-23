@@ -22,6 +22,10 @@ export default function Paginate(props:IProps){
             <button
               key={index}
               onClick={() => props.setCurrentPage(page)}
+              style={{
+                background: page === props.currentPage ? "#019272" : "transparent", 
+                color: page === props.currentPage ? "#ffffff" : "#019272"
+              }}
             >
               {page}
             </button>

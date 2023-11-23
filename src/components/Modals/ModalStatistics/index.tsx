@@ -27,21 +27,17 @@ export default function ModalStatistics({data}:{data: storageType[]}){
   useEffect(() => {
     function countLanguages(languages: storageType[]) {
       const languageCounts = new Map();
-    
-      for (const language of languages) {
+      const newData = languages.map((item) => item.language);
+      
+      for(const language of newData){
         if (!languageCounts.has(language)) {
-          languageCounts.set(language, 0);
+          languageCounts.set(language, 1);
+        } else {
+          languageCounts.set(language, languageCounts.get(language) + 1);
         }
-        languageCounts.set(language, languageCounts.get(language) + 1);
       }
-    
-      const results = [];
-    
-      for (const [language, count] of languageCounts) {
-        results.push([language, count]);
-      }
-    
-      return results.map((item) => [item[0].language, item[1]]);
+
+      return Array.from(languageCounts);
     }
 
     function getCountGender(data: storageType[], gender: string): number{
