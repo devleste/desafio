@@ -22,3 +22,8 @@
 .listContent ul{
   list-style: none;
 }
+
+.buttonContainer{
+  margin-top: 20px;
+  margin-left: 20px;
+}

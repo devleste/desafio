@@ -32,29 +32,17 @@ export default function Form(){
     <section className={style.formSection}>
       <h2>Contact the developer</h2>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
-        <Input htmlForName="Name" {...register("name")} placeholder="Type your name" />
-        {
-          errors.name && (
-            <ErrorMessage message={errors.name.message} />
-          )
-        }
-        <Input htmlForName="Email" {...register("email")} placeholder="Type your email" />
-        {
-          errors.email && (
-            <ErrorMessage message={errors.email.message} />
-          )
-        }
+        <Input htmlForName="Name" {...register("name")} placeholder="Type your name" error={errors.name?.message} />
+        <Input htmlForName="Email" {...register("email")} placeholder="Type your email" error={errors.email?.message} />
         <div className={style.textareaContainer}>
           <label htmlFor="Message">Message</label>
           <textarea id="Message" {...register("message")} placeholder="Type your message"></textarea>
+          {
+            errors.message && (<ErrorMessage message={errors.message.message} />)
+          }
         </div>
-        {
-          errors.message && (
-            <ErrorMessage message={errors.message.message} />
-          )
-        }
         <div>
-          <Button>
+          <Button type="submit">
             Submit
           </Button>
         </div>

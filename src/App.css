@@ -28,3 +28,9 @@ section.cardsContainer{
   display: flex;
   justify-content: space-around;
 }
+
+@media (max-width: 550px) {
+  .title{
+    font-size: 3rem;
+  }
+}

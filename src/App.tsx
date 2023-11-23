@@ -32,6 +32,12 @@ import storageType from './type/storageType';
 import Paginate from "./components/Paginate";
 import Table from "./components/Table";
 
+// Zustand
+import { useFilter } from "./store/useFilter";
+
+// Helpers
+import filtering from "./helpers/filtering";
+
 // const data = [
 //   {
 //     id:	1,
@@ -65,23 +71,32 @@ import Table from "./components/Table";
 
 function App() {
   const [data, setData] = useState<storageType[]>(HandleFetch());
+  const [dataValues, setDataValues] = useState<storageType[]>(data);
 
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
-  const [dataValues, setDataValues] = useState(data);
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [postsPerPage, setPostsPerPage] = useState<number>(5);
 
-  function currentPosts(){
+  const [
+    currentLanguage, 
+    currentGender, 
+    currentFilterDate
+    ] = useFilter((state) => [
+      state.languageFilter, 
+      state.genderFilter, 
+      state.dateFilter
+    ]);
+
+  function currentPosts(data: storageType[]){
     // This code snippet calculates the index range for retrieving a specific set of data based on the current page and the number of items per page.
     const lastPostIndex = currentPage * postsPerPage; // Returns the index of the last post on the current page
     const firstPostIndex = lastPostIndex - postsPerPage; // Returns the index of the first post on the current page
 
-    return dataValues.slice(firstPostIndex, lastPostIndex); // Slice the data array to retrieve the desired range of posts
+    return data.slice(firstPostIndex, lastPostIndex); // Slice the data array to retrieve the desired range of posts
   }
 
   useEffect(() => {
-    // console.log(HandleFetch());
     async function getData(){
       if(data){
         return;
@@ -95,15 +110,10 @@ function App() {
       HandleSave(data)
     }
     getData();
-    function filterTable(){
-      setDataValues(data.filter((item:storageType) => (item.first_name).includes(seachInpuValue)))
+    
+    setDataValues(filtering(data, currentFilterDate, currentGender, currentLanguage, seachInpuValue));
 
-      if(seachInpuValue === ""){
-        setDataValues(data);
-      }
-    }
-    filterTable();
-  }, [seachInpuValue, data])
+  }, [seachInpuValue, data, currentLanguage, currentGender, currentFilterDate])
 
   return (
     <div className="container">
@@ -112,7 +122,7 @@ function App() {
         <h1 className="title">Leste Contact</h1>
         <SearchInput value={seachInpuValue} setValue={setSeachInpuValue} />
         <TableFuncionalitis />
-        <Table dataValues={currentPosts()} />
+        <Table dataValues={currentPosts(dataValues)} />
         <Paginate 
           totalPosts={dataValues.length}
           postsPerPage={postsPerPage}
@@ -137,16 +147,8 @@ function App() {
 
 export default App
 
-// @TODO - Refatorar os search dos searchInput;
-// @TODO - Tolowercase nos search input;
-// @TODO - ajeitar o tamanho dos modais;
 // @TODO - Substituir o mapa da pagina por outra coisa;
 // @TODO - Implementar o envio de formulario para o meu email (contate o desenvolvedor);
-// @TODO - refatorar o paginate;
 // @TODO - Colocar os types na pasta type;
-// @TODO - Melhorar os nomes dos arquivos de context API(zustand);
-// @TODO - Diminuir logica nos components;
-// @TODO - Responsabilidade unica;
-// @TODO - Enxugar o componente App;
 // @TODO - Colocar as estatisticas certas;
 // @TODO - Começar a fazer os testes;

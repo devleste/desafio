@@ -5,7 +5,6 @@ import style from "./index.module.css";
 import Modal from "../../ui/Modal";
 import { Input } from "../../ui/Input";
 import Button from "../../ui/Button";
-import ErrorMessage from "../../ErrorMessage";
 
 // Zustand
 import { useAddUser } from "../../../store/useAddUser";
@@ -17,6 +16,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 // Storage
 import { HandleSave, HandleFetch } from "../../../services/storage";
+
+// Type
 import storageType from "../../../type/storageType";
 
 export default function ModalAddUser({updateTable}:{updateTable: (data:storageType[]) => void}){
@@ -52,24 +53,9 @@ export default function ModalAddUser({updateTable}:{updateTable: (data:storageTy
     <Modal isOpen={show} toogleModal={setShow} >
       <h1 className={style.title}>Add User</h1>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
-        <Input htmlForName="Name" {...register("first_name")} placeholder="Type your name" />
-        {
-          errors.first_name && (
-            <ErrorMessage message={errors.first_name.message} />
-          )
-        }
-        <Input htmlForName="Lastname" {...register("last_name")} placeholder="Type your lastname" />
-        {
-          errors.last_name && (
-            <ErrorMessage message={errors.last_name.message} />
-          )
-        }
-        <Input htmlForName="Email" {...register("email")} type="email" placeholder="Type your email" />
-        {
-          errors.email && (
-            <ErrorMessage message={errors.email.message} />
-          )
-        }
+        <Input htmlForName="Name" {...register("first_name")} placeholder="Type your name" error={errors.first_name?.message} />
+        <Input htmlForName="Lastname" {...register("last_name")} placeholder="Type your lastname" error={errors.last_name?.message} />
+        <Input htmlForName="Email" {...register("email")} type="email" placeholder="Type your email" error={errors.email?.message} />
         <div>
           <label htmlFor="gender">Gender</label>
           <select {...register("gender")} id="gender">
@@ -78,26 +64,11 @@ export default function ModalAddUser({updateTable}:{updateTable: (data:storageTy
             <option value="F">Female</option>
           </select>
         </div>
-        <Input htmlForName="Language" {...register("language")} placeholder="Type your language" />
-        {
-          errors.language && (
-            <ErrorMessage message={errors.language.message} />
-          )
-        }
-        <Input htmlForName="Avatar" {...register("avatar")} placeholder="Type url your avatar" />
-        {
-          errors.avatar && (
-            <ErrorMessage message={errors.avatar.message} />
-          )
-        }
-        <Input htmlForName="Birthday" {...register("birthday")} type="date" placeholder="Type your birthday" />
-        {
-          errors.birthday && (
-            <ErrorMessage message={errors.birthday.message} />
-          )
-        }
+        <Input htmlForName="Language" {...register("language")} placeholder="Type your language" error={errors.language?.message} />
+        <Input htmlForName="Avatar" {...register("avatar")} placeholder="Type url your avatar" error={errors.avatar?.message} />
+        <Input htmlForName="Birthday" {...register("birthday")} type="date" placeholder="Type your birthday" error={errors.birthday?.message} />
 
-        <Button>Send</Button>
+        <Button type="submit">Send</Button>
       </form>
     </Modal>
   )

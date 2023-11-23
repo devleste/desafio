@@ -1,4 +1,3 @@
-
 .overlay{
   width: 100vw;
   height: 100vh;
@@ -11,7 +10,8 @@
 }
 
 .modal{
-  min-width: 375px;
+  min-width: 400px;
+  min-height: 400px;
 
   position: absolute;
   top: 50%;
@@ -41,4 +41,12 @@
 
 .closeContainer button:hover{
   transform: scale(1.2, 1.2);
+}
+
+@media (max-width: 400px) {
+  .modal{
+    max-width: 375px;
+    min-width: auto;
+    width: 100%;
+  }
 }

@@ -11,6 +11,7 @@ import { useDelete } from "../../store/useDelete";
 import { useUpdate } from "../../store/useUpdate";
 import { useFilter } from "../../store/useFilter";
 import { useAddUser } from "../../store/useAddUser";
+import TransparentButton from "../ui/TransparentButton";
 
 export default function TableFuncionalitis(){
 
@@ -22,22 +23,22 @@ export default function TableFuncionalitis(){
 
   return(
     <section className={style.funcionalitisContainer}>
-      <button onClick={ () => setFilter()} title="Filter">
+      <TransparentButton onClick={ () => setFilter()} title="Filter">
         <AiFillFilter size={34} color="#019272" />
-      </button>
+      </TransparentButton>
       <div className={style.buttonGroup}>
-        <button onClick={ () => setStatistics()} title="Statistics">
+        <TransparentButton onClick={ () => setStatistics()} title="Statistics">
           <MdQueryStats size={34} color="#019272" />
-        </button>
-        <button onClick={ () => setAddUser()} title="Add">
+        </TransparentButton>
+        <TransparentButton onClick={ () => setAddUser()} title="Add">
           <MdFormatListBulletedAdd size={34} color="#019272" />
-        </button>
-        <button onClick={ () => setUpdate()} title="Update">
+        </TransparentButton>
+        <TransparentButton onClick={ () => setUpdate()} title="Update">
           <MdUpgrade size={34} color="#019272" />
-        </button>
-        <button onClick={ () => setDelete()} title="Delete">
+        </TransparentButton>
+        <TransparentButton onClick={ () => setDelete()} title="Delete">
           <MdDelete size={34} color="#019272" />
-        </button>
+        </TransparentButton>
       </div>
     </section>
   )

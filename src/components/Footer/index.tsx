@@ -45,14 +45,7 @@ export default function Footer(){
         </section>
         <section className={style.socialMidia}>
           {
-            socialLinks.map(social => (
-              
-              <MidiaLink key={social.id} href={social.href}>
-                {
-                  social.icon
-                }
-              </MidiaLink>
-            ))
+            socialLinks.map(social => <MidiaLink key={social.id} href={social.href}>{social.icon}</MidiaLink>)
           }
         </section>
       </footer>

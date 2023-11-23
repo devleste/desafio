@@ -4,19 +4,11 @@ import style from "./index.module.css";
 // Zustand
 import { useDetail } from "../../store/useDetail";
 
-// Icons
-import { BiSolidUserDetail } from "react-icons/bi";
-
-
 // Type
 import storageType from "../../type/storageType";
+import Row from "./Row";
 
-type IProps = {
-  dataValues: storageType[]
-}
-
-
-export default function Table({ dataValues }:IProps){
+export default function Table({ dataValues }:{dataValues: storageType[]}){
   const [setDetail, setUser] = useDetail((state) => [state.toggleDetail, state.setUser]);
 
   function handleClick(id: number){
@@ -41,29 +33,11 @@ export default function Table({ dataValues }:IProps){
           </tr>
         </thead>
         <tbody id="tbody">
-          {
-            dataValues ?
-              dataValues.map((item:storageType) => (
-                <tr key={item.id} className="tr">
-                  <td data-label="Avatar">
-                    <img className="avatar" src={item.avatar} alt="avatar" />
-                  </td>
-                  <td data-label="Name">{item.first_name}</td>
-                  <td data-label="Lastname">{item.last_name}</td>
-                  <td data-label="Email">{item.email}</td>
-                  <td data-label="Gender">{item.gender}</td>
-                  <td data-label="Language">{item.language}</td>
-                  <td data-label="Birthday">{item.birthday}</td>
-                  <td data-label="Detail">
-                    <button onClick={() => handleClick(item.id)} className={style.buttonDetail}>
-                      <BiSolidUserDetail size={30} color="#019272" />
-                    </button>
-                  </td>
-                </tr>
-              )) :
-              <p>
-                Não contem item
-              </p>
+          {dataValues ?
+            dataValues.map((item:storageType) => <Row key={item.id} item={item} handleClick={handleClick} />) :
+            <tr className={style.notFoundItens}>
+              Não contem item
+            </tr>
           }
         </tbody>
       </table>

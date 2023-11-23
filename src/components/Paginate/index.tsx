@@ -10,7 +10,6 @@ type IProps = {
 export default function Paginate(props:IProps){
 
   const pages = [];
-
   for (let i = 1; i <= Math.ceil(props.totalPosts / props.postsPerPage); i++) {
       pages.push(i);
   }
@@ -20,7 +19,6 @@ export default function Paginate(props:IProps){
       <div className={style.paginate}>
         {
           pages.map((page, index) => (
-
             <button
               key={index}
               onClick={() => props.setCurrentPage(page)}

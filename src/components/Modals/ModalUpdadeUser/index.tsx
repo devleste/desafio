@@ -5,7 +5,6 @@ import style from "./index.module.css";
 import Modal from "../../ui/Modal";
 import { Input } from "../../ui/Input";
 import Button from "../../ui/Button";
-import ErrorMessage from "../../ErrorMessage";
 
 // Zustand
 import { useUpdateUser } from "../../../store/useUpdateUser";
@@ -29,7 +28,6 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
   
   useEffect(()=>{
     function getUser():storageType|null{
-  
       if(!id){
         return null
       }
@@ -66,19 +64,34 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
     
     HandleSave(newData);
     updateTable(newData)
-    
   }
 
   return (
     <Modal isOpen={show} toogleModal={setShow} >
       <h1 className={style.title}>Update</h1>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
-        <Input htmlForName="Name" {...register("first_name")} defaultValue={user?.first_name} placeholder="Type your name" />
-        {errors.first_name && (<ErrorMessage message={errors.first_name.message} />)}
-        <Input htmlForName="Lastname" {...register("last_name")} defaultValue={user?.last_name} placeholder="Type your lastname" />
-        {errors.last_name && (<ErrorMessage message={errors.last_name.message} />)}
-        <Input htmlForName="Email" {...register("email")} defaultValue={user?.email} type="email" placeholder="Type your email" />
-        {errors.email && (<ErrorMessage message={errors.email.message} />)}
+        <Input 
+          htmlForName="Name" 
+          {...register("first_name")} 
+          defaultValue={user?.first_name} 
+          error={errors.first_name?.message} 
+          placeholder="Type your name" 
+        />
+        <Input 
+          htmlForName="Lastname" 
+          {...register("last_name")} 
+          defaultValue={user?.last_name} 
+          error={errors.last_name?.message}  
+          placeholder="Type your lastname" 
+        />
+        <Input 
+          htmlForName="Email" 
+          {...register("email")} 
+          defaultValue={user?.email} 
+          error={errors.email?.message}
+          type="email" 
+          placeholder="Type your email" 
+        />
         <div>
           <label htmlFor="gender">Gender</label>
           <select {...register("gender")} id="gender">
@@ -87,14 +100,30 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
             <option value="F">Female</option>
           </select>
         </div>
-        <Input htmlForName="Language" {...register("language")} defaultValue={user?.language} placeholder="Type your language" />
-        {errors.language && (<ErrorMessage message={errors.language.message} />)}
-        <Input htmlForName="Avatar" {...register("avatar")} defaultValue={user?.avatar} placeholder="Type url your avatar" />
-        {errors.avatar && (<ErrorMessage message={errors.avatar.message} />)}
-        <Input htmlForName="Birthday" {...register("birthday")} defaultValue={user?.birthday} type="date" placeholder="Type your birthday" />
-        {errors.birthday && (<ErrorMessage message={errors.birthday.message} />)}
+        <Input 
+          htmlForName="Language" 
+          {...register("language")} 
+          defaultValue={user?.language} 
+          error={errors.language?.message}
+          placeholder="Type your language" 
+        />
+        <Input 
+          htmlForName="Avatar" 
+          {...register("avatar")} 
+          defaultValue={user?.avatar} 
+          error={errors.avatar?.message}
+          placeholder="Type url your avatar" 
+        />
+        <Input 
+          htmlForName="Birthday" 
+          {...register("birthday")} 
+          defaultValue={user?.birthday} 
+          error={errors.birthday?.message}
+          type="date" 
+          placeholder="Type your birthday" 
+        />
 
-        <Button>Send</Button>
+        <Button type="submit">Send</Button>
       </form>
     </Modal>
   )

@@ -7,4 +7,12 @@
 
 .chartContainer{
   display: flex;
+  height: 400px;
+}
+
+@media (max-width: 850px) {
+  .chartContainer{
+    overflow-y: scroll;
+    flex-direction: column;
+  }
 }
