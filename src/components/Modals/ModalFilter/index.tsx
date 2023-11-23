@@ -14,8 +14,6 @@ import storageType from "../../../type/storageType";
 export default function ModalFilter({data}:{data: storageType[]}){
   const [show, setShow] = useFilter((state) => [state.filter, state.toggleFilter]);
 
-  console.log(data);
-
   function filterRepeatedOptions(data: (string|number)[]){
     const uniqueOptions = new Set(data);
     return [...uniqueOptions];
@@ -25,8 +23,6 @@ export default function ModalFilter({data}:{data: storageType[]}){
     const optionsValue = data.map((item) => item[key])
     return filterRepeatedOptions(optionsValue);
   }
-
-  console.log(getOptionsValue("gender"));
 
   return (
     <Modal isOpen={show} toogleModal={setShow}>

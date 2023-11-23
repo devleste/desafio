@@ -142,4 +142,11 @@ export default App
 // @TODO - ajeitar o tamanho dos modais;
 // @TODO - Substituir o mapa da pagina por outra coisa;
 // @TODO - Implementar o envio de formulario para o meu email (contate o desenvolvedor);
-// @TODO - refatorar o paginate
+// @TODO - refatorar o paginate;
+// @TODO - Colocar os types na pasta type;
+// @TODO - Melhorar os nomes dos arquivos de context API(zustand);
+// @TODO - Diminuir logica nos components;
+// @TODO - Responsabilidade unica;
+// @TODO - Enxugar o componente App;
+// @TODO - Colocar as estatisticas certas;
+// @TODO - Começar a fazer os testes;

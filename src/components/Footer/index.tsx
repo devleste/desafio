@@ -1,4 +1,4 @@
-import MidiaLink from "../ui/MidiaLink";
+import MidiaLink from "./MidiaLink";
 import style from "./index.module.css"
 import { FaWhatsapp, FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
