@@ -14,14 +14,17 @@ export default function Contacts() {
   const [openedModal, setOpenedModal] = useState(false);
   const [create, setCreate] = useState(false);
   const [formInfo, setFormInfo] = useState({
+    gender: "",
+    birthday: "",
+  });
+
+  const [formText, setFormText] = useState({
     first_name: "",
     last_name: "",
     email: "",
-    gender: "",
     language: "",
     avatar: "",
-    birthday: "",
-  });
+  })
 
   // useEffect(() => {
   //   const urlAPI = `${process.env.REACT_APP_API_URL}`;
@@ -38,35 +41,44 @@ export default function Contacts() {
 
   function createContact() {
     const urlAPI = `${process.env.REACT_APP_API_URL}`;
-    // const body = {first_name: , last_name: , email: , gender: , language: , avatar: , birthday: }
-    const promise = axios.post(urlAPI, {});
+    const body = {
+      first_name: formText.first_name, 
+      last_name: formText.last_name, 
+      email: formText.email, 
+      gender: formInfo.gender, 
+      language: formText.language, 
+      avatar: formText.avatar, 
+      birthday: formInfo.birthday}
+    const promise = axios.post(urlAPI, body);
     promise.then((res) => {
       setCreate(true);
     });
     promise.catch((err) => {
-      console.log(err.response.data);
+      console.log(err.response.data.mensagem);
     });
   }
 
-  // function handleForm(e){
-  //   setFormInfo(({ ...formInfo, [e.target.name]: e.target.value}));
-  // }
+  function handleForm(e){
+    setFormText(({ ...formInfo, [e.target.name]: e.target.value}));
+  }
 
-  const handleForm = (e) => {
+  function handleDateForm(e) {
     if (e instanceof Date) {
       const selectedDate = e.toISOString().split("T")[0];
       setFormInfo((prevFormInfo) => ({
         ...prevFormInfo,
         birthday: selectedDate,
       }));
-    } else {
-      const { name, value } = e.target;
-      setFormInfo((prevFormInfo) => ({
-        ...prevFormInfo,
-        [name]: value,
-      }));
     }
-  };
+  }
+
+  function handleGenderForm(e) {
+    const { value } = e.target;
+    setFormInfo((prevFormInfo) => ({
+      ...prevFormInfo,
+      gender: value,
+    }));
+  }
 
   return (
     <Wrapper>
@@ -172,7 +184,7 @@ export default function Contacts() {
                   name="birthday"
                   dateFormat="DD/MM/YYYY"
                   value={formInfo.birthday}
-                  onChange={handleForm}
+                  onChange={handleDateForm}
                 />
               </span>
               <span>
@@ -182,7 +194,7 @@ export default function Contacts() {
                   list="Gênero"
                   name="gender"
                   value={formInfo.gender}
-                  onChange={handleForm}
+                  onChange={handleGenderForm}
                   />
                   <datalist id="Gênero">
                     <option value="M" />
@@ -220,7 +232,7 @@ export default function Contacts() {
             >
               Cancelar
             </WhiteButton>
-            <BlueButton data-test="confirm" onClick={() => {}}>
+            <BlueButton data-test="confirm" onClick={() => {createContact()}}>
               Salvar
             </BlueButton>
           </div>
