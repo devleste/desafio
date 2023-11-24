@@ -36,6 +36,7 @@ import { useFilter } from "./store/useFilter";
 
 // Helpers
 import filtering from "./helpers/filtering";
+import FlashMessage from "./components/FlashMessage";
 
 function App() {
   const [data, setData] = useState<storageType[]>(HandleFetch() ?  HandleFetch() : []);
@@ -103,6 +104,7 @@ function App() {
         <ModalDetail />
         <ModalFilter data={data} />
         <ModalDetail />
+        <FlashMessage />
       </main>
       <Footer/>
     </div>

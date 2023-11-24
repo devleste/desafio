@@ -1,0 +1,17 @@
+.messageModal{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  position: absolute;
+  top: 12%;
+  left: 80%;
+
+  border: none;
+  padding: 20px 40px;
+  border-radius: 15px;
+  background-color: #7dd29c;
+  font-weight: 600;
+  letter-spacing: 2px;
+  box-shadow: 3px 5px 21px -4px rgba(0,0,0,0.54);
+}

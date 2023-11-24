@@ -17,6 +17,7 @@ import { MdDelete } from "react-icons/md";
 // Type
 import storageType from "../../../type/storageType";
 import { HandleSave } from "../../../services/storage";
+import { useFlashMessage } from "../../../store/useFlashMessage";
 
 type IProps = {
   data: storageType[],
@@ -25,6 +26,7 @@ type IProps = {
 
 export default function ModalTableDelete({data, updateTable}:IProps){
   const [show, setShow] = useDelete((state) => [state.delete, state.toggleDelete]);
+  const setMessage = useFlashMessage((state) => state.setMessage);
 
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
   const [dataValues, setDataValues] = useState(data);
@@ -35,6 +37,10 @@ export default function ModalTableDelete({data, updateTable}:IProps){
     const newDataValues = dataValues.filter((item) => item.id !== id)
     HandleSave(newDataValues);
     updateTable(newDataValues);
+    setMessage("Contact deleted successfully")
+    setTimeout(() => {
+      setMessage("")
+    }, 5000)
   }
 
   useEffect(() => {

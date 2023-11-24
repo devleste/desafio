@@ -8,6 +8,7 @@ import Button from "../../ui/Button";
 
 // Zustand
 import { useUpdateUser } from "../../../store/useUpdateUser";
+import { useFlashMessage } from "../../../store/useFlashMessage";
 
 // Validation
 import { useForm } from "react-hook-form";
@@ -24,6 +25,7 @@ import { useEffect, useState } from "react";
 export default function ModalUpdateUser({updateTable}: {updateTable: (data:storageType[]) => void}){
   const [show, setShow, id] = useUpdateUser((state) => [state.updateUser, state.toggleUpdateUser, state.id]);
   const [user, setUser] = useState<storageType|null>();
+  const setMessage = useFlashMessage((state) => state.setMessage);
 
   
   useEffect(()=>{
@@ -63,7 +65,12 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
     newData.push({...data, id: id});
     
     HandleSave(newData);
-    updateTable(newData)
+    updateTable(newData);
+    setShow();
+    setMessage("Contact updated successfully");
+    setTimeout(() => {
+      setMessage("")
+    }, 5000)
   }
 
   return (
