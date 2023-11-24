@@ -10,13 +10,19 @@ import SearchInput from "../../SearchInput"
 
 // Zustand
 import { useDelete } from "../../../store/useDelete";
+import { useFlashMessage } from "../../../store/useFlashMessage";
 
 // Icons
 import { MdDelete } from "react-icons/md";
 
 // Type
 import storageType from "../../../type/storageType";
+
+// Storage
 import { HandleSave } from "../../../services/storage";
+
+// Helpers
+import { filterTableByInput } from "../../../helpers/filtering";
 
 type IProps = {
   data: storageType[],
@@ -25,6 +31,7 @@ type IProps = {
 
 export default function ModalTableDelete({data, updateTable}:IProps){
   const [show, setShow] = useDelete((state) => [state.delete, state.toggleDelete]);
+  const setMessage = useFlashMessage((state) => state.setMessage);
 
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
   const [dataValues, setDataValues] = useState(data);
@@ -35,21 +42,16 @@ export default function ModalTableDelete({data, updateTable}:IProps){
     const newDataValues = dataValues.filter((item) => item.id !== id)
     HandleSave(newDataValues);
     updateTable(newDataValues);
+    setMessage("Contact deleted successfully")
+    setTimeout(() => {
+      setMessage("")
+    }, 5000)
   }
 
   useEffect(() => {
 
-    function filterTable(){
-      setDataValues(data.filter(item => (item.first_name).includes(seachInpuValue)))
-
-      if(seachInpuValue === ""){
-        setDataValues(data);
-      }
-
-    }
-
-    filterTable();
-
+    setDataValues(filterTableByInput(data, seachInpuValue))
+  
   }, [seachInpuValue, data])
 
   return (

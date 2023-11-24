@@ -18,6 +18,9 @@ import { MdUpgrade } from "react-icons/md";
 // Type
 import storageType from "../../../type/storageType";
 
+// Helpers
+import { filterTableByInput } from "../../../helpers/filtering";
+
 export default function ModalTableUpdate({data,}:{data:storageType[]}){
   const [show, setShow] = useUpdate((state) => [state.update, state.toggleUpdate])
   const [setUpdateUser, setId] = useUpdateUser((state) => [state.toggleUpdateUser, state.setId]);
@@ -33,16 +36,7 @@ export default function ModalTableUpdate({data,}:{data:storageType[]}){
 
   useEffect(() => {
 
-    function filterTable(){
-      setDataValues(data.filter(item => (item.first_name).includes(seachInpuValue)))
-
-      if(seachInpuValue === ""){
-        setDataValues(data);
-      }
-
-    }
-
-    filterTable();
+    setDataValues(filterTableByInput(data, seachInpuValue))
 
   }, [seachInpuValue, data])
 

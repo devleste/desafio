@@ -48,7 +48,6 @@ export default function ModalStatistics({data}:{data: storageType[]}){
 
     setColumnChart(countLanguages(data));
     setPieChartStatistics([
-      ["Task", "Gender"],
       ["Woman", getCountGender(data, "F")],
       ["Man", getCountGender(data, "M")]
     ])

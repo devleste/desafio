@@ -9,7 +9,7 @@ type IProps = {
 export default function MidiaLink(props:IProps){
 
   return (
-    <a href={props.href} className={style.midiaLink}>
+    <a href={props.href} target="_blank" className={style.midiaLink}>
       {props.children}
     </a>
   )

@@ -14,6 +14,7 @@ import storageType from "../../../type/storageType";
 
 // Helpers
 import { getOptionsValue } from '../../../helpers/getValueForOptions';
+import { useFlashMessage } from "../../../store/useFlashMessage";
 
 export default function ModalFilter({data}:{data: storageType[]}){
   const [
@@ -36,6 +37,8 @@ export default function ModalFilter({data}:{data: storageType[]}){
     state.setDateFilter
   ]);
 
+  const setMessage = useFlashMessage((state) => state.setMessage);
+
   const dateFilter = [
     "Age < 20",
     "20 <= Age && Age < 35",
@@ -48,6 +51,10 @@ export default function ModalFilter({data}:{data: storageType[]}){
     setCurrentFilterDate("");
     setCurrentGender("");
     setCurrentLanguage("");
+    setMessage("Filter successfully cleaned")
+    setTimeout(() => {
+      setMessage("")
+    }, 5000)
   }
 
   return (

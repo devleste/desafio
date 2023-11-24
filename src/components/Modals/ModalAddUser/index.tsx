@@ -8,6 +8,7 @@ import Button from "../../ui/Button";
 
 // Zustand
 import { useAddUser } from "../../../store/useAddUser";
+import { useFlashMessage } from "../../../store/useFlashMessage";
 
 // Validation
 import { useForm } from "react-hook-form";
@@ -22,8 +23,9 @@ import storageType from "../../../type/storageType";
 
 export default function ModalAddUser({updateTable}:{updateTable: (data:storageType[]) => void}){
   const [show, setShow] = useAddUser((state) => [state.addUser, state.toggleAddUser]);
+  const setMessage = useFlashMessage((state) => state.setMessage);
 
-  const {handleSubmit, register, formState:{errors, isSubmitSuccessful}} = useForm<schemaProps>({
+  const {handleSubmit, register, formState:{errors}} = useForm<schemaProps>({
     mode: "onChange",
     criteriaMode: "all",
     resolver: zodResolver(schema),
@@ -48,7 +50,11 @@ export default function ModalAddUser({updateTable}:{updateTable: (data:storageTy
     const localData = HandleFetch();
     HandleSave([...localData, dataValues]);
     updateTable([...localData, dataValues])
-    console.log(isSubmitSuccessful)
+    setShow();
+    setMessage("Contact saved successfully!")
+    setTimeout(() => {
+      setMessage("")
+    }, 5000)
   }
 
   return (
