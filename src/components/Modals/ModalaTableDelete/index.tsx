@@ -10,14 +10,19 @@ import SearchInput from "../../SearchInput"
 
 // Zustand
 import { useDelete } from "../../../store/useDelete";
+import { useFlashMessage } from "../../../store/useFlashMessage";
 
 // Icons
 import { MdDelete } from "react-icons/md";
 
 // Type
 import storageType from "../../../type/storageType";
+
+// Storage
 import { HandleSave } from "../../../services/storage";
-import { useFlashMessage } from "../../../store/useFlashMessage";
+
+// Helpers
+import { filterTableByInput } from "../../../helpers/filtering";
 
 type IProps = {
   data: storageType[],
@@ -45,17 +50,8 @@ export default function ModalTableDelete({data, updateTable}:IProps){
 
   useEffect(() => {
 
-    function filterTable(){
-      setDataValues(data.filter(item => (item.first_name).includes(seachInpuValue)))
-
-      if(seachInpuValue === ""){
-        setDataValues(data);
-      }
-
-    }
-
-    filterTable();
-
+    setDataValues(filterTableByInput(data, seachInpuValue))
+  
   }, [seachInpuValue, data])
 
   return (

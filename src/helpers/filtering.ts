@@ -24,7 +24,7 @@ function parseToLowerCase(value: string){
   return value.toLowerCase();
 }
 
-function filterTableByInput(dataValues: storageType[], seachInpuValue: string){
+export function filterTableByInput(dataValues: storageType[], seachInpuValue: string){
   if(seachInpuValue === ""){
     return dataValues;
   }
