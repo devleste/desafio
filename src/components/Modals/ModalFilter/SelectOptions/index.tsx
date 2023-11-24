@@ -25,7 +25,7 @@ export default function SelectOptions({htmlForName, label, options, show, setSho
     const selectedValue = selectedOption.value;
 
     setShow(selectedValue);
-    setMessage("Filter successfully cleaned")
+    setMessage("Filter successfully applied")
     setTimeout(() => {
       setMessage("")
     }, 5000)
