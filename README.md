@@ -1,85 +1,70 @@
-<h1 align="center">
-  <img alt="Leste Telecom" title="Leste Telecom" src="./logo.png" width="200px" />
-</h1>
+# Getting Started with Create React App
 
-<h3 align="center">
-  Desafio do Desenvolvimento
-</h3>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<p align="center">
-  <a href="#computer-o-desafio">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>
-</p>
+## Available Scripts
 
-## :computer: O desafio
+In the project directory, you can run:
 
-A aplicação que deverá ser desenvolvida é uma listagem de contatos, o **Leste Contact**.
+### `npm start`
 
-Neste desafio deverá ser criado uma aplicação com todas as funcionalidades solicitadas e será utilizada para **avaliação dos cadadidatos** para a vaga de desenvolvimento da Leste Telecom.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Um pouco sobre as ferramentas
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Você deverá criar a aplicação do zero utilizando o [ReactJS](https://expressjs.com/).
+### `npm test`
 
-Poderá ser utilizado qualquer outra biblioteca complementar ao React para o desenvolvimento desta aplicação.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Funcionalidades
+### `npm run build`
 
-Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-#### 1. Chamada a API
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### 2. Listagem de Contatos
+### `npm run eject`
 
-Liste todas as informações recebidas da API em formato de lista de contatos. 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-O design da aplicação fica a seu critério
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-#### 3. Adicionar novo Contato
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Persista as informações no próprio browser.
+## Learn More
 
-#### 4. Remover Contatos
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Disponibilize para o usuário excluir um contato da lista.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### 5. Editar Contatos
+### Code Splitting
 
-Disponibilize para o usuário editar qualquer campo de um contato da lista.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-#### 6. Filtros
+### Analyzing the Bundle Size
 
-Adicione filtros na listagem para as seguintes informações:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-- Gender
-- Language
-- Age
-- Birthday (todos de um determinado mês)
+### Making a Progressive Web App
 
-#### 7. Resumo
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
+### Advanced Configuration
 
-- Gender
-- Language
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## 📅 Entrega
+### `npm run build` fails to minify
 
-Para realizar a entrega do desafio basta seguir os passos:
-
-- Dê um **Fork** neste repositório para o Github
-- Realize o desafio e suba para a sua cópia do repositório
-- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
-
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
-
----
-
-Feito com ♥ by Leste Telecom :wave: 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

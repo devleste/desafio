@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+.meus-contatos{
+    margin: auto;
+    max-width: 1200px;
+    height: 100%;
+    padding-bottom: 20px;
+    font-family: 'Sora', sans-serif;
+}
+
+.container-title{
+    margin: auto;
+    max-width: 80%;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-addContact{
+    text-decoration: none;
+    color: #fff;
+    background-color: green;
+    border: 2px solid green;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.btn-addContact:hover{
+    color: green;
+    background-color: #fff;
+    border: 2px solid green;
+}
+
+h3{
+    text-align: center;
+    margin-top: 100px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+li{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #d4d4d4;
+    width: 80%;
+}
+
+.container-button{
+    display: flex;
+    gap: 20px;
+}
+
+button{
+    width: 15%;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.delete-button{
+    background-color: rgb(221, 27, 27);
+    border: 2px solid rgb(221, 27, 27);
+    color: white;
+    transition: all 0.4s;
+}
+
+.delete-button:hover{
+    background-color: transparent;
+    border: 2px solid rgb(221, 27, 27);
+    color: rgb(221, 27, 27);
+}
+
+@media screen and (max-width: 768px){
+
+    .container-title{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edit-button{
+        width: 100%;
+    }
+
+    .delete-button{
+        margin-top: 20px;
+        width: 100%;
+        background-color: rgb(221, 27, 27);
+        border: 2px solid rgb(221, 27, 27);
+        color: white;
+        transition: all 0.4s;
+    }
+    
+}

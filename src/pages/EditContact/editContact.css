@@ -1,0 +1,63 @@
+h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-inputEdit{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-edit{
+    margin-left: 15px;
+    padding: 10px;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+}
+
+.container-btn{
+    display: flex; 
+    gap: 15px;
+}
+
+.btn-save{
+    background-color: green;
+    border: 2px solid green;
+    width: 20%;
+    color: white;
+    transition: all 0.3s;
+}
+
+.btn-save:hover{
+    background-color: transparent;
+    border: 2px solid green;
+    color: green;
+}
+
+.btn-edit{
+    width: 20%;
+}
+
+@media screen and (max-width: 768px){
+
+    .container-btn{
+        flex-direction: column;
+    }
+
+    .btn-save{
+        margin-top: 20px;
+        width: 100%;
+        background-color: green;
+        border: 2px solid green;
+        color: white;
+        transition: all 0.4s;
+    }
+
+    .btn-edit{
+        width: 100%;
+    }
+
+}
+
+
