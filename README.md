@@ -33,8 +33,6 @@ avaliar as estatísticas com base nos dados que lhe foram fornecidos.
 - React icons;
 - Axios;
 - React google charts;
-- Testing library;
-- Vitest;
 - Responsividade;
 - Html5 semantico;
 - Clean code;
