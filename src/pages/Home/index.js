@@ -16,7 +16,7 @@ function Home() {
 
             const response = await api.get("/test.json?key=f55c4060");
 
-            setList(response.data.slice(0, 6));
+            setList(response.data);
             setLoading(false);
         }
 
