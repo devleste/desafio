@@ -16,7 +16,7 @@
   gap: 10px;
   list-style: none;
   overflow-y: scroll;
-  height: 400px;
+  height: 300px;
 }
 
 .listContainer ul li{

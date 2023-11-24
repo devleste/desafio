@@ -3,13 +3,9 @@ import style from "./index.module.css";
 
 // Components
 import Modal from "../../ui/Modal"
-import Button from "../../ui/Button";
 
 // Zustand
 import { useDetail } from "../../../store/useDetail"
-
-// Icons
-import { FaRegCopy } from "react-icons/fa6";
 
 export default function ModalDetail(){
   const [show, setShow, user] = useDetail((state) => [state.detail, state.toggleDetail, state.userData])
@@ -38,10 +34,6 @@ export default function ModalDetail(){
             <span>{user?.birthday}</span>
           </p>
         </div>
-        <Button>
-          Copy
-          <FaRegCopy size={16} color="#ffffff" />
-        </Button>
       </section>
     </Modal>
   )

@@ -16,7 +16,7 @@
   flex-direction: column;
   gap: 10px;
   list-style: none;
-  height: 400px;
+  height: 300px;
   overflow-y: scroll;
 }
 

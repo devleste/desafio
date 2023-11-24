@@ -58,10 +58,10 @@ export default function ModalAddUser({updateTable}:{updateTable: (data:storageTy
         <Input htmlForName="Name" {...register("first_name")} placeholder="Type your name" error={errors.first_name?.message} />
         <Input htmlForName="Lastname" {...register("last_name")} placeholder="Type your lastname" error={errors.last_name?.message} />
         <Input htmlForName="Email" {...register("email")} type="email" placeholder="Type your email" error={errors.email?.message} />
-        <div>
+        <div className={style.genderContainer}>
           <label htmlFor="gender">Gender</label>
           <select {...register("gender")} id="gender">
-            <option value="" ></option>
+            <option value="" >Select your genre</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
           </select>

@@ -11,13 +11,40 @@
   gap: 10px;
 }
 
-.checkboxContainer{
+.genderContainer{
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  padding: 10px;
 }
 
-.checkboxContainer div{
-  display: flex;
-  gap: 5px;
+.genderContainer select{
+  background-color: #009373;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  font-size: 1.0rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+@media (max-height: 700px) {
+  .form{
+    max-height: 505px;
+    overflow-y: scroll;
+    padding-right: 10px;
+  }
+
+  .form::-webkit-scrollbar{
+    width: 10px;
+  }
+
+  .form::-webkit-scrollbar-track{
+    background-color: #d5d5d8;
+    border-radius: 10px;
+  }
+  
+  .form::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #009373;
+  }
 }

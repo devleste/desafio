@@ -24,7 +24,7 @@ import ModalFilter from "./components/Modals/ModalFilter";
 import ModalUpdateUser from "./components/Modals/ModalUpdadeUser";
 
 // Storage
-import { HandleSave } from "./services/storage";
+import { HandleFetch, HandleSave } from "./services/storage";
 
 // Type
 import storageType from './type/storageType';
@@ -38,7 +38,7 @@ import { useFilter } from "./store/useFilter";
 import filtering from "./helpers/filtering";
 
 function App() {
-  const [data, setData] = useState<storageType[]>([]);
+  const [data, setData] = useState<storageType[]>(HandleFetch() ?  HandleFetch() : []);
   const [dataValues, setDataValues] = useState<storageType[]>([]);
   
   const [seachInpuValue, setSeachInpuValue] = useState<string>("");
