@@ -30,7 +30,7 @@ div.phoneNumberContainer{
   gap: 10px;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1400px) {
   .container{
     padding: 0px 40px;
   }

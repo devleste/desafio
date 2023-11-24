@@ -44,7 +44,7 @@ div.textareaContainer textarea {
   resize: none;
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1400px) {
   section.formSection{
     padding: 20px 40px;
   }
