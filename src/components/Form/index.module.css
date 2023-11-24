@@ -10,6 +10,7 @@ section.formSection h2{
   text-align: center;
   color: #ffffff;
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 form.form{

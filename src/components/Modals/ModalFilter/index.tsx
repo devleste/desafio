@@ -78,7 +78,7 @@ export default function ModalFilter({data}:{data: storageType[]}){
 
         <div className={style.buttonContainer}>
           <Button onClick={handleClick}>
-            Clear
+            To clean
           </Button>
         </div>
       </section>

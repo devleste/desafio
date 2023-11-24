@@ -92,10 +92,10 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
           type="email" 
           placeholder="Type your email" 
         />
-        <div>
+        <div className={style.genderContainer}>
           <label htmlFor="gender">Gender</label>
           <select {...register("gender")} id="gender">
-            <option value="" ></option>
+            <option value="" >Select your genre</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
           </select>
