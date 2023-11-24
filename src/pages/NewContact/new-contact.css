@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+*{
+    font-family: 'Sora', sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 30vh);
+}
+
+form{
+    background-color: #141414;
+    width: 60%;
+    padding: 20px;
+    color: #fff;    
+}
+
+.form-title{
+    color: #fff;
+}
+
+.container-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px; 
+}
+
+.profile-info, .extra-info{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-top: 20px;
+}
+  
+.input-newContact{
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.container-button{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-submit{
+    display: block;
+    margin: auto;
+    width: 30%;
+    transition: all 0.3s;
+    border: 2px solid white;
+}
+
+.btn-goBack{
+    display: block;
+    margin: auto;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-submit:hover{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .container-info{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 0px; 
+    }
+
+    form{
+        margin-top: 30px;
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+        color: #fff;    
+    }
+
+    .form-title{
+        color: #141414;
+        font-size: 20px;
+    }
+
+    label{
+        color: #141414;
+    }
+
+    .input-newContact{
+        background-color: #d4d4d4;
+    }
+
+    .container-button{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    .btn-submit{
+        display: block;
+        margin-bottom: 15px;
+        margin-top: 20px;
+        width: 100%;
+        background-color: #141414;
+        color: white;
+    }
+
+    .btn-submit:hover{
+        background-color: white;
+        color: #141414;
+    }
+
+    .btn-goBack{
+        margin-top: 15px;
+        text-align: center;
+        display: block;
+        margin: auto;
+        color: #141414;
+        text-decoration: none;
+    }
+    
+}
+  
+
+
+
+

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+.input-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+}
+
+.input-container input {
+  width: 450px;
+  margin-right: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #d4d4d4;
+}
+
+.input-container button {
+  padding: 15px;
+  width: 150px;
+  border: 2px solid green;
+  background-color: green;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.input-container button:hover {
+  border: 2px solid green;
+  background-color: #fff;
+  color: green;
+}
+
+a.contacts-btn{
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #141414;
+  border: 2px solid #141414;
+  color: #fff;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+a.contacts-btn:hover{
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #141414;
+  color: #141414;
+  background-color: transparent;
+}
+
+.container-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  margin-top: 100px;
+  gap: 5%;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2%;
+  margin-top: 20%;
+  background-color: #d4d4d4;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  border-radius: 20px;
+  padding: 25px;
+  font-family: 'Saira', sans-serif;
+}
+
+.personal-info {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+img.profile-img{
+  background-color: #141414;
+  max-width: 30%;
+  border-radius: 50%;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
+
+@media screen and (max-width: 768px){
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    display: flex;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-container input {
+    width: 80%;
+  }
+
+
+  .input-container button {
+    margin-top: 20px;
+    padding: 15px;
+    width: 80%;
+  }
+
+  .container-list {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+  }
+
+}

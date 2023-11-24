@@ -1,0 +1,17 @@
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #002019;
+  height: 20vh;
+}
+
+.favoritos{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #FFF;
+  padding: 5px 14px;
+  color: #000000;
+  border-radius: 4px;
+}
