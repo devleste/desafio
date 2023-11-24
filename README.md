@@ -11,75 +11,61 @@
   <a href="#-entrega">Entrega</a>
 </p>
 
-## :computer: O desafio
+# Solução - Pedro Cardoso da Silva
+## Video
+![Project Preview](./src/assets/Gravação%20de%20tela%20de%2024-11-2023%2012_13_42.gif)
+
+## Descrição do desafio
 
 A aplicação que deverá ser desenvolvida é uma listagem de contatos, o **Leste Contact**.
 
-Neste desafio deverá ser criado uma aplicação com todas as funcionalidades solicitadas e será utilizada para **avaliação dos cadadidatos** para a vaga de desenvolvimento da Leste Telecom.
+Essa listagem deve ser possível criar um novo contato, deletar e atualizar além de conseguir filtrar os dados e por fim deve ser possível
+avaliar as estatísticas com base nos dados que lhe foram fornecidos.
 
-### Um pouco sobre as ferramentas
+## Contruido com
 
-Você deverá criar a aplicação do zero utilizando o [ReactJS](https://expressjs.com/).
+- ReactJs;
+- Typescript;
+- Css modules;
+- React hook form;
+- Zod;
+- Zustand;
+- React icons;
+- Axios;
+- React google charts;
+- Testing library;
+- Vitest;
+- Responsividade;
+- Html5 semantico;
+- Clean code;
+- FlexBox;
+- Web design;
+- Patterns
 
-Poderá ser utilizado qualquer outra biblioteca complementar ao React para o desenvolvimento desta aplicação.
+## Como rodar na sua maquina
 
-### Funcionalidades
+  ### Primeiro abra o terminal!
 
-Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
+  ### Faça um clone do projeto para a sua maquina:
+  ```
+    $ git clone https://github.com/Eu-Pedro0ficial/Leste-Contact-Desafio-.git
+  ```
 
-#### 1. Chamada a API
+  ### Depois se direcione para a pasta do projeto:
+  ```
+    $ cd Leste-Contact-Desafio-
+  ```
 
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
+  ### Agora instale as dependencias:
+  ```
+    $ npm install
+  ```
 
-#### 2. Listagem de Contatos
+  ### Por fim, basta rodar o projeto na sua maquina:
+  ```
+    $ npm run dev
+  ```
+## Author
 
-Liste todas as informações recebidas da API em formato de lista de contatos. 
-
-O design da aplicação fica a seu critério
-
-#### 3. Adicionar novo Contato
-
-Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem.
-
-Persista as informações no próprio browser.
-
-#### 4. Remover Contatos
-
-Disponibilize para o usuário excluir um contato da lista.
-
-#### 5. Editar Contatos
-
-Disponibilize para o usuário editar qualquer campo de um contato da lista.
-
-#### 6. Filtros
-
-Adicione filtros na listagem para as seguintes informações:
-
-- Gender
-- Language
-- Age
-- Birthday (todos de um determinado mês)
-
-#### 7. Resumo
-
-Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
-
-- Gender
-- Language
-
-
-
-## 📅 Entrega
-
-Para realizar a entrega do desafio basta seguir os passos:
-
-- Dê um **Fork** neste repositório para o Github
-- Realize o desafio e suba para a sua cópia do repositório
-- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
-
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
-
----
-
-Feito com ♥ by Leste Telecom :wave: 
+- Instagram - [ohpedro0ficial](https://instagram.com/ohpedro0ficial?igshid=ZDdkNTZiNTM=)
+- gihhub - [Eu-Pedro0ficial](https://github.com/Eu-Pedro0ficial)
