@@ -67,7 +67,6 @@ function App() {
   useEffect(() => {
     async function getData(){
       if(data.length !== 0){
-        console.log("oi");
         return;
       }
 
