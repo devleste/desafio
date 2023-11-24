@@ -5,30 +5,13 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   
   width: 100%;
   height: 100px;
   max-width: 1350px;
   
   margin: auto;
-}
-
-.buttonContainer{
-  display: flex;
-  gap: 15px;
-}
-
-.headerButton{
-  outline: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 1s;
-}
-.headerButton:hover{
-  transform: scale(1.1, 1.2);
-  font-weight: bold;
 }
 
 .logo{
