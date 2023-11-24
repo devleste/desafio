@@ -7,9 +7,6 @@ import style from "./index.module.css";
 // Zustand
 import { useFlashMessage } from "../../store/useFlashMessage";
 
-// Icon
-import { MdDomainVerification } from "react-icons/md";
-
 export default function FlashMessage(){
   const [
     isOpenMessageModal, 
@@ -35,7 +32,6 @@ export default function FlashMessage(){
       {isOpenMessageModal ?
         <dialog className={style.messageModal} open>
           <p>{message}</p>
-          <MdDomainVerification size={30} color="#000000" />
         </dialog>
         :
         <></>

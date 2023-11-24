@@ -5,7 +5,8 @@
 
   position: absolute;
   top: 12%;
-  left: 80%;
+  left: 50%;
+  transform: translate(-50%);
 
   border: none;
   padding: 20px 40px;
