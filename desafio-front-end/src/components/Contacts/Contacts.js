@@ -8,11 +8,13 @@ import { ColorRing } from "react-loader-spinner";
 import DatePicker from "react-datepicker";
 
 export default function Contacts() {
-  const [contactsInfo, setContactsInfo] = useState([]);
+  const [newContact, setNewContact] = useState([]);
+  const [combinedContacts, setCombinedContacts] = useState([]);
   const [list, setList] = useState(false);
-  const [clicked, setClicked] = useState(false);
   const [openedModal, setOpenedModal] = useState(false);
   const [create, setCreate] = useState(false);
+  const localStorage = window.localStorage;
+  const contacts = {};
   const [formInfo, setFormInfo] = useState({
     gender: "",
     birthday: "",
@@ -26,40 +28,63 @@ export default function Contacts() {
     avatar: "",
   })
 
-  // useEffect(() => {
-  //   const urlAPI = `${process.env.REACT_APP_API_URL}`;
-  //   const promise = axios.get(urlAPI);
-  //   promise.then((res) => {
-  //     setContactsInfo(res.data);
-  //     setList(true);
-  //     console.log(res.data);
-  //   });
-  //   promise.catch((err) => {
-  //     console.log(err.response.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    const urlAPI = `${process.env.REACT_APP_API_URL}`;
+    const promise = axios.get(urlAPI);
+    promise.then((res) => {
+      setCombinedContacts([...res.data, ...newContact]); 
+      setList(true);
+    });
+    promise.catch((err) => {
+      console.log(err.response.data);
+      alert("Erros no sistema.");
+    });
+
+    const localStorageData = JSON.parse(localStorage.getItem("contatos")) || [];
+    setNewContact(localStorageData);
+  }, []);
+
 
   function createContact() {
-    const urlAPI = `${process.env.REACT_APP_API_URL}`;
-    const body = {
+    const newContactId = combinedContacts.length + 1;
+    const newContactObj = {
+      id: newContactId,
       first_name: formText.first_name, 
       last_name: formText.last_name, 
       email: formText.email, 
       gender: formInfo.gender, 
       language: formText.language, 
       avatar: formText.avatar, 
-      birthday: formInfo.birthday}
-    const promise = axios.post(urlAPI, body);
-    promise.then((res) => {
-      setCreate(true);
+      birthday: formInfo.birthday
+    }
+    
+    localStorage.setItem("contatos", JSON.stringify([newContactObj, ...newContact]));
+    setNewContact([newContactObj, ...newContact]); 
+    setCombinedContacts([newContactObj, ...combinedContacts]);  
+  
+
+    setFormText({
+      first_name: "",
+      last_name: "",
+      email: "",
+      language: "",
+      avatar: "",
     });
-    promise.catch((err) => {
-      console.log(err.response.data.mensagem);
+    setFormInfo({
+      gender: "",
+      birthday: "",
     });
+
+    setOpenedModal(false);
+    
   }
 
-  function handleForm(e){
-    setFormText(({ ...formInfo, [e.target.name]: e.target.value}));
+  function handleForm(e) {
+    const { name, value } = e.target;
+    setFormText((prevFormText) => ({
+      ...prevFormText,
+      [name]: value,
+    }));
   }
 
   function handleDateForm(e) {
@@ -107,7 +132,7 @@ export default function Contacts() {
           </Category>
 
           <span>
-            {contactsInfo.map((contact, index) => (
+            {combinedContacts.map((contact, index) => (
               <Card key={index} contact={contact} />
             ))}
           </span>
@@ -130,8 +155,9 @@ export default function Contacts() {
                 <input
                   required
                   type="name"
-                  value={formInfo.first_name}
+                  value={formText.first_name}
                   onChange={handleForm}
+                  name="first_name"
                 />
               </span>
               <span>
@@ -139,8 +165,9 @@ export default function Contacts() {
                 <input
                   required
                   type="name"
-                  value={formInfo.last_name}
+                  value={formText.last_name}
                   onChange={handleForm}
+                  name="last_name"
                 />
               </span>
             </Info>
@@ -150,8 +177,9 @@ export default function Contacts() {
               <input
                 required
                 type="email"
-                value={formInfo.email}
+                value={formText.email}
                 onChange={handleForm}
+                name="email"
               />
             </Email>
 
@@ -161,8 +189,9 @@ export default function Contacts() {
                 <input
                   required
                   type="imagem"
-                  value={formInfo.avatar}
+                  value={formText.avatar}
                   onChange={handleForm}
+                  name="avatar"
                 />
               </span>
               <span>
@@ -170,8 +199,9 @@ export default function Contacts() {
                 <input
                   required
                   type="text"
-                  value={formInfo.language}
+                  value={formText.language}
                   onChange={handleForm}
+                  name="language"
                 />
               </span>
             </Info>
