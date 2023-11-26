@@ -1,0 +1,54 @@
+
+.container{
+  background-color: #002019;
+  width: 100%;
+  padding: 20px 0px;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1350px;
+  margin: auto;
+  color: white;
+}
+
+section.socialMidia{
+  display: flex;
+  gap: 10px;
+}
+
+section.clientContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+div.phoneNumberContainer{
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 1400px) {
+  .container{
+    padding: 0px 40px;
+  }
+}
+
+@media (max-width: 750px) {
+  .container{
+    padding: 20px 0px;
+  }
+  .footerContainer{
+    flex-direction: column;
+    gap: 15px;
+    
+  }
+}
+
+@media (max-width: 420px) {
+  div.phoneNumberContainer{
+    flex-direction: column;
+  }
+}

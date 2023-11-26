@@ -1,0 +1,16 @@
+
+a.midiaLink {
+  text-decoration: none;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+a.midiaLink:hover{
+  transform: scale(1.2, 1.2);
+}

@@ -1,0 +1,100 @@
+table.table {
+  border-collapse: collapse;
+  border: 5px solid #019272;
+  border-radius: 5px;
+  margin: 10px auto;
+  max-width: 1350px;
+  width: 100%;
+  animation: grow 1.1s linear .25s;
+}
+
+.table thead{
+  background-color: #019272;
+  color: #ffffff;
+  height: 70px;
+}
+
+.table td{
+  border: 3px solid #019272;
+  padding: 0 15px;
+  text-align: start;
+  width: 150px;
+}
+.table th{
+  width: 150px;
+  padding: 0 15px;
+  text-align: start;
+  letter-spacing: 3px;
+}
+
+.notFoundItens{
+  font-weight: bold;
+  text-align: center;  
+  color: red;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0, 0);
+    transform-origin: center;
+  }
+  90% {
+    transform: scale(1.1, 1.1);
+    transform-origin: center;
+  }
+  100%{
+    transform: scale(1.0, 1.0);
+    transform-origin: center;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+
+  table.table {
+    border: 0;
+  }
+
+  table.table  th, table.table  td {
+    padding: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  table.table  thead{
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+  }
+
+  table.table  td {
+    border-bottom: 2px solid #019272;
+    display: block;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  table.table  td:last-child {
+    border-bottom: 0;
+  }
+
+  .table  td:first-child, th:first-child{
+    border-radius: 0;
+  }
+  
+  .table  td:last-child, th:last-child{
+    border-radius: 0;
+  }
+
+  table.table  td::before{
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: black;
+  }
+
+}

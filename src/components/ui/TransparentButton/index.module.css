@@ -1,0 +1,12 @@
+
+.buttonStyle{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+
+.buttonStyle:hover{
+  transform: scale(1.2, 1.2);
+}

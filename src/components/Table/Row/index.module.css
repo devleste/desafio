@@ -1,0 +1,9 @@
+
+@media screen and (max-width: 1040px) {
+
+  .tr {
+    border: 4px solid #019272;
+    display: block;
+    margin-bottom: 4px;
+  }
+}

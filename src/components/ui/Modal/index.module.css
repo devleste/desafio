@@ -1,0 +1,52 @@
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: rgba(49, 49, 49, 0.3);
+}
+
+.modal{
+  min-width: 400px;
+  min-height: 400px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ededed;
+  border-radius: 20px;
+
+  padding: 15px;
+}
+
+.closeContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.closeContainer button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition:  all 0.2s;
+}
+
+.closeContainer button:hover{
+  transform: scale(1.2, 1.2);
+}
+
+@media (max-width: 400px) {
+  .modal{
+    max-width: 375px;
+    min-width: auto;
+    width: 100%;
+  }
+}
