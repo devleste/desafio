@@ -49,15 +49,15 @@ export default function ModalStatistics({data}:{data: storageType[]}){
     setColumnChart(countLanguages(data));
     setPieChartStatistics([
       ["Task", "Gender"],
-      ["Woman", getCountGender(data, "F")],
-      ["Man", getCountGender(data, "M")]
+      ["Mulher", getCountGender(data, "F")],
+      ["Homem", getCountGender(data, "M")]
     ])
   }, [data])
 
 
   return (
     <Modal isOpen={show} toogleModal={setShow} >
-      <h1 className={style.title}>Statitics</h1>
+      <h1 className={style.title}>Estatísticas</h1>
       <section className={style.chartContainer}>
         <Chart
           chartType="PieChart"

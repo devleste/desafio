@@ -59,25 +59,25 @@ export default function ModalFilter({data}:{data: storageType[]}){
 
   return (
     <Modal isOpen={show} toogleModal={setShow}>
-      <h1 className={style.title}>Filter</h1>
+      <h1 className={style.title}>Filtro</h1>
       <section className={style.selectContainer}>
         <SelectOptions 
           htmlForName="language" 
-          label="Language" 
+          label="Idioma" 
           options={getOptionsValue("language", data)} 
           show={currentLanguage}
           setShow={setCurrentLanguage}
         />
         <SelectOptions 
           htmlForName="gender" 
-          label="Gender" 
+          label="Gênero" 
           options={getOptionsValue("gender", data)}
           show={currentGender}
           setShow={setCurrentGender}
         />
         <SelectOptions 
           htmlForName="birthday" 
-          label="Birthday" 
+          label="Data de nascimento" 
           options={dateFilter}
           show={currentFilterDate}
           setShow={setCurrentFilterDate}
@@ -85,7 +85,7 @@ export default function ModalFilter({data}:{data: storageType[]}){
 
         <div className={style.buttonContainer}>
           <Button onClick={handleClick}>
-            To clean
+            Limpar filtro
           </Button>
         </div>
       </section>

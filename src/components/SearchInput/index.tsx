@@ -13,7 +13,7 @@ export default function SearchInput(props: IProps){
       <span>
         <BiSearchAlt size={24} color="#000000" />
       </span>
-      <input type="text" value={props.value} onChange={(e) => props.setValue(e.target.value)} placeholder="Search" />
+      <input type="text" value={props.value} onChange={(e) => props.setValue(e.target.value)} placeholder="Pesquisar" />
     </section>
   )
 }

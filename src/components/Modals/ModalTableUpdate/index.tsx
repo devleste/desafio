@@ -42,7 +42,7 @@ export default function ModalTableUpdate({data,}:{data:storageType[]}){
 
   return (
     <Modal isOpen={show} toogleModal={setShow} >
-      <h1 className={style.title}>Upgrade</h1>
+      <h1 className={style.title}>Atualizar</h1>
       <SearchInput value={seachInpuValue} setValue={setSeachInpuValue} />
       <section className={style.listContainer}>
         <ul>
@@ -55,7 +55,7 @@ export default function ModalTableUpdate({data,}:{data:storageType[]}){
                     <h4>{item.first_name} {item.last_name}</h4>
                   </div>
                   <button onClick={() => handleClick(item.id)}>
-                    Update <MdUpgrade size={16} color="#ffffff" />
+                    Atualizar <MdUpgrade size={16} color="#ffffff" />
                   </button>
                 </li>
               )):

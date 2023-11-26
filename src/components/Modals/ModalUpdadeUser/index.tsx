@@ -78,18 +78,18 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
       <h1 className={style.title}>Update</h1>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
         <Input 
-          htmlForName="Name" 
+          htmlForName="Nome" 
           {...register("first_name")} 
           defaultValue={user?.first_name} 
           error={errors.first_name?.message} 
-          placeholder="Type your name" 
+          placeholder="Escreva seu nome" 
         />
         <Input 
-          htmlForName="Lastname" 
+          htmlForName="Sobrenome" 
           {...register("last_name")} 
           defaultValue={user?.last_name} 
           error={errors.last_name?.message}  
-          placeholder="Type your lastname" 
+          placeholder="Escreva sobrenome" 
         />
         <Input 
           htmlForName="Email" 
@@ -97,40 +97,40 @@ export default function ModalUpdateUser({updateTable}: {updateTable: (data:stora
           defaultValue={user?.email} 
           error={errors.email?.message}
           type="email" 
-          placeholder="Type your email" 
+          placeholder="Escreva seu email" 
         />
         <div className={style.genderContainer}>
-          <label htmlFor="gender">Gender</label>
+          <label htmlFor="Gênero">Gender</label>
           <select {...register("gender")} id="gender">
             <option value="" >Select your genre</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
           </select>
         </div>
         <Input 
-          htmlForName="Language" 
+          htmlForName="Idioma" 
           {...register("language")} 
           defaultValue={user?.language} 
           error={errors.language?.message}
-          placeholder="Type your language" 
+          placeholder="Escreva sua linguagem" 
         />
         <Input 
           htmlForName="Avatar" 
           {...register("avatar")} 
           defaultValue={user?.avatar} 
           error={errors.avatar?.message}
-          placeholder="Type url your avatar" 
+          placeholder="Escreva a url do seu avatar" 
         />
         <Input 
-          htmlForName="Birthday" 
+          htmlForName="Data de nascimento" 
           {...register("birthday")} 
           defaultValue={user?.birthday} 
           error={errors.birthday?.message}
           type="date" 
-          placeholder="Type your birthday" 
+          placeholder="XX/XX/XXXX" 
         />
 
-        <Button type="submit">Send</Button>
+        <Button type="submit">Enviar</Button>
       </form>
     </Modal>
   )

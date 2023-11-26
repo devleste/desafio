@@ -85,7 +85,7 @@ function App() {
     <div className="container">
       <Header />
       <main>
-        <h1 className="title">Leste Contact</h1>
+        <h1 className="title">Leste Contatos</h1>
         <SearchInput value={seachInpuValue} setValue={setSeachInpuValue} />
         <TableFuncionalitis />
         <Table dataValues={currentPosts(dataValues)} />
