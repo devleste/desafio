@@ -8,6 +8,7 @@ import storageType from "../../../type/storageType";
 
 // Components
 import TransparentButton from '../../ui/TransparentButton/index';
+import { genderNameTransformation } from "../../../helpers/genderNameTransformation";
 
 type IProps = {
   handleClick: (id: number) => void,
@@ -22,12 +23,12 @@ export default function Row({item, handleClick}:IProps){
         <img className="avatar" src={item.avatar} alt="avatar" />
       </td>
       <td data-label="Name">{item.first_name}</td>
-      <td data-label="Lastname">{item.last_name}</td>
+      <td data-label="Sobrenome">{item.last_name}</td>
       <td data-label="Email">{item.email}</td>
-      <td data-label="Gender">{item.gender}</td>
-      <td data-label="Language">{item.language}</td>
-      <td data-label="Birthday">{item.birthday}</td>
-      <td data-label="Detail">
+      <td data-label="Gênero">{genderNameTransformation(item.gender)}</td>
+      <td data-label="Idioma">{item.language}</td>
+      <td data-label="data de nascimento">{item.birthday}</td>
+      <td data-label="detalhes">
         <TransparentButton onClick={() => handleClick(item.id)} className={style.buttonDetail}>
           <BiSolidUserDetail size={30} color="#019272" />
         </TransparentButton>

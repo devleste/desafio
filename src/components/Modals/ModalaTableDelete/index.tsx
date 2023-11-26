@@ -56,7 +56,7 @@ export default function ModalTableDelete({data, updateTable}:IProps){
 
   return (
     <Modal isOpen={show} toogleModal={setShow} >
-      <h1 className={style.title}>Delete</h1>
+      <h1 className={style.title}>Deletar usuario</h1>
       <SearchInput value={seachInpuValue} setValue={setSeachInpuValue} />
       <section className={style.listContainer}>
         <ul>
@@ -69,7 +69,7 @@ export default function ModalTableDelete({data, updateTable}:IProps){
                     <h4>{item.first_name} {item.first_name}</h4>
                   </div>
                   <button onClick={() => handleClick(item.id)}>
-                    Delete <MdDelete size={16} color="#ffffff" />
+                    Deletar <MdDelete size={16} color="#ffffff" />
                   </button>
                 </li>
               )) :

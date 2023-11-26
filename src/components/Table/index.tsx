@@ -23,13 +23,13 @@ export default function Table({ dataValues }:{dataValues: storageType[]}){
         <thead>
           <tr>
             <th scope="col">Avatar</th>
-            <th scope="col">Name</th>
-            <th scope="col">Lastname</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
             <th scope="col">Email</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Language</th>
-            <th scope="col">Birthday</th>
-            <th scope="col">Detail</th>
+            <th scope="col">Gênero</th>
+            <th scope="col">Idioma</th>
+            <th scope="col">Data de nascimento</th>
+            <th scope="col">Detalhes</th>
           </tr>
         </thead>
         <tbody id="tbody">
