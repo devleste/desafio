@@ -15,6 +15,9 @@ principais:
 * React Router
 * React Hook Form
 * localforage
+* zustand
+* lodash
+* recharts
 
 ### Paleta e Tipografia
 O design base foi feito com base no [rebranding da Leste](https://waltermattos.com/projetos/leste)
@@ -28,6 +31,10 @@ as cores utilizadas foram as seguintes:
 - #009273
 - #64F6D7
 - #F2F2F2
+
+A aparência final do projeto seguiu um tema claro com uma paleta simplificada:
+![image](https://github.com/pedro-augusto-santana/leste-contacts/assets/48259258/ed57d67e-8614-47b9-8d0f-17628ebd2680)
+
 
 ### Rodando localmente
 Para rodar o projeto localmente é necessário ter algum gerenciador de pacotes do NPM instalado, seja
@@ -59,5 +66,4 @@ pnpm run dev
 O projeto então estará rodando no port `3312`, disponível em <http://localhost:3312>
 
 ### Instância
-Há uma instância do aplicativo disponível em: COLOCAR LINK DO
-PROJETO RODANDO
+Há uma instância do aplicativo disponível em: <https://leste-contacts.vercel.app/>
