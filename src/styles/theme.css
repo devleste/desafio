@@ -1,0 +1,29 @@
+:root {
+  --c-primary: #009273;
+  --c-primary-light: #64F6D7;
+  --c-primary-dark: #007B5F;
+  --c-primary-darker: #055542;
+  --c-charcoal-green: #01423A;
+  --c-off-black: #0F0101;
+  --c-off-white: #F2F2F2;
+  --c-red: #EF233C;
+  --c-red-darker: #D90429;
+  --c-blue: #0077B6;
+  --c-blue-darker: #023E8A;
+
+  --c-text: var(--c-off-black);
+  --c-background: var(--c-off-white);
+  --c-error: var(--c-red-darker);
+}
+
+@layer base {
+  html {
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .p-wrap {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
