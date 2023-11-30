@@ -1,0 +1,3 @@
+.header-link.active {
+  @apply border-b-2 border-b-primary-dark mt-0.5;
+}
