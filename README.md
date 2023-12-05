@@ -27,7 +27,7 @@ Recursos Principais
 
 
 # Começando 🤖
-Para clonar e executar este aplicativo, você precisará de Git e Node.js (que vem com npm)e Angular CLI instalado em seu computador.
+Para clonar e executar este aplicativo, você precisará de Git e Node.js (que vem com npm) instalado em seu computador.
 
 ```bash
 # Clone este repositório
