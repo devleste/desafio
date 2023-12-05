@@ -15,7 +15,9 @@ Recursos Principais
 
 # Layout
 <p align="center">
-
+<img width="916" alt="project-financeiro360-orcamentoMensal" src="https://github.com/priscilaSartori/lista-de-contatos/blob/priscila-sartori/src/TelaPrincipal.png">
+<img width="916" alt="project-financeiro360-orcamentoMensal" src="https://github.com/priscilaSartori/lista-de-contatos/blob/priscila-sartori/src/NewContato.png">
+<img width="916" alt="project-financeiro360-orcamentoMensal" src="https://github.com/priscilaSartori/lista-de-contatos/blob/priscila-sartori/src/EditarContato.png">  
 </p>
 
 
