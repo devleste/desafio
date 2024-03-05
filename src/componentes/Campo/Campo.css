@@ -1,0 +1,54 @@
+.campo{
+    height: 50vh;;
+    background-color: #1A8F6E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.campoBt{
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    width: 10em;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 3px 3px #000;
+    transition: 0.3s;
+}
+
+.campoBt:hover{
+    cursor: pointer;
+    transform: translateY(-6px);
+    box-shadow: 6px 6px #000;
+}
+
+.cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contDiv h2{
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    width: 10em;
+}
+
+.contDiv p{
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    width: 10em;
+}
