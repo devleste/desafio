@@ -1,0 +1,61 @@
+.textoFormulario{
+    background-color: #1A8F6E;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.textoFormulario div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+
+.textoFormulario label{
+    width: 25%;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.textoFormulario input{
+    width: 25%;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.textoFormulario button{
+    width: 30%;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 100px;
+    transition: 0.5s;
+}
+
+.textoFormulario button:hover{
+    cursor: pointer;
+    background-color: #00ff00;
+    transform: translateY(-6px);
+}
+
+.gender{
+    width: 25.5%;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.language{
+    width: 25.5%;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
