@@ -1,0 +1,44 @@
+.tableContainer {
+  position: absolute;
+  top: 385px;
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border: 3px solid #aabfbf;
+  max-width: 100%;
+  flex: 1;
+}
+
+.td {
+  border: 1px solid #aabfbf;
+  background-color: black;
+  text-align: center;
+  color: white;
+  height: 107px;
+}
+
+.th {
+  border: #aabfbf 1px solid;
+  height: 30px;
+  background-color: rgb(0, 153, 123);
+  color: white;
+}
+
+.icon {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: black;
+  border: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .tableContainer {
+    top: 300px;
+  }
+}

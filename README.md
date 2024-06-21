@@ -1,85 +1,50 @@
-<h1 align="center">
-  <img alt="Leste Telecom" title="Leste Telecom" src="./logo.png" width="200px" />
-</h1>
+<h1 align="center">Leste Contact</h1>
 
-<h3 align="center">
-  Desafio do Desenvolvimento
-</h3>
+# Uma lista de contatos.
+Esta é uma aplicação web que visa desenvolver um sistema de lista de contatos, proporcionando uma experiência eficiente e inteligente na gestão de informações de contatos pessoais. 
 
+Recursos Principais
+1. Chamada a API: A aplicação faz uma chamada para uma API Externa que devolverá uma série de informações de contatos.
+2. Listagem de Contatos: Lista todas as informações recebidas da API em formato de lista de contatos.
+3. Adicionar novo Contato: Cria a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem. Persistindo as informações no próprio browser.
+4. Remover Contatos: Disponibiliza para o usuário excluir um contato da lista.
+5. Editar Contatos: Disponibiliza para o usuário editar qualquer campo de um contato da lista.
+6. Filtros: Adiciona filtros na listagem para as seguintes informações: Gender, Language, Age e Birthday (todos de um determinado mês)
+7. Resumo: Adiciona um resumo estatístico da lista, exibindo a contagem total dos campos: Gender e Language
+
+
+# Layout
 <p align="center">
-  <a href="#computer-o-desafio">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>
+<img width="916" alt="project-financeiro360-orcamentoMensal" src="https://github.com/priscilaSartori/lista-de-contatos/blob/priscila-sartori/src/TelaPrincipal.png">
+<img width="916" alt="project-financeiro360-orcamentoMensal" src="https://github.com/priscilaSartori/lista-de-contatos/blob/priscila-sartori/src/NewContato.png">
+<img width="916" alt="project-financeiro360-orcamentoMensal" src="https://github.com/priscilaSartori/lista-de-contatos/blob/priscila-sartori/src/EditarContato.png">  
 </p>
 
-## :computer: O desafio
 
-A aplicação que deverá ser desenvolvida é uma listagem de contatos, o **Leste Contact**.
-
-Neste desafio deverá ser criado uma aplicação com todas as funcionalidades solicitadas e será utilizada para **avaliação dos cadadidatos** para a vaga de desenvolvimento da Leste Telecom.
-
-### Um pouco sobre as ferramentas
-
-Você deverá criar a aplicação do zero utilizando o [ReactJS](https://expressjs.com/).
-
-Poderá ser utilizado qualquer outra biblioteca complementar ao React para o desenvolvimento desta aplicação.
-
-### Funcionalidades
-
-Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
-
-#### 1. Chamada a API
-
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
-
-#### 2. Listagem de Contatos
-
-Liste todas as informações recebidas da API em formato de lista de contatos. 
-
-O design da aplicação fica a seu critério
-
-#### 3. Adicionar novo Contato
-
-Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem.
-
-Persista as informações no próprio browser.
-
-#### 4. Remover Contatos
-
-Disponibilize para o usuário excluir um contato da lista.
-
-#### 5. Editar Contatos
-
-Disponibilize para o usuário editar qualquer campo de um contato da lista.
-
-#### 6. Filtros
-
-Adicione filtros na listagem para as seguintes informações:
-
-- Gender
-- Language
-- Age
-- Birthday (todos de um determinado mês)
-
-#### 7. Resumo
-
-Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
-
-- Gender
-- Language
+# Tecnologias e Ferramentas
+## Front-end
+- ReactJS
 
 
+# Começando 🤖
+Para clonar e executar este aplicativo, você precisará de Git e Node.js (que vem com npm) instalado em seu computador.
 
-## 📅 Entrega
+```bash
+# Clone este repositório
+$ git clone git@github.com:priscilaSartori/lista-de-contatos.git
 
-Para realizar a entrega do desafio basta seguir os passos:
+# Acesse a pasta do projeto
+$ cd lista-de-contatos
 
-- Dê um **Fork** neste repositório para o Github
-- Realize o desafio e suba para a sua cópia do repositório
-- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
+# Instale as dependências
+$ npm install 
+# or
+$ yarn add install
 
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
+# Execute o projeto 📎 
+$ npm start
+```
 
----
+Acesse o aplicativo em seu navegador em http://localhost:3000.
 
 Feito com ♥ by Leste Telecom :wave: 
