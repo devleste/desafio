@@ -1,0 +1,180 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  background: #0000004b;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+
+.modal.visible {
+  display: flex;
+}
+
+.modal .container {
+  background: var(--background-color);
+  border-radius: 14px;
+  padding: 30px;
+  width: 600px;
+  box-shadow: 0px 4px 4px #00000010;
+}
+
+.container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container .header h5 {
+  font-size: 24px;
+  user-select: none;
+  position: relative;
+  top: -12px;
+  color: var(--primary-color);
+}
+
+.container .header .close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  color: var(--text-grey);
+  transition: 0.3s;
+}
+
+.container .header .close:hover {
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.container .body {
+  padding-top: 10px;
+}
+
+.container .body form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container .body form label {
+  display: block;
+  font-size: 18px;
+  padding-bottom: 4px;
+  color: var(--text-color);
+}
+
+.container .body form label.error,
+.container .body form p.error {
+  color: var(--text-red);
+}
+
+.container .body form input[type="text"],
+.container .body form input[type="email"],
+.container .body form input[type="url"] {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px #0000000a;
+  color: var(--text-color);
+  border-radius: 14px;
+  border: none;
+  height: 58px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 20px 30px;
+}
+
+.container .body .name {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.container .body .first_name,
+.container .body .last_name {
+  flex: 1;
+}
+
+.container .body .gender {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .body .gender p {
+  font-size: 18px;
+  padding-bottom: 4px;
+  color: var(--text-color);
+}
+
+.container .body .gender label {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+
+.container .body .gender .fem,
+.container .body .gender .masc {
+  display: flex;
+  gap: 6px;
+}
+
+.container .body .languages select {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px #0000000a;
+  border-radius: 14px;
+  border: none;
+  height: 58px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 0 30px;
+  color: var(--text-color);
+  border-right: 16px solid transparent;
+  cursor: pointer;
+}
+
+.container .body .birthday p {
+  font-size: 18px;
+  padding-bottom: 4px;
+  color: var(--text-color);
+}
+
+.container .body .birthday input {
+  padding-left: 40px !important;
+}
+
+.container .body .submit {
+  background: var(--primary-color);
+  box-shadow: 0px 4px 4px #0000000a;
+  border-radius: 14px;
+  outline: none;
+  border: none;
+  height: 58px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.container .body .submit:hover {
+  background: var(--primary-color-variation);
+  transition: 0.3s;
+}
+
+.container .body .submit.saving {
+  background: var(--text-green);
+}

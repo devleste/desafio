@@ -1,0 +1,7 @@
+.icon {
+  color: var(--primary-color) !important;
+  position: relative;
+  top: 12px;
+  left: 6px;
+  font-size: 18px;
+}

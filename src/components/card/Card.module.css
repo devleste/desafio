@@ -1,0 +1,274 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 360px;
+  background: #FFFFFF;
+  box-shadow: var(--box-shadow);
+  border-radius: 14px;
+  padding: 30px;
+  position: relative;
+}
+
+.card p {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--text-color)
+}
+
+.card .icon {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.card .context {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.card .context>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+}
+
+.card .context>button:hover .icon {
+  color: var(--primary-color-variation);
+  transition: 0.3s;
+}
+
+.card .context .icon {
+  color: var(--text-grey);
+  transition: 0.3s;
+}
+
+.card .context .container {
+  position: absolute;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  right: 16px;
+  top: 42px;
+  border-radius: 14px;
+  border-top-right-radius: 0;
+  z-index: 2;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  height: 0;
+  width: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.card .context .container.visible {
+  height: 120px;
+  width: 220px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.card .context .container button {
+  background: #FFFFFF;
+  box-shadow: var(--box-shadow-button);
+  border-radius: 14px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.card .context .container button:hover {
+  color: #fff;
+  background: var(--primary-color-variation);
+  transition: 0.3s;
+}
+
+.card .context .container button:hover .icon {
+  color: #fff;
+}
+
+.card .context .container button .icon {
+  color: var(--primary-color);
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding-right: 6px;
+}
+
+.card .context .container button.remove:hover {
+  background: var(--text-red);
+}
+
+.card .avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 105px;
+  border-radius: 26px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.card .avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .gender {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 80px;
+  top: 100px;
+  background: var(--background-color);
+  border-radius: 14px;
+  height: 42px;
+  width: 42px;
+}
+
+.card .gender .icon_female {
+  font-size: 24px;
+  color: #ff6d84;
+}
+
+.card .gender .icon_male {
+  font-size: 24px;
+  color: #37c1ff;
+}
+
+.card .name {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.card .name h6 {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.card .email,
+.card .language,
+.card .birthday {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.card .email p,
+.card .language p,
+.card .birthday p {
+  font-size: 14px;
+  word-break: break-all;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: unset;
+    flex: 1;
+    flex-direction: row;
+    align-items: unset;
+    justify-content: flex-start;
+    padding: 12px;
+  }
+
+  .card .avatar {
+    margin: unset;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px !important;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .card .avatar img {
+    width: 100%;
+  }
+
+  .card .name {
+    position: absolute;
+    left: 80px;
+    top: -12px;
+    width: unset;
+    max-width: 50vw;
+    overflow: hidden;
+  }
+
+  .card .name h6 {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 16px;
+    margin-left: 6px;
+  }
+
+  .card .email .icon,
+  .card .language .icon,
+  .card .birthday .icon {
+    font-size: 20px;
+  }
+
+  .card .email p {
+    line-height: 1;
+    max-width: 75%;
+
+  }
+
+  .card .language p,
+  .card .birthday p {
+    line-height: 1;
+    max-width: 85%;
+  }
+
+  .card .email,
+  .card .language,
+  .card .birthday {
+    position: absolute;
+    left: 86px;
+  }
+
+  .card .email {
+    top: 24px;
+    width: 65vw;
+  }
+
+  .card .language {
+    top: 52px;
+  }
+
+  .card .birthday {
+    top: 80px;
+  }
+
+  .card .gender {
+    top: 65px;
+    left: 20px;
+  }
+
+  .card .context {
+    top: 2px;
+    right: 0;
+  }
+
+  .card .context .icon {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,241 @@
+.filter.visible {
+  display: flex;
+  filter: opacity(1);
+  transition: 0.1s;
+  pointer-events: unset;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  filter: opacity(0);
+  position: absolute;
+  top: 0;
+  right: 160px;
+  padding: 10px 20px;
+  padding-bottom: 20px;
+  background: #fff;
+  width: 280px;
+  border-radius: 14px;
+  box-shadow: var(--box-shadow);
+  z-index: 20;
+  transition: 0.1s;
+  pointer-events: none;
+}
+
+.filter select {
+  background: var(--background-color);
+  box-shadow: var(--box-shadow-button);
+  border-radius: 14px;
+  border: none;
+  height: 30px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  padding: 0 10px;
+  color: var(--text-color);
+  border-right: 16px solid transparent;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.filter .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter .header h5 {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.filter .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.filter .content h6 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-grey);
+}
+
+.filter .content .by_gender .options {
+  padding-top: 6px;
+}
+
+.filter .content .by_gender .options input {
+  cursor: pointer;
+}
+
+.filter .content .by_gender .options label {
+  padding-left: 6px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.filter .content .by_language>p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-grey);
+  padding-top: 16px;
+  padding-bottom: 6px;
+}
+
+.filter .content .by_language .filtered_languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter .content .by_language .filtered_languages .language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  background: var(--background-color);
+  border-radius: 14px;
+  padding: 2px 12px;
+  padding-right: 6px;
+  box-shadow: var(--box-shadow);
+}
+
+.filter .content .by_language .filtered_languages .language p {
+  pointer-events: none;
+}
+
+.filter .content .by_language .filtered_languages .language button {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  top: 3px;
+  padding-left: 2px;
+  transition: 0.3s;
+  color: var(--text-grey);
+}
+
+.filter .content .by_language .filtered_languages .language button:hover {
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.filter .content .by_age {
+  padding-top: 6px;
+}
+
+.filter .content .by_birthmonth {
+  margin-top: -10px;
+}
+
+.filter .content .by_birthmonth>p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-grey);
+  padding-top: 16px;
+  padding-bottom: 6px;
+}
+
+.filter .content .by_birthmonth .filtered_months {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter .content .by_birthmonth .filtered_months .month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  background: var(--background-color);
+  border-radius: 14px;
+  padding: 2px 12px;
+  padding-right: 6px;
+  box-shadow: var(--box-shadow);
+}
+
+.filter .content .by_birthmonth .filtered_months .month p {
+  pointer-events: none;
+}
+
+.filter .content .by_birthmonth .filtered_months .month button {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  top: 3px;
+  padding-left: 2px;
+  transition: 0.3s;
+  color: var(--text-grey);
+}
+
+.filter .content .by_language .filtered_languages .language button:hover {
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.filter .buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+.filter .buttons .clear {
+  box-shadow: var(--box-shadow-button);
+  background: var(--background-color);
+  border-radius: 14px;
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.filter .buttons .clear:hover {
+  background: var(--primary-color-variation) !important;
+}
+
+.filter .buttons .clear:hover .icon {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.filter .buttons .clear .icon {
+  padding: 0 6px;
+  font-size: 32px;
+  color: var(--text-grey);
+}
+
+@media (max-width: 768px) {
+  .filter {
+    top: 80px;
+    right: 80px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 500px) {
+  .filter {
+    top: 50px;
+    right: -45px;
+    width: 270px;
+  }
+}
+
+@media (max-width: 380px) {
+  .filter {
+    left: 0;
+  }
+}

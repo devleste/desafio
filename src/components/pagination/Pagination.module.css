@@ -1,0 +1,92 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  color: var(--text-color);
+}
+
+.pagination .page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination .page .page_number {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #dddddd;
+  border-radius: 14px;
+}
+
+.pagination .page .page_number button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  transition: 0.3s;
+  border-radius: 14px;
+  color: var(--text-color);
+}
+
+.pagination .page .page_number button:hover {
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.pagination .page .page_number button.selected {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.pagination .page .page_number button.selected:hover {
+  background: var(--primary-color-variation);
+  transition: 0.3s;
+}
+
+.pagination .page .arrow button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  border: 1px solid #dddddd;
+  border-radius: 14px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination .page .arrow button:hover {
+  background: var(--primary-color);
+  transition: 0.3s;
+}
+
+.pagination .page .arrow button:hover .icon {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.pagination .page .arrow .icon {
+  font-size: 24px;
+  transition: 0.3s;
+  color: var(--primary-color);
+}
+
+@media (max-width: 540px) {
+  .pagination {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

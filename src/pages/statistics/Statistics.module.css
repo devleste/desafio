@@ -1,0 +1,50 @@
+.statistics  {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.statistics .language {
+  padding-top: 40px;
+}
+
+/* Cor de fundo dos gráficos */
+.statistics rect:first-of-type {
+  fill: var(--background-color);
+}
+
+/* Título do gráfico */
+.statistics text[fill="#757575"]:first-of-type {
+  fill: var(--primary-color);
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+/* Subtítulo do gráfico */
+.statistics text[fill="#757575"]:first-of-type + text {
+  fill: var(--text-grey) !important;
+  font-size: 16px !important;
+}
+
+/* Cor da barra do gênero masculino */
+.statistics .gender path[fill="#4285f4"] {
+  fill: #37c1ff;
+}
+
+.statistics .gender rect[fill="#4285f4"] {
+  fill: #37c1ff;
+}
+
+/* Cor da barra do gênero feminino */
+.statistics .gender path[fill="#db4437"] {
+  fill: #ff6d84;
+}
+.statistics .gender rect[fill="#db4437"] {
+  fill: #ff6d84;
+}
+
+.statistics svg:first-of-type {
+  height: 800px !important;
+}
