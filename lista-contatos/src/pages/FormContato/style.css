@@ -1,0 +1,13 @@
+.button-atualizar {
+    padding-right: 2em;
+    padding-left: 2em;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+.img-perfil{
+    width:6em;
+    height: 6em;
+}

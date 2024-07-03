@@ -1,0 +1,24 @@
+.img-perfil{
+    width:6em;
+    height: 6em;
+}
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.tbody-contacts{
+    display:flex;
+    flex-direction:column;
+    overflow-y :auto;
+    overflow-x :hidden;
+    height:250px;
+}
+
+.thead-contacts{
+    display:flex;
+    flex-direction:column;
+    overflow-y :auto;
+    overflow-x :hidden;
+}
