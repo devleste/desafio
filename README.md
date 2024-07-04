@@ -1,85 +1,52 @@
-<h1 align="center">
-  <img alt="Leste Telecom" title="Leste Telecom" src="./logo.png" width="200px" />
-</h1>
+# Desafio Leste
 
-<h3 align="center">
-  Desafio do Desenvolvimento
-</h3>
+Este é um projeto desenvolvido como parte do desafio técnico da Leste Telecom. O objetivo é criar uma aplicação para gerenciar contatos com funcionalidades de adição, edição, remoção e filtragem de contatos. Além disso, a aplicação também possui um painel de controle que exibe estatísticas sobre os contatos.
 
-<p align="center">
-  <a href="#computer-o-desafio">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-entrega">Entrega</a>
-</p>
+## Deploy 
+https://desafio-orpin.vercel.app/contatos
 
-## :computer: O desafio
+## Tecnologias Utilizadas
 
-A aplicação que deverá ser desenvolvida é uma listagem de contatos, o **Leste Contact**.
+- **Next.js**: Framework React para construção de aplicações web.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Material-UI (MUI)**: Biblioteca de componentes de interface de usuário para React.
+- **Tailwind CSS**: Framework de CSS utilitário para estilização rápida e responsiva.
+- **ESLint**: Ferramenta de linting para código JavaScript.
+- **PostCSS**: Ferramenta para transformar CSS com plugins.
+- **Next-Themes**: Biblioteca para gerenciar temas no Next.js.
 
-Neste desafio deverá ser criado uma aplicação com todas as funcionalidades solicitadas e será utilizada para **avaliação dos cadadidatos** para a vaga de desenvolvimento da Leste Telecom.
+## Funcionalidades
 
-### Um pouco sobre as ferramentas
+- **Listar Contatos**: Exibe uma lista de contatos.
+- **Adicionar Contato**: Permite adicionar um novo contato.
+- **Editar Contato**: Permite editar um contato existente.
+- **Remover Contato**: Permite remover um contato existente.
+- **Filtrar Contatos**: Permite filtrar contatos por gênero, idioma, idade e mês de aniversário.
+- **Estatísticas dos Contatos**: Exibe gráficos com estatísticas dos contatos por gênero e idioma.
 
-Você deverá criar a aplicação do zero utilizando o [ReactJS](https://expressjs.com/).
+## Como Executar o Projeto
 
-Poderá ser utilizado qualquer outra biblioteca complementar ao React para o desenvolvimento desta aplicação.
+### Pré-requisitos
 
-### Funcionalidades
+- Node.js e npm instalados em sua máquina.
 
-Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
+### Passos para Execução
 
-#### 1. Chamada a API
+1. **Clone o repositório**
 
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
+   ```sh
+   git clone https://github.com/your-username/desafio-leste.git
+   cd desafio-leste
 
-#### 2. Listagem de Contatos
+2. **Instale as dependências**
 
-Liste todas as informações recebidas da API em formato de lista de contatos. 
+   ```sh
+   npm install
+3. **Abra o terminal e execute o servidor de desenvolvimento**
 
-O design da aplicação fica a seu critério
+   ```sh
+   npm run dev
+4. **Abra o navegador e acesse**
 
-#### 3. Adicionar novo Contato
-
-Crie a funcionalidade do usuário ser capaz de adicionar um novo Contato a listagem.
-
-Persista as informações no próprio browser.
-
-#### 4. Remover Contatos
-
-Disponibilize para o usuário excluir um contato da lista.
-
-#### 5. Editar Contatos
-
-Disponibilize para o usuário editar qualquer campo de um contato da lista.
-
-#### 6. Filtros
-
-Adicione filtros na listagem para as seguintes informações:
-
-- Gender
-- Language
-- Age
-- Birthday (todos de um determinado mês)
-
-#### 7. Resumo
-
-Adicione um resumo estatístico da sua lista, exibindo a contagem total dos campos:
-
-- Gender
-- Language
-
-
-
-## 📅 Entrega
-
-Para realizar a entrega do desafio basta seguir os passos:
-
-- Dê um **Fork** neste repositório para o Github
-- Realize o desafio e suba para a sua cópia do repositório
-- Hospede a aplicação em um host de sua escolha. Há diversas opções grátis por aí!
-- Ao finalizar todas as funcionalidades realize um **Pull Request** com as seguintes informações: **Nome**, **Email** e **URL da aplicação**
-
-Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível!
-
----
-
-Feito com ♥ by Leste Telecom :wave: 
+   ```sh
+   http://localhost:3000
