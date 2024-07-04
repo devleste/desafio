@@ -1,0 +1,7 @@
+export function RenderGlobalInputs() {
+    return (
+        <>
+        
+        </>
+    )
+}
