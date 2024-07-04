@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(244, 246, 248);
+  padding-bottom: 50px;
+}
+
+.title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.buttonContact {
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: 600;
+  background-color: rgb(115, 164, 255);
+  cursor: pointer;
+}
+
+.buttonContact:hover {
+  background-color: rgb(21, 231, 115);
+}
