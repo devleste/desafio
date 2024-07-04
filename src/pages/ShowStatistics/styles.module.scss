@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+}
+
+.image {
+  width: 450px;
+  height: 214px;
+
+  margin-top: 42px;
+}
+
+.title {
+  margin-top: 42px;
+
+  font-size: 3.625rem;
+  font-weight: 700;
+
+  color: var(--observatory-600);
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  //align-items: center;
+  //justify-content: space-between;
+
+  gap: 18px
+}
+
+.genderStatistcsContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.titleContainer {
+  width: 658px;
+  height: 64px;
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 8px;
+
+  background-color: var(--observatory-600);
+  color: var(--white);
+
+  margin-top: 62px;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.tableGender {
+  width: 658px;
+
+  margin-top: 18px;
+  
+  background-color: var(--white-100);
+  color: var(--observatory-900);
+
+  border: 4px solid var(--observatory-600);
+  border-radius: 12px;
+}
+
+.tableHeader {
+  font-size: 1.375rem;
+  font-weight: 700;
+
+  background-color: var(--observatory-900);
+  color: var(--observatory-600);
+
+  border: 4px solid var(--observatory-600);
+}
+
+.tableColumn {
+  font-size: 1.125rem;
+  font-size: 500;
+
+  border: 1px solid var(--observatory-600);
+
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+}
+
+.languageStatisticsContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.tableLanguage {
+  width: 658px;
+
+  margin-top: 18px;
+  
+  background-color: var(--white-100);
+  color: var(--observatory-900);
+
+  border: 4px solid var(--observatory-600);
+  border-radius: 12px;
+}
+
+.buttonGoBack {
+  width: 1334px;
+  height: 64px;
+
+  border-radius: 8px;
+
+  background-color: var(--observatory-600);
+  color: var(--white);
+
+  margin: 84px 0;
+
+  cursor: pointer;
+  
+  font-size: 2rem;
+  font-weight: 700;
+
+  transition: all 0.4s;
+  
+    &:hover {
+      background-color: var(--button-hover-confirm);
+    }
+}

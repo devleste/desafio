@@ -1,0 +1,22 @@
+.inputLarge {
+  width: 658px;
+  height: 64px;
+
+  border: 2px solid var(--observatory-600);
+  border-radius: 8px;
+
+  background-color: var(--observatory-50);
+  
+  font-size: 1.125rem;
+  color: var(--observatory-950);
+
+  padding: 12px;
+
+  &::placeholder {
+    color: var(--observatory-950);
+  }
+
+  &:focus {
+    outline: 1px solid var(--observatory-600);
+  } 
+}

@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh
+}
+
+.image {
+  width: 450px;
+  height: 214px;
+
+  margin-top: 42px;
+}
+
+.filterContainer {
+  margin-top: 62px;
+}
+
+.filterForm {
+  display: flex;
+
+  gap: 20px;
+}
+
+.counterContainer {
+  display: flex;
+  flex-direction: row;
+
+  gap: 18px;
+  
+  margin-top: 42px;
+}
+
+.infoDetails {
+  width: 658px;
+  height: 64px;
+
+  border-radius: 8px;
+
+  background-color: var(--observatory-600);
+
+  padding: 22px 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.titleInfo {
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  color: var(--white);
+}
+
+.numberInfo {
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  color: var(--white);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titlePage {
+  margin-top: 46px;
+
+  font-size: 3.625rem;
+  font-weight: 700;
+
+  color: var(--observatory-600);
+}
+
+.emptyListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 52px;
+}
+
+.listContactContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 18px;
+  row-gap: 52px;
+
+  margin-top: 62px;
+
+  margin-bottom: 72px;
+}

@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+
+  min-height: 100vh
+}
+
+.image {
+  width: 450px;
+  height: 214px;
+
+  margin-top: 42px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 42px;
+
+  margin-top: 72px;
+
+  flex-grow: 1;
+}

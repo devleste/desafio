@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 450px;
+  height: 214px;
+
+  margin-top: 42px;
+}
+
+.title {
+  margin-top: 42px;
+
+  font-size: 3.625rem;
+  font-weight: 700;
+
+  color: var(--observatory-600);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  
+  margin-top: 62px;
+  gap: 32px;
+}
+
+.formFirstLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 40px;
+}
+
+.inputPrimaryContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.label {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  margin-left: 12px;
+
+  color: var(--observatory-600);
+}
+
+.formSecondLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 40px;
+}
+
+.formThirdLine {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 42px;
+}
+
+.inputSecondaryContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.buttonFormContainer {
+  display: flex;
+  
+  gap: 40px;
+
+  margin-bottom: 72px;
+}

@@ -1,0 +1,19 @@
+.selectSmall {
+  width: 320px;
+  height: 64px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background-color: var(--observatory-600);
+  color: var(--white);
+
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  padding: 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
