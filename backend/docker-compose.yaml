@@ -1,0 +1,11 @@
+version: "25.0.3"
+services:
+  app:
+    build: .
+    volumes: 
+      - .:django
+    image: leste-telecom:latest
+    container_name: leste-telecom
+    command: gunicorn setup.wsgi:application --bind 0.0.0.0:8000
+    env_file:
+      .env

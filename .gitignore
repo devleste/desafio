@@ -1,0 +1,307 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Frontend
+
+# dependencies
+frontend/node_modules
+frontend/api-server/node_modules
+frontend/.pnp
+frontend.pnp.js
+frontend/admin
+# testing
+frontend/coverage
+frontend/api-server/.env
+
+# next.js
+frontend/.next/
+frontend/out/
+
+# production
+frontend/build
+
+# misc
+frontend.DS_Store
+frontend*.pem
+
+# debug
+frontendnpm-debug.log*
+frontendyarn-debug.log*
+frontendyarn-error.log*
+frontend.pnpm-debug.log*
+
+# local env files
+frontend.env*.local
+frontend.env
+
+# vercel
+frontend/.vercel
+frontend/.env
+
+# typescript
+frontend*.tsbuildinfo
+frontendnext-env.d.ts
+
+# bash
+frontend.run_server.sh
+
+# Backend (Django)
+
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+### Django ###
+backend/*.log
+django_project/*.log
+backend/*.pot
+django_project/*.pot
+backend/*.pyc
+django_project/*.pyc
+backend/__pycache__/
+django_project/__pycache__/
+backend/local_settings.py
+django_project/local_settings.py
+backend/db.sqlite3
+django_project/db.sqlite3
+backend/db.sqlite3-journal
+django_project/db.sqlite3-journal
+backend/media
+django_project/media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+
+### Django.Python Stack ###
+# Byte-compiled / optimized / DLL files
+backend/*.py[cod]
+django_project/*.py[cod]
+backend/*$py.class
+django_project/*$py.class
+
+# C extensions
+backend/*.so
+django_project/*.so
+
+# Distribution / packaging
+backend/.Python
+django_project/.Python
+backend/build/
+django_project/build/
+backend/develop-eggs/
+django_project/develop-eggs/
+backend/dist/
+django_project/dist/
+backend/downloads/
+django_project/downloads/
+backend/eggs/
+django_project/eggs/
+backend/.eggs/
+django_project/.eggs/
+backend/lib/
+django_project/lib/
+backend/lib64/
+django_project/lib64/
+backend/parts/
+django_project/parts/
+backend/sdist/
+django_project/sdist/
+backend/var/
+django_project/var/
+backend/wheels/
+django_project/wheels/
+backend/share/python-wheels/
+django_project/share/python-wheels/
+backend/*.egg-info/
+django_project/*.egg-info/
+backend/.installed.cfg
+django_project/.installed.cfg
+backend/*.egg
+django_project/*.egg
+backend/MANIFEST
+django_project/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+backend/*.manifest
+django_project/*.manifest
+backend/*.spec
+django_project/*.spec
+
+# Installer logs
+backend/pip-log.txt
+django_project/pip-log.txt
+backend/pip-delete-this-directory.txt
+django_project/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+backend/htmlcov/
+django_project/htmlcov/
+backend/.tox/
+django_project/.tox/
+backend/.nox/
+django_project/.nox/
+backend/.coverage
+django_project/.coverage
+backend/.coverage.*
+django_project/.coverage.*
+backend/.cache
+django_project/.cache
+backend/nosetests.xml
+django_project/nosetests.xml
+backend/coverage.xml
+django_project/coverage.xml
+backend/*.cover
+django_project/*.cover
+backend/*.py,cover
+django_project/*.py,cover
+backend/.hypothesis/
+django_project/.hypothesis/
+backend/.pytest_cache/
+django_project/.pytest_cache/
+backend/cover/
+django_project/cover/
+
+# Translations
+backend/*.mo
+django_project/*.mo
+
+# Django stuff:
+
+# Flask stuff:
+backend/instance/
+django_project/instance/
+backend/.webassets-cache
+django_project/.webassets-cache
+
+# Scrapy stuff:
+backend/.scrapy
+django_project/.scrapy
+
+# Sphinx documentation
+backend/docs/_build/
+django_project/docs/_build/
+
+# PyBuilder
+backend/.pybuilder/
+django_project/.pybuilder/
+backend/target/
+django_project/target/
+
+# Jupyter Notebook
+backend/.ipynb_checkpoints
+django_project/.ipynb_checkpoints
+
+# IPython
+backend/profile_default/
+django_project/profile_default/
+backend/ipython_config.py
+django_project/ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# backend/.python-version
+# django_project/.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#backend/Pipfile.lock
+#django_project/Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#backend/poetry.lock
+#django_project/poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#backend/pdm.lock
+#django_project/pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+backend/.pdm.toml
+django_project/.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+backend/__pypackages__/
+django_project/__pypackages__/
+
+# Celery stuff
+backend/celerybeat-schedule
+django_project/celerybeat-schedule
+backend/celerybeat.pid
+django_project/celerybeat.pid
+
+# SageMath parsed files
+backend/*.sage.py
+django_project/*.sage.py
+
+# Environments
+backend/.env
+django_project/.env
+backend/.venv
+django_project/.venv
+backend/env/
+django_project/env/
+backend/venv/
+django_project/venv/
+backend/ENV/
+django_project/ENV/
+backend/env.bak/
+django_project/env.bak/
+backend/venv.bak/
+django_project/venv.bak/
+
+# Spyder project settings
+backend/.spyderproject
+django_project/.spyderproject
+backend/.spyproject
+django_project/.spyproject
+
+# Rope project settings
+backend/.ropeproject
+django_project/.ropeproject
+
+# mkdocs documentation
+backend//site
+django_project//site
+
+# mypy
+backend/.mypy_cache/
+django_project/.mypy_cache/
+backend/.dmypy.json
+django_project/.dmypy.json
+backend/dmypy.json
+django_project/dmypy.json
+backend/credentials.json
+credentials.json
+
+# Pyre type checker
+backend/.pyre/
+django_project/.pyre/
+
+# pytype static type analyzer
+backend/.pytype/
+django_project/.pytype/
+
+# Cython debug symbols
+backend/cython_debug/
+django_project/cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#backend/.idea/
+#django_project/.idea/
+
+# End of https://www.toptal.com/developers/gitignore/api/django

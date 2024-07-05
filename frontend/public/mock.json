@@ -1,0 +1,49 @@
+{
+    "contacts": [
+        {
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe@example.com",
+            "gender": "male",
+            "language": "English",
+            "avatar": "https://example.com/avatar1.jpg",
+            "birthday": "1990-01-01"
+        },
+        {
+            "first_name": "Jane",
+            "last_name": "Smith",
+            "email": "jane.smith@example.com",
+            "gender": "female",
+            "language": "Spanish",
+            "avatar": "https://example.com/avatar2.jpg",
+            "birthday": "1985-05-15"
+        },
+        {
+            "first_name": "Michael",
+            "last_name": "Brown",
+            "email": "michael.brown@example.com",
+            "gender": "male",
+            "language": "French",
+            "avatar": "https://example.com/avatar3.jpg",
+            "birthday": "1992-07-20"
+        },
+        {
+            "first_name": "Emily",
+            "last_name": "Davis",
+            "email": "emily.davis@example.com",
+            "gender": "female",
+            "language": "German",
+            "avatar": "https://example.com/avatar4.jpg",
+            "birthday": "1988-10-30"
+        },
+        {
+            "first_name": "David",
+            "last_name": "Wilson",
+            "email": "david.wilson@example.com",
+            "gender": "male",
+            "language": "Chinese",
+            "avatar": "https://example.com/avatar5.jpg",
+            "birthday": "1995-03-25"
+        }
+    ]
+}

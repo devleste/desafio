@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .contactsWrapper.gridLayout {
+    @apply grid grid-cols-custom gap-10 ml-[-13px] max-[630px]:justify-center;
+  }
+
+  .contactsWrapper.listLayout {
+    @apply flex-wrap flex flex-col gap-4;
+  }
+
+  .contactCard.gridLayout {
+    @apply bg-white border w-full max-w-60 border-white shadow-[0_3px_10px_rgb(0,0,0,0.1)] hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl mx-auto p-4 gap-4 flex-col [&>.contactCardAvatar>img]:h-28  [&>.contactCardAvatar>img]:shadow-[0_3px_10px_rgb(0,0,0,0.1)] [&>.contactCardInfo>h2]:text-center  [&>.contactCardInfo>.cardInfo]:mx-auto [&>.contactCardButtons]:w-full [&>.contactCardButtons]:justify-between;
+  }
+
+  .contactCard.listLayout {
+    @apply w-full rounded-b-[0px] [&>.contactCardAvatar>img]:w-[100px] [&>.contactCardAvatar>img]:h-[100px] pb-[45px] md:pb-[60px] [&>.contactCardInfo]:absolute [&>.contactCardInfo]:left-[120px] [&>.contactCardInfo]:transform  [&>.contactCardButtons]:absolute [&>.contactCardButtons]:bottom-3 [&>.contactCardButtons]:left-0;
+  }
+
+  .addContactCard {
+    @apply relative gap-2  flex items-center sm:flex border border-b-[#00937333] bg-[#009373] text-white text-center;
+  }
+
+  .addContactCard.gridLayout {
+    @apply w-full max-w-60 justify-center border-white shadow-[0_3px_10px_rgb(0,0,0,0.1)] hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl mx-auto p-4 [&>*]:lg:text-xl [&>*]:text-base;
+  }
+
+  .addContactCard.listLayout {
+    @apply w-auto rounded-lg py-2 px-4 max-w-44 [&>*]:text-base  justify-start;
+  }
+
+  .contactForm {
+    @apply flex flex-col bg-[#e8ebea] p-4 rounded-lg items-center gap-4 justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .contactForm .contactFields {
+    @apply flex gap-4 flex-col text-[#00997B];
+  }
+
+  .contactForm .inputWrapper {
+    @apply flex items-center gap-1 md:gap-2;
+  }
+
+  .contactForm .inputWrapper svg {
+    @apply text-base md:text-xl;
+  }
+
+  .contactForm .inputWrapper input,
+  .contactForm .inputWrapper select {
+    @apply rounded-sm px-1 py-1 w-[120px] text-xs md:rounded-md md:px-2 md:py-2 md:w-[199px] md:text-sm;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+@media (min-width: 1130px) {
+}
