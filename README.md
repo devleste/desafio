@@ -29,11 +29,11 @@ Abaixo segue a listagem de funcionalidades que a aplicação deve apresentar.
 
 #### 1. Chamada a API
 
-A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos. 
+A aplicação deve fazer uma chamada para uma [API Externa](https://my.api.mockaroo.com/lestetelecom/test.json?key=f55c4060) que devolverá uma série de informações de contatos.
 
 #### 2. Listagem de Contatos
 
-Liste todas as informações recebidas da API em formato de lista de contatos. 
+Liste todas as informações recebidas da API em formato de lista de contatos.
 
 O design da aplicação fica a seu critério
 
@@ -67,8 +67,6 @@ Adicione um resumo estatístico da sua lista, exibindo a contagem total dos camp
 - Gender
 - Language
 
-
-
 ## 📅 Entrega
 
 Para realizar a entrega do desafio basta seguir os passos:
@@ -82,4 +80,4 @@ Depois de enviar a sua versão iremos avaliar e retornaremos assim que possível
 
 ---
 
-Feito com ♥ by Leste Telecom :wave: 
+Feito com ♥ by Leste Telecom :wave:
